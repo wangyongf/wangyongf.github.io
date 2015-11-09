@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Scott Wang's blog]]></title>
+  <subtitle><![CDATA[没有理想，和咸鱼有什么分别]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://blog.54yongf.com/"/>
+  <updated>2015-11-09T04:53:04.025Z</updated>
+  <id>http://blog.54yongf.com/</id>
+  
+  <author>
+    <name><![CDATA[王用]]></name>
+    <email><![CDATA[1059613472@qq.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://blog.54yongf.com/2015/11/09/hello-world/"/>
+    <id>http://blog.54yongf.com/2015/11/09/hello-world/</id>
+    <published>2015-11-09T04:53:04.025Z</published>
+    <updated>2015-11-09T04:53:04.025Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[欢迎大家来水经验]]></title>
+    <link href="http://blog.54yongf.com/2015/11/09/%E6%AC%A2%E8%BF%8E%E5%A4%A7%E5%AE%B6%E6%9D%A5%E6%B0%B4%E7%BB%8F%E9%AA%8C/"/>
+    <id>http://blog.54yongf.com/2015/11/09/欢迎大家来水经验/</id>
+    <published>2015-11-08T19:40:07.000Z</published>
+    <updated>2015-11-08T19:48:17.667Z</updated>
+    <content type="html"><![CDATA[<h1 id="Hello_World!">Hello World!</h1><p>今天折腾了这么久，终于搭建好了。有点累。</p>
+<a id="more"></a>
+<p>不过，收获还是大大地，欢迎大家来水经验，博客刚刚上线，很多不足，内容方面会逐渐完善，谢谢大家！</p>
+<p>先滚去睡了@_@</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Hello_World!">Hello World!</h1><p>今天折腾了这么久，终于搭建好了。有点累。</p>]]>
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[hexo系列文章之微博秀]]></title>
+    <link href="http://blog.54yongf.com/2015/11/08/Hexo%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E4%B9%8B%E5%BE%AE%E5%8D%9A%E7%A7%80/"/>
+    <id>http://blog.54yongf.com/2015/11/08/Hexo系列文章之微博秀/</id>
+    <published>2015-11-08T12:58:21.000Z</published>
+    <updated>2015-11-08T16:14:14.621Z</updated>
+    <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</p>
+<a id="more"></a>
+<p>开始的时候，我找到了wordpress，但是，发现wordpress虽然已经很成熟，很多人都在用，不过我觉得它太臃肿了，不适合我，于是放弃了。后来，看到了hexo这个框架，觉得它很小巧，界面清爽，而且很好看，所以，就决定是它了。</p>
+<p>在学习使用这个框架时，我先去hexo的github页面学习了一下，先安装好必要的东西，然后，选择了一款主题，我这款主题就是参考<a href="http://zipperary.com/" target="_blank" rel="external">Zippera大神</a>的博客制作的，感兴趣的可以去他的博客看看。</p>
+<p>我就跟着Zippera大神的教程，一步一步走，不过在生成微博秀的时候，出了点问题，搞得我差点崩溃，后面终于找到了解决办法，但是我还是没有明白其中问题的原因，所以特地将之记录下来，希望日后能找到真正的原因。</p>
+<h1 id="问题">问题</h1><p>按照正常的修改，将微博秀的代码放到正确的位置上之后，本地在浏览器中输入localhost:4000之后，其他的东西都显示正常，唯独微博秀的位置是空白的，但是在那个位置却也留了这么大的空间，刚好是微博秀的大小，只是没显示微博秀。</p>
+<h1 id="暂时的解决方案">暂时的解决方案</h1><p>将localhost:4000换成本地的IP地址（不是本机的！），比如我的是：127.0.0.1:4000，然后，微博秀就显示出来了，实在搞不懂为什么。<br>我查看过页面的源码，微博秀代码的确是在页面上的，不过localhost:4000就是显示不出来。我猜，可能是微博方面做了相关限制。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="前言">前言</h1><p>今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</p>]]>
+    
+    </summary>
+    
+      <category term="hexo，博客，教程" scheme="http://blog.54yongf.com/tags/hexo%EF%BC%8C%E5%8D%9A%E5%AE%A2%EF%BC%8C%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
+    
+  </entry>
+  
+</feed>
