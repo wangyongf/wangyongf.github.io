@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo | Scott Wang&#39;s blog</title>
+  <title>使用hexo的过程中，我踩过的那些坑 | Scott Wang&#39;s blog</title>
   <meta name="author" content="王用">
   
   <meta name="description" content="没有理想，和咸鱼有什么分别。我是王用@Scott Wang，我在这里分享技术心得，学习体会，偶尔也谈谈人生。">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="使用hexo的过程中，我踩过的那些坑"/>
   <meta property="og:site_name" content="Scott Wang&#39;s blog"/>
 
   
@@ -220,37 +220,167 @@ var _hmt = _hmt || [];
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title category">hexo</h2>
-
-
-  <div class="archive">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-11-09T18:16:06.534Z"><a href="/2015/11/10/使用hexo的过程中，我踩过的那些坑/">2015年11月10日</a></time>
-            
-              <h1 class="title"><a href="/2015/11/10/使用hexo的过程中，我踩过的那些坑/">使用hexo的过程中，我踩过的那些坑</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-11-09T17:19:06.142Z"><a href="/2015/11/10/Hexo系列文章之微博秀/">2015年11月10日</a></time>
-            
-              <h1 class="title"><a href="/2015/11/10/Hexo系列文章之微博秀/">hexo系列文章之微博秀</a></h1>
-            
-          </header>
-        </div>
-      </article>
+      <img src="">
     
   </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-09T18:16:06.534Z"><a href="/2015/11/10/使用hexo的过程中，我踩过的那些坑/">2015年11月10日</a></time>
+      
+      
+  
+    <h1 class="title">使用hexo的过程中，我踩过的那些坑</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="前言">前言</h2><p>事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</p>
+<a id="more"></a>
+<h2 id="说说我的搭建环境吧">说说我的搭建环境吧</h2><ul>
+<li>hexo: 3.1.1外加zippera大神的Lightum主题（再次感谢）</li>
+<li>os: Windows_NT 6.1.7600 win32 x64</li>
+<li>http_parser: 2.5.0</li>
+<li>node: 4.2.2</li>
+</ul>
+<h2 id="先说说hexo的安装过程中潜在的坑">先说说hexo的安装过程中潜在的坑</h2><p>目前，我的博客是用hexo+gitcafe-gitpages的方式搭建的，因为对空间的需求暂时不大，所以就先凑合着用了，以后再做打算。<br>这时候，就需要用到git来部署网站了，注意事项如下：</p>
+<ol>
+<li>在 _config.yml 中设置 deploy中的type一项为git（而且还要注意空一格）<ol>
+<li>此处请注意，如果你是使用github来部署网站，可以设置为github</li>
+</ol>
+</li>
+<li>注意安装好所有必须的插件，在部署网站时，必须用到hexo-deployer-git，如果没安装，会报错，错误信息：<strong>hexo:ERROR Deployer not found: git</strong>。安装的命令为：npm install hexo-deployer-git –save</li>
+<li>接上面2，一般做到这个程度就没问题了，但是不排除有其他特殊情况，那么，还是具体问题具体分析吧。</li>
+<li>在gitcafe上使用gitPages服务，就必须与gitcafe通信，这时候就添加SSH公钥到gitcafe上，至于如何操作，请移步<a href="https://gitcafe.com/GitCafe/Help/wiki/如何安装和设置-Git" title="SSH设置（很详细哦）" target="_blank" rel="external">gitcafe的官方文档</a> ，官方文档很详细，放心，如果有问题，还可以与官方联系，很方便的。</li>
+<li>现在，假设你已经在gitcafe创建好了库，并且已经写好了一篇博客，准备push到gitcafe项目的gitPages分支了，再次检查一下你的hexo/_config.yml吧，它应该是形如下面这样的：<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git   #如果使用gitcafe就一定要填git，使用github可以填github</span><br><span class="line">    <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//gitcafe.com/your_username/your_username.git  #注意用户名，your_username替换成自己的用户名</span></span><br><span class="line">    <span class="attribute">branch</span>: gitcafe-pages   #gitcafe填这个</span><br><span class="line">    <span class="attribute">message</span>: update #这是每次更新博客时的message，这项可以没有，有的话内容也可以自定义（如果你用过Git的话，这些应该不用我解释了）</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><font color="red"><strong>注意（Attention）！</strong></font>在type,repository,branch[,message]的后面的冒号之后，必须留出一个空格！否则很可能会解析出错，可能出现一大堆看不懂的错误，这是一个注意点。</p>
+
+      
+    </div>
+    <footer>
+      
+
+
+        
+  
+  <div class="categories">
+    <a href="/categories/hexo/">hexo</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/hexo/">hexo</a>, <a href="/tags/感受/">感受</a>, <a href="/tags/挖坑and踩坑/">挖坑and踩坑</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<div>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+</div>
+
+<section>
+</section>
+
+<!-- Baidu Button END -->      
+
+
+
+
+
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<section id="protocol">
+<div class="copyright" style="font-size:14px;font-family:Gadugi;font-weight:bold">
+  <p><span>　　　　　本文标题：</span><a href="/2015/11/10/使用hexo的过程中，我踩过的那些坑/">使用hexo的过程中，我踩过的那些坑</a></p>
+  <p><span>　　　　　文章作者：</span><a href="/" title="Scott Wang's blog">王用</a></p>
+  <p><span>　　　　　发布时间：</span>Tue Nov 10 2015 02:16:06 GMT+0800</p>
+  <p>
+    <span>　　　　　原始链接：</span><a href="/2015/11/10/使用hexo的过程中，我踩过的那些坑/" title="使用hexo的过程中，我踩过的那些坑">http://blog.54yongf.com/2015/11/10/使用hexo的过程中，我踩过的那些坑/</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/11/10/使用hexo的过程中，我踩过的那些坑/" title="点击复制文章链接">
+        <i class="fa fa-clipboard"></i>
+    </span>
+  </p>
+  <p><span>　　　　　许可协议：</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">“署名-非商用-相同方式共享 3.0”</a> 转载请保留原文链接及作者。</p>
+  <script src="/js/clipboard.min.js"></script>
+  <script> var clipboard = new Clipboard('.btn'); </script>
+</div>
+<style type="text/css">
+  .copyright p .btn {
+    margin-left: 1em;
+  }
+  .copyright:hover p .btn::after {
+    content: ""
+  }
+  .copyright p .btn:hover {
+      color: gray;
+      cursor: pointer;
+    };
+</style>
+
+</section>
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2015/11/10/Hexo系列文章之微博秀/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"blog-54yongf"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+</section>
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
