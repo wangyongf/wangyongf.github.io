@@ -168,7 +168,7 @@ article.link .title a:after {
 }
 article .post-content {
   padding: 20px 77px 15px 77px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   position: relative;
 }
 @media screen and (max-width: 600px) {
@@ -552,6 +552,7 @@ article footer .addthis iframe {
   background: #ddd;
   color: #777;
   font-family: Helvetica Neue, Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+  font-size: 30px;
   text-shadow: 0 0 1px #fff;
   margin-bottom: 50px;
 }
@@ -853,7 +854,7 @@ pre .deletion {
   background: #fff;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
-  margin: 0 20 0 20px;
+  margin-bottom: 30px;
 }
 #protocol .title {
   font-weight: bold;
