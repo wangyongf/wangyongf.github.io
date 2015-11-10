@@ -848,3 +848,13 @@ pre .clojure .title {
 pre .deletion {
   color: #dc322f;
 }
+#protocol {
+  padding: 20px;
+  background: #fff;
+  -webkit-box-shadow: 1px 2px 3px #ddd;
+  box-shadow: 1px 2px 3px #ddd;
+  margin: 0 20 0 20px;
+}
+#protocol .title {
+  font-weight: bold;
+}
