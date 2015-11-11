@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.54yongf.com/2015/11/10/%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8C%E6%88%91%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/</loc>
-    <lastmod>2015-11-09T18:16:06.534Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://blog.54yongf.com/2015/11/10/Hexo%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E4%B9%8B%E5%BE%AE%E5%8D%9A%E7%A7%80/</loc>
     <lastmod>2015-11-09T17:19:06.142Z</lastmod>
   </url>
@@ -24,6 +19,11 @@
   <url>
     <loc>http://blog.54yongf.com/2015/11/10/hello-world/</loc>
     <lastmod>2015-11-09T17:17:48.889Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.54yongf.com/2015/11/10/%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8C%E6%88%91%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/</loc>
+    <lastmod>2015-11-09T16:00:00.000Z</lastmod>
   </url>
   
 </urlset>
