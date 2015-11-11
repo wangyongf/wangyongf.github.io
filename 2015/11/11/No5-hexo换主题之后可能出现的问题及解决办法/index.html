@@ -11,16 +11,16 @@
     
 
     
-    <meta name="description" content="今天在更换博客主题，从chenall换成jacman之后，重新生成hexo g，然后启动服务hexo s在本地查看。在浏览器中输入localhost:4000之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按Ctrl+F5刷新，强制浏览器重新加载所有资源，不过">
+    <meta name="description" content="问题今天在更换博客主题，从chenall换成jacman之后，重新生成hexo g，然后启动服务hexo s在本地查看。在浏览器中输入localhost:4000之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按Ctrl+F5刷新，强制浏览器重新加载所有资源，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No5-hexo换主题之后可能出现的问题及解决办法">
 <meta property="og:url" content="http://blog.54yongf.com/2015/11/11/No5-hexo换主题之后可能出现的问题及解决办法/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="今天在更换博客主题，从chenall换成jacman之后，重新生成hexo g，然后启动服务hexo s在本地查看。在浏览器中输入localhost:4000之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按Ctrl+F5刷新，强制浏览器重新加载所有资源，不过">
+<meta property="og:description" content="问题今天在更换博客主题，从chenall换成jacman之后，重新生成hexo g，然后启动服务hexo s在本地查看。在浏览器中输入localhost:4000之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按Ctrl+F5刷新，强制浏览器重新加载所有资源，">
 <meta property="og:updated_time" content="2015-11-11T12:11:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No5-hexo换主题之后可能出现的问题及解决办法">
-<meta name="twitter:description" content="今天在更换博客主题，从chenall换成jacman之后，重新生成hexo g，然后启动服务hexo s在本地查看。在浏览器中输入localhost:4000之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按Ctrl+F5刷新，强制浏览器重新加载所有资源，不过">
+<meta name="twitter:description" content="问题今天在更换博客主题，从chenall换成jacman之后，重新生成hexo g，然后启动服务hexo s在本地查看。在浏览器中输入localhost:4000之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按Ctrl+F5刷新，强制浏览器重新加载所有资源，">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -110,16 +110,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-number">2.</span> <span class="toc-text">最后</span></a></li></ol>
 		
 		</div>
 		
-		<p>今天在更换博客主题，从chenall换成jacman之后，重新生成<code>hexo g</code>，然后启动服务<code>hexo s</code>在本地查看。<br>在浏览器中输入<code>localhost:4000</code>之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按<code>Ctrl+F5</code>刷新，强制浏览器重新加载所有资源，不过——还是没反应(⊙_⊙)? 于是，换了个浏览器，世界之窗（真不是打广告），一样的结果。<br>最后，在查询了一些资料之后，终于知道，这可能是hexo的缓存的问题，也就是你网站根目录的那个<code>db.json</code>文件，还知道了一点，推荐在发布网站之前，先清除缓存，然后再部署网站。<br>清除缓存的方法：</p>
+		<h2 id="问题">问题</h2><p><font size="4">今天在更换博客主题，从chenall换成jacman之后，重新生成<code>hexo g</code>，然后启动服务<code>hexo s</code>在本地查看。在浏览器中输入<code>localhost:4000</code>之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按<code>Ctrl+F5</code>刷新，强制浏览器重新加载所有资源，不过——还是没反应(⊙_⊙)? 于是，换了个浏览器，世界之窗（真不是打广告），一样的结果。</font></p>
+<a id="more"></a>
+<p>最后，在查询了一些资料之后，终于知道，这可能是hexo的缓存的问题，也就是你网站根目录的那个<code>db.json</code>文件，还知道了一点，推荐在发布网站之前，先清除缓存，然后再部署网站。<br>清除缓存的方法：</p>
 <ul>
 <li>执行命令：<code>hexo clean</code></li>
 <li>然后可以生成静态博客并在本地预览：<code>hexo g &amp; hexo s</code></li>
 </ul>
-<p>关于hexo中详细的命令，可以参考官网<a href="https://hexo.io/docs/commands.html" title="hexo中详细的命令及其解释" target="_blank" rel="external">hexo docs</a>，或者也可参考我写的一篇博文。</p>
+<h2 id="最后">最后</h2><p><font size="4">关于hexo中详细的命令，可以参考官网<a href="https://hexo.io/docs/commands.html" title="hexo中详细的命令及其解释" target="_blank" rel="external">hexo docs</a>，或者也可参考我写的一篇博文。</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -232,7 +234,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-number">2.</span> <span class="toc-text">最后</span></a></li></ol></font>
  
   </div>
 

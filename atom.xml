@@ -20,15 +20,18 @@
     <id>http://blog.54yongf.com/2015/11/11/No5-hexo换主题之后可能出现的问题及解决办法/</id>
     <published>2015-11-11T12:11:48.000Z</published>
     <updated>2015-11-11T12:11:48.000Z</updated>
-    <content type="html"><![CDATA[<p>今天在更换博客主题，从chenall换成jacman之后，重新生成<code>hexo g</code>，然后启动服务<code>hexo s</code>在本地查看。<br>在浏览器中输入<code>localhost:4000</code>之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按<code>Ctrl+F5</code>刷新，强制浏览器重新加载所有资源，不过——还是没反应(⊙_⊙)? 于是，换了个浏览器，世界之窗（真不是打广告），一样的结果。<br>最后，在查询了一些资料之后，终于知道，这可能是hexo的缓存的问题，也就是你网站根目录的那个<code>db.json</code>文件，还知道了一点，推荐在发布网站之前，先清除缓存，然后再部署网站。<br>清除缓存的方法：</p>
+    <content type="html"><![CDATA[<h2 id="问题">问题</h2><p><font size="4">今天在更换博客主题，从chenall换成jacman之后，重新生成<code>hexo g</code>，然后启动服务<code>hexo s</code>在本地查看。在浏览器中输入<code>localhost:4000</code>之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按<code>Ctrl+F5</code>刷新，强制浏览器重新加载所有资源，不过——还是没反应(⊙_⊙)? 于是，换了个浏览器，世界之窗（真不是打广告），一样的结果。</font></p>
+<a id="more"></a>
+<p>最后，在查询了一些资料之后，终于知道，这可能是hexo的缓存的问题，也就是你网站根目录的那个<code>db.json</code>文件，还知道了一点，推荐在发布网站之前，先清除缓存，然后再部署网站。<br>清除缓存的方法：</p>
 <ul>
 <li>执行命令：<code>hexo clean</code></li>
 <li>然后可以生成静态博客并在本地预览：<code>hexo g &amp; hexo s</code></li>
 </ul>
-<p>关于hexo中详细的命令，可以参考官网<a href="https://hexo.io/docs/commands.html" title="hexo中详细的命令及其解释" target="_blank" rel="external">hexo docs</a>，或者也可参考我写的一篇博文。</p>
+<h2 id="最后">最后</h2><p><font size="4">关于hexo中详细的命令，可以参考官网<a href="https://hexo.io/docs/commands.html" title="hexo中详细的命令及其解释" target="_blank" rel="external">hexo docs</a>，或者也可参考我写的一篇博文。</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>今天在更换博客主题，从chenall换成jacman之后，重新生成<code>hexo g</code>，然后启动服务<code>hexo s</code>在本地查看。<br>在浏览器中输入<code>localhost:4000</code>之后，发现网页全乱了，内容没丢]]>
+    <![CDATA[<h2 id="问题">问题</h2><p><font size=4>今天在更换博客主题，从chenall换成jacman之后，重新生成<code>hexo g</code>，然后启动服务<code>hexo s</code>在本地查看。在浏览器中输入<code>localhost:4000</code>之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按<code>Ctrl+F5</code>刷新，强制浏览器重新加载所有资源，不过——还是没反应(⊙_⊙)? 于是，换了个浏览器，世界之窗（真不是打广告），一样的结果。</p>]]>
+    
     </summary>
     
       <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
