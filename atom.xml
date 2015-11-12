@@ -4,7 +4,7 @@
   <subtitle><![CDATA[没有理想，和咸鱼有什么分别]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-11-11T12:11:48.000Z</updated>
+  <updated>2015-11-12T13:55:16.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -15,19 +15,172 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[No5-hexo换主题之后可能出现的问题及解决办法]]></title>
-    <link href="http://blog.54yongf.com/2015/11/11/No5-hexo%E6%8D%A2%E4%B8%BB%E9%A2%98%E4%B9%8B%E5%90%8E%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>http://blog.54yongf.com/2015/11/11/No5-hexo换主题之后可能出现的问题及解决办法/</id>
+    <title><![CDATA[【原】No10-hexo博文写作之博客生成generate常见错误集锦]]></title>
+    <link href="http://blog.54yongf.com/2015/11/12/%E3%80%90%E5%8E%9F%E3%80%91No10-hexo%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C%E4%B9%8B%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90generate%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/"/>
+    <id>http://blog.54yongf.com/2015/11/12/【原】No10-hexo博文写作之博客生成generate常见错误集锦/</id>
+    <published>2015-11-12T13:55:16.000Z</published>
+    <updated>2015-11-12T13:55:16.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="本文写作初衷">本文写作初衷</h2><p><font size="4">作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</font></p>
+<a id="more"></a>
+<h2 id="软件环境">软件环境</h2><p><font size="4"><br>OS: Windows_NT 6.1.7600 win32 x64<br>node: 4.2.2<br>hexo: 3.1</font></p>
+<h2 id="错误类型1">错误类型1</h2><h3 id="错误描述">错误描述</h3><p><font size="4"><br>YAMLException: end of the stream or a document separator is expected at line x, column y:</font></p>
+<h3 id="错误说明">错误说明</h3><p><font size="4"><br>缺少分隔符，一般都是因为缺少空格</font></p>
+<h3 id="解决方案">解决方案</h3><p><font size="4"><br>出现这种情况，一般都是缺少空格，在<code>:</code>冒号之后要有空格！检查x行y列附近的冒号，其之后是否跟了空格。</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="本文写作初衷">本文写作初衷</h2><p><font size=4>作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</p>]]>
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
+    
+      <category term="hexo写作" scheme="http://blog.54yongf.com/tags/hexo%E5%86%99%E4%BD%9C/"/>
+    
+      <category term="错误" scheme="http://blog.54yongf.com/tags/%E9%94%99%E8%AF%AF/"/>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[【原】No9-解决VMware虚拟机中无法使用键盘的故障]]></title>
+    <link href="http://blog.54yongf.com/2015/11/12/%E3%80%90%E5%8E%9F%E3%80%91No9-%E8%A7%A3%E5%86%B3VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E9%94%AE%E7%9B%98%E7%9A%84%E6%95%85%E9%9A%9C/"/>
+    <id>http://blog.54yongf.com/2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/</id>
+    <published>2015-11-12T13:06:22.000Z</published>
+    <updated>2015-11-12T13:06:22.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="键盘不能用？">键盘不能用？</h2><font size="4" color="red">当我们使用VMware时，在累死累活地折腾完虚拟操作系统的安装之后，开启虚拟机却发现键盘不能用，无法将输入定位到虚拟机内部。多么痛的领悟◑﹏◐</font>
+
+<a id="more"></a>
+<h2 id="参考解决步骤">参考解决步骤</h2><p><font size="4"></font></p>
+<ol>
+<li>打开你的VMware，关闭故障机，定位到故障机的标签，右键点击故障机，选择<code>设置</code><br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No9-2015-11-12_212421.png" alt="设置"></li>
+<li>在上方选择<code>选项</code>，然后选择<code>常规</code>，在右边最下方选择<code>增强型键盘</code>，选择<code>在可用时使用（推荐）</code>。注：一般都是选这个，如果你还是有问题，可选择其他两个再试下。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No9-2015-11-12_213450.png" alt="增强型键盘"></li>
+<li>在做完上述步骤之后，你可以重新启动虚拟机操作系统，一般这时就可以向虚拟机输入字符了。</li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="键盘不能用？">键盘不能用？</h2><font size=4 color=red>当我们使用VMware时，在累死累活地折腾完虚拟操作系统的安装之后，开启虚拟机却发现键盘不能用，无法将输入定位到虚拟机内部。多么痛的领悟◑﹏◐</font>]]>
+    
+    </summary>
+    
+      <category term="VMware" scheme="http://blog.54yongf.com/tags/VMware/"/>
+    
+      <category term="虚拟机" scheme="http://blog.54yongf.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+      <category term="VMware" scheme="http://blog.54yongf.com/categories/VMware/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[【原】No8-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图]]></title>
+    <link href="http://blog.54yongf.com/2015/11/12/%E3%80%90%E5%8E%9F%E3%80%91No8-%E5%A6%82%E4%BD%95%E5%80%9F%E5%8A%A9%E4%B8%83%E7%89%9B%E4%BA%91%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E7%AE%80%E5%8D%95%E5%A4%84%E7%90%86%EF%BC%8C%E5%88%B6%E4%BD%9C%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0%E4%BB%A5%E5%8F%8A%E7%BC%A9%E7%95%A5%E5%9B%BE/"/>
+    <id>http://blog.54yongf.com/2015/11/12/【原】No8-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图/</id>
+    <published>2015-11-12T12:09:10.000Z</published>
+    <updated>2015-11-12T12:09:10.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="开始使用七牛云储存">开始使用七牛云储存</h2><p><font size="4">现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。</font></p>
+<a id="more"></a>
+<h2 id="步骤">步骤</h2><p><font size="4"></font></p>
+<ol>
+<li><p>登录七牛，进入后台管理界面，选择一个已有的空间。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_202745.png" alt="登录七牛云储存"></p>
+</li>
+<li><p>点击进入<code>数据处理</code>，然后<code>新建图片样式</code>。（可以看到有一个图片保护的设置）<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_202933.png" alt="新建图片样式"></p>
+</li>
+<li><p>之后，进入<code>图片样式设置界面</code>，尽情个性化吧。还可以设置水印哦。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_203031.png" alt="设置图片样式等"></p>
+</li>
+</ol>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_203045.png" alt="设置水印"></p>
+<h2 id="如何引用带样式的图片">如何引用带样式的图片</h2><p><font size="4">在得到一个样式之后，会有一段字符串。形如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205134.png" alt="图片样式"></font></p>
+<p><font size="4">在图中的样式之后的字符串，就是代表着这个样式。<br>使用图片时，我们是引用图片的外链：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205150.png" alt="外链"><br>那么，如何应用这个样式呢？很简单，在外链之后加一个<code>？</code>，然后再加上<code>样式</code>这段字符串。举个栗子：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205748.png" alt="如何应用样式"><br>是不是很简单？</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="开始使用七牛云储存">开始使用七牛云储存</h2><p><font size=4>现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。</p>]]>
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
+    
+      <category term="七牛" scheme="http://blog.54yongf.com/tags/%E4%B8%83%E7%89%9B/"/>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[【原】No7-谈谈hexo博客写作中的图片问题]]></title>
+    <link href="http://blog.54yongf.com/2015/11/12/%E3%80%90%E5%8E%9F%E3%80%91No7-%E8%B0%88%E8%B0%88hexo%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/"/>
+    <id>http://blog.54yongf.com/2015/11/12/【原】No7-谈谈hexo博客写作中的图片问题/</id>
+    <published>2015-11-12T11:34:47.000Z</published>
+    <updated>2015-11-12T11:34:47.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="hexo博客的图片问题">hexo博客的图片问题</h2><p><font size="4">自从将博客搬到hexo上之后，感觉一直很好，很喜欢这种简洁的博客发布方式，但是，在开始的时候，我有点犯愁，markdown中的图片放哪里。有两类解决方案，一种是将图片随博客一起发布到服务器上，另外一种是使用图床的形式，将所需的图片先上传到网络上，然后通过外链引用。</font></p>
+<a id="more"></a>
+<h2 id="将图片随博客一起发布">将图片随博客一起发布</h2><p><font size="4">我们可以将图片和博客一起发布，这也是很自然的一件事。但是，有个问题，可能比较耗费空间（加入空间不大的话），因为，随着你写的博文越来越多，图片也会越来越多，像我这样将博客托管在gitcafe上的，空间才512M，如何够用。</font></p>
+<p><font size="4">所以，这种方式只适合在博客刚刚开始运作的时候，一旦你决定长期写下去，这样并不好。</font></p>
+<h2 id="使用图床—-专门存储图片的地方">使用图床—-专门存储图片的地方</h2><p><font size="4">我们也可以使用专门的网络空间来存储图片，貌似这样更易于管理。可能你会说，难道网络空间不要钱吗，非也非也，还真的是不要钱。推荐一个，七牛云存储，也就是我现在在用的，可能你也听说过。</font></p>
+<p><font size="4">先说明，七牛并没有给我广告费（事实上，我也还没成长到这个高度→_→），而是真的好用，就目前来说，七牛注册用户有1G的免费空间，如果通过身份认证，手机认证，就有10G的免费空间，够用了吧。不仅体现在体量上，还可以对图片进行处理。比如，图片的放大缩小，图片的的输出格式，图片的各种简单处理，图片文字水印，等等，各种功能，很强大，还可以对图片进行保护，防止盗图，具体功能，可以去<a href="http://qiniu.com" title="七牛云官网" target="_blank" rel="external">七牛官网</a>看看更多详细的介绍。</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="hexo博客的图片问题">hexo博客的图片问题</h2><p><font size=4>自从将博客搬到hexo上之后，感觉一直很好，很喜欢这种简洁的博客发布方式，但是，在开始的时候，我有点犯愁，markdown中的图片放哪里。有两类解决方案，一种是将图片随博客一起发布到服务器上，另外一种是使用图床的形式，将所需的图片先上传到网络上，然后通过外链引用。</p>]]>
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
+    
+      <category term="markdown" scheme="http://blog.54yongf.com/tags/markdown/"/>
+    
+      <category term="七牛" scheme="http://blog.54yongf.com/tags/%E4%B8%83%E7%89%9B/"/>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[【原】No6-VMware虚拟机Mac OS X系统如何切换中英文输入法]]></title>
+    <link href="http://blog.54yongf.com/2015/11/12/%E3%80%90%E5%8E%9F%E3%80%91No6-VMware%E8%99%9A%E6%8B%9F%E6%9C%BAMac-OS-X%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2%E4%B8%AD%E8%8B%B1%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/"/>
+    <id>http://blog.54yongf.com/2015/11/12/【原】No6-VMware虚拟机Mac-OS-X系统如何切换中英文输入法/</id>
+    <published>2015-11-12T03:04:31.000Z</published>
+    <updated>2015-11-12T03:04:31.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="VMware虚拟机Mac系统如何切换中英文输入法？">VMware虚拟机Mac系统如何切换中英文输入法？</h2><p><font size="4">被这个问题难住了吧？来54yongf.com就对了！笔者也是菜鸟，同级别的人交流，还是蛮有共同语言的！我是直接安装的OS X 10.10。系统中自带中文输入法，但默认是英文输入法。</font></p>
+<a id="more"></a>
+<p><font size="4">如果要切换输入法，必须点击屏幕右上角来切换中文和英文输入法，灰常地不方便。我就想，要是能够用快捷键快速切换岂不爽哉！果真，在查阅了一些资料之后，我发现，是有这个快捷键的。</font></p>
+<p><font size="4">VMware虚拟机Mac系统切换中英文输入法的快捷键是Win（Windows徽标键）+Space（空格），先按Win键，再按空格键就可以了！</font></p>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/键盘1.jpg" alt="键盘"></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="VMware虚拟机Mac系统如何切换中英文输入法？">VMware虚拟机Mac系统如何切换中英文输入法？</h2><p><font size=4>被这个问题难住了吧？来54yongf.com就对了！笔者也是菜鸟，同级别的人交流，还是蛮有共同语言的！我是直接安装的OS X 10.10。系统中自带中文输入法，但默认是英文输入法。</p>]]>
+    
+    </summary>
+    
+      <category term="Mac OS X" scheme="http://blog.54yongf.com/tags/Mac-OS-X/"/>
+    
+      <category term="VMware" scheme="http://blog.54yongf.com/tags/VMware/"/>
+    
+      <category term="虚拟机" scheme="http://blog.54yongf.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+      <category term="虚拟机" scheme="http://blog.54yongf.com/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[【原】No5-hexo换主题之后可能出现的问题及解决办法]]></title>
+    <link href="http://blog.54yongf.com/2015/11/11/%E3%80%90%E5%8E%9F%E3%80%91No5-hexo%E6%8D%A2%E4%B8%BB%E9%A2%98%E4%B9%8B%E5%90%8E%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://blog.54yongf.com/2015/11/11/【原】No5-hexo换主题之后可能出现的问题及解决办法/</id>
     <published>2015-11-11T12:11:48.000Z</published>
     <updated>2015-11-11T12:11:48.000Z</updated>
     <content type="html"><![CDATA[<h2 id="问题">问题</h2><p><font size="4">今天在更换博客主题，从chenall换成jacman之后，重新生成<code>hexo g</code>，然后启动服务<code>hexo s</code>在本地查看。在浏览器中输入<code>localhost:4000</code>之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按<code>Ctrl+F5</code>刷新，强制浏览器重新加载所有资源，不过——还是没反应(⊙_⊙)? 于是，换了个浏览器，世界之窗（真不是打广告），一样的结果。</font></p>
 <a id="more"></a>
-<p>最后，在查询了一些资料之后，终于知道，这可能是hexo的缓存的问题，也就是你网站根目录的那个<code>db.json</code>文件，还知道了一点，推荐在发布网站之前，先清除缓存，然后再部署网站。<br>清除缓存的方法：</p>
+<p><font size="4">最后，在查询了一些资料之后，终于知道，这可能是hexo的缓存的问题，也就是你网站根目录的那个<code>db.json</code>文件，还知道了一点，推荐在发布网站之前，先清除缓存，然后再部署网站。</font></p>
+<p><font size="4">清除缓存的方法：</font></p>
 <ul>
 <li>执行命令：<code>hexo clean</code></li>
 <li>然后可以生成静态博客并在本地预览：<code>hexo g &amp; hexo s</code></li>
 </ul>
 <h2 id="最后">最后</h2><p><font size="4">关于hexo中详细的命令，可以参考官网<a href="https://hexo.io/docs/commands.html" title="hexo中详细的命令及其解释" target="_blank" rel="external">hexo docs</a>，或者也可参考我写的一篇博文。</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="问题">问题</h2><p><font size=4>今天在更换博客主题，从chenall换成jacman之后，重新生成<code>hexo g</code>，然后启动服务<code>hexo s</code>在本地查看。在浏览器中输入<code>localhost:4000</code>之后，发现网页全乱了，内容没丢，但是！css样式全没了！我当时就受惊了。。。然后又重新生成了几次，然而，并没有什么卵用。然后，我又以为是浏览器缓存的问题（毕竟以前碰到过类似的情况⊙﹏⊙），按<code>Ctrl+F5</code>刷新，强制浏览器重新加载所有资源，不过——还是没反应(⊙_⊙)? 于是，换了个浏览器，世界之窗（真不是打广告），一样的结果。</p>]]>
@@ -43,20 +196,22 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No4-使用hexo的过程中，我踩过的那些坑]]></title>
-    <link href="http://blog.54yongf.com/2015/11/10/No4-%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8C%E6%88%91%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/"/>
-    <id>http://blog.54yongf.com/2015/11/10/No4-使用hexo的过程中，我踩过的那些坑/</id>
+    <title><![CDATA[【原】No4-使用hexo的过程中，我踩过的那些坑]]></title>
+    <link href="http://blog.54yongf.com/2015/11/10/%E3%80%90%E5%8E%9F%E3%80%91No4-%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8C%E6%88%91%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/"/>
+    <id>http://blog.54yongf.com/2015/11/10/【原】No4-使用hexo的过程中，我踩过的那些坑/</id>
     <published>2015-11-09T16:00:00.000Z</published>
     <updated>2015-11-09T16:00:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</p>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4">事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</font></p>
 <a id="more"></a>
-<h2 id="说说我的搭建环境吧">说说我的搭建环境吧</h2><ul>
+<h2 id="说说我的搭建环境吧">说说我的搭建环境吧</h2><p><font size="4"></font></p>
+<ul>
 <li>hexo: 3.1.1外加zippera大神的Lightum主题（再次感谢）</li>
 <li>os: Windows_NT 6.1.7600 win32 x64</li>
 <li>http_parser: 2.5.0</li>
 <li>node: 4.2.2</li>
 </ul>
-<h2 id="先说说hexo的安装过程中潜在的坑">先说说hexo的安装过程中潜在的坑</h2><p>目前，我的博客是用hexo+gitcafe-gitpages的方式搭建的，因为对空间的需求暂时不大，所以就先凑合着用了，以后再做打算。<br>这时候，就需要用到git来部署网站了，注意事项如下：</p>
+<h2 id="先说说hexo的安装过程中潜在的坑">先说说hexo的安装过程中潜在的坑</h2><p><font size="4">目前，我的博客是用hexo+gitcafe-gitpages的方式搭建的，因为对空间的需求暂时不大，所以就先凑合着用了，以后再做打算。</font></p>
+<p><font size="4">这时候，就需要用到git来部署网站了，注意事项如下：</font></p>
 <ol>
 <li>在 _config.yml 中设置 deploy中的type一项为git（而且还要注意空一格）<ol>
 <li>此处请注意，如果你是使用github来部署网站，可以设置为github</li>
@@ -65,13 +220,14 @@
 <li>注意安装好所有必须的插件，在部署网站时，必须用到hexo-deployer-git，如果没安装，会报错，错误信息：<strong>hexo:ERROR Deployer not found: git</strong>。安装的命令为：npm install hexo-deployer-git –save</li>
 <li>接上面2，一般做到这个程度就没问题了，但是不排除有其他特殊情况，那么，还是具体问题具体分析吧。</li>
 <li>在gitcafe上使用gitPages服务，就必须与gitcafe通信，这时候就添加SSH公钥到gitcafe上，至于如何操作，请移步<a href="https://gitcafe.com/GitCafe/Help/wiki/如何安装和设置-Git" title="SSH设置（很详细哦）" target="_blank" rel="external">gitcafe的官方文档</a> ，官方文档很详细，放心，如果有问题，还可以与官方联系，很方便的。</li>
-<li>现在，假设你已经在gitcafe创建好了库，并且已经写好了一篇博客，准备push到gitcafe项目的gitPages分支了，再次检查一下你的hexo/_config.yml吧，它应该是形如下面这样的：<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git   #如果使用gitcafe就一定要填git，使用github可以填github</span><br><span class="line">    <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//gitcafe.com/your_username/your_username.git  #注意用户名，your_username替换成自己的用户名</span></span><br><span class="line">    <span class="attribute">branch</span>: gitcafe-pages   #gitcafe填这个</span><br><span class="line">    <span class="attribute">message</span>: update #这是每次更新博客时的message，这项可以没有，有的话内容也可以自定义（如果你用过Git的话，这些应该不用我解释了）</span><br></pre></td></tr></table></figure>
-</li>
+<li>现在，假设你已经在gitcafe创建好了库，并且已经写好了一篇博客，准备push到gitcafe项目的gitPages分支了，再次检查一下你的hexo/_config.yml吧，它应该是形如下面这样的：<br><font size="4"><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git   #如果使用gitcafe就一定要填git，使用github可以填github</span><br><span class="line">    <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//gitcafe.com/your_username/your_username.git  #注意用户名，your_username替换成自己的用户名</span></span><br><span class="line">    <span class="attribute">branch</span>: gitcafe-pages   #gitcafe填这个</span><br><span class="line">    <span class="attribute">message</span>: update #这是每次更新博客时的message，这项可以没有，有的话内容也可以自定义（如果你用过Git的话，这些应该不用我解释了）</span><br></pre></td></tr></table></figure>
+</font></li>
 </ol>
 <p><font color="red"><strong>注意（Attention）！</strong></font>在type,repository,branch[,message]的后面的冒号之后，必须留出一个空格！否则很可能会解析出错，可能出现一大堆看不懂的错误，这是一个注意点。</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p>事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</p>]]>
+    <![CDATA[<h2 id="前言">前言</h2><p><font size=4>事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</p>]]>
     
     </summary>
     
@@ -86,9 +242,9 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No0-Hello World]]></title>
-    <link href="http://blog.54yongf.com/2015/11/09/No0-hello-world/"/>
-    <id>http://blog.54yongf.com/2015/11/09/No0-hello-world/</id>
+    <title><![CDATA[【转】No0-Hello World]]></title>
+    <link href="http://blog.54yongf.com/2015/11/09/%E3%80%90%E8%BD%AC%E3%80%91No0-hello-world/"/>
+    <id>http://blog.54yongf.com/2015/11/09/【转】No0-hello-world/</id>
     <published>2015-11-09T03:26:28.000Z</published>
     <updated>2015-11-09T03:26:33.000Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
@@ -101,6 +257,7 @@
 <p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>]]>
@@ -116,16 +273,17 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No3-测试案例]]></title>
-    <link href="http://blog.54yongf.com/2015/11/09/No3-%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B/"/>
-    <id>http://blog.54yongf.com/2015/11/09/No3-测试案例/</id>
+    <title><![CDATA[【原】No3-测试案例]]></title>
+    <link href="http://blog.54yongf.com/2015/11/09/%E3%80%90%E5%8E%9F%E3%80%91No3-%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B/"/>
+    <id>http://blog.54yongf.com/2015/11/09/【原】No3-测试案例/</id>
     <published>2015-11-09T01:05:32.000Z</published>
     <updated>2015-11-09T01:05:32.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="模板">模板</h2><p>这是一个模板，注明了一篇完整的文章所应该有的必要属性信息，详见上。</p>
+    <content type="html"><![CDATA[<h2 id="模板">模板</h2><p><font size="4">这是一个模板，注明了一篇完整的文章所应该有的必要属性信息，详见上。</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="模板">模板</h2><p>这是一个模板，注明了一篇完整的文章所应该有的必要属性信息，详见上。</p>
-]]>
+    <![CDATA[<h2 id="模板">模板</h2><p><font size="4">这是一个模板，注明了一篇完整的文章所应该有的必要属性信息，详见上。</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站]]>
     </summary>
     
       <category term="测试案例" scheme="http://blog.54yongf.com/tags/%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B/"/>
@@ -135,18 +293,19 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No2-欢迎大家来水经验]]></title>
-    <link href="http://blog.54yongf.com/2015/11/09/No2-%E6%AC%A2%E8%BF%8E%E5%A4%A7%E5%AE%B6%E6%9D%A5%E6%B0%B4%E7%BB%8F%E9%AA%8C/"/>
-    <id>http://blog.54yongf.com/2015/11/09/No2-欢迎大家来水经验/</id>
+    <title><![CDATA[【原】No2-欢迎大家来水经验]]></title>
+    <link href="http://blog.54yongf.com/2015/11/09/%E3%80%90%E5%8E%9F%E3%80%91No2-%E6%AC%A2%E8%BF%8E%E5%A4%A7%E5%AE%B6%E6%9D%A5%E6%B0%B4%E7%BB%8F%E9%AA%8C/"/>
+    <id>http://blog.54yongf.com/2015/11/09/【原】No2-欢迎大家来水经验/</id>
     <published>2015-11-08T19:40:07.000Z</published>
     <updated>2015-11-09T03:10:09.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Hello_World!">Hello World!</h2><p>今天折腾了这么久，终于搭建好了。有点累。</p>
+    <content type="html"><![CDATA[<h2 id="Hello_World!">Hello World!</h2><p><font size="4">今天折腾了这么久，终于搭建好了。有点累。</font></p>
 <a id="more"></a>
-<p>不过，收获还是大大地，欢迎大家来水经验，博客刚刚上线，很多不足，内容方面会逐渐完善，谢谢大家！</p>
-<p>先滚去睡了@_@</p>
+<p><font size="4">不过，收获还是大大地，欢迎大家来水经验，博客刚刚上线，很多不足，内容方面会逐渐完善，谢谢大家！</font></p>
+<p><font size="4">先滚去睡了@_@</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="Hello_World!">Hello World!</h2><p>今天折腾了这么久，终于搭建好了。有点累。</p>]]>
+    <![CDATA[<h2 id="Hello_World!">Hello World!</h2><p><font size=4>今天折腾了这么久，终于搭建好了。有点累。</p>]]>
     
     </summary>
     
@@ -159,21 +318,22 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No1-hexo系列文章之微博秀]]></title>
-    <link href="http://blog.54yongf.com/2015/11/08/No1-hexo%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E4%B9%8B%E5%BE%AE%E5%8D%9A%E7%A7%80/"/>
-    <id>http://blog.54yongf.com/2015/11/08/No1-hexo系列文章之微博秀/</id>
+    <title><![CDATA[【原】No1-hexo系列文章之微博秀]]></title>
+    <link href="http://blog.54yongf.com/2015/11/08/%E3%80%90%E5%8E%9F%E3%80%91No1-hexo%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E4%B9%8B%E5%BE%AE%E5%8D%9A%E7%A7%80/"/>
+    <id>http://blog.54yongf.com/2015/11/08/【原】No1-hexo系列文章之微博秀/</id>
     <published>2015-11-08T00:58:21.000Z</published>
     <updated>2015-11-09T03:24:29.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</p>
+    <content type="html"><![CDATA[<h1 id="前言">前言</h1><p><font size="4">今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</font></p>
 <a id="more"></a>
-<p>开始的时候，我找到了wordpress，但是，发现wordpress虽然已经很成熟，很多人都在用，不过我觉得它太臃肿了，不适合我，于是放弃了。后来，看到了hexo这个框架，觉得它很小巧，界面清爽，而且很好看，所以，就决定是它了。</p>
-<p>在学习使用这个框架时，我先去hexo的github页面学习了一下，先安装好必要的东西，然后，选择了一款主题，我这款主题就是参考<a href="http://zipperary.com/" target="_blank" rel="external">Zippera大神</a>的博客制作的，感兴趣的可以去他的博客看看。</p>
-<p>我就跟着Zippera大神的教程，一步一步走，不过在生成微博秀的时候，出了点问题，搞得我差点崩溃，后面终于找到了解决办法，但是我还是没有明白其中问题的原因，所以特地将之记录下来，希望日后能找到真正的原因。</p>
-<h1 id="问题">问题</h1><p>按照正常的修改，将微博秀的代码放到正确的位置上之后，本地在浏览器中输入localhost:4000之后，其他的东西都显示正常，唯独微博秀的位置是空白的，但是在那个位置却也留了这么大的空间，刚好是微博秀的大小，只是没显示微博秀。</p>
-<h1 id="暂时的解决方案">暂时的解决方案</h1><p>将localhost:4000换成本地的IP地址（不是本机的！），比如我的是：127.0.0.1:4000，然后，微博秀就显示出来了，实在搞不懂为什么。<br>我查看过页面的源码，微博秀代码的确是在页面上的，不过localhost:4000就是显示不出来。我猜，可能是微博方面做了相关限制。</p>
+<p><font size="4">开始的时候，我找到了wordpress，但是，发现wordpress虽然已经很成熟，很多人都在用，不过我觉得它太臃肿了，不适合我，于是放弃了。后来，看到了hexo这个框架，觉得它很小巧，界面清爽，而且很好看，所以，就决定是它了。</font></p>
+<p><font size="4">在学习使用这个框架时，我先去hexo的github页面学习了一下，先安装好必要的东西，然后，选择了一款主题，我这款主题就是参考<a href="http://zipperary.com/" target="_blank" rel="external">Zippera大神</a>的博客制作的，感兴趣的可以去他的博客看看。</font></p>
+<p><font size="4">我就跟着Zippera大神的教程，一步一步走，不过在生成微博秀的时候，出了点问题，搞得我差点崩溃，后面终于找到了解决办法，但是我还是没有明白其中问题的原因，所以特地将之记录下来，希望日后能找到真正的原因。</font></p>
+<h1 id="问题">问题</h1><p><font size="4">按照正常的修改，将微博秀的代码放到正确的位置上之后，本地在浏览器中输入localhost:4000之后，其他的东西都显示正常，唯独微博秀的位置是空白的，但是在那个位置却也留了这么大的空间，刚好是微博秀的大小，只是没显示微博秀。</font></p>
+<h1 id="暂时的解决方案">暂时的解决方案</h1><p><font size="4">将localhost:4000换成本地的IP地址（不是本机的！），比如我的是：127.0.0.1:4000，然后，微博秀就显示出来了，实在搞不懂为什么。<br>我查看过页面的源码，微博秀代码的确是在页面上的，不过localhost:4000就是显示不出来。我猜，可能是微博方面做了相关限制。</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="前言">前言</h1><p>今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</p>]]>
+    <![CDATA[<h1 id="前言">前言</h1><p><font size=4>今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</p>]]>
     
     </summary>
     
