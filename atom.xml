@@ -4,7 +4,7 @@
   <subtitle><![CDATA[没有理想，和咸鱼有什么分别]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-11-13T16:09:18.000Z</updated>
+  <updated>2015-11-13T17:39:41.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No14-【原】使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法]]></title>
+    <link href="http://blog.54yongf.com/2015/11/14/No14-%E3%80%90%E5%8E%9F%E3%80%91%E4%BD%BF%E7%94%A8hexo%E6%97%B6deploy%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99%E5%88%B0github%E6%88%96gitcafe%E7%9A%84gitpages%E6%97%B6%E9%87%8D%E5%A4%8D%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://blog.54yongf.com/2015/11/14/No14-【原】使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法/</id>
+    <published>2015-11-13T17:39:41.000Z</published>
+    <updated>2015-11-13T17:39:41.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在Windows上使用git来deploy到gitcafe服务器上的时候，每次都要填写用户名/邮箱、密码，灰常烦人有木有。关键是我的电脑上已经设置了SSH了。</font></p>
+<a id="more"></a>
+<h2 id="使用SSH">使用SSH</h2><p><font size="4"><br>后面发现，是hexo中配置文件中deploy部分设置的问题，将deploy部分设置成下面的样式就行了（注意替换）：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy</span><br><span class="line">    type: git</span><br><span class="line">    repository: git@gitcafe<span class="class">.com</span>:your_username/your_username<span class="class">.git</span></span><br><span class="line">    branch: gitcafe-pages</span><br><span class="line">    message: update</span><br></pre></td></tr></table></figure></font></p>
+<p><font size="4"><br>注意替换！注意替换！注意替换！重要的事情说三遍。<br>但是，设置为上述的之后，每次<code>hexo deploy</code>的时候，不用输入用户名了，不过还是要输入密码（passphrase），还是不完美<br>目前，还没找到更好的使用SSH的方法。如果你有更好的方法，望留言共享</font></p>
+<h2 id="使用HTTTPS">使用HTTTPS</h2><p><font size="4"><br>之后，经过查证，也可以使用HTTPS，而且，经过<a href="http://zipperary.com/2013/05/26/ssh-errors-with-github/" title="关于解决这个问题的博文" target="_blank" rel="external">Zipperary大神</a>的博文，解决了这个问题。<br>要使用这种方法，请确保你的deploy设置为如下格式：<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy</span><br><span class="line">    <span class="keyword">type</span>: git</span><br><span class="line">    repository: https:<span class="comment">//gitcafe.com/your_username/your_name.git</span></span><br><span class="line">    branch: gitcafe-pages</span><br><span class="line">    <span class="keyword">message</span>: update</span><br></pre></td></tr></table></figure></font></p>
+<p><font size="4"><br>后面的步骤就不赘述了，请参考Zipperary的博客：<a href="http://zipperary.com/2013/05/26/ssh-errors-with-github/" target="_blank" rel="external">http://zipperary.com/2013/05/26/ssh-errors-with-github/</a></font></p>
+<p><strong>注：</strong>如果链接不可用，请在评论中回复，以进一步处理。</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>在Windows上使用git来deploy到gitcafe服务器上的时候，每次都要填写用户名/邮箱、密码，灰常烦人有木有。关键是我的电脑上已经设置了SSH了。</p>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://blog.54yongf.com/tags/git/"/>
+    
+      <category term="githubOrgitcafe" scheme="http://blog.54yongf.com/tags/githubOrgitcafe/"/>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
+    
+      <category term="ssh" scheme="http://blog.54yongf.com/tags/ssh/"/>
+    
+      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No13-【原】IE浏览器连不上网电脑无法联网]]></title>
