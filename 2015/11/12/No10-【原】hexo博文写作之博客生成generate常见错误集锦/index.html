@@ -4,25 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>【原】No9-解决VMware虚拟机中无法使用键盘的故障 | Scott Wang&#39;s blog</title>
+    <title>【原】No10-hexo博文写作之博客生成generate常见错误集锦 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="王用">
     
 
     
-    <meta name="description" content="键盘不能用？当我们使用VMware时，在累死累活地折腾完虚拟操作系统的安装之后，开启虚拟机却发现键盘不能用，无法将输入定位到虚拟机内部。多么痛的领悟◑﹏◐">
+    <meta name="description" content="本文写作初衷作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，hexo generate编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【原】No9-解决VMware虚拟机中无法使用键盘的故障">
-<meta property="og:url" content="http://blog.54yongf.com/2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/index.html">
+<meta property="og:title" content="【原】No10-hexo博文写作之博客生成generate常见错误集锦">
+<meta property="og:url" content="http://blog.54yongf.com/2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="键盘不能用？当我们使用VMware时，在累死累活地折腾完虚拟操作系统的安装之后，开启虚拟机却发现键盘不能用，无法将输入定位到虚拟机内部。多么痛的领悟◑﹏◐">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No9-2015-11-12_212421.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No9-2015-11-12_213450.png">
-<meta property="og:updated_time" content="2015-11-12T13:06:22.000Z">
+<meta property="og:description" content="本文写作初衷作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，hexo generate编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。">
+<meta property="og:updated_time" content="2015-11-13T12:04:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【原】No9-解决VMware虚拟机中无法使用键盘的故障">
-<meta name="twitter:description" content="键盘不能用？当我们使用VMware时，在累死累活地折腾完虚拟操作系统的安装之后，开启虚拟机却发现键盘不能用，无法将输入定位到虚拟机内部。多么痛的领悟◑﹏◐">
+<meta name="twitter:title" content="【原】No10-hexo博文写作之博客生成generate常见错误集锦">
+<meta name="twitter:description" content="本文写作初衷作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，hexo generate编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -93,15 +91,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/" title="【原】No9-解决VMware虚拟机中无法使用键盘的故障" itemprop="url">【原】No9-解决VMware虚拟机中无法使用键盘的故障</a>
+      <a href="/2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/" title="【原】No10-hexo博文写作之博客生成generate常见错误集锦" itemprop="url">【原】No10-hexo博文写作之博客生成generate常见错误集锦</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-12T13:06:22.000Z" itemprop="datePublished">
-      发布于2015-11-12 21:06:22，更新于2015-11-12 21:06:22 <span class="ds-thread-count" data-thread-key="2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/" data-count-type="comments"></span>
+    <time datetime="2015-11-12T13:55:16.000Z" itemprop="datePublished">
+      发布于2015-11-12 21:55:16，更新于2015-11-13 20:04:04 <span class="ds-thread-count" data-thread-key="2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -112,19 +110,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#键盘不能用？"><span class="toc-number">1.</span> <span class="toc-text">键盘不能用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考解决步骤"><span class="toc-number">2.</span> <span class="toc-text">参考解决步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本文写作初衷"><span class="toc-number">1.</span> <span class="toc-text">本文写作初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件环境"><span class="toc-number">2.</span> <span class="toc-text">软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型1"><span class="toc-number">3.</span> <span class="toc-text">错误类型1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述"><span class="toc-number">3.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误说明"><span class="toc-number">3.2.</span> <span class="toc-text">错误说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-number">3.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型2"><span class="toc-number">4.</span> <span class="toc-text">错误类型2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述-1"><span class="toc-number">4.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误说明-1"><span class="toc-number">4.2.</span> <span class="toc-text">错误说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案-1"><span class="toc-number">4.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="键盘不能用？">键盘不能用？</h2><font size="4" color="red">当我们使用VMware时，在累死累活地折腾完虚拟操作系统的安装之后，开启虚拟机却发现键盘不能用，无法将输入定位到虚拟机内部。多么痛的领悟◑﹏◐</font>
-
+		<h2 id="本文写作初衷">本文写作初衷</h2><p><font size="4">作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</font></p>
 <a id="more"></a>
-<h2 id="参考解决步骤">参考解决步骤</h2><p><font size="4"></font></p>
-<ol>
-<li>打开你的VMware，关闭故障机，定位到故障机的标签，右键点击故障机，选择<code>设置</code><br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No9-2015-11-12_212421.png" alt="设置"></li>
-<li>在上方选择<code>选项</code>，然后选择<code>常规</code>，在右边最下方选择<code>增强型键盘</code>，选择<code>在可用时使用（推荐）</code>。注：一般都是选这个，如果你还是有问题，可选择其他两个再试下。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No9-2015-11-12_213450.png" alt="增强型键盘"></li>
-<li>在做完上述步骤之后，你可以重新启动虚拟机操作系统，一般这时就可以向虚拟机输入字符了。</li>
-</ol>
+<h2 id="软件环境">软件环境</h2><p><font size="4"><br>OS: Windows_NT 6.1.7600 win32 x64<br>node: 4.2.2<br>hexo: 3.1</font></p>
+<h2 id="错误类型1">错误类型1</h2><h3 id="错误描述">错误描述</h3><p><font size="4"><br>YAMLException: end of the stream or a document separator is expected at line x, column y:</font></p>
+<h3 id="错误说明">错误说明</h3><p><font size="4"><br>缺少分隔符，一般都是因为缺少空格</font></p>
+<h3 id="解决方案">解决方案</h3><p><font size="4"><br>出现这种情况，一般都是缺少空格，在<code>:</code>冒号之后要有空格！检查x行y列附近的冒号，其之后是否跟了空格。</font></p>
+<h2 id="错误类型2">错误类型2</h2><h3 id="错误描述-1">错误描述</h3><p><font size="4"><br>ValidationError: ‘null’ is not a string!</font></p>
+<h3 id="错误说明-1">错误说明</h3><p><font size="4"><br>一般都是因为文章无内容，可能是因为在这篇博客文章中，有某些属性没有填写，比如author属性，tag属性，categories属性等，导致该属性是空的，即<code>null</code>，所以报错。<br><strong>友情提示</strong>：如果你是用MarkdownPad 2来进行博文写作（我就是），可能在打开该md文件之后，对文件名进行了修改，导致出现了两篇文章。就会出现错误。</font></p>
+<h3 id="解决方案-1">解决方案</h3><p><font size="4"><br>既然是属性缺失，那就把为空的那个属性给补上吧，仔细找找 :-)</font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
@@ -133,13 +131,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/VMware/">VMware</a>
+  <a class="article-category-link" href="/categories/hexo/">hexo</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/VMware/">VMware</a><a href="/tags/虚拟机/">虚拟机</a>
+  <span></span> <a href="/tags/hexo/">hexo</a><a href="/tags/hexo写作/">hexo写作</a><a href="/tags/错误/">错误</a>
   </div>
 
 </div>
@@ -184,12 +182,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/">【原】No9-解决VMware虚拟机中无法使用键盘的故障</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/">【原】No10-hexo博文写作之博客生成generate常见错误集锦</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-12 21:06:22</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-12 21:55:16</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/" title="【原】No9-解决VMware虚拟机中无法使用键盘的故障">http://blog.54yongf.com/2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/" title="【原】No10-hexo博文写作之博客生成generate常见错误集锦">http://blog.54yongf.com/2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -214,18 +212,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/11/12/【原】No10-hexo博文写作之博客生成generate常见错误集锦/" title="【原】No10-hexo博文写作之博客生成generate常见错误集锦">
+ <a href="/2015/11/13/No11-【原】分享几个下载kindle电子书的资源网站/" title="【转】No11-分享几个下载kindle电子书的资源网站">
   <strong>上一篇：</strong><br/>
   <span>
-  【原】No10-hexo博文写作之博客生成generate常见错误集锦</span>
+  【转】No11-分享几个下载kindle电子书的资源网站</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/11/12/【原】No8-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图/"  title="【原】No8-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图">
+<a href="/2015/11/12/No9-【原】解决VMware虚拟机中无法使用键盘的故障/"  title="【原】No9-解决VMware虚拟机中无法使用键盘的故障">
  <strong>下一篇：</strong><br/> 
- <span>【原】No8-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图
+ <span>【原】No9-解决VMware虚拟机中无法使用键盘的故障
 </span>
 </a>
 </div>
@@ -234,7 +232,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/" data-title="【原】No9-解决VMware虚拟机中无法使用键盘的故障" data-url="http://blog.54yongf.com/2015/11/12/【原】No9-解决VMware虚拟机中无法使用键盘的故障/"></div>
+	<div class="ds-thread" data-thread-key="2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/" data-title="【原】No10-hexo博文写作之博客生成generate常见错误集锦" data-url="http://blog.54yongf.com/2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/"></div>
 </section>
 
 
@@ -246,7 +244,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#键盘不能用？"><span class="toc-number">1.</span> <span class="toc-text">键盘不能用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考解决步骤"><span class="toc-number">2.</span> <span class="toc-text">参考解决步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本文写作初衷"><span class="toc-number">1.</span> <span class="toc-text">本文写作初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件环境"><span class="toc-number">2.</span> <span class="toc-text">软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型1"><span class="toc-number">3.</span> <span class="toc-text">错误类型1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述"><span class="toc-number">3.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误说明"><span class="toc-number">3.2.</span> <span class="toc-text">错误说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-number">3.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型2"><span class="toc-number">4.</span> <span class="toc-text">错误类型2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述-1"><span class="toc-number">4.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误说明-1"><span class="toc-number">4.2.</span> <span class="toc-text">错误说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案-1"><span class="toc-number">4.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -303,7 +301,7 @@
 		  
 		
 		  
-			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>2</sup></a></li>
+			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>3</sup></a></li>
 		  
 		
 		  
@@ -312,6 +310,10 @@
 		
 		  
 			<li><a href="/categories/虚拟机/" title="虚拟机">虚拟机<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/资源/" title="资源">资源<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -325,6 +327,10 @@
 		
 			
 				<li><a href="/tags/hexo/" title="hexo">hexo<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>2</sup></a></li>
 			
 		
 			
@@ -344,19 +350,7 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/hello-world/" title="hello world">hello world<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/Mac-OS-X/" title="Mac OS X">Mac OS X<sup>1</sup></a></li>
 			
 		
 			
@@ -364,7 +358,7 @@
 			
 		
 			
-				<li><a href="/tags/错误/" title="错误">错误<sup>1</sup></a></li>
+				<li><a href="/tags/hello-world/" title="hello world">hello world<sup>1</sup></a></li>
 			
 		
 			
@@ -376,15 +370,39 @@
 			
 		
 			
-				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>1</sup></a></li>
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/人生/" title="人生">人生<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/上进/" title="上进">上进<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/鸡汤/" title="鸡汤">鸡汤<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/励志/" title="励志">励志<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/资源/" title="资源">资源<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/kindle/" title="kindle">kindle<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/电子书/" title="电子书">电子书<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/hexo写作/" title="hexo写作">hexo写作<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Mac-OS-X/" title="Mac OS X">Mac OS X<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -395,7 +413,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/VMware/" style="font-size: 15px;">VMware</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/七牛/" style="font-size: 15px;">七牛</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/感受/" style="font-size: 15px;">感受</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/虚拟机/" style="font-size: 15px;">虚拟机</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a>
+       <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/VMware/" style="font-size: 15px;">VMware</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/七牛/" style="font-size: 15px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 10px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/感受/" style="font-size: 15px;">感受</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/杂谈/" style="font-size: 15px;">杂谈</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/虚拟机/" style="font-size: 15px;">虚拟机</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
   </div>
 
