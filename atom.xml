@@ -29,6 +29,7 @@
 <li>理解桶型移位器原理，使用logicsim软件搭建一个8位的桶型移位器</li>
 <li>用verilog实现一个32位桶型移位器</li>
 </ol>
+<a id="more"></a>
 <h3 id="实验原理">实验原理</h3><p><font size="4"><br>桶型移位器是一个多输入、单输出电路。对于输入a[31:0]，移位器首先会根据aluc[1:0]值来确定做何种移位，然后根据b[4:0]的值来确定移多少位，最后将结果c[31:0]输出。<br>下表为aluc的值所对应的运算：</font></p>
 <table>
 <thead>
@@ -71,8 +72,16 @@
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="实验六_桶型移位器">实验六 桶型移位器</h2><p><font size="4"></font></p>
-<h3 id="实验介绍">实验介绍</h3><p><font size="4">本实验使用Verilog语言设计实现一个32位桶型移位器。</font>]]>
+    <![CDATA[<h2 id="实验六_桶型移位器">实验六 桶型移位器</h2><p><font size=4></p>
+<h3 id="实验介绍">实验介绍</h3><p><font size=4>本实验使用Verilog语言设计实现一个32位桶型移位器。</p>
+<h3 id="实验目标">实验目标</h3><p><font size=4></p>
+<ol>
+<li>使用ISE软件设计并进行仿真</li>
+<li>学会使用Modelsim</li>
+<li>理解桶型移位器原理，使用logicsim软件搭建一个8位的桶型移位器</li>
+<li>用verilog实现一个32位桶型移位器</li>
+</ol>]]>
+    
     </summary>
     
       <category term="CPU" scheme="http://blog.54yongf.com/tags/CPU/"/>
