@@ -11,26 +11,17 @@
     
 
     
-    <meta name="description" content="关于hexo关于hexo不想过多介绍，因为官方已经做了这件事了。强烈建议先去看看官方文档（是中文版的哦）：hexo docs
-关于hexo的安装这里也不再赘述，直接去hexo的github主页就行了，ReadMe有详细的教程，传送门：Github  |  hexo.io
-声明本文只是基于个人理解，很可能有错误及不足之处，如有问题，敬请指正，如果觉得本文不错，还请点个赞，谢谢。
-hexo结构图解首先">
+    <meta name="description" content="关于hexo关于hexo不想过多介绍，因为官方已经做了这件事了。强烈建议先去看看官方文档（是中文版的哦）：hexo docs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No18-【原】跟我一起来了解hexo的结构，自定义一些组件">
 <meta property="og:url" content="http://blog.54yongf.com/2015/11/17/No18-【原】跟我一起来了解hexo的结构，自定义一些组件/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="关于hexo关于hexo不想过多介绍，因为官方已经做了这件事了。强烈建议先去看看官方文档（是中文版的哦）：hexo docs
-关于hexo的安装这里也不再赘述，直接去hexo的github主页就行了，ReadMe有详细的教程，传送门：Github  |  hexo.io
-声明本文只是基于个人理解，很可能有错误及不足之处，如有问题，敬请指正，如果觉得本文不错，还请点个赞，谢谢。
-hexo结构图解首先">
+<meta property="og:description" content="关于hexo关于hexo不想过多介绍，因为官方已经做了这件事了。强烈建议先去看看官方文档（是中文版的哦）：hexo docs">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No18-2015-11-17_002958.png">
 <meta property="og:updated_time" content="2015-11-16T16:41:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No18-【原】跟我一起来了解hexo的结构，自定义一些组件">
-<meta name="twitter:description" content="关于hexo关于hexo不想过多介绍，因为官方已经做了这件事了。强烈建议先去看看官方文档（是中文版的哦）：hexo docs
-关于hexo的安装这里也不再赘述，直接去hexo的github主页就行了，ReadMe有详细的教程，传送门：Github  |  hexo.io
-声明本文只是基于个人理解，很可能有错误及不足之处，如有问题，敬请指正，如果觉得本文不错，还请点个赞，谢谢。
-hexo结构图解首先">
+<meta name="twitter:description" content="关于hexo关于hexo不想过多介绍，因为官方已经做了这件事了。强烈建议先去看看官方文档（是中文版的哦）：hexo docs">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -124,19 +115,24 @@ hexo结构图解首先">
 		
 		</div>
 		
-		<h2 id="关于hexo">关于hexo</h2><p><font size="4"><br>关于hexo不想过多介绍，因为官方已经做了这件事了。<font size="5" color="red"><b>强烈建议先去看看官方文档（是中文版的哦）：<a href="https://hexo.io/zh-cn/docs/" title="hexo官方文档" target="_blank" rel="external">hexo docs</a></b></font><br></font></p>
+		<h2 id="关于hexo">关于hexo</h2><font size="4"><br>关于hexo不想过多介绍，因为官方已经做了这件事了。<font size="5" color="red"><b>强烈建议先去看看官方文档（是中文版的哦）：<a href="https://hexo.io/zh-cn/docs/" title="hexo官方文档" target="_blank" rel="external">hexo docs</a></b></font><br></font>
+
+<a id="more"></a>
 <h2 id="关于hexo的安装">关于hexo的安装</h2><p><font size="4"><br>这里也不再赘述，直接去hexo的github主页就行了，ReadMe有详细的教程，传送门：<a href="https://github.com/hexojs/hexo" title="hexo" target="_blank" rel="external">Github</a>  |  <a href="https://hexo.io/" title="hexo.io" target="_blank" rel="external">hexo.io</a></font></p>
 <h2 id="声明">声明</h2><p><font size="4"><br>本文只是基于个人理解，很可能有错误及不足之处，如有问题，敬请指正，如果觉得本文不错，还请点个赞，谢谢。</font></p>
+<!--more-->
 <h2 id="hexo结构图解">hexo结构图解</h2><p><font size="4"><br>首先来分析hexo的结构，快速入门（主要针对我这种菜鸟，大神请自觉忽略）以便我们自定义自己的组件，实现想要的效果。废话少说，上图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No18-2015-11-17_002958.png" alt="hexo结构图，凑活着看吧→_→"></font></p>
 <p><font size="4"><br>我们主要分析标上序号的8个文件|文件夹：</font></p>
+<p><font size="4"></font></p>
 <ol>
 <li>public文件夹，存放的是生成的整个博客的页面文件，也就是说，在你<code>hexo generate</code>之后，生成的东西基本都在这里了（当然外面还有个db.json之类的）。</li>
 <li>scaffolds文件夹，可以看到，我这里有4个<code>.md</code>文档，这里定义的是博客文章md文件的模板。我自定义了4个模板（其中<code>post.md</code>是默认模板，这个可以设置），所以在<code>hexo new</code>之后，hexo会根据你的命令，比如<code>hexo new post xxx</code>或者<code>hexo new draft xxx</code>或者<code>hexo new page xxx</code>或者<code>hexo new gallery xxx</code>在对应的模板基础上生成markdown文件，然后，你就可以进行欢快的写作了。这里顺便提一下，之前有小伙伴问我，我的每篇文章末尾的<code>感谢</code>是如何实现的，其实很简单，就是在post模板的里面加上这段话就OK了，如果想要我的post模板，在文章下方留言即可（敬请指教）。</li>
-<li>Source/_posts，这里是存放你的所有文章的地方，所有的markdown文件都在这里存放，所以，生成之后，进入这个目录编辑。</li>
+<li>Source/_posts，这里是存放你的所有文章的地方，所有的<code>markdown</code>文件都在这里存放，所以，生成之后，进入这个目录编辑。</li>
 <li>Source/favicon.ico，这个是最终生成的博客网站的图标，将你的图标放置在这里即可。</li>
-<li>themes/chenall，其实themes文件夹下的所有子文件夹都是hexo的主题，chenall是我之前使用的一款主题，界面挺不错的，感觉很优雅（不过我还是选择了jacman）。</li>
+<li>themes/chenall，其实themes文件夹下的所有子文件夹都是hexo的主题，chenall是我之前使用的一款主题，界面挺不错的，感觉很优雅（不过我还是选择了<code>jacman</code>）。</li>
 <li>themes/jacman，也就是我现在使用的这款主题，</li>
 </ol>
+<p></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
