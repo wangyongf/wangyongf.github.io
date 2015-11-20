@@ -4,7 +4,7 @@
   <subtitle><![CDATA[没有理想，和咸鱼有什么分别]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-11-16T16:41:15.000Z</updated>
+  <updated>2015-11-20T08:15:20.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No20-【原】破解完VisualAssist后VisualStudio打不开了的解决办法]]></title>
+    <link href="http://blog.54yongf.com/2015/11/20/No20-%E3%80%90%E5%8E%9F%E3%80%91%E7%A0%B4%E8%A7%A3%E5%AE%8CVisualAssist%E5%90%8EVisualStudio%E6%89%93%E4%B8%8D%E5%BC%80%E4%BA%86%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://blog.54yongf.com/2015/11/20/No20-【原】破解完VisualAssist后VisualStudio打不开了的解决办法/</id>
+    <published>2015-11-20T08:15:20.000Z</published>
+    <updated>2015-11-20T08:15:20.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="先说说软件环境">先说说软件环境</h2><p><font size="4"></font></p>
+<ul>
+<li>Windows10</li>
+<li>Visual Studio 2015</li>
+<li>Visual Assist X 2058</li>
+</ul>
+<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> <span class="keyword">this</span> program currently stored <span class="literal">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> <span class="keyword">this</span> version <span class="keyword">of</span> the program.Select Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> key, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br><span class="line">``<span class="javascript"><span class="string">` </span><br><span class="line">&lt;font size=4&gt;不多说了，上图：</span><br><span class="line">![错误提示](http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png)</span><br><span class="line">&lt;font size=4&gt;</span><br><span class="line">这不是关键，关键是，点击Yes或No之后，直接就**&lt;font color=red&gt;失去响应&lt;/font&gt;**了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是--Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</span><br><span class="line">最后，经过我坚持不懈的努力，终于找到了解决办法：</span></span></span><br></pre></td></tr></table></figure></font></p>
+<p>连续点击Cancel四次！<br>```<br>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></p>
+<p>不过不要紧，还是等以后买个正版的吧。其实Visual Studio 2015的智能提示功能已经很不错了。</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="先说说软件环境">先说说软件环境</h2><p><font size="4"></font></p>
+<ul>
+<li>Windows10</li>
+<li>Visual Studio 2015</li>
+<li>Visual Assist X 2058</li>]]>
+    </summary>
+    
+      <category term="Visual Assist X" scheme="http://blog.54yongf.com/tags/Visual-Assist-X/"/>
+    
+      <category term="Visual Studio" scheme="http://blog.54yongf.com/tags/Visual-Studio/"/>
+    
+      <category term="Visual Studio插件系列" scheme="http://blog.54yongf.com/categories/Visual-Studio%E6%8F%92%E4%BB%B6%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[No19-【原】invalid use of incomplete type 'class-Ui-Widge't的解决办法]]></title>
+    <link href="http://blog.54yongf.com/2015/11/20/No19-%E3%80%90%E5%8E%9F%E3%80%91invalid%20use%20of%20incomplete%20type%20'class-Ui-Widge't%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://blog.54yongf.com/2015/11/20/No19-【原】invalid use of incomplete type 'class-Ui-Widge't的解决办法/</id>
+    <published>2015-11-20T07:06:17.000Z</published>
+    <updated>2015-11-20T08:13:53.961Z</updated>
+    <content type="html"><![CDATA[<h2 id="先说环境">先说环境</h2><p><font size="4"></font></p>
+<ul>
+<li>qt 5.5.1</li>
+<li>Windows7 </li>
+<li>gcc version 4.8.1</li>
+</ul>
+<h2 id="错误详情">错误详情</h2><p><font size="4"><br>如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png" alt="错误详情"></font></p>
+<h2 id="原因及解决办法">原因及解决办法</h2><p><font size="4"><br>可以确定的是，你肯定在Qt Designer中修改了顶部Widget的object name，然而，Qt creator并不会帮你同步gotocell.cpp中的obj name。导致不对应，自然就报错了。<br>应该有两种方法：</font></p>
+<ol>
+<li>比较简单的方法，观察错误中的<code>class Ui::gotoCell</code>，在Qt Designer中，将顶部（点击窗口中空白处即可）的objectName修改为<code>gotoCell</code>即可。注意，请根据自己的错误对应处理。</li>
+<li>修改gotoCell.cpp，类似，将gotoCell修改为Qt Designer中的顶部窗口的objectName，这相对麻烦一点，所以还是推荐方法1。</li>
+</ol>
+<h3 id="科普一下">科普一下</h3><p><font size="4"><br>objectName在哪里修改：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_154912.png" alt="objectName"></font></p>
+<h2 id="参考">参考</h2><p><font size="4"></font></p>
+<ul>
+<li><a href="http://icivelee.blog.163.com/blog/static/147198932201171025810737/" target="_blank" rel="external">http://icivelee.blog.163.com/blog/static/147198932201171025810737/</a></li>
+</ul>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="先说环境">先说环境</h2><p><font size="4"></font></p>
+<ul>
+<li>qt 5.5.1</li>
+<li>Windows7 </li>
+<li>gcc version 4.8.1</li>
+</ul>
+<h2 id="错误详情]]>
+    </summary>
+    
+      <category term="qt" scheme="http://blog.54yongf.com/tags/qt/"/>
+    
+      <category term="qt creator" scheme="http://blog.54yongf.com/tags/qt-creator/"/>
+    
+      <category term="qt" scheme="http://blog.54yongf.com/categories/qt/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No18-【原】跟我一起来了解hexo的结构，自定义一些组件]]></title>
@@ -29,16 +105,14 @@
 <h2 id="hexo结构图解">hexo结构图解</h2><p><font size="4"><br>首先来分析hexo的结构，快速入门（主要针对我这种菜鸟，大神请自觉忽略）以便我们自定义自己的组件，实现想要的效果。废话少说，上图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No18-2015-11-17_002958.png" alt="hexo结构图，凑活着看吧→_→"></font></p>
 <p><font size="4"><br>我们主要分析标上序号的8个文件|文件夹：</font></p>
 <p><font size="4"></font></p>
-<ol>
-<li>public文件夹，存放的是生成的整个博客的页面文件，也就是说，在你<code>hexo generate</code>之后，生成的东西基本都在这里了（当然外面还有个db.json之类的）。</li>
-<li>scaffolds文件夹，可以看到，我这里有4个<code>.md</code>文档，这里定义的是博客文章md文件的模板。我自定义了4个模板（其中<code>post.md</code>是默认模板，这个可以设置），所以在<code>hexo new</code>之后，hexo会根据你的命令，比如<code>hexo new post xxx</code>或者<code>hexo new draft xxx</code>或者<code>hexo new page xxx</code>或者<code>hexo new gallery xxx</code>在对应的模板基础上生成markdown文件，然后，你就可以进行欢快的写作了。这里顺便提一下，之前有小伙伴问我，我的每篇文章末尾的<code>感谢</code>是如何实现的，其实很简单，就是在post模板的里面加上这段话就OK了，如果想要我的post模板，在文章下方留言即可（敬请指教）。</li>
-<li>Source/_posts，这里是存放你的所有文章的地方，所有的<code>markdown</code>文件都在这里存放，所以，生成之后，进入这个目录编辑。</li>
-<li>Source/favicon.ico，这个是最终生成的博客网站的图标，将你的图标放置在这里即可。</li>
-<li>themes/chenall，其实themes文件夹下的所有子文件夹都是hexo的主题，chenall是我之前使用的一款主题，界面挺不错的，感觉很优雅（不过我还是选择了<code>jacman</code>）。</li>
-<li>themes/jacman，也就是我现在使用的这款主题，</li>
-</ol>
-<p></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<ul>
+<li><font size="4">public文件夹，存放的是生成的整个博客的页面文件，也就是说，在你<code>hexo generate</code>之后，生成的东西基本都在这里了（当然外面还有个db.json之类的）。</font></li>
+<li><font size="4">scaffolds文件夹，可以看到，我这里有4个<code>.md</code>文档，这里定义的是博客文章md文件的模板。我自定义了4个模板（其中<code>post.md</code>是默认模板，这个可以设置），所以在<code>hexo new</code>之后，hexo会根据你的命令，比如<code>hexo new post xxx</code>或者<code>hexo new draft xxx</code>或者<code>hexo new page xxx</code>或者<code>hexo new gallery xxx</code>在对应的模板基础上生成markdown文件，然后，你就可以进行欢快的写作了。这里顺便提一下，之前有小伙伴问我，我的每篇文章末尾的<code>感谢</code>是如何实现的，其实很简单，就是在post模板的里面加上这段话就OK了，如果想要我的post模板，在文章下方留言即可（敬请指教）。</font></li>
+<li><font size="4">Source/_posts，这里是存放你的所有文章的地方，所有的<code>markdown</code>文件都在这里存放，所以，生成之后，进入这个目录编辑。</font></li>
+<li><font size="4">Source/favicon.ico，这个是最终生成的博客网站的图标，将你的图标放置在这里即可。</font></li>
+<li><font size="4">themes/chenall，其实themes文件夹下的所有子文件夹都是hexo的主题，chenall是我之前使用的一款主题，界面挺不错的，感觉很优雅（不过我还是选择了<code>jacman</code>）。</font></li>
+<li><font size="4">themes/jacman，也就是我现在使用的这款主题，<br></font><h2 id="感谢">感谢</h2><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></li>
+</ul>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="关于hexo">关于hexo</h2><font size=4><br>关于hexo不想过多介绍，因为官方已经做了这件事了。<font size=5 color=red><b>强烈建议先去看看官方文档（是中文版的哦）：<a href="https://hexo.io/zh-cn/docs/" title="hexo官方文档">hexo docs</a></b></font><br></font>]]>
@@ -637,36 +711,6 @@
       <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
     
       <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【原】No1-hexo系列文章之微博秀]]></title>
-    <link href="http://blog.54yongf.com/2015/11/08/No1-%E3%80%90%E5%8E%9F%E3%80%91hexo%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E4%B9%8B%E5%BE%AE%E5%8D%9A%E7%A7%80/"/>
-    <id>http://blog.54yongf.com/2015/11/08/No1-【原】hexo系列文章之微博秀/</id>
-    <published>2015-11-08T00:58:21.000Z</published>
-    <updated>2015-11-09T03:24:29.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="前言">前言</h1><p><font size="4">今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</font></p>
-<a id="more"></a>
-<p><font size="4">开始的时候，我找到了wordpress，但是，发现wordpress虽然已经很成熟，很多人都在用，不过我觉得它太臃肿了，不适合我，于是放弃了。后来，看到了hexo这个框架，觉得它很小巧，界面清爽，而且很好看，所以，就决定是它了。</font></p>
-<p><font size="4">在学习使用这个框架时，我先去hexo的github页面学习了一下，先安装好必要的东西，然后，选择了一款主题，我这款主题就是参考<a href="http://zipperary.com/" target="_blank" rel="external">Zippera大神</a>的博客制作的，感兴趣的可以去他的博客看看。</font></p>
-<p><font size="4">我就跟着Zippera大神的教程，一步一步走，不过在生成微博秀的时候，出了点问题，搞得我差点崩溃，后面终于找到了解决办法，但是我还是没有明白其中问题的原因，所以特地将之记录下来，希望日后能找到真正的原因。</font></p>
-<h1 id="问题">问题</h1><p><font size="4">按照正常的修改，将微博秀的代码放到正确的位置上之后，本地在浏览器中输入localhost:4000之后，其他的东西都显示正常，唯独微博秀的位置是空白的，但是在那个位置却也留了这么大的空间，刚好是微博秀的大小，只是没显示微博秀。</font></p>
-<h1 id="暂时的解决方案">暂时的解决方案</h1><p><font size="4">将localhost:4000换成本地的IP地址（不是本机的！），比如我的是：127.0.0.1:4000，然后，微博秀就显示出来了，实在搞不懂为什么。<br>我查看过页面的源码，微博秀代码的确是在页面上的，不过localhost:4000就是显示不出来。我猜，可能是微博方面做了相关限制。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="前言">前言</h1><p><font size=4>今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</p>]]>
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
-    
-      <category term="博客" scheme="http://blog.54yongf.com/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-      <category term="教程" scheme="http://blog.54yongf.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
     
   </entry>
   
