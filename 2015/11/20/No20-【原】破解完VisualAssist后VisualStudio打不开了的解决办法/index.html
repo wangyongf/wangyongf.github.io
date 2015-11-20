@@ -12,34 +12,25 @@
 
     
     <meta name="description" content="先说说软件环境
-
 Windows10
 Visual Studio 2015
-Visual Assist X 2058
-
-出现的问题在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：1234567The security key for this program currently stored on your">
+Visual Assist X 2058">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No20-【原】破解完VisualAssist后VisualStudio打不开了的解决办法">
 <meta property="og:url" content="http://blog.54yongf.com/2015/11/20/No20-【原】破解完VisualAssist后VisualStudio打不开了的解决办法/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
 <meta property="og:description" content="先说说软件环境
-
 Windows10
 Visual Studio 2015
-Visual Assist X 2058
-
-出现的问题在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：1234567The security key for this program currently stored on your">
+Visual Assist X 2058">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png">
 <meta property="og:updated_time" content="2015-11-20T08:15:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No20-【原】破解完VisualAssist后VisualStudio打不开了的解决办法">
 <meta name="twitter:description" content="先说说软件环境
-
 Windows10
 Visual Studio 2015
-Visual Assist X 2058
-
-出现的问题在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：1234567The security key for this program currently stored on your">
+Visual Assist X 2058">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -133,14 +124,16 @@ Visual Assist X 2058
 		
 		</div>
 		
-		<h2 id="先说说软件环境">先说说软件环境</h2><p><font size="4"></font></p>
-<ul>
+		<h2 id="先说说软件环境">先说说软件环境</h2><ul>
 <li>Windows10</li>
 <li>Visual Studio 2015</li>
 <li>Visual Assist X 2058</li>
 </ul>
-<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> <span class="keyword">this</span> program currently stored <span class="literal">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> <span class="keyword">this</span> version <span class="keyword">of</span> the program.Select Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> key, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br><span class="line">``<span class="javascript"><span class="string">` </span><br><span class="line">&lt;font size=4&gt;不多说了，上图：</span><br><span class="line">![错误提示](http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png)</span><br><span class="line">&lt;font size=4&gt;</span><br><span class="line">这不是关键，关键是，点击Yes或No之后，直接就**&lt;font color=red&gt;失去响应&lt;/font&gt;**了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是--Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</span><br><span class="line">最后，经过我坚持不懈的努力，终于找到了解决办法：</span></span></span><br></pre></td></tr></table></figure></font></p>
-<p>连续点击Cancel四次！<br>```<br>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></p>
+<a id="more"></a>
+<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：</font></p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> <span class="keyword">this</span> program currently stored <span class="literal">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> <span class="keyword">this</span> version <span class="keyword">of</span> the program.Select Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> key, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br><span class="line">``<span class="javascript"><span class="string">` </span><br><span class="line"></span><br><span class="line">&lt;font size=4&gt;不多说了，上图：</span><br><span class="line">![错误提示](http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png)</span><br><span class="line"></span><br><span class="line">&lt;font size=4&gt;这不是关键，关键是，点击Yes或No之后，直接就**&lt;font color=red&gt;失去响应&lt;/font&gt;**了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是--Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</span><br><span class="line">最后，经过我坚持不懈的努力，终于找到了解决办法：</span></span></span><br></pre></td></tr></table></figure>
+<p>连续点击Cancel四次！<br>```</p>
+<p>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></p>
 <p>不过不要紧，还是等以后买个正版的吧。其实Visual Studio 2015的智能提示功能已经很不错了。</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 

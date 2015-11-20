@@ -20,23 +20,26 @@
     <id>http://blog.54yongf.com/2015/11/20/No20-【原】破解完VisualAssist后VisualStudio打不开了的解决办法/</id>
     <published>2015-11-20T08:15:20.000Z</published>
     <updated>2015-11-20T08:15:20.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="先说说软件环境">先说说软件环境</h2><p><font size="4"></font></p>
-<ul>
+    <content type="html"><![CDATA[<h2 id="先说说软件环境">先说说软件环境</h2><ul>
 <li>Windows10</li>
 <li>Visual Studio 2015</li>
 <li>Visual Assist X 2058</li>
 </ul>
-<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> <span class="keyword">this</span> program currently stored <span class="literal">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> <span class="keyword">this</span> version <span class="keyword">of</span> the program.Select Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> key, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br><span class="line">``<span class="javascript"><span class="string">` </span><br><span class="line">&lt;font size=4&gt;不多说了，上图：</span><br><span class="line">![错误提示](http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png)</span><br><span class="line">&lt;font size=4&gt;</span><br><span class="line">这不是关键，关键是，点击Yes或No之后，直接就**&lt;font color=red&gt;失去响应&lt;/font&gt;**了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是--Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</span><br><span class="line">最后，经过我坚持不懈的努力，终于找到了解决办法：</span></span></span><br></pre></td></tr></table></figure></font></p>
-<p>连续点击Cancel四次！<br>```<br>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></p>
+<a id="more"></a>
+<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：</font></p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> <span class="keyword">this</span> program currently stored <span class="literal">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> <span class="keyword">this</span> version <span class="keyword">of</span> the program.Select Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> key, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br><span class="line">``<span class="javascript"><span class="string">` </span><br><span class="line"></span><br><span class="line">&lt;font size=4&gt;不多说了，上图：</span><br><span class="line">![错误提示](http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png)</span><br><span class="line"></span><br><span class="line">&lt;font size=4&gt;这不是关键，关键是，点击Yes或No之后，直接就**&lt;font color=red&gt;失去响应&lt;/font&gt;**了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是--Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</span><br><span class="line">最后，经过我坚持不懈的努力，终于找到了解决办法：</span></span></span><br></pre></td></tr></table></figure>
+<p>连续点击Cancel四次！<br>```</p>
+<p>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></p>
 <p>不过不要紧，还是等以后买个正版的吧。其实Visual Studio 2015的智能提示功能已经很不错了。</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="先说说软件环境">先说说软件环境</h2><p><font size="4"></font></p>
-<ul>
+    <![CDATA[<h2 id="先说说软件环境">先说说软件环境</h2><ul>
 <li>Windows10</li>
 <li>Visual Studio 2015</li>
-<li>Visual Assist X 2058</li>]]>
+<li>Visual Assist X 2058</li>
+</ul>]]>
+    
     </summary>
     
       <category term="Visual Assist X" scheme="http://blog.54yongf.com/tags/Visual-Assist-X/"/>
@@ -52,13 +55,13 @@
     <link href="http://blog.54yongf.com/2015/11/20/No19-%E3%80%90%E5%8E%9F%E3%80%91invalid%20use%20of%20incomplete%20type%20'class-Ui-Widge't%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
     <id>http://blog.54yongf.com/2015/11/20/No19-【原】invalid use of incomplete type 'class-Ui-Widge't的解决办法/</id>
     <published>2015-11-20T07:06:17.000Z</published>
-    <updated>2015-11-20T08:13:53.961Z</updated>
-    <content type="html"><![CDATA[<h2 id="先说环境">先说环境</h2><p><font size="4"></font></p>
-<ul>
+    <updated>2015-11-20T10:01:38.780Z</updated>
+    <content type="html"><![CDATA[<h2 id="先说环境">先说环境</h2><ul>
 <li>qt 5.5.1</li>
 <li>Windows7 </li>
 <li>gcc version 4.8.1</li>
 </ul>
+<a id="more"></a>
 <h2 id="错误详情">错误详情</h2><p><font size="4"><br>如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png" alt="错误详情"></font></p>
 <h2 id="原因及解决办法">原因及解决办法</h2><p><font size="4"><br>可以确定的是，你肯定在Qt Designer中修改了顶部Widget的object name，然而，Qt creator并不会帮你同步gotocell.cpp中的obj name。导致不对应，自然就报错了。<br>应该有两种方法：</font></p>
 <ol>
@@ -73,13 +76,12 @@
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="先说环境">先说环境</h2><p><font size="4"></font></p>
-<ul>
+    <![CDATA[<h2 id="先说环境">先说环境</h2><ul>
 <li>qt 5.5.1</li>
 <li>Windows7 </li>
 <li>gcc version 4.8.1</li>
-</ul>
-<h2 id="错误详情]]>
+</ul>]]>
+    
     </summary>
     
       <category term="qt" scheme="http://blog.54yongf.com/tags/qt/"/>

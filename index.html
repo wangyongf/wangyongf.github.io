@@ -108,20 +108,16 @@
 
     <div class="article-content">
         
-        <h2 id="先说说软件环境">先说说软件环境</h2><p><font size="4"></font></p>
-<ul>
+        <h2 id="先说说软件环境">先说说软件环境</h2><ul>
 <li>Windows10</li>
 <li>Visual Studio 2015</li>
 <li>Visual Assist X 2058</li>
 </ul>
-<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> <span class="keyword">this</span> program currently stored <span class="literal">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> <span class="keyword">this</span> version <span class="keyword">of</span> the program.Select Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> key, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br><span class="line">``<span class="javascript"><span class="string">` </span><br><span class="line">&lt;font size=4&gt;不多说了，上图：</span><br><span class="line">![错误提示](http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png)</span><br><span class="line">&lt;font size=4&gt;</span><br><span class="line">这不是关键，关键是，点击Yes或No之后，直接就**&lt;font color=red&gt;失去响应&lt;/font&gt;**了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是--Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</span><br><span class="line">最后，经过我坚持不懈的努力，终于找到了解决办法：</span></span></span><br></pre></td></tr></table></figure></font></p>
-<p>连续点击Cancel四次！<br>```<br>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></p>
-<p>不过不要紧，还是等以后买个正版的吧。其实Visual Studio 2015的智能提示功能已经很不错了。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/2015/11/20/No20-【原】破解完VisualAssist后VisualStudio打不开了的解决办法/#more">阅读全文</a>
           
        </p>
     </div>
@@ -175,7 +171,7 @@
 		
   <p class="article-time">
     <time datetime="2015-11-20T07:06:17.000Z" itemprop="datePublished">
-      发布于2015-11-20 15:06:17，更新于2015-11-20 16:13:53 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
+      发布于2015-11-20 15:06:17，更新于2015-11-20 18:01:38 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -183,28 +179,16 @@
 
     <div class="article-content">
         
-        <h2 id="先说环境">先说环境</h2><p><font size="4"></font></p>
-<ul>
+        <h2 id="先说环境">先说环境</h2><ul>
 <li>qt 5.5.1</li>
 <li>Windows7 </li>
 <li>gcc version 4.8.1</li>
 </ul>
-<h2 id="错误详情">错误详情</h2><p><font size="4"><br>如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png" alt="错误详情"></font></p>
-<h2 id="原因及解决办法">原因及解决办法</h2><p><font size="4"><br>可以确定的是，你肯定在Qt Designer中修改了顶部Widget的object name，然而，Qt creator并不会帮你同步gotocell.cpp中的obj name。导致不对应，自然就报错了。<br>应该有两种方法：</font></p>
-<ol>
-<li>比较简单的方法，观察错误中的<code>class Ui::gotoCell</code>，在Qt Designer中，将顶部（点击窗口中空白处即可）的objectName修改为<code>gotoCell</code>即可。注意，请根据自己的错误对应处理。</li>
-<li>修改gotoCell.cpp，类似，将gotoCell修改为Qt Designer中的顶部窗口的objectName，这相对麻烦一点，所以还是推荐方法1。</li>
-</ol>
-<h3 id="科普一下">科普一下</h3><p><font size="4"><br>objectName在哪里修改：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_154912.png" alt="objectName"></font></p>
-<h2 id="参考">参考</h2><p><font size="4"></font></p>
-<ul>
-<li><a href="http://icivelee.blog.163.com/blog/static/147198932201171025810737/" target="_blank" rel="external">http://icivelee.blog.163.com/blog/static/147198932201171025810737/</a></li>
-</ul>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/2015/11/20/No19-【原】invalid use of incomplete type 'class-Ui-Widge't的解决办法/#more">阅读全文</a>
           
        </p>
     </div>
