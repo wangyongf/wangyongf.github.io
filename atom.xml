@@ -26,11 +26,14 @@
 <li>Visual Assist X 2058</li>
 </ul>
 <a id="more"></a>
-<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：</font></p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> <span class="keyword">this</span> program currently stored <span class="literal">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> <span class="keyword">this</span> version <span class="keyword">of</span> the program.Select Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> key, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br><span class="line">``<span class="javascript"><span class="string">` </span><br><span class="line"></span><br><span class="line">不多说了，上图：</span><br><span class="line">![错误提示](http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png)</span><br><span class="line"></span><br><span class="line">这不是关键，关键是，点击Yes或No之后，直接就**&lt;font color=red&gt;失去响应&lt;/font&gt;**了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是--Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</span><br><span class="line">最后，经过我坚持不懈的努力，终于找到了解决办法：</span></span></span><br></pre></td></tr></table></figure>
-<p>连续点击Cancel四次！<br>```</p>
-<p>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></p>
-<p>不过不要紧，还是等以后买个正版的吧。其实Visual Studio 2015的智能提示功能已经很不错了。</p>
+<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息如下：</font></p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The security <span class="keyword">key</span> <span class="keyword">for</span> this program currently stored <span class="keyword">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> this version <span class="keyword">of</span> the program.<span class="keyword">Select</span> Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> <span class="keyword">key</span>, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br></pre></td></tr></table></figure>
+<p><font size="4">不多说了，上图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png" alt="错误提示"></font></p>
+<p><font size="4">这不是关键，关键是，点击Yes或No之后，直接就<font color="red">失去响应</font>了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是–Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</font></p>
+<h2 id="解决办法">解决办法</h2><p><font size="4"><br>最后，经过我坚持不懈的努力，终于找到了解决办法：</font></p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">连续点击<span class="keyword">Cancel</span>四次！</span><br></pre></td></tr></table></figure>
+<p><font size="4"><br>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></font></p>
+<p>不过不要紧，还是等以后买个正版的吧。要想以后启动Visual Studio的时候不出现这个问题，就赶紧在VS里面把Visual Assist X卸载吧。<br>其实Visual Studio 2015的智能提示功能已经很不错了。</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
@@ -417,7 +420,7 @@
     <link href="http://blog.54yongf.com/2015/11/12/No10-%E3%80%90%E5%8E%9F%E3%80%91hexo%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C%E4%B9%8B%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90generate%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/"/>
     <id>http://blog.54yongf.com/2015/11/12/No10-【原】hexo博文写作之博客生成generate常见错误集锦/</id>
     <published>2015-11-12T13:55:16.000Z</published>
-    <updated>2015-11-13T12:04:04.000Z</updated>
+    <updated>2015-11-20T10:27:03.000Z</updated>
     <content type="html"><![CDATA[<h2 id="本文写作初衷">本文写作初衷</h2><p><font size="4">作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</font></p>
 <a id="more"></a>
 <h2 id="软件环境">软件环境</h2><p><font size="4"><br>OS: Windows_NT 6.1.7600 win32 x64<br>node: 4.2.2<br>hexo: 3.1</font></p>
@@ -427,6 +430,8 @@
 <h2 id="错误类型2">错误类型2</h2><h3 id="错误描述-1">错误描述</h3><p><font size="4"><br>ValidationError: ‘null’ is not a string!</font></p>
 <h3 id="错误说明-1">错误说明</h3><p><font size="4"><br>一般都是因为文章无内容，可能是因为在这篇博客文章中，有某些属性没有填写，比如author属性，tag属性，categories属性等，导致该属性是空的，即<code>null</code>，所以报错。<br><strong>友情提示</strong>：如果你是用MarkdownPad 2来进行博文写作（我就是），可能在打开该md文件之后，对文件名进行了修改，导致出现了两篇文章。就会出现错误。</font></p>
 <h3 id="解决方案-1">解决方案</h3><p><font size="4"><br>既然是属性缺失，那就把为空的那个属性给补上吧，仔细找找 :-)</font></p>
+<h2 id="错误类型3">错误类型3</h2><h3 id="错误描述-2">错误描述</h3><p><font size="4"><br>generate的时候是没问题的，但是网页预览的时候，发现引用块有问题，原本引用块下方的内容跑到引用块里边去了！</font></p>
+<h3 id="解决方案-2">解决方案</h3><p><font size="4"><br>引用块都是由一对三个<strong>`</strong>所包起来的，如果在最后一个点<strong>`</strong>之后有空格，界面会错乱，所以，把这个多余的空格去掉吧。</font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">

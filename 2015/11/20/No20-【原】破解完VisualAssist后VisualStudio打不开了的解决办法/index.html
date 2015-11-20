@@ -23,6 +23,7 @@ Visual Assist X 2058">
 Windows10
 Visual Studio 2015
 Visual Assist X 2058">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png">
 <meta property="og:updated_time" content="2015-11-20T08:15:20.000Z">
 <meta name="twitter:card" content="summary">
@@ -120,7 +121,7 @@ Visual Assist X 2058">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说说软件环境"><span class="toc-number">1.</span> <span class="toc-text">先说说软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出现的问题"><span class="toc-number">2.</span> <span class="toc-text">出现的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说说软件环境"><span class="toc-number">1.</span> <span class="toc-text">先说说软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出现的问题"><span class="toc-number">2.</span> <span class="toc-text">出现的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-number">3.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
@@ -130,11 +131,14 @@ Visual Assist X 2058">
 <li>Visual Assist X 2058</li>
 </ul>
 <a id="more"></a>
-<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息：</font></p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> <span class="keyword">this</span> program currently stored <span class="literal">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> <span class="keyword">this</span> version <span class="keyword">of</span> the program.Select Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> key, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br><span class="line">``<span class="javascript"><span class="string">` </span><br><span class="line"></span><br><span class="line">不多说了，上图：</span><br><span class="line">![错误提示](http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png)</span><br><span class="line"></span><br><span class="line">这不是关键，关键是，点击Yes或No之后，直接就**&lt;font color=red&gt;失去响应&lt;/font&gt;**了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是--Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</span><br><span class="line">最后，经过我坚持不懈的努力，终于找到了解决办法：</span></span></span><br></pre></td></tr></table></figure>
-<p>连续点击Cancel四次！<br>```</p>
-<p>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></p>
-<p>不过不要紧，还是等以后买个正版的吧。其实Visual Studio 2015的智能提示功能已经很不错了。</p>
+<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息如下：</font></p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The security <span class="keyword">key</span> <span class="keyword">for</span> this program currently stored <span class="keyword">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> this version <span class="keyword">of</span> the program.<span class="keyword">Select</span> Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> <span class="keyword">key</span>, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br></pre></td></tr></table></figure>
+<p><font size="4">不多说了，上图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png" alt="错误提示"></font></p>
+<p><font size="4">这不是关键，关键是，点击Yes或No之后，直接就<font color="red">失去响应</font>了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是–Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</font></p>
+<h2 id="解决办法">解决办法</h2><p><font size="4"><br>最后，经过我坚持不懈的努力，终于找到了解决办法：</font></p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">连续点击<span class="keyword">Cancel</span>四次！</span><br></pre></td></tr></table></figure>
+<p><font size="4"><br>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></font></p>
+<p>不过不要紧，还是等以后买个正版的吧。要想以后启动Visual Studio的时候不出现这个问题，就赶紧在VS里面把Visual Assist X卸载吧。<br>其实Visual Studio 2015的智能提示功能已经很不错了。</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
@@ -248,7 +252,7 @@ Visual Assist X 2058">
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说说软件环境"><span class="toc-number">1.</span> <span class="toc-text">先说说软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出现的问题"><span class="toc-number">2.</span> <span class="toc-text">出现的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说说软件环境"><span class="toc-number">1.</span> <span class="toc-text">先说说软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出现的问题"><span class="toc-number">2.</span> <span class="toc-text">出现的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-number">3.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
