@@ -4,7 +4,7 @@
   <subtitle><![CDATA[没有理想，和咸鱼有什么分别]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-11-21T11:55:31.000Z</updated>
+  <updated>2015-11-24T05:49:00.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,130 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源]]></title>
+    <link href="http://blog.54yongf.com/2015/11/24/24/"/>
+    <id>http://blog.54yongf.com/2015/11/24/24/</id>
+    <published>2015-11-24T05:49:00.000Z</published>
+    <updated>2015-11-24T05:49:00.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="烦恼">烦恼</h2><p><font size="4"><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。</font></p>
+<h2 id="Android_SDK_在线更新镜像服务器资源">Android SDK 在线更新镜像服务器资源</h2><font size="4"> 
+
+<ul>
+<li><p>大连东软信息学院镜像服务器地址:<br><a href="http://mirrors.neusoft.edu.cn" target="_blank" rel="external">http://mirrors.neusoft.edu.cn</a> 端口：80</p>
+</li>
+<li><p>北京化工大学镜像服务器地址:<br>IPv4: <a href="http://ubuntu.buct.edu.cn/" target="_blank" rel="external">http://ubuntu.buct.edu.cn/</a> 端口：80<br>IPv4: <a href="http://ubuntu.buct.cn/" target="_blank" rel="external">http://ubuntu.buct.cn/</a> 端口：80<br>IPv6: <a href="http://ubuntu.buct6.edu.cn/" target="_blank" rel="external">http://ubuntu.buct6.edu.cn/</a> 端口：80</p>
+</li>
+<li>上海GDG镜像服务器地址:<br><a href="http://sdk.gdgshanghai.com" target="_blank" rel="external">http://sdk.gdgshanghai.com</a> 端口：8000</li>
+<li>中国科学院开源协会镜像站地址:<br>IPV4/IPV6: <a href="http://mirrors.opencas.cn" target="_blank" rel="external">http://mirrors.opencas.cn</a> 端口：80<br>IPV4/IPV6: <a href="http://mirrors.opencas.org" target="_blank" rel="external">http://mirrors.opencas.org</a> 端口：80<br>IPV4/IPV6: <a href="http://mirrors.opencas.ac.cn" target="_blank" rel="external">http://mirrors.opencas.ac.cn</a> 端口：80</li>
+<li>腾讯Bugly 镜像:<br><a href="http://android-mirror.bugly.qq.com" target="_blank" rel="external">http://android-mirror.bugly.qq.com</a> 端口：8080</li>
+<li>腾讯镜像使用方法:<br><a href="http://android-mirror.bugly.qq.com:8080/include/usage.html" target="_blank" rel="external">http://android-mirror.bugly.qq.com:8080/include/usage.html</a></li>
+</ul>
+<h2 id="使用方法">使用方法</h2><p><font size="4"><br>先上图：</font></p>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_140914.png" alt="详细设置"></p>
+<ol>
+<li>启动 Android SDK Manager ，打开主界面，依次选择『Tools』、『Options…』，弹出『Android SDK Manager - Settings』窗口；</li>
+<li>在『Android SDK Manager - Settings』窗口中，在『HTTP Proxy Server」和「HTTP Proxy Port』输入框内填入上面镜像服务器地址和端口，并且选中『Force https://… sources to be fetched using <a href="http://...』复选框。设置完成后单击『Close』按钮关闭『Android" target="_blank" rel="external">http://...』复选框。设置完成后单击『Close』按钮关闭『Android</a> SDK Manager - Settings』窗口返回到主界面；</li>
+<li>依次选择『Packages』、『Reload』。 </li>
+</ol>
+<h2 id="一点推荐">一点推荐</h2><font size="4">
+
+<ul>
+<li>推荐一个Android SDK,Android-Studio相关的网站<br><a href="http://tools.android-studio.org/" target="_blank" rel="external">http://tools.android-studio.org/</a><br><a href="http://www.android-studio.org/" target="_blank" rel="external">http://www.android-studio.org/</a><br>至于里边到底有啥，自己去看吧</li>
+</ul>
+<h2 id="最后">最后</h2><p><font size="4"><br>不同地区，不同网络，访问速度也不同，比如我的这个电信的校园网，用东软这个很快。所以，如果用某个镜像很慢，那就换一个试试，也许就起飞了呢 :)</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+</font></font>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="烦恼">烦恼</h2><p><font size="4"><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如]]>
+    </summary>
+    
+      <category term="Android SDK" scheme="http://blog.54yongf.com/tags/Android-SDK/"/>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="翻墙" scheme="http://blog.54yongf.com/tags/%E7%BF%BB%E5%A2%99/"/>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[No23-【原】SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿]]></title>
+    <link href="http://blog.54yongf.com/2015/11/24/23/"/>
+    <id>http://blog.54yongf.com/2015/11/24/23/</id>
+    <published>2015-11-24T05:09:17.000Z</published>
+    <updated>2015-11-24T05:09:17.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="一点说道">一点说道</h2><p><font size="4"><br>这种方法的成功的前提是你的浏览器能够翻墙，本文仅供娱乐，如有雷同，纯属巧合。</font></p>
+<h2 id="更新SDK">更新SDK</h2><p><font size="4"><br>安装完Android Studio之后，更新SDK，因为我的SDK不是最新的。然而，在我大天朝，不翻墙是不行的，我电脑上开了『蓝灯』，于是在SDK Manager中将HTTP proxy设置为<code>127.0.0.1:16823</code>，然而，报错了。使用正常的网络？我这可怜的校园网更悲催，还是报错–连不上！  但是，我的浏览器是可以直接从墙外下载的。</font></p>
+<blockquote>
+<p>Failed to fetch URL <a href="http://dl-ssl.google.com/android/repository/addons_list" target="_blank" rel="external">http://dl-ssl.google.com/android/repository/addons_list</a></p>
+</blockquote>
+<p>最后，想了个笨办法，你不是要这两个链接么，反正浏览器是可以翻墙的，不如直接在浏览器中打开这两个链接，看看是什么情况。<br>浏览器访问：</p>
+<blockquote>
+<p><a href="https://dl-ssl.google.com/android/repository/repository.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/repository.xml</a><br><a href="https://dl-ssl.google.com/android/repository/addon.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/addon.xml</a></p>
+</blockquote>
+<p>发现，它们是这样的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132839.png" alt="图片1"></p>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132746.png" alt="图片2"></p>
+<p><font size="4"><br>不知你有否发现其中之玄机→_→</font></p>
+<p>找到xml节点下的 google_apis-3-r03.zip platform-tools_r09-windows.zip 各种API<br>然后<a href="https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip</a><br>手动下载。</p>
+<h2 id="最后">最后</h2><p><font size="4"><br>是不是很鸡贼？再次申明，本文仅供娱乐╮(╯3╰)╭   ， 你要当真我也没办法。</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="一点说道">一点说道</h2><p><font size="4"><br>这种方法的成功的前提是你的浏览器能够翻墙，本文仅供娱乐，如有雷同，纯属巧合。</font></p>
+<h2 id="更新SDK">更新SDK</h2><p><font size="4"><b]]>
+    </summary>
+    
+      <category term="Android SDK" scheme="http://blog.54yongf.com/tags/Android-SDK/"/>
+    
+      <category term="翻墙" scheme="http://blog.54yongf.com/tags/%E7%BF%BB%E5%A2%99/"/>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[No22-【原】Android开发时如何用小米3进行真机调试]]></title>
+    <link href="http://blog.54yongf.com/2015/11/24/22/"/>
+    <id>http://blog.54yongf.com/2015/11/24/22/</id>
+    <published>2015-11-24T01:20:39.000Z</published>
+    <updated>2015-11-24T01:20:39.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好，我有个小米3，就用它了。但是，打开小米3的USB调试用了点时间，记录一下。<br>软硬件环境：</font></p>
+<ul>
+<li>小米3</li>
+<li>MIUI 7</li>
+<li>Android Studio 1.4</li>
+</ul>
+<h2 id="如何打开小米3的USB调试选项">如何打开小米3的USB调试选项</h2><p><font size="4"><br>一开始，百度，发现教程很多，但是好像都有点问题。步骤如下：</font></p>
+<ol>
+<li>用数据线连接电脑和手机</li>
+<li>打开手机：<ol>
+<li>『设置』:wink:</li>
+<li>最底下的『关于手机』:wink:</li>
+<li>进去之后，找到『MIUI版本』，连续点击这一栏4次，就会提示已经开启开发者模式了。</li>
+</ol>
+</li>
+<li>退出『关于手机』，在『设置』中，找到『其他高级设置』，下拉，找到『开发者选项』（注意，没有开启开发者模式的话，是不会有这个选项的哦）</li>
+<li>进去之后，就可以开启『USB调试』了，貌似功能还挺多。慢慢研究吧^_^</li>
+<li>这时候，在Android Studio中运行Android APP的话，就会出现小米3的选项了，Good luck!</li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好]]>
+    </summary>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="小米" scheme="http://blog.54yongf.com/tags/%E5%B0%8F%E7%B1%B3/"/>
+    
+      <category term="调试" scheme="http://blog.54yongf.com/tags/%E8%B0%83%E8%AF%95/"/>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No21-【原】安利一款软件-FolderSize]]></title>
@@ -645,103 +769,6 @@
       <category term="hexo主题" scheme="http://blog.54yongf.com/tags/hexo%E4%B8%BB%E9%A2%98/"/>
     
       <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【原】No4-使用hexo的过程中，我踩过的那些坑]]></title>
-    <link href="http://blog.54yongf.com/2015/11/10/4/"/>
-    <id>http://blog.54yongf.com/2015/11/10/4/</id>
-    <published>2015-11-09T16:00:00.000Z</published>
-    <updated>2015-11-09T16:00:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4">事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</font></p>
-<a id="more"></a>
-<h2 id="说说我的搭建环境吧">说说我的搭建环境吧</h2><p><font size="4"></font></p>
-<ul>
-<li>hexo: 3.1.1外加zippera大神的Lightum主题（再次感谢）</li>
-<li>os: Windows_NT 6.1.7600 win32 x64</li>
-<li>http_parser: 2.5.0</li>
-<li>node: 4.2.2</li>
-</ul>
-<h2 id="先说说hexo的安装过程中潜在的坑">先说说hexo的安装过程中潜在的坑</h2><p><font size="4">目前，我的博客是用hexo+gitcafe-gitpages的方式搭建的，因为对空间的需求暂时不大，所以就先凑合着用了，以后再做打算。</font></p>
-<p><font size="4">这时候，就需要用到git来部署网站了，注意事项如下：</font></p>
-<ol>
-<li>在 _config.yml 中设置 deploy中的type一项为git（而且还要注意空一格）<ol>
-<li>此处请注意，如果你是使用github来部署网站，可以设置为github</li>
-</ol>
-</li>
-<li>注意安装好所有必须的插件，在部署网站时，必须用到hexo-deployer-git，如果没安装，会报错，错误信息：<strong>hexo:ERROR Deployer not found: git</strong>。安装的命令为：npm install hexo-deployer-git –save</li>
-<li>接上面2，一般做到这个程度就没问题了，但是不排除有其他特殊情况，那么，还是具体问题具体分析吧。</li>
-<li>在gitcafe上使用gitPages服务，就必须与gitcafe通信，这时候就添加SSH公钥到gitcafe上，至于如何操作，请移步<a href="https://gitcafe.com/GitCafe/Help/wiki/如何安装和设置-Git" title="SSH设置（很详细哦）" target="_blank" rel="external">gitcafe的官方文档</a> ，官方文档很详细，放心，如果有问题，还可以与官方联系，很方便的。</li>
-<li>现在，假设你已经在gitcafe创建好了库，并且已经写好了一篇博客，准备push到gitcafe项目的gitPages分支了，再次检查一下你的hexo/_config.yml吧，它应该是形如下面这样的：<br><font size="4"><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git   #如果使用gitcafe就一定要填git，使用github可以填github</span><br><span class="line">    <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//gitcafe.com/your_username/your_username.git  #注意用户名，your_username替换成自己的用户名</span></span><br><span class="line">    <span class="attribute">branch</span>: gitcafe-pages   #gitcafe填这个</span><br><span class="line">    <span class="attribute">message</span>: update #这是每次更新博客时的message，这项可以没有，有的话内容也可以自定义（如果你用过Git的话，这些应该不用我解释了）</span><br></pre></td></tr></table></figure>
-</font></li>
-</ol>
-<p><font color="red"><strong>注意（Attention）！</strong></font>在type,repository,branch[,message]的后面的冒号之后，必须留出一个空格！否则很可能会解析出错，可能出现一大堆看不懂的错误，这是一个注意点。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4>事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</p>]]>
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
-    
-      <category term="感受" scheme="http://blog.54yongf.com/tags/%E6%84%9F%E5%8F%97/"/>
-    
-      <category term="挖坑and踩坑" scheme="http://blog.54yongf.com/tags/%E6%8C%96%E5%9D%91and%E8%B8%A9%E5%9D%91/"/>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【转】No0-Hello World]]></title>
-    <link href="http://blog.54yongf.com/2015/11/09/0/"/>
-    <id>http://blog.54yongf.com/2015/11/09/0/</id>
-    <published>2015-11-09T03:26:28.000Z</published>
-    <updated>2015-11-09T03:26:33.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>]]>
-    
-    </summary>
-    
-      <category term="hello world" scheme="http://blog.54yongf.com/tags/hello-world/"/>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【原】No3-测试案例]]></title>
-    <link href="http://blog.54yongf.com/2015/11/09/3/"/>
-    <id>http://blog.54yongf.com/2015/11/09/3/</id>
-    <published>2015-11-09T01:05:32.000Z</published>
-    <updated>2015-11-09T01:05:32.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="模板">模板</h2><p><font size="4">这是一个模板，注明了一篇完整的文章所应该有的必要属性信息，详见上。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="模板">模板</h2><p><font size="4">这是一个模板，注明了一篇完整的文章所应该有的必要属性信息，详见上。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站]]>
-    </summary>
-    
-      <category term="测试案例" scheme="http://blog.54yongf.com/tags/%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B/"/>
-    
-      <category term="测试案例" scheme="http://blog.54yongf.com/categories/%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B/"/>
     
   </entry>
   
