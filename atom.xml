@@ -21,6 +21,7 @@
     <published>2015-11-24T05:49:00.000Z</published>
     <updated>2015-11-24T05:49:00.000Z</updated>
     <content type="html"><![CDATA[<h2 id="烦恼">烦恼</h2><p><font size="4"><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。</font></p>
+<a id="more"></a>
 <h2 id="Android_SDK_在线更新镜像服务器资源">Android SDK 在线更新镜像服务器资源</h2><font size="4"> 
 
 <ul>
@@ -49,7 +50,8 @@
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 </font></font>]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="烦恼">烦恼</h2><p><font size="4"><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如]]>
+    <![CDATA[<h2 id="烦恼">烦恼</h2><p><font size=4><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。</p>]]>
+    
     </summary>
     
       <category term="Android SDK" scheme="http://blog.54yongf.com/tags/Android-SDK/"/>
@@ -68,7 +70,8 @@
     <id>http://blog.54yongf.com/2015/11/24/23/</id>
     <published>2015-11-24T05:09:17.000Z</published>
     <updated>2015-11-24T05:09:17.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="一点说道">一点说道</h2><p><font size="4"><br>这种方法的成功的前提是你的浏览器能够翻墙，本文仅供娱乐，如有雷同，纯属巧合。</font></p>
+    <content type="html"><![CDATA[<h2 id="一点说道">一点说道</h2><p><font size="4"><br>这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。</font></p>
+<a id="more"></a>
 <h2 id="更新SDK">更新SDK</h2><p><font size="4"><br>安装完Android Studio之后，更新SDK，因为我的SDK不是最新的。然而，在我大天朝，不翻墙是不行的，我电脑上开了『蓝灯』，于是在SDK Manager中将HTTP proxy设置为<code>127.0.0.1:16823</code>，然而，报错了。使用正常的网络？我这可怜的校园网更悲催，还是报错–连不上！  但是，我的浏览器是可以直接从墙外下载的。</font></p>
 <blockquote>
 <p>Failed to fetch URL <a href="http://dl-ssl.google.com/android/repository/addons_list" target="_blank" rel="external">http://dl-ssl.google.com/android/repository/addons_list</a></p>
@@ -81,12 +84,12 @@
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132746.png" alt="图片2"></p>
 <p><font size="4"><br>不知你有否发现其中之玄机→_→</font></p>
 <p>找到xml节点下的 google_apis-3-r03.zip platform-tools_r09-windows.zip 各种API<br>然后<a href="https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip</a><br>手动下载。</p>
-<h2 id="最后">最后</h2><p><font size="4"><br>是不是很鸡贼？再次申明，本文仅供娱乐╮(╯3╰)╭   ， 你要当真我也没办法。</font></p>
+<h2 id="最后">最后</h2><p><font size="4"><br>是不是很鸡贼？再次申明，本文仅供娱乐哦    ╮(╯3╰)╭   </font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="一点说道">一点说道</h2><p><font size="4"><br>这种方法的成功的前提是你的浏览器能够翻墙，本文仅供娱乐，如有雷同，纯属巧合。</font></p>
-<h2 id="更新SDK">更新SDK</h2><p><font size="4"><b]]>
+    <![CDATA[<h2 id="一点说道">一点说道</h2><p><font size=4><br>这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。</p>]]>
+    
     </summary>
     
       <category term="Android SDK" scheme="http://blog.54yongf.com/tags/Android-SDK/"/>
@@ -103,12 +106,14 @@
     <id>http://blog.54yongf.com/2015/11/24/22/</id>
     <published>2015-11-24T01:20:39.000Z</published>
     <updated>2015-11-24T01:20:39.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好，我有个小米3，就用它了。但是，打开小米3的USB调试用了点时间，记录一下。<br>软硬件环境：</font></p>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好，我有个小米3，就用它了。但是，打开小米3的USB调试用了点时间，记录一下。</font></p>
+<p>软硬件环境:</p>
 <ul>
 <li>小米3</li>
 <li>MIUI 7</li>
 <li>Android Studio 1.4</li>
 </ul>
+<a id="more"></a>
 <h2 id="如何打开小米3的USB调试选项">如何打开小米3的USB调试选项</h2><p><font size="4"><br>一开始，百度，发现教程很多，但是好像都有点问题。步骤如下：</font></p>
 <ol>
 <li>用数据线连接电脑和手机</li>
@@ -125,7 +130,14 @@
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好]]>
+    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好，我有个小米3，就用它了。但是，打开小米3的USB调试用了点时间，记录一下。</p>
+<p>软硬件环境:</p>
+<ul>
+<li>小米3</li>
+<li>MIUI 7</li>
+<li>Android Studio 1.4</li>
+</ul>]]>
+    
     </summary>
     
       <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
