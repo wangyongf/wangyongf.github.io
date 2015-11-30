@@ -4,7 +4,7 @@
   <subtitle><![CDATA[没有理想，和咸鱼有什么分别]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-11-27T17:15:05.000Z</updated>
+  <updated>2015-11-30T12:37:25.008Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[浅谈使用Android Studio进行Android Tests（单元测试）]]></title>
+    <link href="http://blog.54yongf.com/2015/11/30/27/"/>
+    <id>http://blog.54yongf.com/2015/11/30/27/</id>
+    <published>2015-11-30T10:59:17.000Z</published>
+    <updated>2015-11-30T12:37:25.008Z</updated>
+    <content type="html"><![CDATA[<h2 id="声明">声明</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</font></p>
+<h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
+<ol>
+<li>选择顶部工具栏Run–&gt;Edit Configuration<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_190934.png" alt="先编辑测试选项"></li>
+<li>选择Default–&gt;Android Tests，我的配置如下图，当然，也可以根据自己的需要自行设置<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191303.png" alt="自行设置"></li>
+<li>在Project中找到ApplicationTest:app–&gt;src–&gt;androidTest–&gt;java–&gt;包名–&gt;ApplicationTest，打开之<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191517.png" alt="测试文件"></li>
+<li><p>打开之后，它长这样（这些都是自动生成的）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yongf.sqlitedemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Application;</span><br><span class="line"><span class="keyword">import</span> android.test.ApplicationTestCase;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.yongf.sqlitedemo.db.PersonSQLiteOpenHelper;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * &lt;a href="http://d.android.com/tools/testing/testing_android.html"&gt;Testing Fundamentals&lt;/a&gt;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationTest</span> <span class="keyword">extends</span> <span class="title">ApplicationTestCase</span>&lt;<span class="title">Application</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApplicationTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(Application.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在ApplicationTest中新建自己的测试函数，<strong><font color="red">注意！测试的入口函数的函数名必须为test开头</font></strong>。我加了几行测试代码，加完之后，它长这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yongf.sqlitedemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Application;</span><br><span class="line"><span class="keyword">import</span> android.test.ApplicationTestCase;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.yongf.sqlitedemo.db.PersonSQLiteOpenHelper;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * &lt;a href="http://d.android.com/tools/testing/testing_android.html"&gt;Testing Fundamentals&lt;/a&gt;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationTest</span> <span class="keyword">extends</span> <span class="title">ApplicationTestCase</span>&lt;<span class="title">Application</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApplicationTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(Application.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assertEquals(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>test函数中为测试代码，<code>assertEquals(1, 3)</code>这句显然有问题，我们的任务就是，在Android Tests中发现这个错误。</p>
+</li>
+<li>右键app，选择Run All Tests，或者用快捷键Ctrl+Shift+F10。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192801.png" alt="Run Tests"></li>
+<li>选择模拟器，然后OK。等一会儿<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192953.png" alt="选择模拟器"></li>
+<li><p>点击下方的Run工具栏，选择test()，窗口中就会打印出错信息了，我这里肯定错了，因为1!=3，错误信息如下：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Running tests</span><br><span class="line">Test running started</span><br><span class="line">junit<span class="class">.framework</span><span class="class">.AssertionFailedError</span>: expected:&lt;<span class="number">1</span>&gt; but was:&lt;<span class="number">3</span>&gt;</span><br><span class="line">at com<span class="class">.yongf</span><span class="class">.sqlitedemo</span><span class="class">.ApplicationTest</span><span class="class">.test</span>(ApplicationTest<span class="class">.java</span>:<span class="number">19</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.AndroidTestRunner</span><span class="class">.runTest</span>(AndroidTestRunner<span class="class">.java</span>:<span class="number">191</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.AndroidTestRunner</span><span class="class">.runTest</span>(AndroidTestRunner<span class="class">.java</span>:<span class="number">176</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.InstrumentationTestRunner</span><span class="class">.onStart</span>(InstrumentationTestRunner<span class="class">.java</span>:<span class="number">555</span>)</span><br><span class="line">at android<span class="class">.app</span><span class="class">.Instrumentation</span><span class="variable">$InstrumentationThread</span>.<span class="function"><span class="title">run</span><span class="params">(Instrumentation.java:<span class="number">1879</span>)</span></span></span><br><span class="line"></span><br><span class="line">Finish</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从错误信息中，可以轻松定位到出错的位置。如果Test没问题，就会显示Test Passed。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193310.png" alt="打印出错信息"></p>
+</li>
+</ol>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193237.png" alt="打印出错信息"></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="声明">声明</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对]]>
+    </summary>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="单元测试" scheme="http://blog.54yongf.com/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No26-【原】Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]]]></title>
@@ -764,35 +807,6 @@
     </summary>
     
       <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
-    
-      <category term="七牛" scheme="http://blog.54yongf.com/tags/%E4%B8%83%E7%89%9B/"/>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【原】No7-谈谈hexo博客写作中的图片问题]]></title>
-    <link href="http://blog.54yongf.com/2015/11/12/7/"/>
-    <id>http://blog.54yongf.com/2015/11/12/7/</id>
-    <published>2015-11-12T11:34:47.000Z</published>
-    <updated>2015-11-12T11:34:47.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="hexo博客的图片问题">hexo博客的图片问题</h2><p><font size="4">自从将博客搬到hexo上之后，感觉一直很好，很喜欢这种简洁的博客发布方式，但是，在开始的时候，我有点犯愁，markdown中的图片放哪里。有两类解决方案，一种是将图片随博客一起发布到服务器上，另外一种是使用图床的形式，将所需的图片先上传到网络上，然后通过外链引用。</font></p>
-<a id="more"></a>
-<h2 id="将图片随博客一起发布">将图片随博客一起发布</h2><p><font size="4">我们可以将图片和博客一起发布，这也是很自然的一件事。但是，有个问题，可能比较耗费空间（加入空间不大的话），因为，随着你写的博文越来越多，图片也会越来越多，像我这样将博客托管在gitcafe上的，空间才512M，如何够用。</font></p>
-<p><font size="4">所以，这种方式只适合在博客刚刚开始运作的时候，一旦你决定长期写下去，这样并不好。</font></p>
-<h2 id="使用图床—-专门存储图片的地方">使用图床—-专门存储图片的地方</h2><p><font size="4">我们也可以使用专门的网络空间来存储图片，貌似这样更易于管理。可能你会说，难道网络空间不要钱吗，非也非也，还真的是不要钱。推荐一个，七牛云存储，也就是我现在在用的，可能你也听说过。</font></p>
-<p><font size="4">先说明，七牛并没有给我广告费（事实上，我也还没成长到这个高度→_→），而是真的好用，就目前来说，七牛注册用户有1G的免费空间，如果通过身份认证，手机认证，就有10G的免费空间，够用了吧。不仅体现在体量上，还可以对图片进行处理。比如，图片的放大缩小，图片的的输出格式，图片的各种简单处理，图片文字水印，等等，各种功能，很强大，还可以对图片进行保护，防止盗图，具体功能，可以去<a href="http://qiniu.com" title="七牛云官网" target="_blank" rel="external">七牛官网</a>看看更多详细的介绍。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="hexo博客的图片问题">hexo博客的图片问题</h2><p><font size=4>自从将博客搬到hexo上之后，感觉一直很好，很喜欢这种简洁的博客发布方式，但是，在开始的时候，我有点犯愁，markdown中的图片放哪里。有两类解决方案，一种是将图片随博客一起发布到服务器上，另外一种是使用图床的形式，将所需的图片先上传到网络上，然后通过外链引用。</p>]]>
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
-    
-      <category term="markdown" scheme="http://blog.54yongf.com/tags/markdown/"/>
     
       <category term="七牛" scheme="http://blog.54yongf.com/tags/%E4%B8%83%E7%89%9B/"/>
     

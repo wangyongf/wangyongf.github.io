@@ -92,6 +92,95 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/11/30/27/" title="浅谈使用Android Studio进行Android Tests（单元测试）" itemprop="url">浅谈使用Android Studio进行Android Tests（单元测试）</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-30T10:59:17.000Z" itemprop="datePublished">
+      发布于2015-11-30 18:59:17，更新于2015-11-30 20:37:25 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
+    </time>
+
+  </p>
+</header>
+
+    <div class="article-content">
+        
+        <h2 id="声明">声明</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</font></p>
+<h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
+<ol>
+<li>选择顶部工具栏Run–&gt;Edit Configuration<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_190934.png" alt="先编辑测试选项"></li>
+<li>选择Default–&gt;Android Tests，我的配置如下图，当然，也可以根据自己的需要自行设置<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191303.png" alt="自行设置"></li>
+<li>在Project中找到ApplicationTest:app–&gt;src–&gt;androidTest–&gt;java–&gt;包名–&gt;ApplicationTest，打开之<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191517.png" alt="测试文件"></li>
+<li><p>打开之后，它长这样（这些都是自动生成的）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yongf.sqlitedemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Application;</span><br><span class="line"><span class="keyword">import</span> android.test.ApplicationTestCase;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.yongf.sqlitedemo.db.PersonSQLiteOpenHelper;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * &lt;a href="http://d.android.com/tools/testing/testing_android.html"&gt;Testing Fundamentals&lt;/a&gt;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationTest</span> <span class="keyword">extends</span> <span class="title">ApplicationTestCase</span>&lt;<span class="title">Application</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApplicationTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(Application.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在ApplicationTest中新建自己的测试函数，<strong><font color="red">注意！测试的入口函数的函数名必须为test开头</font></strong>。我加了几行测试代码，加完之后，它长这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yongf.sqlitedemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Application;</span><br><span class="line"><span class="keyword">import</span> android.test.ApplicationTestCase;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.yongf.sqlitedemo.db.PersonSQLiteOpenHelper;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * &lt;a href="http://d.android.com/tools/testing/testing_android.html"&gt;Testing Fundamentals&lt;/a&gt;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationTest</span> <span class="keyword">extends</span> <span class="title">ApplicationTestCase</span>&lt;<span class="title">Application</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApplicationTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(Application.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assertEquals(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>test函数中为测试代码，<code>assertEquals(1, 3)</code>这句显然有问题，我们的任务就是，在Android Tests中发现这个错误。</p>
+</li>
+<li>右键app，选择Run All Tests，或者用快捷键Ctrl+Shift+F10。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192801.png" alt="Run Tests"></li>
+<li>选择模拟器，然后OK。等一会儿<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192953.png" alt="选择模拟器"></li>
+<li><p>点击下方的Run工具栏，选择test()，窗口中就会打印出错信息了，我这里肯定错了，因为1!=3，错误信息如下：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Running tests</span><br><span class="line">Test running started</span><br><span class="line">junit<span class="class">.framework</span><span class="class">.AssertionFailedError</span>: expected:&lt;<span class="number">1</span>&gt; but was:&lt;<span class="number">3</span>&gt;</span><br><span class="line">at com<span class="class">.yongf</span><span class="class">.sqlitedemo</span><span class="class">.ApplicationTest</span><span class="class">.test</span>(ApplicationTest<span class="class">.java</span>:<span class="number">19</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.AndroidTestRunner</span><span class="class">.runTest</span>(AndroidTestRunner<span class="class">.java</span>:<span class="number">191</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.AndroidTestRunner</span><span class="class">.runTest</span>(AndroidTestRunner<span class="class">.java</span>:<span class="number">176</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.InstrumentationTestRunner</span><span class="class">.onStart</span>(InstrumentationTestRunner<span class="class">.java</span>:<span class="number">555</span>)</span><br><span class="line">at android<span class="class">.app</span><span class="class">.Instrumentation</span><span class="variable">$InstrumentationThread</span>.<span class="function"><span class="title">run</span><span class="params">(Instrumentation.java:<span class="number">1879</span>)</span></span></span><br><span class="line"></span><br><span class="line">Finish</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从错误信息中，可以轻松定位到出错的位置。如果Test没问题，就会显示Test Passed。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193310.png" alt="打印出错信息"></p>
+</li>
+</ol>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193237.png" alt="打印出错信息"></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android开发/">Android开发</a><a href="/tags/单元测试/">单元测试</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/11/30/27/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/11/30/27/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/11/28/26/" title="No26-【原】Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]" itemprop="url">No26-【原】Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]</a>
   </h1>
   <p class="article-author">By
@@ -703,73 +792,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/11/15/17/" title="No17-【原】以后就是模板之家了" itemprop="url">No17-【原】以后就是模板之家了</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-15T15:45:50.000Z" itemprop="datePublished">
-      发布于2015-11-15 23:45:50，更新于2015-11-15 23:45:50 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="感概">感概</h2><p><font size=4><br>最近，我在做网站，一直在找模版，但是，你懂得，很多模板都要收费的，看着这么精美的模板不可得，多么得遗憾。但是刚才找到了一个网站–<a href="http://www.cssmoban.com/" title="模板之家">模板之家</a>，里面太多的模板，各种各样的，真的十分感谢，也推荐一下，只希望这个网站能长期存在，那就再好不过了。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/11/15/17/#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Web/">Web</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/模版/">模版</a><a href="/tags/网站/">网站</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/11/15/17/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/11/15/17/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -824,7 +846,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Android开发/" title="Android开发">Android开发<sup>4</sup></a></li>
+			<li><a href="/categories/Android开发/" title="Android开发">Android开发<sup>5</sup></a></li>
 		  
 		
 		  
@@ -893,7 +915,7 @@
 			
 		
 			
-				<li><a href="/tags/Android开发/" title="Android开发">Android开发<sup>3</sup></a></li>
+				<li><a href="/tags/Android开发/" title="Android开发">Android开发<sup>4</sup></a></li>
 			
 		
 			
@@ -929,15 +951,19 @@
 			
 		
 			
-				<li><a href="/tags/博客自定义/" title="博客自定义">博客自定义<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Android-Studio/" title="Android Studio">Android Studio<sup>1</sup></a></li>
+				<li><a href="/tags/qt-creator/" title="qt creator">qt creator<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/单元测试/" title="单元测试">单元测试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Android-Studio/" title="Android Studio">Android Studio<sup>1</sup></a></li>
 			
 		
 			
@@ -964,10 +990,6 @@
 				<li><a href="/tags/软件/" title="软件">软件<sup>1</sup></a></li>
 			
 		
-			
-				<li><a href="/tags/小工具/" title="小工具">小工具<sup>1</sup></a></li>
-			
-		
 		</ul>
 </div>
 
@@ -976,7 +998,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Android-SDK/" style="font-size: 13.33px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 16.67px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/VMware/" style="font-size: 13.33px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/七牛/" style="font-size: 13.33px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 13.33px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 13.33px;">感受</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/杂谈/" style="font-size: 16.67px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 13.33px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 13.33px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 17.5px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/杂谈/" style="font-size: 15px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
   </div>
 
