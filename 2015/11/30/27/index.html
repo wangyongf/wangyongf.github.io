@@ -1,266 +1,130 @@
 
-
-<!DOCTYPE HTML>
-<html>
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>浅谈使用Android Studio进行Android Tests（单元测试） | Scott Wang&#39;s blog</title>
-  <meta name="author" content="王用">
-  
-  <meta name="description" content="车到山前必有路。我是王用@Scott Wang，我在这里分享技术心得，学习体会，偶尔也谈谈人生。">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>浅谈使用Android Studio进行Android Tests（单元测试） | Scott Wang&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="王用">
+    
 
-  <meta property="og:title" content="浅谈使用Android Studio进行Android Tests（单元测试）"/>
-  <meta property="og:site_name" content="Scott Wang&#39;s blog"/>
+    
+    <meta name="description" content="声明本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。
+Android TestsAS新建项目时，自动生成了Test类，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈使用Android Studio进行Android Tests（单元测试）">
+<meta property="og:url" content="http://blog.54yongf.com/2015/11/30/27/index.html">
+<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:description" content="声明本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。
+Android TestsAS新建项目时，自动生成了Test类，">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_190934.png">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191303.png">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191517.png">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192801.png">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192953.png">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193310.png">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193237.png">
+<meta property="og:updated_time" content="2015-11-30T12:37:25.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈使用Android Studio进行Android Tests（单元测试）">
+<meta name="twitter:description" content="声明本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。
+Android TestsAS新建项目时，自动生成了Test类，">
+<link rel="publisher" href="103252988093400142507">
 
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="http://blog.54yongf.com/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
-
-  
-
-  <meta name="ujianVerification" content="5504a1c7921d87615d0c25e0f4775e2f" />
-  <meta name="baidu-site-verification" content="OonwDT7eH8" />
-  <meta baidu-gxt-verify-token="bea566fb69b011ed36e2d5884e8bdc6a">
+    
+    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman2.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
+<a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
-<script>
-(function(){
-    var bp = document.createElement('script');
-    bp.src = '//push.zhanzhang.baidu.com/push.js';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','sPVUS3ZopWQess3-qugj','2.0.0');
 </script>
 
-
-
-<a href="https://github.com/wangyongf"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on Github"></a>
-
-<body>
-  <header id="header" class="inner">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?ca2ba806d2e57e48036c980865cbdf22";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-<div class="alignleft">
-  <h1><a href="/">Scott Wang&#39;s blog</a></h1>
-  <h2><a href="/">车到山前必有路</a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">首页</a></li>
-    
-      <li><a href="/archives">归档</a></li>
-    
-      <li><a href="/about">关于</a></li>
-    
-      <li><a href="/tools">工具</a></li>
-    
-	<li> <a href="/atom.xml">RSS</a> </li>
-<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
-	function c() {
-		var e = document.createElement("link");
-		e.setAttribute("type", "text/css");
-		e.setAttribute("rel", "stylesheet");
-		e.setAttribute("href", f);
-		e.setAttribute("class", l);
-		document.body.appendChild(e)
-	}
-
-	function h() {
-		var e = document.getElementsByClassName(l);
-		for (var t = 0; t < e.length; t++) {
-			document.body.removeChild(e[t])
-		}
-	}
-
-	function p() {
-		var e = document.createElement("div");
-		e.setAttribute("class", a);
-		document.body.appendChild(e);
-		setTimeout(function() {
-			document.body.removeChild(e)
-		}, 100)
-	}
-
-	function d(e) {
-		return {
-			height : e.offsetHeight,
-			width : e.offsetWidth
-		}
-	}
-
-	function v(i) {
-		var s = d(i);
-		return s.height > e && s.height < n && s.width > t && s.width < r
-	}
-
-	function m(e) {
-		var t = e;
-		var n = 0;
-		while (!!t) {
-			n += t.offsetTop;
-			t = t.offsetParent
-		}
-		return n
-	}
-
-	function g() {
-		var e = document.documentElement;
-		if (!!window.innerWidth) {
-			return window.innerHeight
-		} else if (e && !isNaN(e.clientHeight)) {
-			return e.clientHeight
-		}
-		return 0
-	}
-
-	function y() {
-		if (window.pageYOffset) {
-			return window.pageYOffset
-		}
-		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-	}
-
-	function E(e) {
-		var t = m(e);
-		return t >= w && t <= b + w
-	}
-
-	function S() {
-		var e = document.createElement("audio");
-		e.setAttribute("class", l);
-		e.src = i;
-		e.loop = false;
-		e.addEventListener("canplay", function() {
-			setTimeout(function() {
-				x(k)
-			}, 500);
-			setTimeout(function() {
-				N();
-				p();
-				for (var e = 0; e < O.length; e++) {
-					T(O[e])
-				}
-			}, 15500)
-		}, true);
-		e.addEventListener("ended", function() {
-			N();
-			h()
-		}, true);
-		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-		document.body.appendChild(e);
-		e.play()
-	}
-
-	function x(e) {
-		e.className += " " + s + " " + o
-	}
-
-	function T(e) {
-		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-	}
-
-	function N() {
-		var e = document.getElementsByClassName(s);
-		var t = new RegExp("\\b" + s + "\\b");
-		for (var n = 0; n < e.length; ) {
-			e[n].className = e[n].className.replace(t, "")
-		}
-	}
-
-	var e = 30;
-	var t = 30;
-	var n = 350;
-	var r = 350;
-	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-	var s = "mw-harlem_shake_me";
-	var o = "im_first";
-	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-	var a = "mw-strobe_light";
-	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-	var l = "mw_added_css";
-	var b = g();
-	var w = y();
-	var C = document.getElementsByTagName("*");
-	var k = null;
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			if (E(A)) {
-				k = A;
-				break
-			}
-		}
-	}
-	if (A === null) {
-		console.warn("Could not find a node of the right size. Please try a different page.");
-		return
-	}
-	c();
-	S();
-	var O = [];
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			O.push(A)
-		}
-	}
-})()    '>High一下</a> </li>
-
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div>
-</header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
+  <body>
     <header>
       
-        <div class="icon"></div>
-        <time datetime="2015-11-30T10:59:17.000Z"><a href="/2015/11/30/27/">2015-11-30 18:59:17</a></time>
-      
-      
-  
-    <h1 class="title">浅谈使用Android Studio进行Android Tests（单元测试）</h1>
-  
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
+				<h2 class="blog-motto">车到山前必有路</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">文章归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="" target="_blank">
+							<label>Search</label>
+						<input type="text" name="q" class="st-default-search-input" size="50" placeholder="搜索我的博客"><br>
+						</form>
+					
+					</li>
+				</ul>
+			</nav>
+</div>
 
     </header>
-    <div class="entry">
-      
-        <h2 id="声明">声明</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</font></p>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody">
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/30/27/" title="浅谈使用Android Studio进行Android Tests（单元测试）" itemprop="url">浅谈使用Android Studio进行Android Tests（单元测试）</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-30T10:59:17.000Z" itemprop="datePublished">
+      发布于2015-11-30 18:59:17，更新于2015-11-30 20:37:25 <span class="ds-thread-count" data-thread-key="2015/11/30/27/" data-count-type="comments"></span>
+    </time>
+
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#声明"><span class="toc-number">1.</span> <span class="toc-text">声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_Tests"><span class="toc-number">2.</span> <span class="toc-text">Android Tests</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="声明">声明</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</font></p>
 <h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
 <ol>
 <li>选择顶部工具栏Run–&gt;Edit Configuration<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_190934.png" alt="先编辑测试选项"></li>
@@ -285,71 +149,73 @@ var _hmt = _hmt || [];
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193237.png" alt="打印出错信息"></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
-      
-    </div>
-    <footer>
-      
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
 
-
-        
-  
-  <div class="categories">
-    <a href="/categories/Android开发/">Android开发</a>
-  </div>
-
-        
-  
-  <div class="tags">
-    <a href="/tags/Android开发/">Android开发</a>, <a href="/tags/单元测试/">单元测试</a>
-  </div>
-
-<!-- Baidu Button BEGIN -->
-<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
-<a class="bds_qzone"></a>
-<a class="bds_tsina"></a>
-<a class="bds_tqq"></a>
-<a class="bds_renren"></a>
-<a class="bds_t163"></a>
-<span class="bds_more"></span>
-<a class="shareCount"></a>
-</div>
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
-<script type="text/javascript" id="bdshell_js"></script>
-<div>
-<script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
-</script>
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
 </div>
 
-<section>
-</section>
 
-<!-- Baidu Button END -->      
-
-
-
-
-
-      <div class="clearfix"></div>
-    </footer>
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android开发/">Android开发</a><a href="/tags/单元测试/">单元测试</a>
   </div>
-</article>
+
+</div>
 
 
 
-<section id="protocol">
-<div class="copyright" style="font-size:14px;font-weight:bold">
-  <p><span>　　　本文标题：</span><a href="/2015/11/30/27/">浅谈使用Android Studio进行Android Tests（单元测试）</a></p>
-  <p><span>　　　文章作者：</span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p><span>　　　发布时间：</span>Mon Nov 30 2015 18:59:17 GMT+0800</p>
-  <p>
-    <span>　　　原始链接：</span><a href="/2015/11/30/27/" title="浅谈使用Android Studio进行Android Tests（单元测试）">http://blog.54yongf.com/2015/11/30/27/</a>
+	<div class="article-share" id="share">
+	
+	<div class="share-jiathis">
+	  
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_googleplus"></a>
+	<a class="jiathis_button_douban"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+     ralateuid:{"tsina":"2902237231"},hideMore:false}
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+1059613472" charset="utf-8"></script>      
+
+	 </div>
+	
+	</div>
+
+
+</footer>
+
+
+	</article>
+	<script src="/js/clipboard.min.js"></script>
+
+<div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2015/11/30/27/">浅谈使用Android Studio进行Android Tests（单元测试）</a></p>
+  <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-30 18:59:17</font</p>
+  <p align="left">
+    <span><font color="black">　　原始链接：</font></span><a href="/2015/11/30/27/" title="浅谈使用Android Studio进行Android Tests（单元测试）">http://blog.54yongf.com/2015/11/30/27/</a>
     <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/11/30/27/" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
-  <p><span>　　　许可协议：</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">“署名-非商用-相同方式共享 3.0”</a> 转载请保留原文链接及作者。</p>
-  <script src="/js/clipboard.min.js"></script>
+  <p align="left"><span><font color="black">　　许可协议：</font></span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p><br/>
   <script> var clipboard = new Clipboard('.btn'); </script>
 </div>
 <style type="text/css">
@@ -357,8 +223,8 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
     margin-left: 1em;
   }
   .copyright:hover p .btn::after {
-    content: "点击复制";
-    color: red;
+    content: "点击复制(Chrome)";
+    color: "#2CA6CB";
   }
   .copyright p .btn:hover {
       color: gray;
@@ -366,144 +232,454 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
     };
 </style>
 
-</section>
+	
+<nav class="article-nav clearfix">
+ 
 
- <nav id="pagination" >
-    
-    
-    <a href="/2015/11/28/26/" class="alignright next" >下一页</a>
-    
-    <div class="clearfix"></div>
+<div class="next">
+<a href="/2015/11/28/26/"  title="No26-【原】Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]">
+ <strong>下一篇：</strong><br/> 
+ <span>No26-【原】Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]
+</span>
+</a>
+</div>
+
 </nav>
 
-<section id="comment">
-
-<!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"blog-54yongf"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- Duoshuo Comment END -->
-
-
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/11/30/27/" data-title="浅谈使用Android Studio进行Android Tests（单元测试）" data-url="http://blog.54yongf.com/2015/11/30/27/"></div>
 </section>
 
 
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:blog.54yongf.com">
-  </form>
+
 </div>
 
-<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=310717869449282566' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
-
-  <div class="widget tag">
-<h3 class="title">简介</h3>
-<ul class="entry">
-<li>姓名：王用</li>
-<li>化名：yongf | Scott Wang</li>
-<li>性别：男</li>
-<li>爱好：女</li>
-<li>现状：魔都CS在读本科生，大三</li>
-<li>想交友的朋友请<a href="http:blog.54yongf.com/about">联系我</a>！</li>
-<li>QQ ：1059613472</li>
-<li>一句话：<font color="red">我不是咸鱼！</font></li>
-</ul>
-</div>
-
-
-
-  
-<div class="widget tag">
-  <h3 class="title">分类</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/Android开发/">Android开发</a><small>5</small></li>
-  
-    <li><a href="/categories/Software/">Software</a><small>1</small></li>
-  
-    <li><a href="/categories/VMware/">VMware</a><small>1</small></li>
-  
-    <li><a href="/categories/Visual-Studio插件系列/">Visual Studio插件系列</a><small>1</small></li>
-  
-    <li><a href="/categories/Web/">Web</a><small>1</small></li>
-  
-    <li><a href="/categories/hexo/">hexo</a><small>8</small></li>
-  
-    <li><a href="/categories/qt/">qt</a><small>1</small></li>
-  
-    <li><a href="/categories/杂谈/">杂谈</a><small>4</small></li>
-  
-    <li><a href="/categories/测试案例/">测试案例</a><small>1</small></li>
-  
-    <li><a href="/categories/网络/">网络</a><small>1</small></li>
-  
-    <li><a href="/categories/虚拟化/">虚拟化</a><small>1</small></li>
-  
-    <li><a href="/categories/虚拟机/">虚拟机</a><small>1</small></li>
-  
-    <li><a href="/categories/计算机组成原理/">计算机组成原理</a><small>1</small></li>
-  
-    <li><a href="/categories/资源/">资源</a><small>1</small></li>
-  
-  </ul>
-</div>
-
-
-  
-<div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
-  <div class="entry">
-    <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 17.5px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/杂谈/" style="font-size: 15px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
+ 
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#声明"><span class="toc-number">1.</span> <span class="toc-text">声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_Tests"><span class="toc-number">2.</span> <span class="toc-text">Android Tests</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ 
   </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div class="closeaside help-button" >
+    <a title="显示文章目录TOC">文章目录TOC</a>
 </div>
 
 
-  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=3&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2902237231&verifier=94ab9e5a&dpc=1"></iframe>
+
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="wangyongf" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
 
 
 
-  <div class="widget tag">
-<h3 class="title">访问量</h3>
-<ul class="entry">
-<li>本站总访问量：<span id="busuanzi_value_site_pv"></span>次</li>
-<li>本站访客数：<span id="busuanzi_value_site_uv"></span>人次</li>
-<li>本页总阅读量：<span id="busuanzi_value_page_pv"></span>次</li>
-</ul>
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="intro">
+  <p class="asidetitle">个人简介</p>
+    <ul class="entry">
+    <li>姓名：王用</li>
+    <li>化名：yongf | Scott Wang</li>
+    <li>性别：男</li>
+    <li>爱好：女</li>
+    <li>现状：魔都CS在读本科生，大三</li>
+    <li>想交友的朋友请<a href="http:blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
+    <li>QQ ：1059613472</li>
+    <li>邮箱：ScottWang1996@gmail.com</li>
+    <li>一句话：<font color="red">我不是咸鱼！</font></li>
+    </ul>
 </div>
 
 
-  <div class="widget tag">
-<h3 class="title">友情链接</h3>
-<ul class="entry">
-<li><a href="http://zipperary.com/" title="Zippera's Blog">Zippera</a></li>
-</ul>
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android开发/" title="Android开发">Android开发<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Software/" title="Software">Software<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/VMware/" title="VMware">VMware<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Visual-Studio插件系列/" title="Visual Studio插件系列">Visual Studio插件系列<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Web/" title="Web">Web<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/hexo/" title="hexo">hexo<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/qt/" title="qt">qt<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/测试案例/" title="测试案例">测试案例<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/网络/" title="网络">网络<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/虚拟化/" title="虚拟化">虚拟化<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/虚拟机/" title="虚拟机">虚拟机<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/计算机组成原理/" title="计算机组成原理">计算机组成原理<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/资源/" title="资源">资源<sup>1</sup></a></li>
+		  
+		
+		</ul>
 </div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Android开发/" title="Android开发">Android开发<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/七牛/" title="七牛">七牛<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/感受/" title="感受">感受<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/虚拟机/" title="虚拟机">虚拟机<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Android-SDK/" title="Android SDK">Android SDK<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻墙/" title="翻墙">翻墙<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/人生/" title="人生">人生<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/VMware/" title="VMware">VMware<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/qt-creator/" title="qt creator">qt creator<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/单元测试/" title="单元测试">单元测试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Android-Studio/" title="Android Studio">Android Studio<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/虚拟化/" title="虚拟化">虚拟化<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Mac-OS-X/" title="Mac OS X">Mac OS X<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo主题/" title="hexo主题">hexo主题<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/小米/" title="小米">小米<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/调试/" title="调试">调试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/软件/" title="软件">软件<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 17.5px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/杂谈/" style="font-size: 15px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+    </div>
+  </div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+
+    <iframe width="100%" height="350" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=1&ptype=1&speed=0&skin=3&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2902237231&verifier=94ab9e5a&dpc=1"></iframe>
+</div>
+
+
+  <div class="pageview">
+    <p class="asidetitle">阅读量</p><br/>
+    本站总访问：<span id="busuanzi_value_site_pv"></span>次<br/>
+    本站访客数：<span id="busuanzi_value_site_uv"></span>人次<br/>
+    本文总阅读：<span id="busuanzi_value_page_pv"></span>次<br/><br/>
+</div>
+
+
+  <div class="top-article">
+  <p class="asidetitle">每周热文</p>
+    <ul  class="ds-top-threads" data-range="weekly" data-num-items="5"></ul>
+</div>
+
+
+  
+
+
+  <div class="recent-visitors">
+  <p class="asidetitle">最近访客</p>
+    <ul class="ds-recent-visitors" data-num-items="10"></ul>
+</div>
+
+
+  <div class="recent-comment">
+  <p class="asidetitle">最新吐槽</p>
+    <ul class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-admin="1" data-excerpt-length="70"></ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.54yongf.com" target="_blank" title="我的个人网站">54yongf</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="wuchong大神的个人博客jacman主题来自于此">Jark&#39;s Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://zipperary.com/" target="_blank" title="Zipperary大森的博客，我博客的上一个主题就是从这里得到启发的">Zipperary&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
 </aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><section>
-Theme of <a href="https://github.com/zippera/lightum">Lightum</a>, Improved from <a href="https://github.com/hexojs/hexo-theme-light">Light</a>, by <a href="/">Scott Wang</a>
-</section>
-<div class="clearfix"></div>
+</div>
+
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hey, it&#39;s yongf.  <br/>
+			This is my blog, welcome!</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+		
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015
+		
+		<a href="/about" target="_blank" title="王用">王用</a>
+		
+
+		</p>
+</div>
+
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 </footer>
-  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize();
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+      
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"blog-54yongf"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
 
 
 
@@ -511,12 +687,49 @@ Theme of <a href="https://github.com/zippera/lightum">Lightum</a>, Improved from
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
 </script>
 
 
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fca2ba806d2e57e48036c980865cbdf22' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
@@ -547,8 +760,13 @@ Theme of <a href="https://github.com/zippera/lightum">Lightum</a>, Improved from
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-</body>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
 </html>
-
-
-
