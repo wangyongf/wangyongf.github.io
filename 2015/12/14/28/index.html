@@ -4,24 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源 | Scott Wang&#39;s blog</title>
+    <title>No28-【转】再谈C语言函数实现交换两个数的值--包你懂！ | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="王用">
     
 
     
-    <meta name="description" content="烦恼学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。">
+    <meta name="description" content="摘要　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源">
-<meta property="og:url" content="http://blog.54yongf.com/2015/11/24/24/index.html">
+<meta property="og:title" content="No28-【转】再谈C语言函数实现交换两个数的值--包你懂！">
+<meta property="og:url" content="http://blog.54yongf.com/2015/12/14/28/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="烦恼学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_140914.png">
-<meta property="og:updated_time" content="2015-11-24T05:49:00.000Z">
+<meta property="og:description" content="摘要　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。">
+<meta property="og:updated_time" content="2015-12-14T08:44:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源">
-<meta name="twitter:description" content="烦恼学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。">
+<meta name="twitter:title" content="No28-【转】再谈C语言函数实现交换两个数的值--包你懂！">
+<meta name="twitter:description" content="摘要　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -92,15 +91,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/24/24/" title="No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源" itemprop="url">No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源</a>
+      <a href="/2015/12/14/28/" title="No28-【转】再谈C语言函数实现交换两个数的值--包你懂！" itemprop="url">No28-【转】再谈C语言函数实现交换两个数的值--包你懂！</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-24T05:49:00.000Z" itemprop="datePublished">
-      发布于2015-11-24 13:49:00，更新于2015-11-24 13:49:00 <span class="ds-thread-count" data-thread-key="2015/11/24/24/" data-count-type="comments"></span>
+    <time datetime="2015-12-14T08:44:57.000Z" itemprop="datePublished">
+      发布于2015-12-14 16:44:57，更新于2015-12-14 16:44:57 <span class="ds-thread-count" data-thread-key="2015/12/14/28/" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -111,52 +110,33 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#烦恼"><span class="toc-number">1.</span> <span class="toc-text">烦恼</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_SDK_在线更新镜像服务器资源"><span class="toc-number">2.</span> <span class="toc-text">Android SDK 在线更新镜像服务器资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">3.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一点推荐"><span class="toc-number">4.</span> <span class="toc-text">一点推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-number">5.</span> <span class="toc-text">最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">6.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出"><span class="toc-number">3.</span> <span class="toc-text">输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">4.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="烦恼">烦恼</h2><p><font size="4"><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。</font></p>
+		<h2 id="摘要">摘要</h2><p><font size="4"><br>　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。</font></p>
 <a id="more"></a>
-<h2 id="Android_SDK_在线更新镜像服务器资源">Android SDK 在线更新镜像服务器资源</h2><font size="4"> 
+<h2 id="代码">代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">     </span><br><span class="line">    temp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_with_pt</span><span class="params">(<span class="keyword">int</span> * x,<span class="keyword">int</span> * y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">     </span><br><span class="line">    temp = *x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap_with_pt: x = %d,y = %d\n"</span>,*x,*y);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>,y = <span class="number">10</span>;</span><br><span class="line">     </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap(x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"-------------------------------\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap_with_pt(&amp;x,&amp;y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="输出">输出</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Before swap: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">In swap: x = <span class="number">10</span>,y = <span class="number">5</span></span><br><span class="line">After swap: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">---------------------------------</span><br><span class="line">Before swap_with_pt: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">In swap_with_pt: x =<span class="number">10</span>,y = <span class="number">5</span></span><br><span class="line">After swap_with_pt: x = <span class="number">10</span>,y = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h2 id="解释">解释</h2><p><font size="4"><br>　　swap函数调用时首先创建x，y的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap函数里有意义），并将main函数中x，y的值传给变量x2，y2，然后函数交换了x2，y2的值，运行完函数后x2，y2变量生命期结束。所以，x和y的值是不变的。            </font></p>
+<font size="4">
 
-<ul>
-<li><p>大连东软信息学院镜像服务器地址:<br><a href="http://mirrors.neusoft.edu.cn" target="_blank" rel="external">http://mirrors.neusoft.edu.cn</a> 端口：80</p>
-</li>
-<li><p>北京化工大学镜像服务器地址:<br>IPv4: <a href="http://ubuntu.buct.edu.cn/" target="_blank" rel="external">http://ubuntu.buct.edu.cn/</a> 端口：80<br>IPv4: <a href="http://ubuntu.buct.cn/" target="_blank" rel="external">http://ubuntu.buct.cn/</a> 端口：80<br>IPv6: <a href="http://ubuntu.buct6.edu.cn/" target="_blank" rel="external">http://ubuntu.buct6.edu.cn/</a> 端口：80</p>
-</li>
-<li>上海GDG镜像服务器地址:<br><a href="http://sdk.gdgshanghai.com" target="_blank" rel="external">http://sdk.gdgshanghai.com</a> 端口：8000</li>
-<li>中国科学院开源协会镜像站地址:<br>IPV4/IPV6: <a href="http://mirrors.opencas.cn" target="_blank" rel="external">http://mirrors.opencas.cn</a> 端口：80<br>IPV4/IPV6: <a href="http://mirrors.opencas.org" target="_blank" rel="external">http://mirrors.opencas.org</a> 端口：80<br>IPV4/IPV6: <a href="http://mirrors.opencas.ac.cn" target="_blank" rel="external">http://mirrors.opencas.ac.cn</a> 端口：80</li>
-<li>腾讯Bugly 镜像:<br><a href="http://android-mirror.bugly.qq.com" target="_blank" rel="external">http://android-mirror.bugly.qq.com</a> 端口：8080</li>
-<li>腾讯镜像使用方法:<br><a href="http://android-mirror.bugly.qq.com:8080/include/usage.html" target="_blank" rel="external">http://android-mirror.bugly.qq.com:8080/include/usage.html</a></li>
-</ul>
-<h2 id="使用方法">使用方法</h2><p><font size="4"><br>先上图：</font></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_140914.png" alt="详细设置"></p>
-<ol>
-<li>启动 Android SDK Manager ，打开主界面，依次选择『Tools』、『Options…』，弹出『Android SDK Manager - Settings』窗口；</li>
-<li>在『Android SDK Manager - Settings』窗口中，在『HTTP Proxy Server」和「HTTP Proxy Port』输入框内填入上面镜像服务器地址和端口，并且选中『Force https://… sources to be fetched using <a href="http://...』复选框。设置完成后单击『Close』按钮关闭『Android" target="_blank" rel="external">http://...』复选框。设置完成后单击『Close』按钮关闭『Android</a> SDK Manager - Settings』窗口返回到主界面；</li>
-<li>依次选择『Packages』、『Reload』。 </li>
-</ol>
-<h2 id="一点推荐">一点推荐</h2><font size="4">
-
-<ul>
-<li>推荐一个Android SDK,Android-Studio相关的网站<br><a href="http://tools.android-studio.org/" target="_blank" rel="external">http://tools.android-studio.org/</a><br><a href="http://www.android-studio.org/" target="_blank" rel="external">http://www.android-studio.org/</a><br>至于里边到底有啥，自己去看吧</li>
-</ul>
-<h2 id="最后">最后</h2><p><font size="4"><br>不同地区，不同网络，访问速度也不同，比如我的这个电信的校园网，用东软这个很快。所以，如果用某个镜像很慢，那就换一个试试，也许就起飞了呢 :)</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-</font></font>
+<p>　　swap_with_pt函数调用时同样创建x，y的指针的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap_with_pt函数里有意义），并将x，y的地址值传给x2，y2，这个时候x2和y2是指向main函数中x，y的，然后通过<em>运算修改x，y的值。注意，“</em>+指针名”是可以改变它所指向的变量的值的。</p>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+</font>
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
+  <a class="article-category-link" href="/categories/C语言/">C语言</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Android-SDK/">Android SDK</a><a href="/tags/Android开发/">Android开发</a><a href="/tags/翻墙/">翻墙</a>
+  <span></span> <a href="/tags/C语言/">C语言</a><a href="/tags/指针/">指针</a>
   </div>
 
 </div>
@@ -201,12 +181,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2015/11/24/24/">No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2015/12/14/28/">No28-【转】再谈C语言函数实现交换两个数的值--包你懂！</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-24 13:49:00</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-12-14 16:44:57</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/2015/11/24/24/" title="No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源">http://blog.54yongf.com/2015/11/24/24/</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/11/24/24/" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/2015/12/14/28/" title="No28-【转】再谈C语言函数实现交换两个数的值--包你懂！">http://blog.54yongf.com/2015/12/14/28/</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/12/14/28/" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -230,19 +210,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/11/28/25/" title="No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/11/24/23/"  title="No23-【原】SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿">
+<a href="/2015/11/30/27/"  title="浅谈使用Android Studio进行Android Tests（单元测试）">
  <strong>下一篇：</strong><br/> 
- <span>No23-【原】SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿
+ <span>浅谈使用Android Studio进行Android Tests（单元测试）
 </span>
 </a>
 </div>
@@ -251,7 +223,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/11/24/24/" data-title="No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源" data-url="http://blog.54yongf.com/2015/11/24/24/"></div>
+	<div class="ds-thread" data-thread-key="2015/12/14/28/" data-title="No28-【转】再谈C语言函数实现交换两个数的值--包你懂！" data-url="http://blog.54yongf.com/2015/12/14/28/"></div>
 </section>
 
 
@@ -263,7 +235,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#烦恼"><span class="toc-number">1.</span> <span class="toc-text">烦恼</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_SDK_在线更新镜像服务器资源"><span class="toc-number">2.</span> <span class="toc-text">Android SDK 在线更新镜像服务器资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">3.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一点推荐"><span class="toc-number">4.</span> <span class="toc-text">一点推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-number">5.</span> <span class="toc-text">最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">6.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出"><span class="toc-number">3.</span> <span class="toc-text">输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">4.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 

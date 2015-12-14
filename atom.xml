@@ -4,7 +4,7 @@
   <subtitle><![CDATA[车到山前必有路]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-11-30T12:37:25.008Z</updated>
+  <updated>2015-12-14T08:44:57.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No28-【转】再谈C语言函数实现交换两个数的值--包你懂！]]></title>
+    <link href="http://blog.54yongf.com/2015/12/14/28/"/>
+    <id>http://blog.54yongf.com/2015/12/14/28/</id>
+    <published>2015-12-14T08:44:57.000Z</published>
+    <updated>2015-12-14T08:44:57.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。</font></p>
+<a id="more"></a>
+<h2 id="代码">代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">     </span><br><span class="line">    temp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_with_pt</span><span class="params">(<span class="keyword">int</span> * x,<span class="keyword">int</span> * y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">     </span><br><span class="line">    temp = *x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap_with_pt: x = %d,y = %d\n"</span>,*x,*y);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>,y = <span class="number">10</span>;</span><br><span class="line">     </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap(x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"-------------------------------\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap_with_pt(&amp;x,&amp;y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="输出">输出</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Before swap: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">In swap: x = <span class="number">10</span>,y = <span class="number">5</span></span><br><span class="line">After swap: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">---------------------------------</span><br><span class="line">Before swap_with_pt: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">In swap_with_pt: x =<span class="number">10</span>,y = <span class="number">5</span></span><br><span class="line">After swap_with_pt: x = <span class="number">10</span>,y = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h2 id="解释">解释</h2><p><font size="4"><br>　　swap函数调用时首先创建x，y的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap函数里有意义），并将main函数中x，y的值传给变量x2，y2，然后函数交换了x2，y2的值，运行完函数后x2，y2变量生命期结束。所以，x和y的值是不变的。            </font></p>
+<font size="4">
+
+<p>　　swap_with_pt函数调用时同样创建x，y的指针的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap_with_pt函数里有意义），并将x，y的地址值传给x2，y2，这个时候x2和y2是指向main函数中x，y的，然后通过<em>运算修改x，y的值。注意，“</em>+指针名”是可以改变它所指向的变量的值的。</p>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+</font>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="摘要">摘要</h2><p><font size=4><br>　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。</p>]]>
+    
+    </summary>
+    
+      <category term="C语言" scheme="http://blog.54yongf.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="指针" scheme="http://blog.54yongf.com/tags/%E6%8C%87%E9%92%88/"/>
+    
+      <category term="C语言" scheme="http://blog.54yongf.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[浅谈使用Android Studio进行Android Tests（单元测试）]]></title>
@@ -776,41 +805,6 @@
       <category term="虚拟机" scheme="http://blog.54yongf.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
       <category term="VMware" scheme="http://blog.54yongf.com/categories/VMware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【原】No8-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图]]></title>
-    <link href="http://blog.54yongf.com/2015/11/12/8/"/>
-    <id>http://blog.54yongf.com/2015/11/12/8/</id>
-    <published>2015-11-12T12:09:10.000Z</published>
-    <updated>2015-11-12T12:09:10.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="开始使用七牛云储存">开始使用七牛云储存</h2><p><font size="4">现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。</font></p>
-<a id="more"></a>
-<h2 id="步骤">步骤</h2><p><font size="4"></font></p>
-<ol>
-<li><p>登录七牛，进入后台管理界面，选择一个已有的空间。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_202745.png" alt="登录七牛云储存"></p>
-</li>
-<li><p>点击进入<code>数据处理</code>，然后<code>新建图片样式</code>。（可以看到有一个图片保护的设置）<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_202933.png" alt="新建图片样式"></p>
-</li>
-<li><p>之后，进入<code>图片样式设置界面</code>，尽情个性化吧。还可以设置水印哦。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_203031.png" alt="设置图片样式等"></p>
-</li>
-</ol>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_203045.png" alt="设置水印"></p>
-<h2 id="如何引用带样式的图片">如何引用带样式的图片</h2><p><font size="4">在得到一个样式之后，会有一段字符串。形如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205134.png" alt="图片样式"></font></p>
-<p><font size="4">在图中的样式之后的字符串，就是代表着这个样式。<br>使用图片时，我们是引用图片的外链：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205150.png" alt="外链"><br>那么，如何应用这个样式呢？很简单，在外链之后加一个<code>？</code>，然后再加上<code>样式</code>这段字符串。举个栗子：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205748.png" alt="如何应用样式"><br>是不是很简单？</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="开始使用七牛云储存">开始使用七牛云储存</h2><p><font size=4>现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。</p>]]>
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
-    
-      <category term="七牛" scheme="http://blog.54yongf.com/tags/%E4%B8%83%E7%89%9B/"/>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
     
   </entry>
   
