@@ -4,7 +4,7 @@
   <subtitle><![CDATA[车到山前必有路]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-12-14T08:44:57.000Z</updated>
+  <updated>2015-12-14T09:07:38.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No29-【转】C语言不用临时变量交换两个数程序分析]]></title>
+    <link href="http://blog.54yongf.com/2015/12/14/29/"/>
+    <id>http://blog.54yongf.com/2015/12/14/29/</id>
+    <published>2015-12-14T09:07:38.000Z</published>
+    <updated>2015-12-14T09:07:38.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>首先看这样一个程序<br></font></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br></pre></td></tr></table></figure>
+<p>此时b = (a + b) - b = a;     (经过第一步a为a+b）<br><br>a = a - b;此时a = (a + b) - a = b; (经过第二步时b已为a)<br><br>可见这个程序实现了a和b的交换。注意+和-互为逆运算，可以得到(a+b)-b=a，埋个伏笔先。</p>
+<a id="more"></a>
+<h2 id="转载，详情请见">转载，详情请见</h2><p><a href="http://blog.csdn.net/pegasuswang_/article/details/9131751" target="_blank" rel="external">CSDN-C语言不用临时变量交换两个数的程序分析</a></p>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="摘要">摘要</h2><p><font size=4><br>首先看这样一个程序<br/></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br></pre></td></tr></table></figure>
+<p>此时b = (a + b) - b = a;     (经过第一步a为a+b）<br/><br>a = a - b;此时a = (a + b) - a = b; (经过第二步时b已为a)<br/><br>可见这个程序实现了a和b的交换。注意+和-互为逆运算，可以得到(a+b)-b=a，埋个伏笔先。</p>]]>
+    
+    </summary>
+    
+      <category term="C语言" scheme="http://blog.54yongf.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="C语言" scheme="http://blog.54yongf.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No28-【转】再谈C语言函数实现交换两个数的值--包你懂！]]></title>
@@ -44,12 +72,13 @@
   </entry>
   
   <entry>
-    <title><![CDATA[浅谈使用Android Studio进行Android Tests（单元测试）]]></title>
+    <title><![CDATA[No27-【原】浅谈使用Android Studio进行Android Tests（单元测试）]]></title>
     <link href="http://blog.54yongf.com/2015/11/30/27/"/>
     <id>http://blog.54yongf.com/2015/11/30/27/</id>
     <published>2015-11-30T10:59:17.000Z</published>
-    <updated>2015-11-30T12:37:25.008Z</updated>
-    <content type="html"><![CDATA[<h2 id="声明">声明</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</font></p>
+    <updated>2015-12-14T09:17:13.092Z</updated>
+    <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</font></p>
+<a id="more"></a>
 <h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
 <ol>
 <li>选择顶部工具栏Run–&gt;Edit Configuration<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_190934.png" alt="先编辑测试选项"></li>
@@ -75,7 +104,8 @@
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="声明">声明</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对]]>
+    <![CDATA[<h2 id="摘要">摘要</h2><p><font size=4><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</p>]]>
+    
     </summary>
     
       <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
@@ -775,36 +805,6 @@
       <category term="错误" scheme="http://blog.54yongf.com/tags/%E9%94%99%E8%AF%AF/"/>
     
       <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【原】No9-解决VMware虚拟机中无法使用键盘的故障]]></title>
-    <link href="http://blog.54yongf.com/2015/11/12/9/"/>
-    <id>http://blog.54yongf.com/2015/11/12/9/</id>
-    <published>2015-11-12T13:06:22.000Z</published>
-    <updated>2015-11-12T13:06:22.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="键盘不能用？">键盘不能用？</h2><font size="4" color="red">当我们使用VMware时，在累死累活地折腾完虚拟操作系统的安装之后，开启虚拟机却发现键盘不能用，无法将输入定位到虚拟机内部。多么痛的领悟◑﹏◐</font>
-
-<a id="more"></a>
-<h2 id="参考解决步骤">参考解决步骤</h2><p><font size="4"></font></p>
-<ol>
-<li>打开你的VMware，关闭故障机，定位到故障机的标签，右键点击故障机，选择<code>设置</code><br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No9-2015-11-12_212421.png" alt="设置"></li>
-<li>在上方选择<code>选项</code>，然后选择<code>常规</code>，在右边最下方选择<code>增强型键盘</code>，选择<code>在可用时使用（推荐）</code>。注：一般都是选这个，如果你还是有问题，可选择其他两个再试下。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No9-2015-11-12_213450.png" alt="增强型键盘"></li>
-<li>在做完上述步骤之后，你可以重新启动虚拟机操作系统，一般这时就可以向虚拟机输入字符了。</li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="键盘不能用？">键盘不能用？</h2><font size=4 color=red>当我们使用VMware时，在累死累活地折腾完虚拟操作系统的安装之后，开启虚拟机却发现键盘不能用，无法将输入定位到虚拟机内部。多么痛的领悟◑﹏◐</font>]]>
-    
-    </summary>
-    
-      <category term="VMware" scheme="http://blog.54yongf.com/tags/VMware/"/>
-    
-      <category term="虚拟机" scheme="http://blog.54yongf.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    
-      <category term="VMware" scheme="http://blog.54yongf.com/categories/VMware/"/>
     
   </entry>
   
