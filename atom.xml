@@ -76,8 +76,8 @@
     <link href="http://blog.54yongf.com/2015/11/30/27/"/>
     <id>http://blog.54yongf.com/2015/11/30/27/</id>
     <published>2015-11-30T10:59:17.000Z</published>
-    <updated>2015-12-14T09:17:13.092Z</updated>
-    <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</font></p>
+    <updated>2015-12-22T03:27:51.416Z</updated>
+    <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。</font></p>
 <a id="more"></a>
 <h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
 <ol>
@@ -101,10 +101,10 @@
 </li>
 </ol>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193237.png" alt="打印出错信息"></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="摘要">摘要</h2><p><font size=4><br>本文写作时，笔者处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而Android Studio的相对较少。不过，作为Google的亲儿子，Android Studio的确在飞快成长，感觉比eclipse强大，除了开始使用AS时的不适应之外。</p>]]>
+    <![CDATA[<h2 id="摘要">摘要</h2><p><font size=4><br>本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。</p>]]>
     
     </summary>
     
