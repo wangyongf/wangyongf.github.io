@@ -4,7 +4,7 @@
   <subtitle><![CDATA[车到山前必有路]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-12-14T09:07:38.000Z</updated>
+  <updated>2015-12-26T10:22:52.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No30-【转】扩展欧几里德定理]]></title>
+    <link href="http://blog.54yongf.com/2015/12/26/30/"/>
+    <id>http://blog.54yongf.com/2015/12/26/30/</id>
+    <published>2015-12-26T10:22:52.000Z</published>
+    <updated>2015-12-26T10:22:52.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="扩展欧几里德定理">扩展欧几里德定理</h2><p><font size="4"><br>　　对于不完全为 0 的整数 a，b，gcd（a，b）表示 a，b 的最大公约数。那么一定存在整<br>数 x，y 使得 gcd（a，b）=ax+by。</font></p>
+<a id="more"></a>
+<h2 id="对欧几里德定理的理解">对欧几里德定理的理解</h2><p>设 a&gt;b。<br><br>1，显然当 b=0，gcd（a，b）=a。此时 x=1，y=0；<br><br>2，ab&lt;&gt;0 时<br><br>设 ax1+by1=gcd(a,b);<br><br>bx2+(a mod b)y2=gcd(b,a mod b);<br><br>根据朴素的欧几里德原理有 gcd(a,b)=gcd(b,a mod b);<br><br>则:ax1+by1=bx2+(a mod b)y2;<br><br>即:ax1+by1=bx2+(a-(a/b)<em>b)y2=ay2+bx2-(a/b)</em>by2;<br><br>根据恒等定理得：x1=y2; y1=x2-(a/b)*y2;<br><br>这样我们就得到了求解 x1,y1 的方法：x1，y1 的值基于 x2，y2.<br><br>上面的思想是以递归定义的，因为gcd不断的递归求解一定会有个时候b=0，所以递归可以结束。</p>
+<h2 id="C++实现">C++实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> x, y, q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend_Euclid</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( b == <span class="number">0</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        x = <span class="number">1</span>;</span><br><span class="line">        y = <span class="number">0</span>;</span><br><span class="line">        q = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        extend_Euclid(b, a % b);</span><br><span class="line">        <span class="keyword">int</span> temp = x;</span><br><span class="line">        x = y;</span><br><span class="line">        y = temp - a / b * y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="keyword">if</span>(a &lt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = a;</span><br><span class="line">        a = b;</span><br><span class="line">        b = t;</span><br><span class="line">    &#125;</span><br><span class="line">    extend_Euclid(a,b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d=(%d)*%d+(%d)*%d\n"</span>, q, x, a, y, b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="扩展欧几里德定理">扩展欧几里德定理</h2><p><font size=4><br>　　对于不完全为 0 的整数 a，b，gcd（a，b）表示 a，b 的最大公约数。那么一定存在整<br>数 x，y 使得 gcd（a，b）=ax+by。</p>]]>
+    
+    </summary>
+    
+      <category term="数学" scheme="http://blog.54yongf.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="数学之美" scheme="http://blog.54yongf.com/categories/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No29-【转】C语言不用临时变量交换两个数程序分析]]></title>
@@ -76,7 +99,7 @@
     <link href="http://blog.54yongf.com/2015/11/30/27/"/>
     <id>http://blog.54yongf.com/2015/11/30/27/</id>
     <published>2015-11-30T10:59:17.000Z</published>
-    <updated>2015-12-22T03:27:51.416Z</updated>
+    <updated>2015-12-22T03:31:14.566Z</updated>
     <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。</font></p>
 <a id="more"></a>
 <h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
@@ -771,40 +794,6 @@
       <category term="资源" scheme="http://blog.54yongf.com/tags/%E8%B5%84%E6%BA%90/"/>
     
       <category term="资源" scheme="http://blog.54yongf.com/categories/%E8%B5%84%E6%BA%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【原】No10-hexo博文写作之博客生成generate常见错误集锦]]></title>
-    <link href="http://blog.54yongf.com/2015/11/12/10/"/>
-    <id>http://blog.54yongf.com/2015/11/12/10/</id>
-    <published>2015-11-12T13:55:16.000Z</published>
-    <updated>2015-11-20T10:27:03.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="本文写作初衷">本文写作初衷</h2><p><font size="4">作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</font></p>
-<a id="more"></a>
-<h2 id="软件环境">软件环境</h2><p><font size="4"><br>OS: Windows_NT 6.1.7600 win32 x64<br>node: 4.2.2<br>hexo: 3.1</font></p>
-<h2 id="错误类型1">错误类型1</h2><h3 id="错误描述">错误描述</h3><p><font size="4"><br>YAMLException: end of the stream or a document separator is expected at line x, column y:</font></p>
-<h3 id="错误说明">错误说明</h3><p><font size="4"><br>缺少分隔符，一般都是因为缺少空格</font></p>
-<h3 id="解决方案">解决方案</h3><p><font size="4"><br>出现这种情况，一般都是缺少空格，在<code>:</code>冒号之后要有空格！检查x行y列附近的冒号，其之后是否跟了空格。</font></p>
-<h2 id="错误类型2">错误类型2</h2><h3 id="错误描述-1">错误描述</h3><p><font size="4"><br>ValidationError: ‘null’ is not a string!</font></p>
-<h3 id="错误说明-1">错误说明</h3><p><font size="4"><br>一般都是因为文章无内容，可能是因为在这篇博客文章中，有某些属性没有填写，比如author属性，tag属性，categories属性等，导致该属性是空的，即<code>null</code>，所以报错。<br><strong>友情提示</strong>：如果你是用MarkdownPad 2来进行博文写作（我就是），可能在打开该md文件之后，对文件名进行了修改，导致出现了两篇文章。就会出现错误。</font></p>
-<h3 id="解决方案-1">解决方案</h3><p><font size="4"><br>既然是属性缺失，那就把为空的那个属性给补上吧，仔细找找 :-)</font></p>
-<h2 id="错误类型3">错误类型3</h2><h3 id="错误描述-2">错误描述</h3><p><font size="4"><br>generate的时候是没问题的，但是网页预览的时候，发现引用块有问题，原本引用块下方的内容跑到引用块里边去了！</font></p>
-<h3 id="解决方案-2">解决方案</h3><p><font size="4"><br>引用块都是由一对三个<strong>`</strong>所包起来的，如果在最后一个点<strong>`</strong>之后有空格，界面会错乱，所以，把这个多余的空格去掉吧。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="本文写作初衷">本文写作初衷</h2><p><font size=4>作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</p>]]>
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
-    
-      <category term="hexo写作" scheme="http://blog.54yongf.com/tags/hexo%E5%86%99%E4%BD%9C/"/>
-    
-      <category term="错误" scheme="http://blog.54yongf.com/tags/%E9%94%99%E8%AF%AF/"/>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
     
   </entry>
   
