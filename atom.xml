@@ -4,7 +4,7 @@
   <subtitle><![CDATA[车到山前必有路]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-12-26T10:22:52.000Z</updated>
+  <updated>2015-12-29T03:14:28.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -15,6 +15,71 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[No32-【原】离线版MSDN文档的安装和配置]]></title>
+    <link href="http://blog.54yongf.com/2015/12/29/32/"/>
+    <id>http://blog.54yongf.com/2015/12/29/32/</id>
+    <published>2015-12-29T03:14:28.000Z</published>
+    <updated>2015-12-29T03:14:28.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="离线MSDN">离线MSDN</h2><p><font size="4"><br>　　大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
+<h2 id="第一种方式">第一种方式</h2><p><font size="4"><br>使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：</font></p>
+<ol>
+<li>下载安装Microsoft Help Viewer v2.2；</li>
+<li>桌面右键，新建快捷方式，格式如下（注意路径，<strong>直接从网页拷贝此路径可能有问题！</strong>）</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"C:\Program Files (x86)\Microsoft Help Viewer\v2.2\HlpViewer.exe"</span> /catalogName VisualStudio14</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">VisualStudio10 代表 Visual Studio <span class="number">2010</span></span><br><span class="line">VisualStudio12 代表 Visual Studio <span class="number">2013</span></span><br><span class="line">VisualStudio14 代表 Visual Studio <span class="number">2015</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>点击该快捷方式，打开了Microsoft Help Viewer，现在可以选择你想要的文档，然后下载即可；</li>
+</ol>
+<h2 id="第二种方式">第二种方式</h2><p><font size="4"><br>前面大部分都一样，不过可以直接下载网上打包好的离线MSDN文档库，这种方式下载速度快，因为可以使用迅雷等下载：</font></p>
+<ol>
+<li>下载安装Microsoft Help Viewer v2.2；</li>
+<li>解压离线MSDN文档库之后，在我下载的资源中，有一个快捷方式MSDN2015，直接就可以打开了，然后更新即可。</li>
+<li>上述第二步可能有问题，是快捷方式的问题，可以选择自己新建快捷方式，具体做法参考上述<strong>第一种方式</strong>的<strong>第二步</strong></li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="离线MSDN">离线MSDN</h2><p><font size="4"><br>　　大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
+]]>
+    </summary>
+    
+      <category term="MSDN" scheme="http://blog.54yongf.com/tags/MSDN/"/>
+    
+      <category term="Visual Studio" scheme="http://blog.54yongf.com/tags/Visual-Studio/"/>
+    
+      <category term="Visual Studio" scheme="http://blog.54yongf.com/categories/Visual-Studio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[No31-【原】Windows10中多窗口时点击经常切换不了的问题]]></title>
+    <link href="http://blog.54yongf.com/2015/12/29/31/"/>
+    <id>http://blog.54yongf.com/2015/12/29/31/</id>
+    <published>2015-12-29T02:47:19.000Z</published>
+    <updated>2015-12-29T02:47:19.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="不知道你是否有这个问题">不知道你是否有这个问题</h2><p><font size="4"><br>　　在一开始就有这个问题，顺利升级Win10之后发现窗口经常 没法一点击就弹到最前面！<br><br>　　比如，在看网页的时候要把qq聊天窗口点出来，结果在任务栏点击N次也出不来，或者聊QQ的时候点之前看的网页也是半天都点不出来，总是不出现在最前面，或者干脆就没反应。<br><br>　　唯一的办法就是把所有窗口全部最小化，然后点开想点开的窗口–巨硬，还让不让人活了！！！<strong>急， 在线等！</strong></font></p>
+<a id="more"></a>
+<h2 id="解决之道">解决之道</h2><p><font size="4"><br>　　哈哈，上面开个玩笑，其实我好不容易找到了解决办法，所以，有这个问题的兄弟们，来试试吧^_^<br><br><br>步骤很简单：
+　　</font></p>
+<ol>
+<li>卸载巨硬（Or 微软）的必应输入法；</li>
+<li>重启；</li>
+<li>重启之后，你就会发现一切OK了，人生的大和谐::&gt;_&lt;::</li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="不知道你是否有这个问题">不知道你是否有这个问题</h2><p><font size=4><br>　　在一开始就有这个问题，顺利升级Win10之后发现窗口经常 没法一点击就弹到最前面！<br/><br>　　比如，在看网页的时候要把qq聊天窗口点出来，结果在任务栏点击N次也出不来，或者聊QQ的时候点之前看的网页也是半天都点不出来，总是不出现在最前面，或者干脆就没反应。<br/><br>　　唯一的办法就是把所有窗口全部最小化，然后点开想点开的窗口–巨硬，还让不让人活了！！！<strong>急， 在线等！</strong></p>]]>
+    
+    </summary>
+    
+      <category term="Windows日常" scheme="http://blog.54yongf.com/tags/Windows%E6%97%A5%E5%B8%B8/"/>
+    
+      <category term="Windows" scheme="http://blog.54yongf.com/categories/Windows/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[No30-【转】扩展欧几里德定理]]></title>
     <link href="http://blog.54yongf.com/2015/12/26/30/"/>
     <id>http://blog.54yongf.com/2015/12/26/30/</id>
@@ -22,7 +87,7 @@
     <updated>2015-12-26T10:22:52.000Z</updated>
     <content type="html"><![CDATA[<h2 id="扩展欧几里德定理">扩展欧几里德定理</h2><p><font size="4"><br>　　对于不完全为 0 的整数 a，b，gcd（a，b）表示 a，b 的最大公约数。那么一定存在整<br>数 x，y 使得 gcd（a，b）=ax+by。</font></p>
 <a id="more"></a>
-<h2 id="对欧几里德定理的理解">对欧几里德定理的理解</h2><p>设 a&gt;b。<br><br>1，显然当 b=0，gcd（a，b）=a。此时 x=1，y=0；<br><br>2，ab&lt;&gt;0 时<br><br>设 ax1+by1=gcd(a,b);<br><br>bx2+(a mod b)y2=gcd(b,a mod b);<br><br>根据朴素的欧几里德原理有 gcd(a,b)=gcd(b,a mod b);<br><br>则:ax1+by1=bx2+(a mod b)y2;<br><br>即:ax1+by1=bx2+(a-(a/b)<em>b)y2=ay2+bx2-(a/b)</em>by2;<br><br>根据恒等定理得：x1=y2; y1=x2-(a/b)*y2;<br><br>这样我们就得到了求解 x1,y1 的方法：x1，y1 的值基于 x2，y2.<br><br>上面的思想是以递归定义的，因为gcd不断的递归求解一定会有个时候b=0，所以递归可以结束。</p>
+<h2 id="对欧几里德定理的理解">对欧几里德定理的理解</h2><p><font size="4"><br>设 a&gt;b。<br><br>1，显然当 b=0，gcd（a，b）=a。此时 x=1，y=0；<br><br>2，ab&lt;&gt;0 时<br><br>设 ax1+by1=gcd(a,b);<br><br>bx2+(a mod b)y2=gcd(b,a mod b);<br><br>根据朴素的欧几里德原理有 gcd(a,b)=gcd(b,a mod b);<br><br>则:ax1+by1=bx2+(a mod b)y2;<br><br>即:ax1+by1=bx2+(a-(a/b)<em>b)y2=ay2+bx2-(a/b)</em>by2;<br><br>根据恒等定理得：x1=y2; y1=x2-(a/b)*y2;<br><br>这样我们就得到了求解 x1,y1 的方法：x1，y1 的值基于 x2，y2.<br><br>上面的思想是以递归定义的，因为gcd不断的递归求解一定会有个时候b=0，所以递归可以结束。</font></p>
 <h2 id="C++实现">C++实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> x, y, q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend_Euclid</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( b == <span class="number">0</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        x = <span class="number">1</span>;</span><br><span class="line">        y = <span class="number">0</span>;</span><br><span class="line">        q = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        extend_Euclid(b, a % b);</span><br><span class="line">        <span class="keyword">int</span> temp = x;</span><br><span class="line">        x = y;</span><br><span class="line">        y = temp - a / b * y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="keyword">if</span>(a &lt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = a;</span><br><span class="line">        a = b;</span><br><span class="line">        b = t;</span><br><span class="line">    &#125;</span><br><span class="line">    extend_Euclid(a,b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d=(%d)*%d+(%d)*%d\n"</span>, q, x, a, y, b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
@@ -710,90 +775,6 @@
       <category term="联网" scheme="http://blog.54yongf.com/tags/%E8%81%94%E7%BD%91/"/>
     
       <category term="网络" scheme="http://blog.54yongf.com/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No12-【转】别在最能吃苦的年纪里选择了安逸]]></title>
-    <link href="http://blog.54yongf.com/2015/11/13/12/"/>
-    <id>http://blog.54yongf.com/2015/11/13/12/</id>
-    <published>2015-11-13T12:00:13.000Z</published>
-    <updated>2015-11-13T12:00:13.000Z</updated>
-    <content type="html"><![CDATA[<p><font size="4"><br>“当你不去旅行，不去冒险，不去拼一份奖学金，不过没试过的生活，整天挂着QQ，刷着微博，逛着淘宝，玩着网游。干着我80岁都能做的的事，你要青春干嘛… …”你是否也曾被这句网传的流行语唤醒了心底那一丝早已沉寂的上进心？</font></p>
-<a id="more"></a>
-<p>锦瑟流年，花开花落，岁月蹉跎匆匆过，而恰如同学少年，在最能学习的时候你选择恋爱，在最能吃苦的时候你选择安逸，自是年少，却韶华倾负，再无少年之时。错过了人生最为难得的吃苦经历，对生活的理解和感悟就会浅薄。</p>
-<p>什么叫吃苦？当你抱怨自己已经很辛苦的时候，请看看那些透支着体力却依旧食不果腹的劳动者？在办公室里整整资料能算吃苦？在有空调的写字楼里敲敲键盘算是吃苦？认真的看看书，学学习，算吃苦？如果你为人生画出了一条很浅的吃苦底线，就请不要妄图跨越深邃的幸福极限。</p>
-<p>当你看了《杜拉拉升职记》，你觉得外企真好，可以出入高档写字楼，说着让人听不懂的英语，拿着让人眼红的薪水。</p>
-<p>当你看了《亲密敌人》，你觉得投行男好帅，开着凯迪拉克，漫步澳大利亚的海滩，随手签着几百万的合同。</p>
-<p>当你看到一条精妙的广告赞不绝口，你觉得做营销好潮，可以把握市场脉搏，纵情挥洒自己的创意。</p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No12-将来的你一定会感谢现在拼命的自己.jpg" alt="将来的你，一定会感谢现在拼命的自己"></p>
-<p>当你看到一位做房地产的朋友，每天和有钱人出入各种高档场所，发着各种挥霍的微博，你觉得做房地产好赚钱。</p>
-<p>当你看到一位快消人员满世界出差，在各种地方住五星级酒店，你觉得做快消好风光。你疯狂的爱上了那种洋洋得意的状态，却不曾想到你日思夜想称之为梦想的状态，其实并不等于你看到的那样简单。</p>
-<p>他所吃的苦，是早就开始每天只睡三个小时，从N年前的数据查到昨天，一点点的做着细致无比的分析。</p>
-<p>他所吃的苦，是为了去争取一个客户，和农民工挤在一辆卧铺大巴车上，冒着被偷被抢被撞车的风险，一边敲邮件，一边环顾周围诧异的眼神。</p>
-<p>他所吃的苦，是为了一套更合理更系统的管理方法，而不断的和各个领导去磨合，去询问，去思考；他所吃的苦，是为了签下一个大订单，自己一个人在他乡，看着别人世界中的团圆，装饰着自己的相思梦。</p>
-<p>他所吃的苦，是为了一个上市项目，在三天之内自学几十万字的材料，让自己在三天之内从一个门外汉变成一个行家… …他也曾许多次摔倒在泥土里，甚至让别人从自己的身体上踩过去。</p>
-<p>他成功的取得了让人望尘莫及的荣耀，只因为他是一个懂得吃苦的人，能够承担得起那种厚重的魅力。他辛勤工作的身影，他随时洋溢的才华，他的一切禁得起岁月的推敲。</p>
-<p>亲爱的朋友，如果老天善待你，给了你优越的生活，请不要收敛了自己的斗志；如果老天对你百般设障，更请不要磨灭了对自己的信心和向前奋斗的勇气。</p>
-<p>当你想要放弃了，一定要想想那些睡得比你晚、起得比你早、跑得比你卖力、天赋还比你高的牛人，他们早已在晨光中跑向那个你永远只能眺望的远方。</p>
-<p>在你经历过风吹雨打之后，也许会伤痕累累，但是当雨后的第一缕阳光投射到你那苍白、憔悴的脸庞时，你应该欣喜若狂，并不是因为阳光的温暖，而是在苦了心志，劳了筋骨，饿了体肤之后，你毅然站立在前进的路上，做着坚韧上进的自己。其实你现在在哪里，并不是那么重要。只要你有一颗永远向上的心，你终究会找到那个属于你自己的方向。</p>
-<p>所以，请不要在最能吃苦的时候选择安逸，没有人的青春是在红地毯上走过，既然梦想成为那个别人无法企及的自我，就应该选择一条属于自己的道路，为了到达终点，付出别人无法企及的努力。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><font size=4><br>“当你不去旅行，不去冒险，不去拼一份奖学金，不过没试过的生活，整天挂着QQ，刷着微博，逛着淘宝，玩着网游。干着我80岁都能做的的事，你要青春干嘛… …”你是否也曾被这句网传的流行语唤醒了心底那一丝早已沉寂的上进心？</p>]]>
-    
-    </summary>
-    
-      <category term="上进" scheme="http://blog.54yongf.com/tags/%E4%B8%8A%E8%BF%9B/"/>
-    
-      <category term="人生" scheme="http://blog.54yongf.com/tags/%E4%BA%BA%E7%94%9F/"/>
-    
-      <category term="励志" scheme="http://blog.54yongf.com/tags/%E5%8A%B1%E5%BF%97/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-      <category term="鸡汤" scheme="http://blog.54yongf.com/tags/%E9%B8%A1%E6%B1%A4/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[【转】No11-分享几个下载kindle电子书的资源网站]]></title>
-    <link href="http://blog.54yongf.com/2015/11/13/11/"/>
-    <id>http://blog.54yongf.com/2015/11/13/11/</id>
-    <published>2015-11-13T11:12:21.000Z</published>
-    <updated>2015-11-13T11:12:21.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="本人收集了几个下载kindle电子书的资源网站，分享给需要的朋友们">本人收集了几个下载kindle电子书的资源网站，分享给需要的朋友们</h2><p><font size="4">最近好像来了很多新人，也许大家还在为找资源而头痛，楼主分享给朋友们几个自己经常浏览的资源网站。</font></p>
-<a id="more"></a>
-<p>列表如下：</p>
-<ol>
-<li><a href="http://www.kindle114.com" title="不用注册也能下载" target="_blank" rel="external">kindle114</a></li>
-<li><a href="http://kindleren.com/forum.php" title="QQ号注册就可以" target="_blank" rel="external">kindle人社区</a></li>
-<li><a href="http://readfree.me" title="每天只能下载6本书，有点少，不过资源还不错" target="_blank" rel="external">readfree</a></li>
-<li><a href="http://bbs.mydoo.cn" target="_blank" rel="external">麦兜电纸书论坛</a></li>
-<li><a href="http://book.zi5.me" target="_blank" rel="external">子乌书简</a></li>
-<li><a href="http://www.readfar.com" target="_blank" rel="external">读远</a></li>
-<li><a href="http://www.epub5.com" target="_blank" rel="external">艺派电子书</a></li>
-<li><a href="http://lt.imobile.com.cn/forum-323-1.html" target="_blank" rel="external">手机之家电子书板块</a></li>
-<li><a href="http://www.11dream.net" target="_blank" rel="external">之梦TXT电子书论坛</a></li>
-</ol>
-<h2 id="说明">说明</h2><p><font size="4">目前就这9个资源，希望能给大家帮助。也同时希望有其他资源的朋友们补充，感谢。。。这篇博客保持长期更新o_O</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="本人收集了几个下载kindle电子书的资源网站，分享给需要的朋友们">本人收集了几个下载kindle电子书的资源网站，分享给需要的朋友们</h2><p><font size=4>最近好像来了很多新人，也许大家还在为找资源而头痛，楼主分享给朋友们几个自己经常浏览的资源网站。</p>]]>
-    
-    </summary>
-    
-      <category term="kindle" scheme="http://blog.54yongf.com/tags/kindle/"/>
-    
-      <category term="电子书" scheme="http://blog.54yongf.com/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
-    
-      <category term="资源" scheme="http://blog.54yongf.com/tags/%E8%B5%84%E6%BA%90/"/>
-    
-      <category term="资源" scheme="http://blog.54yongf.com/categories/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   

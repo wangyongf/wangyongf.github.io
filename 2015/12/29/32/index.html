@@ -4,26 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？ | Scott Wang&#39;s blog</title>
+    <title>No32-【原】离线版MSDN文档的安装和配置 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="王用">
     
 
     
-    <meta name="description" content="关于CPU虚拟化什么是CPU虚拟化？">
+    <meta name="description" content="离线MSDN　　大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。
+第一种方式使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：
+
+下载安装Microsoft Help Viewer v2.2；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？">
-<meta property="og:url" content="http://blog.54yongf.com/2015/11/28/25/index.html">
+<meta property="og:title" content="No32-【原】离线版MSDN文档的安装和配置">
+<meta property="og:url" content="http://blog.54yongf.com/2015/12/29/32/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="关于CPU虚拟化什么是CPU虚拟化？">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010338.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010729.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010939.png">
-<meta property="og:updated_time" content="2015-11-27T16:28:52.000Z">
+<meta property="og:description" content="离线MSDN　　大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。
+第一种方式使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：
+
+下载安装Microsoft Help Viewer v2.2；">
+<meta property="og:updated_time" content="2015-12-29T03:14:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？">
-<meta name="twitter:description" content="关于CPU虚拟化什么是CPU虚拟化？">
+<meta name="twitter:title" content="No32-【原】离线版MSDN文档的安装和配置">
+<meta name="twitter:description" content="离线MSDN　　大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。
+第一种方式使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：
+
+下载安装Microsoft Help Viewer v2.2；">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -94,15 +100,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/28/25/" title="No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？" itemprop="url">No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？</a>
+      <a href="/2015/12/29/32/" title="No32-【原】离线版MSDN文档的安装和配置" itemprop="url">No32-【原】离线版MSDN文档的安装和配置</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-27T16:28:52.000Z" itemprop="datePublished">
-      发布于2015-11-28 00:28:52，更新于2015-11-28 00:28:52 <span class="ds-thread-count" data-thread-key="2015/11/28/25/" data-count-type="comments"></span>
+    <time datetime="2015-12-29T03:14:28.000Z" itemprop="datePublished">
+      发布于2015-12-29 11:14:28，更新于2015-12-29 11:14:28 <span class="ds-thread-count" data-thread-key="2015/12/29/32/" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -113,56 +119,41 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于CPU虚拟化"><span class="toc-number">1.</span> <span class="toc-text">关于CPU虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候用到CPU虚拟化"><span class="toc-number">2.</span> <span class="toc-text">什么时候用到CPU虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何开启CPU虚拟化"><span class="toc-number">3.</span> <span class="toc-text">如何开启CPU虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可能遇到的问题"><span class="toc-number">4.</span> <span class="toc-text">可能遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何关闭360的Intel-VT核晶防护引擎"><span class="toc-number">5.</span> <span class="toc-text">如何关闭360的Intel-VT核晶防护引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于360的Intel-VT核晶防护引擎"><span class="toc-number">6.</span> <span class="toc-text">关于360的Intel-VT核晶防护引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#离线MSDN"><span class="toc-number">1.</span> <span class="toc-text">离线MSDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一种方式"><span class="toc-number">2.</span> <span class="toc-text">第一种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二种方式"><span class="toc-number">3.</span> <span class="toc-text">第二种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="关于CPU虚拟化">关于CPU虚拟化</h2><p><font size="4"><br>什么是CPU虚拟化？</font></p>
-<a id="more"></a>
-<p>在计算机中，虚拟化（英语：Virtualization）是一种资源管理技术，是将计算机的各种实体资源，如服务器、网络、内存及存储等，予以抽象、转换后呈现出来，打破实体结构间的不可切割的障碍，使用户可以比原本的组态更好的方式来应用这些资源。这些资源的新虚拟部份是不受现有资源的架设方式，地域或物理组态所限制。一般所指的虚拟化资源包括计算能力和资料存储。（以上资料来自<a href="http://baike.baidu.com/link?url=Mas0pVcsdr85LbyUuvlxjEKRVbQDjq3IGyFtppFDVfFaq479_DaiQlphu1_jX9Fn" target="_blank" rel="external">百度百科</a>）</p>
-<h2 id="什么时候用到CPU虚拟化">什么时候用到CPU虚拟化</h2><p><font size="4"><br>就我个人而言，两个地方：安装虚拟机和Android开发的时候。</font></p>
-<h2 id="如何开启CPU虚拟化">如何开启CPU虚拟化</h2><p><font size="4"><br>不同的电脑略有不同，都是开机时进入BIOS设置界面，找到VT-x这一项，改成Enable（因为一般电脑都是默认关闭|Disable虚拟化的）。然后保存，重启即可。</font></p>
-<h2 id="可能遇到的问题">可能遇到的问题</h2><font size="4">
+		<h2 id="离线MSDN">离线MSDN</h2><p><font size="4"><br>　　大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
+<h2 id="第一种方式">第一种方式</h2><p><font size="4"><br>使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：</font></p>
+<ol>
+<li>下载安装Microsoft Help Viewer v2.2；</li>
+<li>桌面右键，新建快捷方式，格式如下（注意路径，<strong>直接从网页拷贝此路径可能有问题！</strong>）</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"C:\Program Files (x86)\Microsoft Help Viewer\v2.2\HlpViewer.exe"</span> /catalogName VisualStudio14</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">VisualStudio10 代表 Visual Studio <span class="number">2010</span></span><br><span class="line">VisualStudio12 代表 Visual Studio <span class="number">2013</span></span><br><span class="line">VisualStudio14 代表 Visual Studio <span class="number">2015</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>点击该快捷方式，打开了Microsoft Help Viewer，现在可以选择你想要的文档，然后下载即可；</li>
+</ol>
+<h2 id="第二种方式">第二种方式</h2><p><font size="4"><br>前面大部分都一样，不过可以直接下载网上打包好的离线MSDN文档库，这种方式下载速度快，因为可以使用迅雷等下载：</font></p>
+<ol>
+<li>下载安装Microsoft Help Viewer v2.2；</li>
+<li>解压离线MSDN文档库之后，在我下载的资源中，有一个快捷方式MSDN2015，直接就可以打开了，然后更新即可。</li>
+<li>上述第二步可能有问题，是快捷方式的问题，可以选择自己新建快捷方式，具体做法参考上述<strong>第一种方式</strong>的<strong>第二步</strong></li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
-<ol>
-<li>如何进入BIOS<br>答：请根据自己的电脑型号百度或者Google，也可以在刚按下开机键之后按Esc进入。</li>
-<li>我明明都已经开启虚拟化了，即已经将VT-x设置为Enable了，为什么还是提示我开启CPU的虚拟化？<br>答：这个问题太大，不好说，但是，一般设置成功之后是没问题了的，可以参考以下几点：<ol>
-<li>请确保是在将VT-x设置为Enable之后保存了设置然后重启的。我之前就有过这样的情况。</li>
-<li>如果你电脑上安装了360，请确保关闭了360的Intel-VT核晶防护引擎，至于如何关闭，请参考本文[最后][^footnote]。</li>
-</ol>
-</li>
-<li>本文所说均为Intel的CPU下的操作，AMD不在讨论范围之内。</li>
-</ol>
-<h2 id="如何关闭360的Intel-VT核晶防护引擎">如何关闭360的Intel-VT核晶防护引擎</h2><p><font size="4"><br>使用的360安全卫士主程序版本：10.2.0.1003</font></p>
-<p>操作步骤如下：</p>
-<ol>
-<li>打开360安全卫士，找到主界面的『安全防护中心』<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010338.png" alt="enter description here"></li>
-<li>进入『安全防护中心』之后，点击右上角，即可关闭<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010729.png" alt="enter description here"></li>
-<li>确保其处于关闭状态<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010939.png" alt="![enter description here][4]"></li>
-<li>OK了！</li>
-</ol>
-<h2 id="关于360的Intel-VT核晶防护引擎">关于360的Intel-VT核晶防护引擎</h2><p><font size="4"><br>由于硬件虚拟化技术的限制，核晶防护引擎不能与部分虚拟机等软件同时开启，否则可能出现一些兼容性问题，先列出已知的问题供您参考：</font></p>
-<ol>
-<li>开启核晶防护引擎的情况下，vmware等虚拟机无法运行。</li>
-<li>开启核晶防护引擎的情况下，运行安卓模拟器比如bluestack，可能出现蓝屏等异常。</li>
-<li>在INTEL 的CPU的环境上，360卫士和腾迅视频共存时，如果选择临时关闭卫士的核晶防护，正在运行的腾迅视频可能崩溃</li>
-</ol>
-<p>因此，如果你有上述一些问题也可以参照解决哦 ^_^  </p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-</font>
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/虚拟化/">虚拟化</a>
+  <a class="article-category-link" href="/categories/Visual-Studio/">Visual Studio</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/虚拟化/">虚拟化</a>
+  <span></span> <a href="/tags/MSDN/">MSDN</a><a href="/tags/Visual-Studio/">Visual Studio</a>
   </div>
 
 </div>
@@ -207,12 +198,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2015/11/28/25/">No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2015/12/29/32/">No32-【原】离线版MSDN文档的安装和配置</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-28 00:28:52</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-12-29 11:14:28</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/2015/11/28/25/" title="No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？">http://blog.54yongf.com/2015/11/28/25/</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/11/28/25/" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/2015/12/29/32/" title="No32-【原】离线版MSDN文档的安装和配置">http://blog.54yongf.com/2015/12/29/32/</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/12/29/32/" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -236,19 +227,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/11/28/26/" title="No26-【原】Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No26-【原】Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/11/24/24/"  title="No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源">
+<a href="/2015/12/29/31/"  title="No31-【原】Windows10中多窗口时点击经常切换不了的问题">
  <strong>下一篇：</strong><br/> 
- <span>No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源
+ <span>No31-【原】Windows10中多窗口时点击经常切换不了的问题
 </span>
 </a>
 </div>
@@ -257,7 +240,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/11/28/25/" data-title="No25-【原】说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？" data-url="http://blog.54yongf.com/2015/11/28/25/"></div>
+	<div class="ds-thread" data-thread-key="2015/12/29/32/" data-title="No32-【原】离线版MSDN文档的安装和配置" data-url="http://blog.54yongf.com/2015/12/29/32/"></div>
 </section>
 
 
@@ -269,7 +252,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于CPU虚拟化"><span class="toc-number">1.</span> <span class="toc-text">关于CPU虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么时候用到CPU虚拟化"><span class="toc-number">2.</span> <span class="toc-text">什么时候用到CPU虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何开启CPU虚拟化"><span class="toc-number">3.</span> <span class="toc-text">如何开启CPU虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可能遇到的问题"><span class="toc-number">4.</span> <span class="toc-text">可能遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何关闭360的Intel-VT核晶防护引擎"><span class="toc-number">5.</span> <span class="toc-text">如何关闭360的Intel-VT核晶防护引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于360的Intel-VT核晶防护引擎"><span class="toc-number">6.</span> <span class="toc-text">关于360的Intel-VT核晶防护引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#离线MSDN"><span class="toc-number">1.</span> <span class="toc-text">离线MSDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一种方式"><span class="toc-number">2.</span> <span class="toc-text">第一种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二种方式"><span class="toc-number">3.</span> <span class="toc-text">第二种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
