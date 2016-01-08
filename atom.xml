@@ -4,7 +4,7 @@
   <subtitle><![CDATA[车到山前必有路]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2015-12-29T03:14:28.000Z</updated>
+  <updated>2016-01-08T12:07:19.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -15,12 +15,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[No33-【原】根据语义规则产生布尔表达式三地址代码]]></title>
+    <link href="http://blog.54yongf.com/2016/01/08/33/"/>
+    <id>http://blog.54yongf.com/2016/01/08/33/</id>
+    <published>2016-01-08T12:07:19.000Z</published>
+    <updated>2016-01-08T12:07:19.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="问题">问题</h2><p><font size="4"><br>考虑如下表达式：a &lt; b or c &lt; d and e &lt; f<br><br>假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）<br></font></p>
+<a id="more"></a>
+<h2 id="产生布尔表达式三地址代码的语义规则">产生布尔表达式三地址代码的语义规则</h2><p><font size="4"><br>语义规则如下：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" alt="布尔表达式"></font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="问题">问题</h2><p><font size=4><br>考虑如下表达式：a &lt; b or c &lt; d and e &lt; f<br/><br>假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）<br/></p>]]>
+    
+    </summary>
+    
+      <category term="编译原理" scheme="http://blog.54yongf.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="语义规则" scheme="http://blog.54yongf.com/tags/%E8%AF%AD%E4%B9%89%E8%A7%84%E5%88%99/"/>
+    
+      <category term="编译原理" scheme="http://blog.54yongf.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[No32-【原】离线版MSDN文档的安装和配置]]></title>
     <link href="http://blog.54yongf.com/2015/12/29/32/"/>
     <id>http://blog.54yongf.com/2015/12/29/32/</id>
     <published>2015-12-29T03:14:28.000Z</published>
     <updated>2015-12-29T03:14:28.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="离线MSDN">离线MSDN</h2><p><font size="4"><br>　　大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
+    <content type="html"><![CDATA[<h2 id="离线MSDN">离线MSDN</h2><p><font size="4"><br>大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
+<a id="more"></a>
 <h2 id="第一种方式">第一种方式</h2><p><font size="4"><br>使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：</font></p>
 <ol>
 <li>下载安装Microsoft Help Viewer v2.2；</li>
@@ -39,8 +64,8 @@
 <h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="离线MSDN">离线MSDN</h2><p><font size="4"><br>　　大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
-]]>
+    <![CDATA[<h2 id="离线MSDN">离线MSDN</h2><p><font size=4><br>大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</p>]]>
+    
     </summary>
     
       <category term="MSDN" scheme="http://blog.54yongf.com/tags/MSDN/"/>
@@ -57,9 +82,9 @@
     <id>http://blog.54yongf.com/2015/12/29/31/</id>
     <published>2015-12-29T02:47:19.000Z</published>
     <updated>2015-12-29T02:47:19.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="不知道你是否有这个问题">不知道你是否有这个问题</h2><p><font size="4"><br>　　在一开始就有这个问题，顺利升级Win10之后发现窗口经常 没法一点击就弹到最前面！<br><br>　　比如，在看网页的时候要把qq聊天窗口点出来，结果在任务栏点击N次也出不来，或者聊QQ的时候点之前看的网页也是半天都点不出来，总是不出现在最前面，或者干脆就没反应。<br><br>　　唯一的办法就是把所有窗口全部最小化，然后点开想点开的窗口–巨硬，还让不让人活了！！！<strong>急， 在线等！</strong></font></p>
+    <content type="html"><![CDATA[<h2 id="不知道你是否有这个问题">不知道你是否有这个问题</h2><p><font size="4"><br>在一开始就有这个问题，顺利升级Win10之后发现窗口经常 没法一点击就弹到最前面！<br><br>比如，在看网页的时候要把qq聊天窗口点出来，结果在任务栏点击N次也出不来，或者聊QQ的时候点之前看的网页也是半天都点不出来，总是不出现在最前面，或者干脆就没反应。<br><br>唯一的办法就是把所有窗口全部最小化，然后点开想点开的窗口–巨硬，还让不让人活了！！！<strong>急， 在线等！</strong></font></p>
 <a id="more"></a>
-<h2 id="解决之道">解决之道</h2><p><font size="4"><br>　　哈哈，上面开个玩笑，其实我好不容易找到了解决办法，所以，有这个问题的兄弟们，来试试吧^_^<br><br><br>步骤很简单：
+<h2 id="解决之道">解决之道</h2><p><font size="4"><br>哈哈，上面开个玩笑，其实我好不容易找到了解决办法，所以，有这个问题的兄弟们，来试试吧^_^<br><br><br>步骤很简单：
 　　</font></p>
 <ol>
 <li>卸载巨硬（Or 微软）的必应输入法；</li>
@@ -69,7 +94,7 @@
 <h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="不知道你是否有这个问题">不知道你是否有这个问题</h2><p><font size=4><br>　　在一开始就有这个问题，顺利升级Win10之后发现窗口经常 没法一点击就弹到最前面！<br/><br>　　比如，在看网页的时候要把qq聊天窗口点出来，结果在任务栏点击N次也出不来，或者聊QQ的时候点之前看的网页也是半天都点不出来，总是不出现在最前面，或者干脆就没反应。<br/><br>　　唯一的办法就是把所有窗口全部最小化，然后点开想点开的窗口–巨硬，还让不让人活了！！！<strong>急， 在线等！</strong></p>]]>
+    <![CDATA[<h2 id="不知道你是否有这个问题">不知道你是否有这个问题</h2><p><font size=4><br>在一开始就有这个问题，顺利升级Win10之后发现窗口经常 没法一点击就弹到最前面！<br/><br>比如，在看网页的时候要把qq聊天窗口点出来，结果在任务栏点击N次也出不来，或者聊QQ的时候点之前看的网页也是半天都点不出来，总是不出现在最前面，或者干脆就没反应。<br/><br>唯一的办法就是把所有窗口全部最小化，然后点开想点开的窗口–巨硬，还让不让人活了！！！<strong>急， 在线等！</strong></p>]]>
     
     </summary>
     
@@ -738,43 +763,6 @@
       <category term="ssh" scheme="http://blog.54yongf.com/tags/ssh/"/>
     
       <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No13-【原】IE浏览器连不上网电脑无法联网]]></title>
-    <link href="http://blog.54yongf.com/2015/11/14/13/"/>
-    <id>http://blog.54yongf.com/2015/11/14/13/</id>
-    <published>2015-11-13T16:09:18.000Z</published>
-    <updated>2015-11-13T16:09:18.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="IE又上不了网了，印象笔记无法同步">IE又上不了网了，印象笔记无法同步</h2><p><font size="4">刚刚打算做一下明天的todo list，就打开桌面版印象笔记，按照惯例，先同步一下，可是，显示的是：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同步：无法连接到印象笔记服务器</span><br></pre></td></tr></table></figure></font></p>
-<a id="more"></a>
-<p><font size="4"><br>一想，网络又故障了？赶紧检查下IE有问题否，果然，打开IE后，显示，Internet Explore无法连接网络。然而，我的世界之窗浏览器是可以联网的，网速还飞起。IE问题检测的信息是：该设备或资源(127.0.0.1)未设置为接受端口“16823”上的连接。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No13-我的内心是崩溃的.jpg" alt="我的内心几乎是崩溃的"><br>妈蛋，用360的网络修复，检查之后提示说hosts文件有问题，可hosts文件哪有问题，不过是搞的虚拟主机而已，枪毙360.只好自己来搞，后面终于弄好了，其实也很简单。</font></p>
-<h2 id="操作步骤">操作步骤</h2><p><font size="4"></font></p>
-<ol>
-<li>打开IE浏览器，打开Internet选项，选择【高级】选项卡<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No13-2015-11-14_002605.png" alt="Internet选项"></li>
-<li>点击下方的<code>重置</code>，在弹出的窗口中，点击<code>重置</code>。之后，重启IE浏览器。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No13-2015-11-14_002733.png" alt="重置"></li>
-<li>重启IE之后，如果可以联网了，说明问题已经解决。这时，我再去点击印象笔记的<code>同步</code>，可以同步了，OK！</li>
-<li>如果IE还不能联网，说明是其他问题了，需要去参考其他的解决办法。</li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="IE又上不了网了，印象笔记无法同步">IE又上不了网了，印象笔记无法同步</h2><p><font size=4>刚刚打算做一下明天的todo list，就打开桌面版印象笔记，按照惯例，先同步一下，可是，显示的是：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同步：无法连接到印象笔记服务器</span><br></pre></td></tr></table></figure></p>]]>
-    
-    </summary>
-    
-      <category term="IE" scheme="http://blog.54yongf.com/tags/IE/"/>
-    
-      <category term="故障" scheme="http://blog.54yongf.com/tags/%E6%95%85%E9%9A%9C/"/>
-    
-      <category term="浏览器" scheme="http://blog.54yongf.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-      <category term="网络连接" scheme="http://blog.54yongf.com/tags/%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5/"/>
-    
-      <category term="联网" scheme="http://blog.54yongf.com/tags/%E8%81%94%E7%BD%91/"/>
-    
-      <category term="网络" scheme="http://blog.54yongf.com/categories/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
