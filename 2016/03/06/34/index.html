@@ -140,18 +140,17 @@
 <li><p>在app目录下的build.gradle中加入一行代码：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile project(':LIBRARY_NAME')</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
-<li>Sync Project</li>
+<li><p>Sync Project</p>
+</li>
 </ol>
 <h2 id="导入Eclipse构建的开源库">导入Eclipse构建的开源库</h2><p>稍微复杂一点，步骤如下：</p>
 <ol>
 <li>前两步同上，导入gradle构建的开源库</li>
-<li>使用Eclipse构建的开源库是没有build.gradle文件的，这时需要新建一个，在其中写入必要的内容，可参考如下模版：</li>
-</ol>
+<li><p>使用Eclipse构建的开源库是没有build.gradle文件的，这时需要新建一个，在其中写入必要的内容，可参考如下模版：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath 'com.android.tools.build:gradle:0.4.+'</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">apply plugin: 'android-library'</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile 'com.android.support:support-v4:13.0.0'</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion 23</span><br><span class="line">    buildToolsVersion "23.0.2"</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        minSdkVersion 7</span><br><span class="line">        targetSdkVersion 16</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sourceSets &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            java.srcDirs = ['src']</span><br><span class="line">            resources.srcDirs = ['src']</span><br><span class="line">            aidl.srcDirs = ['src']</span><br><span class="line">            renderscript.srcDirs = ['src']</span><br><span class="line">            res.srcDirs = ['res']</span><br><span class="line">            assets.srcDirs = ['assets']</span><br><span class="line"></span><br><span class="line">            manifest.srcFile 'AndroidManifest.xml'</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>Sync Project</li>
+</li>
+<li><p>Sync Project</p>
+</li>
 </ol>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
@@ -324,10 +323,6 @@
 		  
 		
 		  
-			<li><a href="/categories/VMware/" title="VMware">VMware<sup>1</sup></a></li>
-		  
-		
-		  
 			<li><a href="/categories/hexo/" title="hexo">hexo<sup>8</sup></a></li>
 		  
 		
@@ -340,7 +335,7 @@
 		  
 		
 		  
-			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>10</sup></a></li>
+			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>11</sup></a></li>
 		  
 		
 		  
