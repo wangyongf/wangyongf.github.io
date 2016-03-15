@@ -4,7 +4,7 @@
   <subtitle><![CDATA[You are nothing!!!]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-03-14T14:15:02.000Z</updated>
+  <updated>2016-03-15T07:12:28.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No36-【原】老生常谈之如何获取最新版Chrome]]></title>
+    <link href="http://blog.54yongf.com/2016/03/15/37/"/>
+    <id>http://blog.54yongf.com/2016/03/15/37/</id>
+    <published>2016-03-15T07:12:28.000Z</published>
+    <updated>2016-03-15T07:12:28.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="如何获取最新版Chrome">如何获取最新版Chrome</h2><p><font size="4">就目前这个网络环境来说，对开发者甚是不利，不过该翻墙的还是得翻墙啊，毕竟Chrome大法好。那么问题就来了，如何获取最新版的Chrome呢（Chrome自动更新老是失败。）？其实稍微关注下还是有很多方法的，我亲自使用过的，觉得比较安全的也就知道一个。</font></p>
+<a id="more"></a>
+<h2 id="网址">网址</h2><p><font size="4">网址是：<a href="http://dl.chromeba.com" target="_blank" rel="external">http://dl.chromeba.com</a><br>感谢Chrome吧及相关支持者！玩贴吧的可以关注Chrome吧，置顶帖有教程<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No36-%E6%94%AF%E6%8C%81%EF%BC%81.jpg" alt="支持"></font></p>
+<h2 id="注意！">注意！</h2><p><font size="5" color="red">前方高能！</font><br><br><br><br><br><br><br><br><br><br></p>
+<ol>
+<li>最好不要通过百度、腾讯管家、360、XX下载站下载Chrome，有风险</li>
+<li>Chrome从V50开始不再支持XP，XP用户下载时请选择&lt;=V49的版本（不过老XP也该退休了）</li>
+</ol>
+<h2 id="其它">其它</h2><font size="4">
+
+<ol>
+<li>如果你在使用Chrome的过程中，出现了种种问题，比如打不开了（就像今天我这样，这也是写本文的缘由），比如点击的时候<strong>应用程序无法启动,因为应用程序的并行配置不正确</strong>，你就可以考虑重装Chrome了:(</li>
+<li>在旧版本的Chrome卸载完全之前，可能无法安装新版本，具体表现就是双击Chrome安装包无反应。这时候，可能需要清理注册表，你可以用360、腾讯电脑管家等安全软件卸载，然后清理残留。但是我遇到的情况是根本无法卸载，系统无法找到Chrome，于是我将Chrome安装路径上的Google文件夹整个删除了（如果你还有其他Google就不能这样搞），然后用官方提供的<a href="http://7xo5vs.com1.z0.glb.clouddn.com/No36-chrome%E5%8D%B8%E8%BD%BD%20remove.reg" target="_blank" rel="external"><strong>remove.reg</strong></a>。使用方式是下载之后双击，然后导入注册表就OK了</li>
+<li>注意！上述清理注册表的小工具会删除全部Google软件的注册表项，如果你的电脑上还有其他Google软件（Android Studio不算…），请慎重使用。</li>
+</ol>
+<h2 id="写在最后">写在最后</h2><p><font size="4">限于个人能力，上述可能有纰漏之处，如果你有不同看法，欢迎在评论中与我交流，荣幸之至。此外，如果你有其他的Chrome小技巧，也可以与我交流。</font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+</font>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="如何获取最新版Chrome">如何获取最新版Chrome</h2><p><font size=4>就目前这个网络环境来说，对开发者甚是不利，不过该翻墙的还是得翻墙啊，毕竟Chrome大法好。那么问题就来了，如何获取最新版的Chrome呢（Chrome自动更新老是失败。）？其实稍微关注下还是有很多方法的，我亲自使用过的，觉得比较安全的也就知道一个。</p>]]>
+    
+    </summary>
+    
+      <category term="Chrome" scheme="http://blog.54yongf.com/tags/Chrome/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No35-【原】Windows系统论设置还原点的重要性]]></title>
@@ -705,33 +742,6 @@
       <category term="模版" scheme="http://blog.54yongf.com/tags/%E6%A8%A1%E7%89%88/"/>
     
       <category term="网站" scheme="http://blog.54yongf.com/tags/%E7%BD%91%E7%AB%99/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No16-【原】是时候摊牌了]]></title>
-    <link href="http://blog.54yongf.com/2015/11/15/16/"/>
-    <id>http://blog.54yongf.com/2015/11/15/16/</id>
-    <published>2015-11-15T10:59:22.000Z</published>
-    <updated>2015-11-15T10:59:22.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="是时候摊牌了">是时候摊牌了</h2><font size="4">因为，我已经扛不住了。</font>
-
-<a id="more"></a>
-<h2 id="加油">加油</h2><font size="4">天将降大任于斯人也，必先苦其心志,劳其胫骨，饿其体肤,空乏其身，行拂乱其所为，所以动心忍性，增益其所不能。</font><br><font size="5"><br>When Heaven is about to place a great responsibility on a great man, it always first frustrates his spirit and will, exhausts his muscles and bones, exposes him to starvation and poverty, harasses him by troubles and setbacks so as to stimulate his spirit, toughen his nature and enhance his abilities.<br></font>
-
-
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="是时候摊牌了">是时候摊牌了</h2><font size=4>因为，我已经扛不住了。</font>]]>
-    
-    </summary>
-    
-      <category term="人生" scheme="http://blog.54yongf.com/tags/%E4%BA%BA%E7%94%9F/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
     
       <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
     
