@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Scott Wang's blog]]></title>
-  <subtitle><![CDATA[You are nothing!!!]]></subtitle>
+  <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-03-16T11:19:25.000Z</updated>
+  <updated>2016-03-18T08:52:34.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No38-【原】Ubuntu v14.04使用小技巧]]></title>
+    <link href="http://blog.54yongf.com/2016/03/18/38/"/>
+    <id>http://blog.54yongf.com/2016/03/18/38/</id>
+    <published>2016-03-18T08:52:34.000Z</published>
+    <updated>2016-03-18T08:52:34.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.54yongf.com/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://blog.54yongf.com/tags/Ubuntu/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No37-【原】ThinkPHP3.2.3学习笔记]]></title>
@@ -33,6 +56,9 @@
 <li>where方法的用法是ThinkPHP查询语言的精髓，也是ThinkPHP ORM的重要组成部分和亮点所在，可以完成包括普通查询、表达式查询、快捷查询、区间查询、组合查询在内的查询操作。使用字符串条件的时候，建议配合预处理机制，确保更加安全。</li>
 <li>一般情况下，无需调用table方法，默认会自动获取当前模型对应或者定义的数据表。</li>
 <li>thinkphp中Include标签支持在包含文件的同时传入参数，但是要注意！使用变量时用[]符号把变量名包起来（<font color="red">不包括$符号！</font>）</li>
+<li>如果插入数据时提示Field <em>*</em> doesn’t have a default value，可以是字段名有问题，有么拼错了，要么是大小写的问题（比如全部换成大写或小写试试？）</li>
+<li>给模板传递变量数组，比如<code>$this-&gt;assign($data)</code>，这里$data是一个数组（$data[‘time’], $data[‘user’]），有两个属性。那么，在模板中，可以直接使用{$time}、{$user}来输出值。注意别写成{$data.time}了哦！</li>
+<li>在thinkphp中使用jQuery的ajax，注意参数正确。最后，如果觉得代码实在没错，重启下服务器试试？</li>
 </ol>
 <h2 id="再贴一下thinkphp官方开发规范">再贴一下thinkphp官方开发规范</h2><font size="4">
 
@@ -363,7 +389,7 @@
     <link href="http://blog.54yongf.com/2015/11/30/27/"/>
     <id>http://blog.54yongf.com/2015/11/30/27/</id>
     <published>2015-11-30T10:59:17.000Z</published>
-    <updated>2015-12-22T03:31:14.000Z</updated>
+    <updated>2015-12-22T03:31:14.566Z</updated>
     <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。</font></p>
 <a id="more"></a>
 <h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
@@ -704,7 +730,7 @@
     <link href="http://blog.54yongf.com/2015/11/20/19/"/>
     <id>http://blog.54yongf.com/2015/11/20/19/</id>
     <published>2015-11-20T07:06:17.000Z</published>
-    <updated>2015-11-20T10:01:38.000Z</updated>
+    <updated>2015-11-20T10:01:38.780Z</updated>
     <content type="html"><![CDATA[<h2 id="先说环境">先说环境</h2><ul>
 <li>qt 5.5.1</li>
 <li>Windows7 </li>
@@ -738,43 +764,6 @@
       <category term="qt creator" scheme="http://blog.54yongf.com/tags/qt-creator/"/>
     
       <category term="qt" scheme="http://blog.54yongf.com/categories/qt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No18-【原】跟我一起来了解hexo的结构，自定义一些组件]]></title>
-    <link href="http://blog.54yongf.com/2015/11/17/18/"/>
-    <id>http://blog.54yongf.com/2015/11/17/18/</id>
-    <published>2015-11-16T16:41:15.000Z</published>
-    <updated>2015-11-16T16:41:15.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="关于hexo">关于hexo</h2><font size="4"><br>关于hexo不想过多介绍，因为官方已经做了这件事了。<font size="5" color="red"><b>强烈建议先去看看官方文档（是中文版的哦）：<a href="https://hexo.io/zh-cn/docs/" title="hexo官方文档" target="_blank" rel="external">hexo docs</a></b></font><br></font>
-
-<a id="more"></a>
-<h2 id="关于hexo的安装">关于hexo的安装</h2><p><font size="4"><br>这里也不再赘述，直接去hexo的github主页就行了，ReadMe有详细的教程，传送门：<a href="https://github.com/hexojs/hexo" title="hexo" target="_blank" rel="external">Github</a>  |  <a href="https://hexo.io/" title="hexo.io" target="_blank" rel="external">hexo.io</a></font></p>
-<h2 id="声明">声明</h2><p><font size="4"><br>本文只是基于个人理解，很可能有错误及不足之处，如有问题，敬请指正，如果觉得本文不错，还请点个赞，谢谢。</font></p>
-<!--more-->
-<h2 id="hexo结构图解">hexo结构图解</h2><p><font size="4"><br>首先来分析hexo的结构，快速入门（主要针对我这种菜鸟，大神请自觉忽略）以便我们自定义自己的组件，实现想要的效果。废话少说，上图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No18-2015-11-17_002958.png" alt="hexo结构图，凑活着看吧→_→"></font></p>
-<p><font size="4"><br>我们主要分析标上序号的8个文件|文件夹：</font></p>
-<p><font size="4"></font></p>
-<ul>
-<li><font size="4">public文件夹，存放的是生成的整个博客的页面文件，也就是说，在你<code>hexo generate</code>之后，生成的东西基本都在这里了（当然外面还有个db.json之类的）。</font></li>
-<li><font size="4">scaffolds文件夹，可以看到，我这里有4个<code>.md</code>文档，这里定义的是博客文章md文件的模板。我自定义了4个模板（其中<code>post.md</code>是默认模板，这个可以设置），所以在<code>hexo new</code>之后，hexo会根据你的命令，比如<code>hexo new post xxx</code>或者<code>hexo new draft xxx</code>或者<code>hexo new page xxx</code>或者<code>hexo new gallery xxx</code>在对应的模板基础上生成markdown文件，然后，你就可以进行欢快的写作了。这里顺便提一下，之前有小伙伴问我，我的每篇文章末尾的<code>感谢</code>是如何实现的，其实很简单，就是在post模板的里面加上这段话就OK了，如果想要我的post模板，在文章下方留言即可（敬请指教）。</font></li>
-<li><font size="4">Source/_posts，这里是存放你的所有文章的地方，所有的<code>markdown</code>文件都在这里存放，所以，生成之后，进入这个目录编辑。</font></li>
-<li><font size="4">Source/favicon.ico，这个是最终生成的博客网站的图标，将你的图标放置在这里即可。</font></li>
-<li><font size="4">themes/chenall，其实themes文件夹下的所有子文件夹都是hexo的主题，chenall是我之前使用的一款主题，界面挺不错的，感觉很优雅（不过我还是选择了<code>jacman</code>）。</font></li>
-<li><font size="4">themes/jacman，也就是我现在使用的这款主题，<br></font><h2 id="感谢">感谢</h2><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="关于hexo">关于hexo</h2><font size=4><br>关于hexo不想过多介绍，因为官方已经做了这件事了。<font size=5 color=red><b>强烈建议先去看看官方文档（是中文版的哦）：<a href="https://hexo.io/zh-cn/docs/" title="hexo官方文档">hexo docs</a></b></font><br></font>]]>
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/tags/hexo/"/>
-    
-      <category term="博客自定义" scheme="http://blog.54yongf.com/tags/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89/"/>
-    
-      <category term="hexo" scheme="http://blog.54yongf.com/categories/hexo/"/>
     
   </entry>
   
