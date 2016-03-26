@@ -126,10 +126,7 @@
 		<h2 id="Java核心技术读书笔记">Java核心技术读书笔记</h2><font size="4">
 
 <ol>
-<li>在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）</li>
-</ol>
-<a id="more"></a>
-<ol>
+<li>在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）<a id="more"></a></li>
 <li>强烈建议不要在程序中使用char类型，除非确实需要对UTF-16代码单元进行操作（char类型用UTF-16编码描述一个代码单元）:( Why?</li>
 <li>整型和布尔型不能相互转换</li>
 <li>&amp;&amp;和||是按照短路方式求值的。&amp;和|运算符不按照短路方式计算！</li>
@@ -149,11 +146,11 @@
 <li>当且仅当没有给类显式提供任何构造器的情况下，系统才会提供一个默认的构造器</li>
 <li>关于初始化块：首先运行初始化块，然后才运行构造器的主体部分。不过，通常把初始化代码放在构造器中就行了。</li>
 <li>如果在一个类的构造器A中调用另一个构造器B，该调用代码必须写在构造器A的第一行！</li>
-<li>Java程序可以没有main方法（但是JDK1.8不可以了）。代码如下：</li>
-</ol>
+<li><p>Java程序可以没有main方法（但是JDK1.8不可以了）。代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello, World"</span>);</span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">    &#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>静态方法与类绑定–静态绑定。实例化变量之后，变量是什么类型的，就会调用那个类的静态方法（其实是废话）</li>
+</li>
+<li><p>静态方法与类绑定–静态绑定。实例化变量之后，变量是什么类型的，就会调用那个类的静态方法（其实是废话）</p>
+</li>
 <li>方法的名字和参数列表称为方法的签名，返回类型不是签名的一部分！</li>
 <li>动态绑定。在运行的时候，调用parent.method的解析过程<ol>
 <li>首先，虚拟机提取object的实际类型的方法表。这既可能是Parent类型，Child1类型，Child2类型…类的其他子类的方法表</li>
@@ -161,11 +158,11 @@
 <li>最后，虚拟机调用方法。</li>
 </ol>
 </li>
-<li>类强制转换：1. 只能在继承层次内进行类型转换。2. 在将父类转换成子类之前，应该使用instanceof进行检查。</li>
-</ol>
+<li><p>类强制转换：1. 只能在继承层次内进行类型转换。2. 在将父类转换成子类之前，应该使用instanceof进行检查。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (parent <span class="keyword">instanceof</span> child) &#123;</span><br><span class="line">    result = (child)parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>通过类型转换调整对象的类型并不是一种好的做法。</li>
+</li>
+<li><p>通过类型转换调整对象的类型并不是一种好的做法。</p>
+</li>
 <li>Java中的受保护部分对于所有子类以及同一个包中的其他所有类都是可见的。</li>
 <li>4个访问修饰符：<ol>
 <li>private: 仅仅对本类可见</li>
@@ -201,7 +198,7 @@
 <li>实际上，所有的错误都发生在运行时。</li>
 <li>假设在try和finally块中均含有return语句，利用return语句从try语句块中退出。在方法返回前，finally子句的内容将被执行。如果finally子句中也有一个return语句，这个返回值会覆盖原来的返回值。</li>
 <li>泛型程序设计意味着编写的代码可以被很多不同类型的对象所重用</li>
-<li>数组在连续的存储位置上存放对象引用</li>
+<li>数组在连续的存储位置上存放对象引用，但是链表</li>
 </ol>
 <h4 id="调用构造器的具体处理步骤">调用构造器的具体处理步骤</h4><font size="4">
 
