@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-03-26T12:44:57.000Z</updated>
+  <updated>2016-03-29T14:24:39.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No40-【原】Git push的时候出错状况及其解决办法]]></title>
+    <link href="http://blog.54yongf.com/2016/03/29/40/"/>
+    <id>http://blog.54yongf.com/2016/03/29/40/</id>
+    <published>2016-03-29T14:24:39.000Z</published>
+    <updated>2016-03-29T14:24:39.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="先说问题">先说问题</h2><p><font size="4"><br>老规矩，先说问题。今天想把之前做的一个博客项目<a href="http://www.thinkblog.org" target="_blank" rel="external">ThinkBlog</a>推送到Github。但是遇到了一个以前从没遇到过的问题。错误信息如下：</font></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">error: RPC failed; result=7, HTTP code = 0</span><br></pre></td></tr></table></figure>
+<p>弄了好久才把这个问题干掉，特来分享。</p>
+<a id="more"></a>
+<h2 id="解决办法">解决办法</h2><p><font size="4"><br>我是在stackoverflow上找到的答案。原链接如下：<a href="http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。" target="_blank" rel="external">http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。</a></font></p>
+<ol>
+<li>运行：git config http.postBuffer 524288000</li>
+<li>重新推送</li>
+<li>OK！</li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="先说问题">先说问题</h2><p><font size=4><br>老规矩，先说问题。今天想把之前做的一个博客项目<a href="http://www.thinkblog.org">ThinkBlog</a>推送到Github。但是遇到了一个以前从没遇到过的问题。错误信息如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">error: RPC failed; result=7, HTTP code = 0</span><br></pre></td></tr></table></figure>
+<p>弄了好久才把这个问题干掉，特来分享。</p>]]>
+    
+    </summary>
+    
+      <category term="Git" scheme="http://blog.54yongf.com/tags/Git/"/>
+    
+      <category term="Git" scheme="http://blog.54yongf.com/categories/Git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No39-【原】Java核心技术读书笔记]]></title>
@@ -30,7 +61,7 @@
 <li>对移位运算符右侧的参数需要进行模32的运算（除非左边的操作数是long类型，此时需模64）。例如，1 &lt;&lt; 35和1 &lt;&lt; 3是相等的</li>
 <li>String类对象是不可变字符串。编译器可以让字符串共享</li>
 <li>字符串比较使用equals方法，千万不要使用==！这个运算符只能确定两个字符串是否放置在同一个虚拟机中位置上（虚拟机完全可能将内容相同的多个字符串的拷贝位置放在不同的地方！）</li>
-<li>如果需要用许多小段的字符串构建一个字符串，那么应该使用StringBuilder。在JDK5.0中引入StringBuilder类。这个类的前身是StringBuilder，其效率稍微有些低，但是允许采用多线程的方式执行添加或删除字符的操作。如果所有的字符串都在一个单线程中编辑（通常情况下），应该用StringBuilder替代它。</li>
+<li>如果需要用许多小段的字符串构建一个字符串，那么应该使用StringBuilder。在JDK5.0中引入StringBuilder类。这个类的前身是StringBuffer，其效率稍微有些低，但是允许采用多线程的方式执行添加或删除字符的操作。如果所有的字符串都在一个单线程中编辑（通常情况下），应该用StringBuilder替代它。</li>
 <li>在C++中可以在嵌套的块中重定义一个变量（内层定义的变量会覆盖外层定义的变量），但是这在Java中是不允许的！</li>
 <li>在循环中，检测两个浮点数是否相等需要格外小心！注意舍入误差，即可能浮点数无法用二进制完全表示。</li>
 <li>switch语句的case标签可以是：1. 类型为char, byte, short, int（或者其包装类Character, Byte, Short, Integer）；2. 枚举常量；3. 字符串字面量（Since JDK7.0）</li>
@@ -95,7 +126,28 @@
 <li>实际上，所有的错误都发生在运行时。</li>
 <li>假设在try和finally块中均含有return语句，利用return语句从try语句块中退出。在方法返回前，finally子句的内容将被执行。如果finally子句中也有一个return语句，这个返回值会覆盖原来的返回值。</li>
 <li>泛型程序设计意味着编写的代码可以被很多不同类型的对象所重用</li>
-<li>数组在连续的存储位置上存放对象引用，但是链表</li>
+<li>数组在连续的存储位置上存放对象引用，链表将每个对象存放在独立的结点中。在Java中，所有链表实际上都是双向链表</li>
+<li>为了避免发生并发修改的异常，请遵循下述规则：可以根据需要给容器添加许多迭代器，但是这些迭代器只能读取列表。另外，再单独附加一个既能读又能写的迭代器</li>
+<li>list的get方法（最好不要使用）：每次查找一个元素都要从列表的头部重新开始搜索。LinkedList对象根本不做任何缓存位置信息的操作。</li>
+<li>TreeSet树集（有序集合）：在对集合进行遍历时，每个值将自动地按照排序后的顺序呈现。</li>
+<li>TreeSet添加元素快于数组|链表，慢于散列表。如果树中包含n个元素，查找新元素的正确位置平均需要log2 n次比较。</li>
+<li>优先级队列（Priority Queue）中的元素可以按照任意的顺序插入，却总是按照排序的顺序进行检索（所以，总是获得最小的那个元素）。优先级队列使用了堆（heap）-一个可以自我调整的二叉树。</li>
+<li>Hashtable和HashMap几乎是一样的。唯一的区别是：Hashtable的方法是同步的，而HashMap不是。</li>
+<li>如果向一个变量写入值，而这个变量接下来可能会被另一个线程读取，或者，从一个变量读值，而这个变量可能是之前被另一个线程写入的，此时必须使用同步</li>
+<li>volatile关键字为实例域的同步访问提供了一种免锁机制。如果声明一个域为volatile，那么编译器和虚拟机就知道该域是可能被另一个线程并发更新的。</li>
+<li>对象序列化是以特殊的文件格式存储对象数据的。（每个文件都是以AC ED开头的）</li>
+<li>Path和Files类since JDK7.0</li>
+<li>每个Java程序至少拥有三个类加载器：1. 引导类加载器。2. 扩展类加载器。3. 系统类（应用类）加载器。引导类加载器负责加载系统类（通常从JAR文件rt.jar中进行加载），引导类加载器没有对应的ClassLoader对象。扩展类加载器用于从jre/lib/ext目录加载标准扩展。系统类加载器用于加载应用类。引导类加载器通常使用C语言实现的，扩展类加载器和系统类加载器通常是用Java来实现的。</li>
+</ol>
+<h4 id="volatile变量不能提供原子性！">volatile变量不能提供原子性！</h4><p><font size="4"><br>volatile只提供了保证访问该变量时，每次都是从内存中读取最新值，并不会使用寄存器缓存该值——每次都会从内存中读取。而对该变量的修改，volatile并不提供原子性的保证。那么编译器究竟是直接修改内存的值，还是使用寄存器修改都符合volatile的定义。所以，一句话，volatile并不提供原子性的保证。所以，下面的代码并不能确保number的递增。还是要使用synchronized</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add_number</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ++number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字节码校验">字节码校验</h4><p><font size="4"><br>在类加载器将新加载的字节码传递给虚拟机时，这些字节码首先要接受校验器的校验。下面是校验器执行的一些检查：</font></p>
+<ol>
+<li>变量要在使用之前初始化</li>
+<li>方法调用与对象引用类型之间要匹配</li>
+<li>访问私有变量和方法的规则没有被违反</li>
+<li>对本地变量的访问都落在运行时堆栈内</li>
+<li>运行时堆栈没有溢出</li>
 </ol>
 <h4 id="调用构造器的具体处理步骤">调用构造器的具体处理步骤</h4><font size="4">
 
@@ -822,45 +874,6 @@
       <category term="软件" scheme="http://blog.54yongf.com/tags/%E8%BD%AF%E4%BB%B6/"/>
     
       <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No20-【原】破解完VisualAssist后VisualStudio打不开了的解决办法]]></title>
-    <link href="http://blog.54yongf.com/2015/11/20/20/"/>
-    <id>http://blog.54yongf.com/2015/11/20/20/</id>
-    <published>2015-11-20T08:15:20.000Z</published>
-    <updated>2015-11-20T08:15:20.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="先说说软件环境">先说说软件环境</h2><ul>
-<li>Windows10</li>
-<li>Visual Studio 2015</li>
-<li>Visual Assist X 2058</li>
-</ul>
-<a id="more"></a>
-<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息如下：</font></p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The security <span class="keyword">key</span> <span class="keyword">for</span> this program currently stored <span class="keyword">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> this version <span class="keyword">of</span> the program.<span class="keyword">Select</span> Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> <span class="keyword">key</span>, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br></pre></td></tr></table></figure>
-<p><font size="4">不多说了，上图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png" alt="错误提示"></font></p>
-<p><font size="4">这不是关键，关键是，点击Yes或No之后，直接就<font color="red">失去响应</font>了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是–Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</font></p>
-<h2 id="解决办法">解决办法</h2><p><font size="4"><br>最后，经过我坚持不懈的努力，终于找到了解决办法：</font></p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">连续点击<span class="keyword">Cancel</span>四次！</span><br></pre></td></tr></table></figure>
-<p><font size="4"><br>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></font></p>
-<p>不过不要紧，还是等以后买个正版的吧。要想以后启动Visual Studio的时候不出现这个问题，就赶紧在VS里面把Visual Assist X卸载吧。<br>其实Visual Studio 2015的智能提示功能已经很不错了。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="先说说软件环境">先说说软件环境</h2><ul>
-<li>Windows10</li>
-<li>Visual Studio 2015</li>
-<li>Visual Assist X 2058</li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="Visual Assist X" scheme="http://blog.54yongf.com/tags/Visual-Assist-X/"/>
-    
-      <category term="Visual Studio" scheme="http://blog.54yongf.com/tags/Visual-Studio/"/>
-    
-      <category term="开发工具" scheme="http://blog.54yongf.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

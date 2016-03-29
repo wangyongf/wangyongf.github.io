@@ -119,7 +119,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java核心技术读书笔记"><span class="toc-number">1.</span> <span class="toc-text">Java核心技术读书笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#调用构造器的具体处理步骤"><span class="toc-number">1.0.1.</span> <span class="toc-text">调用构造器的具体处理步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#泛型的约束和局限性"><span class="toc-number">1.0.2.</span> <span class="toc-text">泛型的约束和局限性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象拷贝与对象克隆的区别"><span class="toc-number">1.0.3.</span> <span class="toc-text">对象拷贝与对象克隆的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编写equals方法的建议"><span class="toc-number">1.0.4.</span> <span class="toc-text">编写equals方法的建议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java核心技术读书笔记"><span class="toc-number">1.</span> <span class="toc-text">Java核心技术读书笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#volatile变量不能提供原子性！"><span class="toc-number">1.0.1.</span> <span class="toc-text">volatile变量不能提供原子性！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字节码校验"><span class="toc-number">1.0.2.</span> <span class="toc-text">字节码校验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调用构造器的具体处理步骤"><span class="toc-number">1.0.3.</span> <span class="toc-text">调用构造器的具体处理步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#泛型的约束和局限性"><span class="toc-number">1.0.4.</span> <span class="toc-text">泛型的约束和局限性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象拷贝与对象克隆的区别"><span class="toc-number">1.0.5.</span> <span class="toc-text">对象拷贝与对象克隆的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编写equals方法的建议"><span class="toc-number">1.0.6.</span> <span class="toc-text">编写equals方法的建议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
@@ -133,7 +133,7 @@
 <li>对移位运算符右侧的参数需要进行模32的运算（除非左边的操作数是long类型，此时需模64）。例如，1 &lt;&lt; 35和1 &lt;&lt; 3是相等的</li>
 <li>String类对象是不可变字符串。编译器可以让字符串共享</li>
 <li>字符串比较使用equals方法，千万不要使用==！这个运算符只能确定两个字符串是否放置在同一个虚拟机中位置上（虚拟机完全可能将内容相同的多个字符串的拷贝位置放在不同的地方！）</li>
-<li>如果需要用许多小段的字符串构建一个字符串，那么应该使用StringBuilder。在JDK5.0中引入StringBuilder类。这个类的前身是StringBuilder，其效率稍微有些低，但是允许采用多线程的方式执行添加或删除字符的操作。如果所有的字符串都在一个单线程中编辑（通常情况下），应该用StringBuilder替代它。</li>
+<li>如果需要用许多小段的字符串构建一个字符串，那么应该使用StringBuilder。在JDK5.0中引入StringBuilder类。这个类的前身是StringBuffer，其效率稍微有些低，但是允许采用多线程的方式执行添加或删除字符的操作。如果所有的字符串都在一个单线程中编辑（通常情况下），应该用StringBuilder替代它。</li>
 <li>在C++中可以在嵌套的块中重定义一个变量（内层定义的变量会覆盖外层定义的变量），但是这在Java中是不允许的！</li>
 <li>在循环中，检测两个浮点数是否相等需要格外小心！注意舍入误差，即可能浮点数无法用二进制完全表示。</li>
 <li>switch语句的case标签可以是：1. 类型为char, byte, short, int（或者其包装类Character, Byte, Short, Integer）；2. 枚举常量；3. 字符串字面量（Since JDK7.0）</li>
@@ -198,7 +198,28 @@
 <li>实际上，所有的错误都发生在运行时。</li>
 <li>假设在try和finally块中均含有return语句，利用return语句从try语句块中退出。在方法返回前，finally子句的内容将被执行。如果finally子句中也有一个return语句，这个返回值会覆盖原来的返回值。</li>
 <li>泛型程序设计意味着编写的代码可以被很多不同类型的对象所重用</li>
-<li>数组在连续的存储位置上存放对象引用，但是链表</li>
+<li>数组在连续的存储位置上存放对象引用，链表将每个对象存放在独立的结点中。在Java中，所有链表实际上都是双向链表</li>
+<li>为了避免发生并发修改的异常，请遵循下述规则：可以根据需要给容器添加许多迭代器，但是这些迭代器只能读取列表。另外，再单独附加一个既能读又能写的迭代器</li>
+<li>list的get方法（最好不要使用）：每次查找一个元素都要从列表的头部重新开始搜索。LinkedList对象根本不做任何缓存位置信息的操作。</li>
+<li>TreeSet树集（有序集合）：在对集合进行遍历时，每个值将自动地按照排序后的顺序呈现。</li>
+<li>TreeSet添加元素快于数组|链表，慢于散列表。如果树中包含n个元素，查找新元素的正确位置平均需要log2 n次比较。</li>
+<li>优先级队列（Priority Queue）中的元素可以按照任意的顺序插入，却总是按照排序的顺序进行检索（所以，总是获得最小的那个元素）。优先级队列使用了堆（heap）-一个可以自我调整的二叉树。</li>
+<li>Hashtable和HashMap几乎是一样的。唯一的区别是：Hashtable的方法是同步的，而HashMap不是。</li>
+<li>如果向一个变量写入值，而这个变量接下来可能会被另一个线程读取，或者，从一个变量读值，而这个变量可能是之前被另一个线程写入的，此时必须使用同步</li>
+<li>volatile关键字为实例域的同步访问提供了一种免锁机制。如果声明一个域为volatile，那么编译器和虚拟机就知道该域是可能被另一个线程并发更新的。</li>
+<li>对象序列化是以特殊的文件格式存储对象数据的。（每个文件都是以AC ED开头的）</li>
+<li>Path和Files类since JDK7.0</li>
+<li>每个Java程序至少拥有三个类加载器：1. 引导类加载器。2. 扩展类加载器。3. 系统类（应用类）加载器。引导类加载器负责加载系统类（通常从JAR文件rt.jar中进行加载），引导类加载器没有对应的ClassLoader对象。扩展类加载器用于从jre/lib/ext目录加载标准扩展。系统类加载器用于加载应用类。引导类加载器通常使用C语言实现的，扩展类加载器和系统类加载器通常是用Java来实现的。</li>
+</ol>
+<h4 id="volatile变量不能提供原子性！">volatile变量不能提供原子性！</h4><p><font size="4"><br>volatile只提供了保证访问该变量时，每次都是从内存中读取最新值，并不会使用寄存器缓存该值——每次都会从内存中读取。而对该变量的修改，volatile并不提供原子性的保证。那么编译器究竟是直接修改内存的值，还是使用寄存器修改都符合volatile的定义。所以，一句话，volatile并不提供原子性的保证。所以，下面的代码并不能确保number的递增。还是要使用synchronized</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add_number</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ++number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字节码校验">字节码校验</h4><p><font size="4"><br>在类加载器将新加载的字节码传递给虚拟机时，这些字节码首先要接受校验器的校验。下面是校验器执行的一些检查：</font></p>
+<ol>
+<li>变量要在使用之前初始化</li>
+<li>方法调用与对象引用类型之间要匹配</li>
+<li>访问私有变量和方法的规则没有被违反</li>
+<li>对本地变量的访问都落在运行时堆栈内</li>
+<li>运行时堆栈没有溢出</li>
 </ol>
 <h4 id="调用构造器的具体处理步骤">调用构造器的具体处理步骤</h4><font size="4">
 
@@ -319,6 +340,14 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/03/29/40/" title="No40-【原】Git push的时候出错状况及其解决办法">
+  <strong>上一篇：</strong><br/>
+  <span>
+  No40-【原】Git push的时候出错状况及其解决办法</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2016/03/18/38/"  title="No38-【原】Ubuntu v14.04使用小技巧">
@@ -344,7 +373,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java核心技术读书笔记"><span class="toc-number">1.</span> <span class="toc-text">Java核心技术读书笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#调用构造器的具体处理步骤"><span class="toc-number">1.0.1.</span> <span class="toc-text">调用构造器的具体处理步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#泛型的约束和局限性"><span class="toc-number">1.0.2.</span> <span class="toc-text">泛型的约束和局限性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象拷贝与对象克隆的区别"><span class="toc-number">1.0.3.</span> <span class="toc-text">对象拷贝与对象克隆的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编写equals方法的建议"><span class="toc-number">1.0.4.</span> <span class="toc-text">编写equals方法的建议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java核心技术读书笔记"><span class="toc-number">1.</span> <span class="toc-text">Java核心技术读书笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#volatile变量不能提供原子性！"><span class="toc-number">1.0.1.</span> <span class="toc-text">volatile变量不能提供原子性！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字节码校验"><span class="toc-number">1.0.2.</span> <span class="toc-text">字节码校验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调用构造器的具体处理步骤"><span class="toc-number">1.0.3.</span> <span class="toc-text">调用构造器的具体处理步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#泛型的约束和局限性"><span class="toc-number">1.0.4.</span> <span class="toc-text">泛型的约束和局限性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象拷贝与对象克隆的区别"><span class="toc-number">1.0.5.</span> <span class="toc-text">对象拷贝与对象克隆的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编写equals方法的建议"><span class="toc-number">1.0.6.</span> <span class="toc-text">编写equals方法的建议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -402,6 +431,10 @@
 		  
 		
 		  
+			<li><a href="/categories/Git/" title="Git">Git<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/Java/" title="Java">Java<sup>1</sup></a></li>
 		  
 		
@@ -453,7 +486,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 12.5px;">C语言</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 17.5px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 12.5px;">C语言</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 17.5px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
   </div>
 
