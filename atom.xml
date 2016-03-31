@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-03-29T14:24:39.000Z</updated>
+  <updated>2016-03-31T10:27:37.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -15,28 +15,53 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[No41-【原】Ubuntu用apt-get方式安装php5.6]]></title>
+    <link href="http://blog.54yongf.com/2016/03/31/41/"/>
+    <id>http://blog.54yongf.com/2016/03/31/41/</id>
+    <published>2016-03-31T10:27:37.000Z</published>
+    <updated>2016-03-31T10:27:37.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>请注意，本文讲述的不是编译安装php5.6！！！<br>如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。</font></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> autoremove php5</span><br></pre></td></tr></table></figure>
+<p>然后使用<code>php -v</code>查看php是否卸载成功。如果提示<code>No such file or directory</code>说明卸载成功。</p>
+<h2 id="添加php5-6的PPA源">添加php5.6的PPA源</h2><p><font size="4"><br>下面有三个选择，分别对应php5.4, php5.5, php5.6。请自行选择</font></p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//安装ph<span class="variable">p5</span>.4</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span>-oldstable</span><br><span class="line">//安装ph<span class="variable">p5</span>.5</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span></span><br><span class="line">//安装ph<span class="variable">p5</span>.6</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span>-5.6</span><br></pre></td></tr></table></figure>
+<h2 id="更新源并安装php5-6">更新源并安装php5.6</h2><p><font size="4"><br>添加完源之后，安装php5.6：</font></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install php5-<span class="number">5.6</span></span><br></pre></td></tr></table></figure>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>请注意，本文讲述的不是编译安装php5.6！！！<br>如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。</font></p>
+<figure class="highlight]]>
+    </summary>
+    
+      <category term="Ubuntu" scheme="http://blog.54yongf.com/tags/Ubuntu/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[No40-【原】Git push的时候出错状况及其解决办法]]></title>
     <link href="http://blog.54yongf.com/2016/03/29/40/"/>
     <id>http://blog.54yongf.com/2016/03/29/40/</id>
     <published>2016-03-29T14:24:39.000Z</published>
-    <updated>2016-03-29T14:24:39.000Z</updated>
+    <updated>2016-03-29T15:44:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="先说问题">先说问题</h2><p><font size="4"><br>老规矩，先说问题。今天想把之前做的一个博客项目<a href="http://www.thinkblog.org" target="_blank" rel="external">ThinkBlog</a>推送到Github。但是遇到了一个以前从没遇到过的问题。错误信息如下：</font></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">error: RPC failed; result=7, HTTP code = 0</span><br></pre></td></tr></table></figure>
 <p>弄了好久才把这个问题干掉，特来分享。</p>
-<a id="more"></a>
 <h2 id="解决办法">解决办法</h2><p><font size="4"><br>我是在stackoverflow上找到的答案。原链接如下：<a href="http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。" target="_blank" rel="external">http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。</a></font></p>
 <ol>
 <li>运行：git config http.postBuffer 524288000</li>
 <li>重新推送</li>
 <li>OK！</li>
 </ol>
+<h2 id="其他">其他</h2><p><font size="4"><br>另外，如果一次性推送的文件内容过多，也可能会引发上述问题。至于怎么办，少点呗。</font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="先说问题">先说问题</h2><p><font size=4><br>老规矩，先说问题。今天想把之前做的一个博客项目<a href="http://www.thinkblog.org">ThinkBlog</a>推送到Github。但是遇到了一个以前从没遇到过的问题。错误信息如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">error: RPC failed; result=7, HTTP code = 0</span><br></pre></td></tr></table></figure>
-<p>弄了好久才把这个问题干掉，特来分享。</p>]]>
-    
+    <![CDATA[<h2 id="先说问题">先说问题</h2><p><font size="4"><br>老规矩，先说问题。今天想把之前做的一个博客项目<a href="http://www.thinkblog.org" target="_blank" rel="external">ThinkB]]>
     </summary>
     
       <category term="Git" scheme="http://blog.54yongf.com/tags/Git/"/>
@@ -827,53 +852,6 @@
       <category term="调试" scheme="http://blog.54yongf.com/tags/%E8%B0%83%E8%AF%95/"/>
     
       <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No21-【原】安利一款软件-FolderSize]]></title>
-    <link href="http://blog.54yongf.com/2015/11/21/21/"/>
-    <id>http://blog.54yongf.com/2015/11/21/21/</id>
-    <published>2015-11-21T11:55:31.000Z</published>
-    <updated>2015-11-21T11:55:31.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="安利一款软件">安利一款软件</h2><p><font size="4"><br>最近磁盘又不够用了，1T的，我想看看到底是哪些地方占用了这么多的空间（毕竟以前下的一些软件我都忘了），在网上一搜索，还真有这样的软件，我用的是Folder Size，功能很强大，放个截图吧：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No21-2015-11-21_201052.png" alt="Folder-Size"></font></p>
-<a id="more"></a>
-<p><font size="4"><br>这款软件很小，才1.5M，而且支持WinAll，WinXP。我是在Win7上使用的。</font></p>
-<h2 id="软件介绍">软件介绍</h2><p><font size="4"><br>Folder Size会分析您的硬盘驱动器并显示文件和文件夹的大小，以便您可以轻松地检查您的磁盘空间分配。应用程序将显示的文件夹和文件，也可以是整个磁盘的大小，他们占据的百分比。整洁的报告，以确定最大的文件夹和最大的文件。您可以轻松地找出哪些文件或文件夹占用了你的驱动器空间，也将扫描的所有子文件夹的大小。应用程序可以在几分钟内扫描整个硬盘驱动器，由于它优化扫描算法和树的大小详细列出。逐行扫描让你继续从扫描中断的问题。<br>除了扫描整个硬盘驱动器文件夹大小也可以扫描一个文件夹，以节省时间。</font></p>
-<h2 id="特点">特点</h2><p><font size="4"></font></p>
-<ul>
-<li>查找并显示所有文件和文件夹大小。</li>
-<li>扫描整个存储设备或选择的文件夹。</li>
-<li>在不同的图表-柱状图，饼图显示文件和文件夹的大小等</li>
-<li>在表中列出所有文件和文件夹的详细信息：</li>
-<li>名称</li>
-<li>文件夹大小</li>
-<li>从父文件夹的大小的百分比的大小</li>
-<li>文件夹数</li>
-<li>子文件夹数</li>
-<li>创建时间</li>
-<li>上次修改时间</li>
-<li>上次访问时间文件夹的所有者和组</li>
-<li>上述排序选项列出所有不同的标准- 基于文件夹的名称，文件夹大小等</li>
-<li>重新排列的选项列表中的列，以适应您的偏好。</li>
-<li>找到Windows资源管理器中选择通过上下文菜单文件夹或文件</li>
-<li>删除文件夹或文件。</li>
-<li>相关的应用程序打开文件使用双击。</li>
-<li>对于所有类型的存储设备支持 -硬盘驱动器，光驱，usb驱动器，软盘</li>
-<li>简易资源管理器风格的导航通过后退，前进和文件夹向上工具按钮</li>
-</ul>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="安利一款软件">安利一款软件</h2><p><font size=4><br>最近磁盘又不够用了，1T的，我想看看到底是哪些地方占用了这么多的空间（毕竟以前下的一些软件我都忘了），在网上一搜索，还真有这样的软件，我用的是Folder Size，功能很强大，放个截图吧：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No21-2015-11-21_201052.png" alt="Folder-Size"></p>]]>
-    
-    </summary>
-    
-      <category term="小工具" scheme="http://blog.54yongf.com/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="软件" scheme="http://blog.54yongf.com/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   

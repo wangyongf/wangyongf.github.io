@@ -4,26 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No33-【原】根据语义规则产生布尔表达式三地址代码 | Scott Wang&#39;s blog</title>
+    <title>No41-【原】Ubuntu用apt-get方式安装php5.6 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="王用">
     
 
     
-    <meta name="description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
+    <meta name="description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。
+1sudo apt-get autoremove php5
+然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。
+添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No33-【原】根据语义规则产生布尔表达式三地址代码">
-<meta property="og:url" content="http://blog.54yongf.com/2016/01/08/33/index.html">
+<meta property="og:title" content="No41-【原】Ubuntu用apt-get方式安装php5.6">
+<meta property="og:url" content="http://blog.54yongf.com/2016/03/31/41/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%A0%91.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97.png">
-<meta property="og:updated_time" content="2016-01-08T12:07:19.000Z">
+<meta property="og:description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。
+1sudo apt-get autoremove php5
+然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。
+添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
+<meta property="og:updated_time" content="2016-03-31T10:27:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No33-【原】根据语义规则产生布尔表达式三地址代码">
-<meta name="twitter:description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
+<meta name="twitter:title" content="No41-【原】Ubuntu用apt-get方式安装php5.6">
+<meta name="twitter:description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。
+1sudo apt-get autoremove php5
+然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。
+添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -94,15 +100,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/08/33/" title="No33-【原】根据语义规则产生布尔表达式三地址代码" itemprop="url">No33-【原】根据语义规则产生布尔表达式三地址代码</a>
+      <a href="/2016/03/31/41/" title="No41-【原】Ubuntu用apt-get方式安装php5.6" itemprop="url">No41-【原】Ubuntu用apt-get方式安装php5.6</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-08T12:07:19.000Z" itemprop="datePublished">
-      发布于2016-01-08 20:07:19，更新于2016-01-08 20:07:19 <span class="ds-thread-count" data-thread-key="2016/01/08/33/" data-count-type="comments"></span>
+    <time datetime="2016-03-31T10:27:37.000Z" itemprop="datePublished">
+      发布于2016-03-31 18:27:37，更新于2016-03-31 18:27:37 <span class="ds-thread-count" data-thread-key="2016/03/31/41/" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -113,20 +119,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#产生布尔表达式三地址代码的语义规则"><span class="toc-number">2.</span> <span class="toc-text">产生布尔表达式三地址代码的语义规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成三地址中间代码的步骤"><span class="toc-number">3.</span> <span class="toc-text">生成三地址中间代码的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法树"><span class="toc-number">3.1.</span> <span class="toc-text">语法树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对表达式进行归约"><span class="toc-number">3.2.</span> <span class="toc-text">对表达式进行归约</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三地址代码"><span class="toc-number">3.3.</span> <span class="toc-text">三地址代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加php5-6的PPA源"><span class="toc-number">2.</span> <span class="toc-text">添加php5.6的PPA源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新源并安装php5-6"><span class="toc-number">3.</span> <span class="toc-text">更新源并安装php5.6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="问题">问题</h2><p><font size="4"><br>考虑如下表达式：a &lt; b or c &lt; d and e &lt; f<br><br>假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）<br></font></p>
-<a id="more"></a>
-<h2 id="产生布尔表达式三地址代码的语义规则">产生布尔表达式三地址代码的语义规则</h2><p><font size="4"><br>语义规则如下：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" alt="布尔表达式"></font></p>
-<h2 id="生成三地址中间代码的步骤">生成三地址中间代码的步骤</h2><p><font size="4"><br>生成三地址中间代码的过程如下：<br></font></p>
-<h3 id="语法树">语法树</h3><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%A0%91.png" alt="语法分析树"></p>
-<h3 id="对表达式进行归约">对表达式进行归约</h3><p><font size="4"><br>根据产生式，语义规则，进行相应的语义动作：<br></font></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97.png" alt="语义计算"></p>
-<h3 id="三地址代码">三地址代码</h3><p><font size="4"><br>生成的三地址代码为：<br></font></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> a &lt; b <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> L2</span><br><span class="line">L2: <span class="keyword">if</span> c &lt; d <span class="keyword">goto</span> L1</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br><span class="line">L1: <span class="keyword">if</span> e &lt; f <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br></pre></td></tr></table></figure>
-<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+		<h2 id="前言">前言</h2><p><font size="4"><br>请注意，本文讲述的不是编译安装php5.6！！！<br>如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。</font></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> autoremove php5</span><br></pre></td></tr></table></figure>
+<p>然后使用<code>php -v</code>查看php是否卸载成功。如果提示<code>No such file or directory</code>说明卸载成功。</p>
+<h2 id="添加php5-6的PPA源">添加php5.6的PPA源</h2><p><font size="4"><br>下面有三个选择，分别对应php5.4, php5.5, php5.6。请自行选择</font></p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//安装ph<span class="variable">p5</span>.4</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span>-oldstable</span><br><span class="line">//安装ph<span class="variable">p5</span>.5</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span></span><br><span class="line">//安装ph<span class="variable">p5</span>.6</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span>-5.6</span><br></pre></td></tr></table></figure>
+<h2 id="更新源并安装php5-6">更新源并安装php5.6</h2><p><font size="4"><br>添加完源之后，安装php5.6：</font></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install php5-<span class="number">5.6</span></span><br></pre></td></tr></table></figure>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -134,13 +138,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/编译原理/">编译原理</a>
+  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/编译原理/">编译原理</a><a href="/tags/语义规则/">语义规则</a>
+  <span></span> <a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/杂谈/">杂谈</a>
   </div>
 
 </div>
@@ -185,12 +189,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2016/01/08/33/">No33-【原】根据语义规则产生布尔表达式三地址代码</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2016/03/31/41/">No41-【原】Ubuntu用apt-get方式安装php5.6</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-01-08 20:07:19</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-03-31 18:27:37</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/2016/01/08/33/" title="No33-【原】根据语义规则产生布尔表达式三地址代码">http://blog.54yongf.com/2016/01/08/33/</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2016/01/08/33/" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/2016/03/31/41/" title="No41-【原】Ubuntu用apt-get方式安装php5.6">http://blog.54yongf.com/2016/03/31/41/</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2016/03/31/41/" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -214,19 +218,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/06/34/" title="No34-【原】向基于Android Studio的Android开发项目中导入第三方库">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No34-【原】向基于Android Studio的Android开发项目中导入第三方库</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/12/29/32/"  title="No32-【原】离线版MSDN文档的安装和配置">
+<a href="/2016/03/29/40/"  title="No40-【原】Git push的时候出错状况及其解决办法">
  <strong>下一篇：</strong><br/> 
- <span>No32-【原】离线版MSDN文档的安装和配置
+ <span>No40-【原】Git push的时候出错状况及其解决办法
 </span>
 </a>
 </div>
@@ -235,7 +231,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/01/08/33/" data-title="No33-【原】根据语义规则产生布尔表达式三地址代码" data-url="http://blog.54yongf.com/2016/01/08/33/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/31/41/" data-title="No41-【原】Ubuntu用apt-get方式安装php5.6" data-url="http://blog.54yongf.com/2016/03/31/41/"></div>
 </section>
 
 
@@ -247,7 +243,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#产生布尔表达式三地址代码的语义规则"><span class="toc-number">2.</span> <span class="toc-text">产生布尔表达式三地址代码的语义规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成三地址中间代码的步骤"><span class="toc-number">3.</span> <span class="toc-text">生成三地址中间代码的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法树"><span class="toc-number">3.1.</span> <span class="toc-text">语法树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对表达式进行归约"><span class="toc-number">3.2.</span> <span class="toc-text">对表达式进行归约</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三地址代码"><span class="toc-number">3.3.</span> <span class="toc-text">三地址代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加php5-6的PPA源"><span class="toc-number">2.</span> <span class="toc-text">添加php5.6的PPA源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新源并安装php5-6"><span class="toc-number">3.</span> <span class="toc-text">更新源并安装php5.6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 

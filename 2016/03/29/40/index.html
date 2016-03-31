@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Scott Wang's blog">
 <meta property="og:description" content="先说问题老规矩，先说问题。今天想把之前做的一个博客项目ThinkBlog推送到Github。但是遇到了一个以前从没遇到过的问题。错误信息如下：
 123fatal: The remote end hung up unexpectedlyfatal: The remote end hung up unexpectedlyerror: RPC failed; result=7, HTTP code =">
-<meta property="og:updated_time" content="2016-03-29T14:24:39.000Z">
+<meta property="og:updated_time" content="2016-03-29T15:44:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No40-【原】Git push的时候出错状况及其解决办法">
 <meta name="twitter:description" content="先说问题老规矩，先说问题。今天想把之前做的一个博客项目ThinkBlog推送到Github。但是遇到了一个以前从没遇到过的问题。错误信息如下：
@@ -102,7 +102,7 @@
 		
   <p class="article-time">
     <time datetime="2016-03-29T14:24:39.000Z" itemprop="datePublished">
-      发布于2016-03-29 22:24:39，更新于2016-03-29 22:24:39 <span class="ds-thread-count" data-thread-key="2016/03/29/40/" data-count-type="comments"></span>
+      发布于2016-03-29 22:24:39，更新于2016-03-29 23:44:29 <span class="ds-thread-count" data-thread-key="2016/03/29/40/" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -113,20 +113,20 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说问题"><span class="toc-number">1.</span> <span class="toc-text">先说问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-number">2.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说问题"><span class="toc-number">1.</span> <span class="toc-text">先说问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-number">2.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">3.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
 		<h2 id="先说问题">先说问题</h2><p><font size="4"><br>老规矩，先说问题。今天想把之前做的一个博客项目<a href="http://www.thinkblog.org" target="_blank" rel="external">ThinkBlog</a>推送到Github。但是遇到了一个以前从没遇到过的问题。错误信息如下：</font></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">error: RPC failed; result=7, HTTP code = 0</span><br></pre></td></tr></table></figure>
 <p>弄了好久才把这个问题干掉，特来分享。</p>
-<a id="more"></a>
 <h2 id="解决办法">解决办法</h2><p><font size="4"><br>我是在stackoverflow上找到的答案。原链接如下：<a href="http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。" target="_blank" rel="external">http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。</a></font></p>
 <ol>
 <li>运行：git config http.postBuffer 524288000</li>
 <li>重新推送</li>
 <li>OK！</li>
 </ol>
+<h2 id="其他">其他</h2><p><font size="4"><br>另外，如果一次性推送的文件内容过多，也可能会引发上述问题。至于怎么办，少点呗。</font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
@@ -215,6 +215,14 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/03/31/41/" title="No41-【原】Ubuntu用apt-get方式安装php5.6">
+  <strong>上一篇：</strong><br/>
+  <span>
+  No41-【原】Ubuntu用apt-get方式安装php5.6</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2016/03/20/39/"  title="No39-【原】Java核心技术读书笔记">
@@ -240,7 +248,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说问题"><span class="toc-number">1.</span> <span class="toc-text">先说问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-number">2.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说问题"><span class="toc-number">1.</span> <span class="toc-text">先说问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-number">2.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">3.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -322,7 +330,7 @@
 		  
 		
 		  
-			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>14</sup></a></li>
+			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>15</sup></a></li>
 		  
 		
 		  
@@ -353,7 +361,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 12.5px;">C语言</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 17.5px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 12.5px;">C语言</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Ubuntu/" style="font-size: 12.5px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 17.5px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
   </div>
 
