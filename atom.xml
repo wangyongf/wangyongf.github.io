@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-03-31T10:27:37.000Z</updated>
+  <updated>2016-03-31T10:56:41.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[No42-【原】Windows下Apache使用问题总结（持续更新）]]></title>
+    <link href="http://blog.54yongf.com/2016/03/31/42/"/>
+    <id>http://blog.54yongf.com/2016/03/31/42/</id>
+    <published>2016-03-31T10:56:41.000Z</published>
+    <updated>2016-03-31T10:56:41.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。</font></p>
+<a id="more"></a>
+<h2 id="apache无法启动">apache无法启动</h2><p><font size="4"><br>The request operation has failed</font></p>
+<p><font size="4">一般来说，都是端口被占用所导致的。apache默认使用80端口，如果80端口被占用，apache就会启动失败。目前我已知的会占用80端口的软件有：迅雷，IIS，Skype。欢迎补充！<br></font></p>
+<p><strong>解决办法</strong><br></p>
+<ol>
+<li>修改apache的默认端口，或者开机后，立即启动apache，让它使用80端口。</li>
+<li>也可以关闭或杀死使用80端口的软件，但如果是IIS，最好修改一下端口。</li>
+</ol>
+<h2 id="apache无法启动终极解决办法">apache无法启动终极解决办法</h2><p><font size="4"><br>上面所说的只是比较特殊的情况，也许并不能找到问题之所在。下面说一个比较一般的方法，对各种问题基本通吃–使用命令行启动apache服务。用命令行模式启动apache，并带上参数，apache会提示你哪句有误，然后就可以针对性的解决，可以发现端口冲突问题，软件冲突问题，http.conf配置问题等。</font></p>
+<ol>
+<li>在N:\MyWorks\Apache\bin目录处打开cmd命令行，输入如下命令：</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd<span class="class">.exe</span> -w -n <span class="string">"Apache"</span> -k start</span><br></pre></td></tr></table></figure>
+<p>这里，引号内的是你的apache服务的名称，不同的机子可以有些许差别。</p>
+<ol>
+<li>之后等一会，如果启动不成功，会提示详细的错误信息。根据错误信息，去做响应的修改即可。</li>
+<li>我的问题是启动服务时提示the requested operation has failed，一开始以为是80端口被占用的问题，用netstat -ano一看，80端口没有被占用啊！但就是启动不了，很郁闷。使用上述方法用命令行启动后，提示信息如下：<br><img src="http://img.blog.csdn.net/20151016095853606" alt="这里写图片描述"></li>
+<li>我明明配置apache监听80端口，也就是默认的，但是竟然还需要监听443端口，难怪，443端口被别的软件所占用了，apache启动自然报错了！不过，有这个方法，以后apache出问题也可以很好地差错了。</li>
+<li>关于如何kill掉占用端口的进程：用netstat -ano找到占用该端口的进程号，也就是PID，然后打开任务管理器，切换到【服务】一栏：<br><img src="http://img.blog.csdn.net/20151016100602872" alt="这里写图片描述"></li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。</p>]]>
+    
+    </summary>
+    
+      <category term="apache" scheme="http://blog.54yongf.com/tags/apache/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="服务器" scheme="http://blog.54yongf.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[No41-【原】Ubuntu用apt-get方式安装php5.6]]></title>
     <link href="http://blog.54yongf.com/2016/03/31/41/"/>
     <id>http://blog.54yongf.com/2016/03/31/41/</id>
@@ -23,7 +65,7 @@
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>请注意，本文讲述的不是编译安装php5.6！！！<br>如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。</font></p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> autoremove php5</span><br></pre></td></tr></table></figure>
 <p>然后使用<code>php -v</code>查看php是否卸载成功。如果提示<code>No such file or directory</code>说明卸载成功。</p>
-<h2 id="添加php5-6的PPA源">添加php5.6的PPA源</h2><p><font size="4"><br>下面有三个选择，分别对应php5.4, php5.5, php5.6。请自行选择</font></p>
+<h2 id="添加php5-6的PPA源">添加php5.6的PPA源</h2><p>下面有三个选择，分别对应php5.4, php5.5, php5.6。请自行选择</p>
 <figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//安装ph<span class="variable">p5</span>.4</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span>-oldstable</span><br><span class="line">//安装ph<span class="variable">p5</span>.5</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span></span><br><span class="line">//安装ph<span class="variable">p5</span>.6</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span>-5.6</span><br></pre></td></tr></table></figure>
 <h2 id="更新源并安装php5-6">更新源并安装php5.6</h2><p><font size="4"><br>添加完源之后，安装php5.6：</font></p>
 <figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install php5-<span class="number">5.6</span></span><br></pre></td></tr></table></figure>
@@ -800,56 +842,6 @@
       <category term="Android SDK" scheme="http://blog.54yongf.com/tags/Android-SDK/"/>
     
       <category term="翻墙" scheme="http://blog.54yongf.com/tags/%E7%BF%BB%E5%A2%99/"/>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No22-【原】Android开发时如何用小米3进行真机调试]]></title>
-    <link href="http://blog.54yongf.com/2015/11/24/22/"/>
-    <id>http://blog.54yongf.com/2015/11/24/22/</id>
-    <published>2015-11-24T01:20:39.000Z</published>
-    <updated>2015-11-24T01:20:39.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好，我有个小米3，就用它了。但是，打开小米3的USB调试用了点时间，记录一下。</font></p>
-<p>软硬件环境:</p>
-<ul>
-<li>小米3</li>
-<li>MIUI 7</li>
-<li>Android Studio 1.4</li>
-</ul>
-<a id="more"></a>
-<h2 id="如何打开小米3的USB调试选项">如何打开小米3的USB调试选项</h2><p><font size="4"><br>一开始，百度，发现教程很多，但是好像都有点问题。步骤如下：</font></p>
-<ol>
-<li>用数据线连接电脑和手机</li>
-<li>打开手机：<ol>
-<li>『设置』:wink:</li>
-<li>最底下的『关于手机』:wink:</li>
-<li>进去之后，找到『MIUI版本』，连续点击这一栏4次，就会提示已经开启开发者模式了。</li>
-</ol>
-</li>
-<li>退出『关于手机』，在『设置』中，找到『其他高级设置』，下拉，找到『开发者选项』（注意，没有开启开发者模式的话，是不会有这个选项的哦）</li>
-<li>进去之后，就可以开启『USB调试』了，貌似功能还挺多。慢慢研究吧^_^</li>
-<li>这时候，在Android Studio中运行Android APP的话，就会出现小米3的选项了，Good luck!</li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好，我有个小米3，就用它了。但是，打开小米3的USB调试用了点时间，记录一下。</p>
-<p>软硬件环境:</p>
-<ul>
-<li>小米3</li>
-<li>MIUI 7</li>
-<li>Android Studio 1.4</li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="小米" scheme="http://blog.54yongf.com/tags/%E5%B0%8F%E7%B1%B3/"/>
-    
-      <category term="调试" scheme="http://blog.54yongf.com/tags/%E8%B0%83%E8%AF%95/"/>
     
       <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
     

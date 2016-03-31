@@ -4,23 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>【原】No10-hexo博文写作之博客生成generate常见错误集锦 | Scott Wang&#39;s blog</title>
+    <title>No42-【原】Windows下Apache使用问题总结（持续更新） | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="王用">
     
 
     
-    <meta name="description" content="本文写作初衷作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，hexo generate编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。">
+    <meta name="description" content="前言在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【原】No10-hexo博文写作之博客生成generate常见错误集锦">
-<meta property="og:url" content="http://blog.54yongf.com/2015/11/12/10/index.html">
+<meta property="og:title" content="No42-【原】Windows下Apache使用问题总结（持续更新）">
+<meta property="og:url" content="http://blog.54yongf.com/2016/03/31/42/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="本文写作初衷作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，hexo generate编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。">
-<meta property="og:updated_time" content="2015-11-20T10:27:03.000Z">
+<meta property="og:description" content="前言在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。">
+<meta property="og:image" content="http://img.blog.csdn.net/20151016095853606">
+<meta property="og:image" content="http://img.blog.csdn.net/20151016100602872">
+<meta property="og:updated_time" content="2016-03-31T10:56:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【原】No10-hexo博文写作之博客生成generate常见错误集锦">
-<meta name="twitter:description" content="本文写作初衷作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，hexo generate编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。">
+<meta name="twitter:title" content="No42-【原】Windows下Apache使用问题总结（持续更新）">
+<meta name="twitter:description" content="前言在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -91,15 +93,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/12/10/" title="【原】No10-hexo博文写作之博客生成generate常见错误集锦" itemprop="url">【原】No10-hexo博文写作之博客生成generate常见错误集锦</a>
+      <a href="/2016/03/31/42/" title="No42-【原】Windows下Apache使用问题总结（持续更新）" itemprop="url">No42-【原】Windows下Apache使用问题总结（持续更新）</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-12T13:55:16.000Z" itemprop="datePublished">
-      发布于2015-11-12 21:55:16，更新于2015-11-20 18:27:03 <span class="ds-thread-count" data-thread-key="2015/11/12/10/" data-count-type="comments"></span>
+    <time datetime="2016-03-31T10:56:41.000Z" itemprop="datePublished">
+      发布于2016-03-31 18:56:41，更新于2016-03-31 18:56:41 <span class="ds-thread-count" data-thread-key="2016/03/31/42/" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -110,22 +112,32 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本文写作初衷"><span class="toc-number">1.</span> <span class="toc-text">本文写作初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件环境"><span class="toc-number">2.</span> <span class="toc-text">软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型1"><span class="toc-number">3.</span> <span class="toc-text">错误类型1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述"><span class="toc-number">3.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误说明"><span class="toc-number">3.2.</span> <span class="toc-text">错误说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-number">3.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型2"><span class="toc-number">4.</span> <span class="toc-text">错误类型2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述-1"><span class="toc-number">4.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误说明-1"><span class="toc-number">4.2.</span> <span class="toc-text">错误说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案-1"><span class="toc-number">4.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型3"><span class="toc-number">5.</span> <span class="toc-text">错误类型3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述-2"><span class="toc-number">5.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案-2"><span class="toc-number">5.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">6.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apache无法启动"><span class="toc-number">2.</span> <span class="toc-text">apache无法启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apache无法启动终极解决办法"><span class="toc-number">3.</span> <span class="toc-text">apache无法启动终极解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="本文写作初衷">本文写作初衷</h2><p><font size="4">作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</font></p>
+		<h2 id="前言">前言</h2><p><font size="4"><br>在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。</font></p>
 <a id="more"></a>
-<h2 id="软件环境">软件环境</h2><p><font size="4"><br>OS: Windows_NT 6.1.7600 win32 x64<br>node: 4.2.2<br>hexo: 3.1</font></p>
-<h2 id="错误类型1">错误类型1</h2><h3 id="错误描述">错误描述</h3><p><font size="4"><br>YAMLException: end of the stream or a document separator is expected at line x, column y:</font></p>
-<h3 id="错误说明">错误说明</h3><p><font size="4"><br>缺少分隔符，一般都是因为缺少空格</font></p>
-<h3 id="解决方案">解决方案</h3><p><font size="4"><br>出现这种情况，一般都是缺少空格，在<code>:</code>冒号之后要有空格！检查x行y列附近的冒号，其之后是否跟了空格。</font></p>
-<h2 id="错误类型2">错误类型2</h2><h3 id="错误描述-1">错误描述</h3><p><font size="4"><br>ValidationError: ‘null’ is not a string!</font></p>
-<h3 id="错误说明-1">错误说明</h3><p><font size="4"><br>一般都是因为文章无内容，可能是因为在这篇博客文章中，有某些属性没有填写，比如author属性，tag属性，categories属性等，导致该属性是空的，即<code>null</code>，所以报错。<br><strong>友情提示</strong>：如果你是用MarkdownPad 2来进行博文写作（我就是），可能在打开该md文件之后，对文件名进行了修改，导致出现了两篇文章。就会出现错误。</font></p>
-<h3 id="解决方案-1">解决方案</h3><p><font size="4"><br>既然是属性缺失，那就把为空的那个属性给补上吧，仔细找找 :-)</font></p>
-<h2 id="错误类型3">错误类型3</h2><h3 id="错误描述-2">错误描述</h3><p><font size="4"><br>generate的时候是没问题的，但是网页预览的时候，发现引用块有问题，原本引用块下方的内容跑到引用块里边去了！</font></p>
-<h3 id="解决方案-2">解决方案</h3><p><font size="4"><br>引用块都是由一对三个<strong>`</strong>所包起来的，如果在最后一个点<strong>`</strong>之后有空格，界面会错乱，所以，把这个多余的空格去掉吧。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="apache无法启动">apache无法启动</h2><p><font size="4"><br>The request operation has failed</font></p>
+<p><font size="4">一般来说，都是端口被占用所导致的。apache默认使用80端口，如果80端口被占用，apache就会启动失败。目前我已知的会占用80端口的软件有：迅雷，IIS，Skype。欢迎补充！<br></font></p>
+<p><strong>解决办法</strong><br></p>
+<ol>
+<li>修改apache的默认端口，或者开机后，立即启动apache，让它使用80端口。</li>
+<li>也可以关闭或杀死使用80端口的软件，但如果是IIS，最好修改一下端口。</li>
+</ol>
+<h2 id="apache无法启动终极解决办法">apache无法启动终极解决办法</h2><p><font size="4"><br>上面所说的只是比较特殊的情况，也许并不能找到问题之所在。下面说一个比较一般的方法，对各种问题基本通吃–使用命令行启动apache服务。用命令行模式启动apache，并带上参数，apache会提示你哪句有误，然后就可以针对性的解决，可以发现端口冲突问题，软件冲突问题，http.conf配置问题等。</font></p>
+<ol>
+<li>在N:\MyWorks\Apache\bin目录处打开cmd命令行，输入如下命令：</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd<span class="class">.exe</span> -w -n <span class="string">"Apache"</span> -k start</span><br></pre></td></tr></table></figure>
+<p>这里，引号内的是你的apache服务的名称，不同的机子可以有些许差别。</p>
+<ol>
+<li>之后等一会，如果启动不成功，会提示详细的错误信息。根据错误信息，去做响应的修改即可。</li>
+<li>我的问题是启动服务时提示the requested operation has failed，一开始以为是80端口被占用的问题，用netstat -ano一看，80端口没有被占用啊！但就是启动不了，很郁闷。使用上述方法用命令行启动后，提示信息如下：<br><img src="http://img.blog.csdn.net/20151016095853606" alt="这里写图片描述"></li>
+<li>我明明配置apache监听80端口，也就是默认的，但是竟然还需要监听443端口，难怪，443端口被别的软件所占用了，apache启动自然报错了！不过，有这个方法，以后apache出问题也可以很好地差错了。</li>
+<li>关于如何kill掉占用端口的进程：用netstat -ano找到占用该端口的进程号，也就是PID，然后打开任务管理器，切换到【服务】一栏：<br><img src="http://img.blog.csdn.net/20151016100602872" alt="这里写图片描述"></li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -133,13 +145,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  <a class="article-category-link" href="/categories/服务器/">服务器</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a><a href="/tags/hexo写作/">hexo写作</a><a href="/tags/错误/">错误</a>
+  <span></span> <a href="/tags/apache/">apache</a><a href="/tags/杂谈/">杂谈</a>
   </div>
 
 </div>
@@ -184,12 +196,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2015/11/12/10/">【原】No10-hexo博文写作之博客生成generate常见错误集锦</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/2016/03/31/42/">No42-【原】Windows下Apache使用问题总结（持续更新）</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-12 21:55:16</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-03-31 18:56:41</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/2015/11/12/10/" title="【原】No10-hexo博文写作之博客生成generate常见错误集锦">http://blog.54yongf.com/2015/11/12/10/</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2015/11/12/10/" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/2016/03/31/42/" title="No42-【原】Windows下Apache使用问题总结（持续更新）">http://blog.54yongf.com/2016/03/31/42/</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/2016/03/31/42/" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -213,19 +225,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/11/13/11/" title="【转】No11-分享几个下载kindle电子书的资源网站">
-  <strong>上一篇：</strong><br/>
-  <span>
-  【转】No11-分享几个下载kindle电子书的资源网站</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/11/12/9/"  title="【原】No9-解决VMware虚拟机中无法使用键盘的故障">
+<a href="/2016/03/31/41/"  title="No41-【原】Ubuntu用apt-get方式安装php5.6">
  <strong>下一篇：</strong><br/> 
- <span>【原】No9-解决VMware虚拟机中无法使用键盘的故障
+ <span>No41-【原】Ubuntu用apt-get方式安装php5.6
 </span>
 </a>
 </div>
@@ -234,7 +238,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/11/12/10/" data-title="【原】No10-hexo博文写作之博客生成generate常见错误集锦" data-url="http://blog.54yongf.com/2015/11/12/10/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/31/42/" data-title="No42-【原】Windows下Apache使用问题总结（持续更新）" data-url="http://blog.54yongf.com/2016/03/31/42/"></div>
 </section>
 
 
@@ -246,7 +250,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本文写作初衷"><span class="toc-number">1.</span> <span class="toc-text">本文写作初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件环境"><span class="toc-number">2.</span> <span class="toc-text">软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型1"><span class="toc-number">3.</span> <span class="toc-text">错误类型1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述"><span class="toc-number">3.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误说明"><span class="toc-number">3.2.</span> <span class="toc-text">错误说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-number">3.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型2"><span class="toc-number">4.</span> <span class="toc-text">错误类型2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述-1"><span class="toc-number">4.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误说明-1"><span class="toc-number">4.2.</span> <span class="toc-text">错误说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案-1"><span class="toc-number">4.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误类型3"><span class="toc-number">5.</span> <span class="toc-text">错误类型3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#错误描述-2"><span class="toc-number">5.1.</span> <span class="toc-text">错误描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案-2"><span class="toc-number">5.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">6.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apache无法启动"><span class="toc-number">2.</span> <span class="toc-text">apache无法启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apache无法启动终极解决办法"><span class="toc-number">3.</span> <span class="toc-text">apache无法启动终极解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
