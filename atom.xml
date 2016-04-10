@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-04-10T12:43:58.000Z</updated>
+  <updated>2016-04-10T14:08:27.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No44-[原]-Visual Studio Code使用初体验]]></title>
+    <link href="http://blog.54yongf.com/2016/04/10/44/"/>
+    <id>http://blog.54yongf.com/2016/04/10/44/</id>
+    <published>2016-04-10T14:08:27.000Z</published>
+    <updated>2016-04-10T14:08:27.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Visual_Studio_Code_使用初体验">Visual Studio Code 使用初体验</h2><p><font size="4"><br>作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好,CSS,JS还没试,应该可以的吧.我是在Ubuntu 14.04下使用VSC的,使用的是<code>Monokai</code>主题,颜值和我使用Sublime Text 3有的一拼.<br><br>之前在Ubuntu下一直没有找到一款好用的Markdown编辑器(如果你有好的推荐,请留言哦 ^_^ ),现在,我可以用VSC写Markdown写得飞起了.VSC的缺点也挺多,比如说BUG稍微有点多,插件呢,也相对比较少,毕竟作为新人嘛,到现在为止,还在<code>0.10.11</code>版本,算是预览版吧.不过,现在巨硬也一直在推荐VSC,VSC一直在发展,相信会有越来越多的人喜欢上这款编辑器的.</font></p>
+<h2 id="关于VSC的Markdown写作的特性">关于VSC的Markdown写作的特性</h2><p><font size="4"></font></p>
+<ol>
+<li>可以定制Snippets,加快写作速度(不过还是没有直接使用快捷键的爽啊 QAQ)</li>
+<li>支持实时预览,边写边看,左边写,右边预览(快捷键Ctrl+K, V 不谢)</li>
+<li>支持全文预览,适合写完之后看一下效果(快捷键Ctrl+Shift+V)</li>
+<li>上述功能为VSC自带,不使用任何插件,因为目前关于Markdown的插件很少</li>
+</ol>
+<h2 id="最后,来几张美照吧">最后,来几张美照吧</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No44-%E7%94%A8vs%20code%E5%86%99markdown.png" alt="我的VSC"></p>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No44-VSCODE.png" alt="我的VSC"></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Visual_Studio_Code_使用初体验">Visual Studio Code 使用初体验</h2><p><font size="4"><br>作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好]]>
+    </summary>
+    
+      <category term="Visual Studio Code" scheme="http://blog.54yongf.com/tags/Visual-Studio-Code/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No43-[原]计算机算法设计与分析-统计数字问题]]></title>
@@ -785,56 +815,6 @@
       <category term="虚拟化" scheme="http://blog.54yongf.com/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/"/>
     
       <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No24-【原】Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源]]></title>
-    <link href="http://blog.54yongf.com/2015/11/24/24/"/>
-    <id>http://blog.54yongf.com/2015/11/24/24/</id>
-    <published>2015-11-24T05:49:00.000Z</published>
-    <updated>2015-11-24T05:49:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="烦恼">烦恼</h2><p><font size="4"><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。</font></p>
-<a id="more"></a>
-<h2 id="Android_SDK_在线更新镜像服务器资源">Android SDK 在线更新镜像服务器资源</h2><font size="4"> 
-
-<ul>
-<li><p>大连东软信息学院镜像服务器地址:<br><a href="http://mirrors.neusoft.edu.cn" target="_blank" rel="external">http://mirrors.neusoft.edu.cn</a> 端口：80</p>
-</li>
-<li><p>北京化工大学镜像服务器地址:<br>IPv4: <a href="http://ubuntu.buct.edu.cn/" target="_blank" rel="external">http://ubuntu.buct.edu.cn/</a> 端口：80<br>IPv4: <a href="http://ubuntu.buct.cn/" target="_blank" rel="external">http://ubuntu.buct.cn/</a> 端口：80<br>IPv6: <a href="http://ubuntu.buct6.edu.cn/" target="_blank" rel="external">http://ubuntu.buct6.edu.cn/</a> 端口：80</p>
-</li>
-<li>上海GDG镜像服务器地址:<br><a href="http://sdk.gdgshanghai.com" target="_blank" rel="external">http://sdk.gdgshanghai.com</a> 端口：8000</li>
-<li>中国科学院开源协会镜像站地址:<br>IPV4/IPV6: <a href="http://mirrors.opencas.cn" target="_blank" rel="external">http://mirrors.opencas.cn</a> 端口：80<br>IPV4/IPV6: <a href="http://mirrors.opencas.org" target="_blank" rel="external">http://mirrors.opencas.org</a> 端口：80<br>IPV4/IPV6: <a href="http://mirrors.opencas.ac.cn" target="_blank" rel="external">http://mirrors.opencas.ac.cn</a> 端口：80</li>
-<li>腾讯Bugly 镜像:<br><a href="http://android-mirror.bugly.qq.com" target="_blank" rel="external">http://android-mirror.bugly.qq.com</a> 端口：8080</li>
-<li>腾讯镜像使用方法:<br><a href="http://android-mirror.bugly.qq.com:8080/include/usage.html" target="_blank" rel="external">http://android-mirror.bugly.qq.com:8080/include/usage.html</a></li>
-</ul>
-<h2 id="使用方法">使用方法</h2><p><font size="4"><br>先上图：</font></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_140914.png" alt="详细设置"></p>
-<ol>
-<li>启动 Android SDK Manager ，打开主界面，依次选择『Tools』、『Options…』，弹出『Android SDK Manager - Settings』窗口；</li>
-<li>在『Android SDK Manager - Settings』窗口中，在『HTTP Proxy Server」和「HTTP Proxy Port』输入框内填入上面镜像服务器地址和端口，并且选中『Force https://… sources to be fetched using <a href="http://...』复选框。设置完成后单击『Close』按钮关闭『Android" target="_blank" rel="external">http://...』复选框。设置完成后单击『Close』按钮关闭『Android</a> SDK Manager - Settings』窗口返回到主界面；</li>
-<li>依次选择『Packages』、『Reload』。 </li>
-</ol>
-<h2 id="一点推荐">一点推荐</h2><font size="4">
-
-<ul>
-<li>推荐一个Android SDK,Android-Studio相关的网站<br><a href="http://tools.android-studio.org/" target="_blank" rel="external">http://tools.android-studio.org/</a><br><a href="http://www.android-studio.org/" target="_blank" rel="external">http://www.android-studio.org/</a><br>至于里边到底有啥，自己去看吧</li>
-</ul>
-<h2 id="最后">最后</h2><p><font size="4"><br>不同地区，不同网络，访问速度也不同，比如我的这个电信的校园网，用东软这个很快。所以，如果用某个镜像很慢，那就换一个试试，也许就起飞了呢 :)</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-</font></font>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="烦恼">烦恼</h2><p><font size=4><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。</p>]]>
-    
-    </summary>
-    
-      <category term="Android SDK" scheme="http://blog.54yongf.com/tags/Android-SDK/"/>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="翻墙" scheme="http://blog.54yongf.com/tags/%E7%BF%BB%E5%A2%99/"/>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
