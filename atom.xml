@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-03-31T10:56:41.000Z</updated>
+  <updated>2016-04-10T12:43:58.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No43-[原]计算机算法设计与分析-统计数字问题]]></title>
+    <link href="http://blog.54yongf.com/2016/04/10/43/"/>
+    <id>http://blog.54yongf.com/2016/04/10/43/</id>
+    <published>2016-04-10T12:43:58.000Z</published>
+    <updated>2016-04-10T12:43:58.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="统计数字问题">统计数字问题</h2><h4 id="问题描述">问题描述</h4><p><font size="4"><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</font></p>
+<a id="more"></a>
+<h4 id="算法设计">算法设计</h4><p><font size="4"><br>给定表示书的总页码的十进制数n(1&lt;=n&lt;=10^9),计算书的全部页码中分别用到多少次数字0, 1, 2, …, 9.</font></p>
+<h4 id="数据输入">数据输入</h4><p><font size="4"><br>输入数据由文件名为input.txt的文本文件提供.每个文件只有一行,给出表示书的总页码的整数n.</font></p>
+<h4 id="结果输出">结果输出</h4><p><font size="4"><br>将计算结果输出到文件output.txt.输出文件共有10行,在第k行输出页码中用到数字k-1的次数,k = 1, 2, …, 10.</font></p>
+<h4 id="输入文件示例">输入文件示例</h4><p><font size="4"><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">input</span><span class="class">.txt</span></span><br><span class="line"><span class="number">11</span></span><br></pre></td></tr></table></figure></font></p>
+<h4 id="输出文件示例">输出文件示例</h4><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">output.txt</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></font></p>
+<h4 id="C++实现">C++实现</h4><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">* @Author: Scott Wang</span><br><span class="line">* @Date:   2016-04-07 23:18:13</span><br><span class="line">* @Last Modified by:   Scott Wang</span><br><span class="line">* @Last Modified time: 2016-04-10 21:38:01</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">"stdlib.h"</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initNumber</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span>* result)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* result, <span class="keyword">int</span> count)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number;</span><br><span class="line">    <span class="keyword">int</span> result[<span class="number">10</span>] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    number = initNumber();</span><br><span class="line"></span><br><span class="line">    calculate(number, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> count = <span class="keyword">sizeof</span>(result) / <span class="keyword">sizeof</span>(result[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    output(result, count);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 从文件中获取数字</span><br><span class="line"> * @return 书的页码</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initNumber</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">istringstream</span> iss;</span><br><span class="line">    <span class="built_in">string</span> line;</span><br><span class="line">    <span class="function">ifstream <span class="title">input</span><span class="params">(<span class="string">"input.txt"</span>, ios::in)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!input.is_open())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"Can't open input.txt"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getline(input, line);</span><br><span class="line">    iss.str(line);</span><br><span class="line">    iss &gt;&gt; num;</span><br><span class="line">    iss.clear();</span><br><span class="line"></span><br><span class="line">    input.close();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 计算页码</span><br><span class="line"> * @param number 页码</span><br><span class="line"> * @param result 存储结果的数组(全部页码分别用到0-9多少次)</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span>* result)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// cout&lt;&lt;number&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= number; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        j = i;</span><br><span class="line">        <span class="keyword">while</span> (j &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result[j % <span class="number">10</span>]++;</span><br><span class="line"></span><br><span class="line">            j = j / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 将计算结果输出</span><br><span class="line"> * @param result 要输出的结果(result[10])</span><br><span class="line"> * @param count 结果数组的大小</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* result, <span class="keyword">int</span> count)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">output</span><span class="params">(<span class="string">"output.txt"</span>, ios::out)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        output &lt;&lt; result[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    output.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="统计数字问题">统计数字问题</h2><h4 id="问题描述">问题描述</h4><p><font size=4><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</p>]]>
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.54yongf.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法" scheme="http://blog.54yongf.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No42-【原】Windows下Apache使用问题总结（持续更新）]]></title>
@@ -95,11 +122,11 @@
 <p>弄了好久才把这个问题干掉，特来分享。</p>
 <h2 id="解决办法">解决办法</h2><p><font size="4"><br>我是在stackoverflow上找到的答案。原链接如下：<a href="http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。" target="_blank" rel="external">http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。</a></font></p>
 <ol>
-<li>运行：git config http.postBuffer 524288000</li>
+<li>运行：git config –global http.postBuffer 524288000</li>
 <li>重新推送</li>
 <li>OK！</li>
 </ol>
-<h2 id="其他">其他</h2><p><font size="4"><br>另外，如果一次性推送的文件内容过多，也可能会引发上述问题。至于怎么办，少点呗。</font></p>
+<h2 id="其他">其他</h2><p><font size="4"><br>如果一次性推送的文件内容过多，也可能会引发上述问题。</font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
     <summary type="html">
@@ -647,7 +674,7 @@
     <link href="http://blog.54yongf.com/2015/11/30/27/"/>
     <id>http://blog.54yongf.com/2015/11/30/27/</id>
     <published>2015-11-30T10:59:17.000Z</published>
-    <updated>2015-12-22T03:31:14.566Z</updated>
+    <updated>2015-12-22T03:31:14.000Z</updated>
     <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。</font></p>
 <a id="more"></a>
 <h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
@@ -804,42 +831,6 @@
       <category term="Android SDK" scheme="http://blog.54yongf.com/tags/Android-SDK/"/>
     
       <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="翻墙" scheme="http://blog.54yongf.com/tags/%E7%BF%BB%E5%A2%99/"/>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No23-【原】SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿]]></title>
-    <link href="http://blog.54yongf.com/2015/11/24/23/"/>
-    <id>http://blog.54yongf.com/2015/11/24/23/</id>
-    <published>2015-11-24T05:09:17.000Z</published>
-    <updated>2015-11-24T05:09:17.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="一点说道">一点说道</h2><p><font size="4"><br>这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。</font></p>
-<a id="more"></a>
-<h2 id="更新SDK">更新SDK</h2><p><font size="4"><br>安装完Android Studio之后，更新SDK，因为我的SDK不是最新的。然而，在我大天朝，不翻墙是不行的，我电脑上开了『蓝灯』，于是在SDK Manager中将HTTP proxy设置为<code>127.0.0.1:16823</code>，然而，报错了。使用正常的网络？我这可怜的校园网更悲催，还是报错–连不上！  但是，我的浏览器是可以直接从墙外下载的。</font></p>
-<blockquote>
-<p>Failed to fetch URL <a href="http://dl-ssl.google.com/android/repository/addons_list" target="_blank" rel="external">http://dl-ssl.google.com/android/repository/addons_list</a></p>
-</blockquote>
-<p>最后，想了个笨办法，你不是要这两个链接么，反正浏览器是可以翻墙的，不如直接在浏览器中打开这两个链接，看看是什么情况。<br>浏览器访问：</p>
-<blockquote>
-<p><a href="https://dl-ssl.google.com/android/repository/repository.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/repository.xml</a><br><a href="https://dl-ssl.google.com/android/repository/addon.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/addon.xml</a></p>
-</blockquote>
-<p>发现，它们是这样的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132839.png" alt="图片1"></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132746.png" alt="图片2"></p>
-<p><font size="4"><br>不知你有否发现其中之玄机→_→</font></p>
-<p>找到xml节点下的 google_apis-3-r03.zip platform-tools_r09-windows.zip 各种API<br>然后<a href="https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip</a><br>手动下载。</p>
-<h2 id="最后">最后</h2><p><font size="4"><br>是不是很鸡贼？再次申明，本文仅供娱乐哦    ╮(╯3╰)╭   </font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="一点说道">一点说道</h2><p><font size=4><br>这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。</p>]]>
-    
-    </summary>
-    
-      <category term="Android SDK" scheme="http://blog.54yongf.com/tags/Android-SDK/"/>
     
       <category term="翻墙" scheme="http://blog.54yongf.com/tags/%E7%BF%BB%E5%A2%99/"/>
     
