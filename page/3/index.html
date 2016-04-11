@@ -92,6 +92,75 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/12/14/29/" title="No29-【转】C语言不用临时变量交换两个数程序分析" itemprop="url">No29-【转】C语言不用临时变量交换两个数程序分析</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-14T09:07:38.000Z" itemprop="datePublished">
+      发布于2015-12-14 17:07:38，更新于2015-12-14 17:07:38 <span class="ds-thread-count" data-thread-key="page/3/index.html" data-count-type="comments"></span>
+    </time>
+
+  </p>
+</header>
+
+    <div class="article-content">
+        
+        <h2 id="摘要">摘要</h2><p><font size=4><br>首先看这样一个程序<br/></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br></pre></td></tr></table></figure>
+<p>此时b = (a + b) - b = a;     (经过第一步a为a+b）<br/><br>a = a - b;此时a = (a + b) - a = b; (经过第二步时b已为a)<br/><br>可见这个程序实现了a和b的交换。注意+和-互为逆运算，可以得到(a+b)-b=a，埋个伏笔先。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/12/14/29/#more">阅读全文</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/C语言/">C语言</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/C语言/">C语言</a><a href="/tags/杂谈/">杂谈</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/12/14/29/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/12/14/29/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/12/14/28/" title="No28-【转】再谈C语言函数实现交换两个数的值--包你懂！" itemprop="url">No28-【转】再谈C语言函数实现交换两个数的值--包你懂！</a>
   </h1>
   <p class="article-author">By
@@ -561,73 +630,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/11/21/21/" title="No21-【原】安利一款软件-FolderSize" itemprop="url">No21-【原】安利一款软件-FolderSize</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="王用" target="_blank" itemprop="author">王用</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-21T11:55:31.000Z" itemprop="datePublished">
-      发布于2015-11-21 19:55:31，更新于2015-11-21 19:55:31 <span class="ds-thread-count" data-thread-key="page/3/index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="安利一款软件">安利一款软件</h2><p><font size=4><br>最近磁盘又不够用了，1T的，我想看看到底是哪些地方占用了这么多的空间（毕竟以前下的一些软件我都忘了），在网上一搜索，还真有这样的软件，我用的是Folder Size，功能很强大，放个截图吧：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No21-2015-11-21_201052.png" alt="Folder-Size"></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/11/21/21/#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/小工具/">小工具</a><a href="/tags/软件/">软件</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/11/21/21/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/11/21/21/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
@@ -682,7 +684,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Android开发/" title="Android开发">Android开发<sup>6</sup></a></li>
+			<li><a href="/categories/Android开发/" title="Android开发">Android开发<sup>7</sup></a></li>
 		  
 		
 		  
