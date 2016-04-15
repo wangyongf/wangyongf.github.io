@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-04-11T17:45:32.000Z</updated>
+  <updated>2016-04-15T15:29:02.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No46-原-计算机算法设计与分析-三个水杯倒水问题]]></title>
+    <link href="http://blog.54yongf.com/2016/04/15/46/"/>
+    <id>http://blog.54yongf.com/2016/04/15/46/</id>
+    <published>2016-04-15T15:29:02.000Z</published>
+    <updated>2016-04-15T15:29:02.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目来源">题目来源</h2><p><font size="4"><br>南阳理工学院OJ:<a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=21" target="_blank" rel="external">http://acm.nyist.net/JudgeOnline/problem.php?pid=21</a></font></p>
+<h2 id="问题描述">问题描述</h2><p><font size="4"><br>给出三个水杯，大小不一，并且只有最大的水杯的水是装满的，其余两个为空杯子。三个水杯之间相互倒水，并且水杯没有标识，只能根据给出的水杯体积来计算。现在要求你写出一个程序，使其输出使初始状态到达目标状态的最少次数。</font></p>
+<a id="more"></a>
+<h2 id="输入">输入</h2><p><font size="4"><br>输入数据由input.txt给出.<br>测试数据有两行，第一行给出三个整数V1 V2 V3 (V1&gt;V2&gt;V3 V1<100 v3="">0)表示三个水杯的体积。<br>第二行给出三个整数E1 E2 E3 （体积小于等于相应水杯体积）表示我们需要的最终状态</100></font></p>
+<h2 id="输出">输出</h2><p><font size="4"><br>输出到文件output.txt中<br>如果能够达到目标状态输出true,达不到输出false</font></p>
+<h2 id="样例输入">样例输入</h2><p><font size="4"><br>input.txt<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span> <span class="number">3</span> <span class="number">1</span></span><br><span class="line"><span class="number">4</span> <span class="number">1</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></font></p>
+<h2 id="样例输出">样例输出</h2><p><font size="4"><br>output.txt<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure></font></p>
+<h2 id="C++实现">C++实现</h2><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">* @Author: Scott Wang</span><br><span class="line">* @Date:   2016-04-15 21:36:02</span><br><span class="line">* @Last Modified by:   Scott Wang</span><br><span class="line">* @Last Modified time: 2016-04-15 23:08:34</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> id;                     <span class="comment">//当前节点在vector中的位置</span></span><br><span class="line">    <span class="keyword">int</span> current[<span class="number">3</span>];         <span class="comment">//当前３个水杯中的水量</span></span><br><span class="line">    <span class="keyword">int</span> step;                   <span class="comment">//已走的步数</span></span><br><span class="line">    <span class="keyword">int</span> father;                 <span class="comment">//标记上一步</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStep</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output2Terminal</span><span class="params">(<span class="keyword">bool</span> result)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">bool</span> result)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> work[<span class="number">6</span>][<span class="number">2</span>] = &#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">2</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">2</span>&#125;, &#123;<span class="number">2</span>, <span class="number">0</span>&#125;, &#123;<span class="number">2</span>, <span class="number">1</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> src[<span class="number">3</span>];</span><br><span class="line"><span class="keyword">int</span> des[<span class="number">3</span>];</span><br><span class="line"><span class="built_in">vector</span>&lt;Node&gt; v;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> result;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化数据</span></span><br><span class="line">    input();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 进行广度优先遍历</span></span><br><span class="line">    result = bfs();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在控制台输出结果</span></span><br><span class="line">    output2Terminal(result);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果到output.txt</span></span><br><span class="line">    output(result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 初始化杯子的容量和目标水量</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">ifstream <span class="title">input</span><span class="params">(<span class="string">"input.txt"</span>, ios::in)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!input.is_open())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"Can't open input.txt"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    input &gt;&gt; src[<span class="number">0</span>] &gt;&gt; src[<span class="number">1</span>] &gt;&gt; src[<span class="number">2</span>];</span><br><span class="line">    input &gt;&gt; des[<span class="number">0</span>] &gt;&gt; des[<span class="number">1</span>] &gt;&gt; des[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">    input.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 进行广度优先遍历</span><br><span class="line"> * @return 判断结果</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> front = <span class="number">0</span>, rear = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> foot[<span class="number">100</span>][<span class="number">100</span>][<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    Node temp = &#123;<span class="number">0</span>, &#123;src[<span class="number">0</span>], <span class="number">0</span>, <span class="number">0</span>&#125;, <span class="number">0</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">    foot[temp.current[<span class="number">0</span>]][temp.current[<span class="number">1</span>]][temp.current[<span class="number">2</span>]] = <span class="literal">true</span>;</span><br><span class="line">    v.push_back(temp);</span><br><span class="line">    rear++;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (front &lt; rear)</span><br><span class="line">    &#123;</span><br><span class="line">        index++;</span><br><span class="line">        temp = v[front++];</span><br><span class="line">        <span class="keyword">if</span> (temp.current[<span class="number">0</span>] == des[<span class="number">0</span>] &amp;&amp;</span><br><span class="line">                temp.current[<span class="number">1</span>] == des[<span class="number">1</span>] &amp;&amp;</span><br><span class="line">                temp.current[<span class="number">2</span>] == des[<span class="number">2</span>] )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Node temp1 = temp;</span><br><span class="line">            temp1.step++;</span><br><span class="line">            temp1.father = temp.step;</span><br><span class="line">            <span class="keyword">int</span> s = work[i][<span class="number">0</span>], d = work[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> available = src[d] - temp1.current[d];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="number">0</span> == temp1.current[s] || <span class="number">0</span> == available)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (temp1.current[s] &lt;= available)</span><br><span class="line">            &#123;</span><br><span class="line">                temp1.current[d] += temp1.current[s];</span><br><span class="line">                temp1.current[s] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                temp1.current[s] -= available;</span><br><span class="line">                temp1.current[d] = src[d];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!foot[temp1.current[<span class="number">0</span>]][temp1.current[<span class="number">1</span>]][temp1.current[<span class="number">2</span>]])</span><br><span class="line">            &#123;</span><br><span class="line">                temp1.id = v.size() - <span class="number">1</span>;</span><br><span class="line">                v.push_back(temp1);</span><br><span class="line">                rear++;</span><br><span class="line">                foot[temp1.current[<span class="number">0</span>]][temp1.current[<span class="number">1</span>]][temp1.current[<span class="number">2</span>]] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 输出倒水的步骤</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStep</span><span class="params">(<span class="keyword">int</span> id)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (id)</span><br><span class="line">    &#123;</span><br><span class="line">        printStep(v[id].father);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; v[id].current[<span class="number">0</span>] &lt;&lt; <span class="string">"\t"</span> &lt;&lt; v[id].current[<span class="number">1</span>] &lt;&lt; <span class="string">"\t"</span> &lt;&lt; v[id].current[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 输出结果到控制台</span><br><span class="line"> * @param result 结果</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output2Terminal</span><span class="params">(<span class="keyword">bool</span> result)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (result)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"共需"</span> &lt;&lt; v.back().step &lt;&lt; <span class="string">"次"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"步骤为："</span> &lt;&lt; endl;</span><br><span class="line">        printStep(v.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"此题无解"</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 返回结果 - 是否找到满足条件的倒法</span><br><span class="line"> * @param result 结果 true or false</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">bool</span> result)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">output</span><span class="params">(<span class="string">"output.txt"</span>, ios::out)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!output.is_open())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"Can't open output.txt"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    output &lt;&lt; (result ? <span class="string">"true"</span> : <span class="string">"false"</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    output.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目来源">题目来源</h2><p><font size=4><br>南阳理工学院OJ:<a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=21">http://acm.nyist.net/JudgeOnline/problem.php?pid=21</a></p>
+<h2 id="问题描述">问题描述</h2><p><font size=4><br>给出三个水杯，大小不一，并且只有最大的水杯的水是装满的，其余两个为空杯子。三个水杯之间相互倒水，并且水杯没有标识，只能根据给出的水杯体积来计算。现在要求你写出一个程序，使其输出使初始状态到达目标状态的最少次数。</p>]]>
+    
+    </summary>
+    
+      <category term="算法" scheme="http://blog.54yongf.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法" scheme="http://blog.54yongf.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No45-原-Android中使用自定义字体-使用Android Studio]]></title>
@@ -52,7 +80,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No44-[原]-Visual Studio Code使用初体验]]></title>
+    <title><![CDATA[No44-原-Visual Studio Code使用初体验]]></title>
     <link href="http://blog.54yongf.com/2016/04/10/44/"/>
     <id>http://blog.54yongf.com/2016/04/10/44/</id>
     <published>2016-04-10T14:08:27.000Z</published>
@@ -82,12 +110,13 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No43-[原]计算机算法设计与分析-统计数字问题]]></title>
+    <title><![CDATA[No43-原-计算机算法设计与分析-统计数字问题]]></title>
     <link href="http://blog.54yongf.com/2016/04/10/43/"/>
     <id>http://blog.54yongf.com/2016/04/10/43/</id>
     <published>2016-04-10T12:43:58.000Z</published>
-    <updated>2016-04-10T12:43:58.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="统计数字问题">统计数字问题</h2><h4 id="问题描述">问题描述</h4><p><font size="4"><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</font></p>
+    <updated>2016-04-15T15:52:30.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目来源">题目来源</h2><p><font size="4"><br>计算机算法设计与分析第二版-王晓东 P8</font></p>
+<h4 id="问题描述">问题描述</h4><p><font size="4"><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</font></p>
 <a id="more"></a>
 <h4 id="算法设计">算法设计</h4><p><font size="4"><br>给定表示书的总页码的十进制数n(1&lt;=n&lt;=10^9),计算书的全部页码中分别用到多少次数字0, 1, 2, …, 9.</font></p>
 <h4 id="数据输入">数据输入</h4><p><font size="4"><br>输入数据由文件名为input.txt的文本文件提供.每个文件只有一行,给出表示书的总页码的整数n.</font></p>
@@ -98,7 +127,8 @@
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="统计数字问题">统计数字问题</h2><h4 id="问题描述">问题描述</h4><p><font size=4><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</p>]]>
+    <![CDATA[<h2 id="题目来源">题目来源</h2><p><font size=4><br>计算机算法设计与分析第二版-王晓东 P8</p>
+<h4 id="问题描述">问题描述</h4><p><font size=4><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</p>]]>
     
     </summary>
     
@@ -109,7 +139,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No42-【原】Windows下Apache使用问题总结（持续更新）]]></title>
+    <title><![CDATA[No42-原-Windows下Apache使用问题总结（持续更新）]]></title>
     <link href="http://blog.54yongf.com/2016/03/31/42/"/>
     <id>http://blog.54yongf.com/2016/03/31/42/</id>
     <published>2016-03-31T10:56:41.000Z</published>
@@ -151,7 +181,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No41-【原】Ubuntu用apt-get方式安装php5.6]]></title>
+    <title><![CDATA[No41-原-Ubuntu用apt-get方式安装php5.6]]></title>
     <link href="http://blog.54yongf.com/2016/03/31/41/"/>
     <id>http://blog.54yongf.com/2016/03/31/41/</id>
     <published>2016-03-31T10:27:37.000Z</published>
@@ -179,7 +209,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No40-【原】Git push的时候出错状况及其解决办法]]></title>
+    <title><![CDATA[No40-原-Git push的时候出错状况及其解决办法]]></title>
     <link href="http://blog.54yongf.com/2016/03/29/40/"/>
     <id>http://blog.54yongf.com/2016/03/29/40/</id>
     <published>2016-03-29T14:24:39.000Z</published>
@@ -207,7 +237,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No39-【原】Java核心技术读书笔记]]></title>
+    <title><![CDATA[No39-原-Java核心技术读书笔记]]></title>
     <link href="http://blog.54yongf.com/2016/03/20/39/"/>
     <id>http://blog.54yongf.com/2016/03/20/39/</id>
     <published>2016-03-20T08:54:27.000Z</published>
@@ -362,7 +392,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No38-【原】Ubuntu v14.04使用小技巧]]></title>
+    <title><![CDATA[No38-原-Ubuntu v14.04使用小技巧]]></title>
     <link href="http://blog.54yongf.com/2016/03/18/38/"/>
     <id>http://blog.54yongf.com/2016/03/18/38/</id>
     <published>2016-03-18T08:52:34.000Z</published>
@@ -390,7 +420,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No37-【原】ThinkPHP3.2.3学习笔记]]></title>
+    <title><![CDATA[No37-原-ThinkPHP3.2.3学习笔记]]></title>
     <link href="http://blog.54yongf.com/2016/03/16/37/"/>
     <id>http://blog.54yongf.com/2016/03/16/37/</id>
     <published>2016-03-16T11:19:25.000Z</published>
@@ -447,7 +477,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No36-【原】老生常谈之如何获取最新版Chrome]]></title>
+    <title><![CDATA[No36-原-老生常谈之如何获取最新版Chrome]]></title>
     <link href="http://blog.54yongf.com/2016/03/15/37/"/>
     <id>http://blog.54yongf.com/2016/03/15/37/</id>
     <published>2016-03-15T07:12:28.000Z</published>
@@ -484,7 +514,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No35-【原】Windows系统论设置还原点的重要性]]></title>
+    <title><![CDATA[No35-原-Windows系统论设置还原点的重要性]]></title>
     <link href="http://blog.54yongf.com/2016/03/14/35/"/>
     <id>http://blog.54yongf.com/2016/03/14/35/</id>
     <published>2016-03-14T14:15:02.000Z</published>
@@ -506,7 +536,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No34-【原】向基于Android Studio的Android开发项目中导入第三方库]]></title>
+    <title><![CDATA[No34-原-向基于Android Studio的Android开发项目中导入第三方库]]></title>
     <link href="http://blog.54yongf.com/2016/03/06/34/"/>
     <id>http://blog.54yongf.com/2016/03/06/34/</id>
     <published>2016-03-06T11:44:24.000Z</published>
@@ -561,7 +591,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No33-【原】根据语义规则产生布尔表达式三地址代码]]></title>
+    <title><![CDATA[No33-原-根据语义规则产生布尔表达式三地址代码]]></title>
     <link href="http://blog.54yongf.com/2016/01/08/33/"/>
     <id>http://blog.54yongf.com/2016/01/08/33/</id>
     <published>2016-01-08T12:07:19.000Z</published>
@@ -591,7 +621,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No32-【原】离线版MSDN文档的安装和配置]]></title>
+    <title><![CDATA[No32-原-离线版MSDN文档的安装和配置]]></title>
     <link href="http://blog.54yongf.com/2015/12/29/32/"/>
     <id>http://blog.54yongf.com/2015/12/29/32/</id>
     <published>2015-12-29T03:14:28.000Z</published>
@@ -629,7 +659,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No31-【原】Windows10中多窗口时点击经常切换不了的问题]]></title>
+    <title><![CDATA[No31-原-Windows10中多窗口时点击经常切换不了的问题]]></title>
     <link href="http://blog.54yongf.com/2015/12/29/31/"/>
     <id>http://blog.54yongf.com/2015/12/29/31/</id>
     <published>2015-12-29T02:47:19.000Z</published>
@@ -657,7 +687,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No30-【转】扩展欧几里德定理]]></title>
+    <title><![CDATA[No30-转-扩展欧几里德定理]]></title>
     <link href="http://blog.54yongf.com/2015/12/26/30/"/>
     <id>http://blog.54yongf.com/2015/12/26/30/</id>
     <published>2015-12-26T10:22:52.000Z</published>
@@ -680,7 +710,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No29-【转】C语言不用临时变量交换两个数程序分析]]></title>
+    <title><![CDATA[No29-转-C语言不用临时变量交换两个数程序分析]]></title>
     <link href="http://blog.54yongf.com/2015/12/14/29/"/>
     <id>http://blog.54yongf.com/2015/12/14/29/</id>
     <published>2015-12-14T09:07:38.000Z</published>
@@ -708,7 +738,7 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No28-【转】再谈C语言函数实现交换两个数的值--包你懂！]]></title>
+    <title><![CDATA[No28-转-再谈C语言函数实现交换两个数的值--包你懂！]]></title>
     <link href="http://blog.54yongf.com/2015/12/14/28/"/>
     <id>http://blog.54yongf.com/2015/12/14/28/</id>
     <published>2015-12-14T08:44:57.000Z</published>
@@ -737,11 +767,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[No27-【原】浅谈使用Android Studio进行Android Tests（单元测试）]]></title>
+    <title><![CDATA[No27-原-浅谈使用Android Studio进行Android Tests（单元测试）]]></title>
     <link href="http://blog.54yongf.com/2015/11/30/27/"/>
     <id>http://blog.54yongf.com/2015/11/30/27/</id>
     <published>2015-11-30T10:59:17.000Z</published>
-    <updated>2015-12-22T03:31:14.000Z</updated>
+    <updated>2016-04-15T15:19:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p><font size="4"><br>本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。</font></p>
 <a id="more"></a>
 <h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
@@ -776,30 +806,6 @@
       <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
     
       <category term="单元测试" scheme="http://blog.54yongf.com/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No26-【原】Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]]]></title>
-    <link href="http://blog.54yongf.com/2015/11/28/26/"/>
-    <id>http://blog.54yongf.com/2015/11/28/26/</id>
-    <published>2015-11-27T17:15:05.000Z</published>
-    <updated>2015-11-27T17:15:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p><font size="4"><br>Failure [INSTALL_FAILED_INSUFFICIENT_STORAGE]</font></p>
-<a id="more"></a>
-<h2 id="我的解决方案">我的解决方案</h2><p>发现，原来是手机没有内存空间了。卸载几个应用就OK了</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="问题描述">问题描述</h2><p><font size=4><br>Failure [INSTALL_FAILED_INSUFFICIENT_STORAGE]</p>]]>
-    
-    </summary>
-    
-      <category term="Android Studio" scheme="http://blog.54yongf.com/tags/Android-Studio/"/>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
     
       <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
     
