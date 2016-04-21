@@ -4,34 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No19-原-invalid use of incomplete type &#39;class-Ui-Widge&#39;t的解决办法 | Scott Wang&#39;s blog</title>
+    <title>Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="隔壁老王">
     
 
     
-    <meta name="description" content="先说环境
-qt 5.5.1
-Windows7 
-gcc version 4.8.1">
-<meta property="og:type" content="article">
-<meta property="og:title" content="No19-原-invalid use of incomplete type 'class-Ui-Widge't的解决办法">
-<meta property="og:url" content="http://blog.54yongf.com/qt/19.html">
+    <meta name="description" content="车到山前必有路。我是王用@Scott Wang，我在这里分享技术心得，学习体会，偶尔也谈谈人生。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scott Wang's blog">
+<meta property="og:url" content="http://blog.54yongf.com/page/7/index.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="先说环境
-qt 5.5.1
-Windows7 
-gcc version 4.8.1">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_154912.png">
-<meta property="og:updated_time" content="2016-04-15T15:18:08.000Z">
+<meta property="og:description" content="车到山前必有路。我是王用@Scott Wang，我在这里分享技术心得，学习体会，偶尔也谈谈人生。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No19-原-invalid use of incomplete type 'class-Ui-Widge't的解决办法">
-<meta name="twitter:description" content="先说环境
-qt 5.5.1
-Windows7 
-gcc version 4.8.1">
+<meta name="twitter:title" content="Scott Wang's blog">
+<meta name="twitter:description" content="车到山前必有路。我是王用@Scott Wang，我在这里分享技术心得，学习体会，偶尔也谈谈人生。">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -96,176 +84,82 @@ gcc version 4.8.1">
 
     </header>
     <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-  
-	<article itemprop="articleBody">
-		<header class="article-info clearfix">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/qt/19.html" title="No19-原-invalid use of incomplete type &#39;class-Ui-Widge&#39;t的解决办法" itemprop="url">No19-原-invalid use of incomplete type &#39;class-Ui-Widge&#39;t的解决办法</a>
+      <a href="/hexo/1.html" title="No1-原-hexo系列文章之微博秀" itemprop="url">No1-原-hexo系列文章之微博秀</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="隔壁老王" target="_blank" itemprop="author">隔壁老王</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-20T07:06:17.000Z" itemprop="datePublished">
-      发布于2015-11-20 15:06:17，更新于2016-04-15 23:18:08 <span class="ds-thread-count" data-thread-key="qt/19.html" data-count-type="comments"></span>
+    <time datetime="2015-11-08T00:58:21.000Z" itemprop="datePublished">
+      发布于2015-11-08 08:58:21，更新于2015-11-09 11:24:29 <span class="ds-thread-count" data-thread-key="page/7/index.html" data-count-type="comments"></span>
     </time>
 
   </p>
 </header>
 
-	<div class="article-content">
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说环境"><span class="toc-number">1.</span> <span class="toc-text">先说环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误详情"><span class="toc-number">2.</span> <span class="toc-text">错误详情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原因及解决办法"><span class="toc-number">3.</span> <span class="toc-text">原因及解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#科普一下"><span class="toc-number">3.1.</span> <span class="toc-text">科普一下</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol>
-		
-		</div>
-		
-		<h2 id="先说环境">先说环境</h2><ul>
-<li>qt 5.5.1</li>
-<li>Windows7 </li>
-<li>gcc version 4.8.1</li>
-</ul>
-<a id="more"></a>
-<h2 id="错误详情">错误详情</h2><p><font size="4"><br>如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png" alt="错误详情"></font></p>
-<h2 id="原因及解决办法">原因及解决办法</h2><p><font size="4"><br>可以确定的是，你肯定在Qt Designer中修改了顶部Widget的object name，然而，Qt creator并不会帮你同步gotocell.cpp中的obj name。导致不对应，自然就报错了。<br>应该有两种方法：</font></p>
-<ol>
-<li>比较简单的方法，观察错误中的<code>class Ui::gotoCell</code>，在Qt Designer中，将顶部（点击窗口中空白处即可）的objectName修改为<code>gotoCell</code>即可。注意，请根据自己的错误对应处理。</li>
-<li>修改gotoCell.cpp，类似，将gotoCell修改为Qt Designer中的顶部窗口的objectName，这相对麻烦一点，所以还是推荐方法1。</li>
-</ol>
-<h3 id="科普一下">科普一下</h3><p><font size="4"><br>objectName在哪里修改：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_154912.png" alt="objectName"></font></p>
-<h2 id="参考">参考</h2><p><font size="4"></font></p>
-<ul>
-<li><a href="http://icivelee.blog.163.com/blog/static/147198932201171025810737/" target="_blank" rel="external">http://icivelee.blog.163.com/blog/static/147198932201171025810737/</a></li>
-</ul>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
-
-	</div>
-		<footer class="article-footer clearfix">
+    <div class="article-content">
+        
+        <h1 id="前言">前言</h1><p><font size=4>今天忙活了一天，想着也该给自己整个博客了（怎么说咱也是计算机的人），于是乎，我就满世界地找博客框架，毕竟自己太菜，从零开始自己搭建博客是不可能的，所以只能借助别人成熟的框架，然后在之上进行二次开发。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/hexo/1.html#more">阅读全文</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/qt/">qt</a>
+  <a class="article-category-link" href="/categories/hexo/">hexo</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/qt/">qt</a><a href="/tags/qt-creator/">qt creator</a>
+  <span></span> <a href="/tags/hexo/">hexo</a><a href="/tags/博客/">博客</a><a href="/tags/教程/">教程</a>
   </div>
 
 </div>
 
 
 
-	<div class="article-share" id="share">
+
+<div class="comments-count">
 	
-	<div class="share-jiathis">
-	  
-<div class="jiathis_style_24x24">
-	<a class="jiathis_button_tsina"></a>
-	<a class="jiathis_button_weixin"></a>
-	<a class="jiathis_button_renren"></a>
-	<a class="jiathis_button_qzone"></a>
-	<a class="jiathis_button_googleplus"></a>
-	<a class="jiathis_button_douban"></a>
-	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	<a class="jiathis_counter_style"></a>
+	  	<span></span>
+		<a href="/hexo/1.html#comments" class="ds-thread-count comments-count-link" data-thread-key="hexo/1.html" data-count-type="comments">&nbsp;</a>
+	
 </div>
-<script type="text/javascript" >
-    var jiathis_config={
-    data_track_clickback:true,
-    sm:"copy,renren,cqq",
-    pic:"",
-    summary:"",
-     ralateuid:{"tsina":"2902237231"},hideMore:false}
-    
-  </script> 
-<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
-1059613472" charset="utf-8"></script>      
-
-	 </div>
-	
-	</div>
-
 
 </footer>
 
 
-	</article>
-	<script src="/js/clipboard.min.js"></script>
-
-<div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/qt/19.html">No19-原-invalid use of incomplete type 'class-Ui-Widge't的解决办法</a></p>
-  <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-20 15:06:17</font</p>
-  <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/qt/19.html" title="No19-原-invalid use of incomplete type 'class-Ui-Widge't的解决办法">http://blog.54yongf.com/qt/19.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/qt/19.html" title="点击复制文章链接">
-        <i class="fa fa-clipboard"></i>
-    </span>
-  </p>
-  <p align="left"><span><font color="black">　　许可协议：</font></span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p><br/>
-  <script> var clipboard = new Clipboard('.btn'); </script>
-</div>
-<style type="text/css">
-  .copyright p .btn {
-    margin-left: 1em;
-  }
-  .copyright:hover p .btn::after {
-    content: "点击复制(Chrome)";
-    color: "#2CA6CB";
-  }
-  .copyright p .btn:hover {
-      color: gray;
-      cursor: pointer;
-    };
-</style>
-
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/开发工具/20.html" title="No20-原-破解完VisualAssist后VisualStudio打不开了的解决办法">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No20-原-破解完VisualAssist后VisualStudio打不开了的解决办法</span>
-</a>
-</div>
+    </article>
 
 
-<div class="next">
-<a href="/hexo/18.html"  title="No18-原-跟我一起来了解hexo的结构，自定义一些组件">
- <strong>下一篇：</strong><br/> 
- <span>No18-原-跟我一起来了解hexo的结构，自定义一些组件
-</span>
-</a>
-</div>
-
-</nav>
-
-	
-<section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="qt/19.html" data-title="No19-原-invalid use of incomplete type 'class-Ui-Widge't的解决办法" data-url="http://blog.54yongf.com/qt/19.html"></div>
-</section>
 
 
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <a class="extend prev" rel="prev" href="/page/6/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+  </nav>
 
 </div>
-
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
- 
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说环境"><span class="toc-number">1.</span> <span class="toc-text">先说环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误详情"><span class="toc-number">2.</span> <span class="toc-text">错误详情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原因及解决办法"><span class="toc-number">3.</span> <span class="toc-text">原因及解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#科普一下"><span class="toc-number">3.1.</span> <span class="toc-text">科普一下</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol></font>
- 
-  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -549,35 +443,7 @@ $(document).ready(function(){
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
       
-      $('#toc.toc-aside').css('display', 'none');
-      
     }
-  });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
 });
 </script>
@@ -688,4 +554,4 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 <!-- Tiny_search End -->
 
   </body>
-</html>
+ </html>
