@@ -4,30 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No27-原-浅谈使用Android Studio进行Android Tests（单元测试） | Scott Wang&#39;s blog</title>
+    <title>No49-原-4月乐报 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="隔壁老王">
     
 
     
-    <meta name="description" content="摘要本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。">
+    <meta name="description" content="Light">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No27-原-浅谈使用Android Studio进行Android Tests（单元测试）">
-<meta property="og:url" content="http://blog.54yongf.com/Android开发/27.html">
+<meta property="og:title" content="No49-原-4月乐报">
+<meta property="og:url" content="http://blog.54yongf.com/乐报/49.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="摘要本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_190934.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191303.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191517.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192801.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192953.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193310.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193237.png">
-<meta property="og:updated_time" content="2016-04-15T15:19:35.000Z">
+<meta property="og:description" content="Light">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No49-3.jpg">
+<meta property="og:updated_time" content="2016-04-22T10:04:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No27-原-浅谈使用Android Studio进行Android Tests（单元测试）">
-<meta name="twitter:description" content="摘要本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。">
+<meta name="twitter:title" content="No49-原-4月乐报">
+<meta name="twitter:description" content="Light">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -98,15 +92,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/Android开发/27.html" title="No27-原-浅谈使用Android Studio进行Android Tests（单元测试）" itemprop="url">No27-原-浅谈使用Android Studio进行Android Tests（单元测试）</a>
+      <a href="/乐报/49.html" title="No49-原-4月乐报" itemprop="url">No49-原-4月乐报</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="隔壁老王" target="_blank" itemprop="author">隔壁老王</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-30T10:59:17.000Z" itemprop="datePublished">
-      发布于2015-11-30 18:59:17，更新于2016-04-15 23:19:35 <span class="ds-thread-count" data-thread-key="Android开发/27.html" data-count-type="comments"></span>
+    <time datetime="2016-04-22T10:04:29.000Z" itemprop="datePublished">
+      发布于2016-04-22 18:04:29，更新于2016-04-22 18:04:29 <span class="ds-thread-count" data-thread-key="乐报/49.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -117,35 +111,23 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_Tests"><span class="toc-number">2.</span> <span class="toc-text">Android Tests</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Light"><span class="toc-number">1.</span> <span class="toc-text">Light</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Are_You_OK_-_雷军"><span class="toc-number">2.</span> <span class="toc-text">Are You OK - 雷军</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luv_Letter_-_DJ_OKAWARI"><span class="toc-number">3.</span> <span class="toc-text">Luv Letter - DJ OKAWARI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rags_To_Rings_-_Danny_Mc_Carthy"><span class="toc-number">4.</span> <span class="toc-text">Rags To Rings - Danny Mc Carthy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chain_Hang_Low_-_Jibbs"><span class="toc-number">5.</span> <span class="toc-text">Chain Hang Low - Jibbs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Trip_-_Axero"><span class="toc-number">6.</span> <span class="toc-text">Trip - Axero</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="摘要">摘要</h2><p><font size="4"><br>本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。</font></p>
+		<h2 id="Light">Light</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No49-3.jpg" alt="石兰"></p>
 <a id="more"></a>
-<h2 id="Android_Tests">Android Tests</h2><p><font size="4"><br>AS新建项目时，自动生成了Test类，所以，你只需配置一下Run/Debug Configuration，在Test类中写入测试代码，就可以运行测试了。<br>详细步骤如下：</font></p>
-<ol>
-<li>选择顶部工具栏Run–&gt;Edit Configuration<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_190934.png" alt="先编辑测试选项"></li>
-<li>选择Default–&gt;Android Tests，我的配置如下图，当然，也可以根据自己的需要自行设置<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191303.png" alt="自行设置"></li>
-<li>在Project中找到ApplicationTest:app–&gt;src–&gt;androidTest–&gt;java–&gt;包名–&gt;ApplicationTest，打开之<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_191517.png" alt="测试文件"></li>
-<li><p>打开之后，它长这样（这些都是自动生成的）：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yongf.sqlitedemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Application;</span><br><span class="line"><span class="keyword">import</span> android.test.ApplicationTestCase;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.yongf.sqlitedemo.db.PersonSQLiteOpenHelper;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * &lt;a href="http://d.android.com/tools/testing/testing_android.html"&gt;Testing Fundamentals&lt;/a&gt;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationTest</span> <span class="keyword">extends</span> <span class="title">ApplicationTestCase</span>&lt;<span class="title">Application</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApplicationTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(Application.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在ApplicationTest中新建自己的测试函数，<strong><font color="red">注意！测试的入口函数的函数名必须为test开头</font></strong>。我加了几行测试代码，加完之后，它长这样：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yongf.sqlitedemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Application;</span><br><span class="line"><span class="keyword">import</span> android.test.ApplicationTestCase;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.yongf.sqlitedemo.db.PersonSQLiteOpenHelper;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * &lt;a href="http://d.android.com/tools/testing/testing_android.html"&gt;Testing Fundamentals&lt;/a&gt;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationTest</span> <span class="keyword">extends</span> <span class="title">ApplicationTestCase</span>&lt;<span class="title">Application</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApplicationTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(Application.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assertEquals(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>test函数中为测试代码，<code>assertEquals(1, 3)</code>这句显然有问题，我们的任务就是，在Android Tests中发现这个错误。</p>
-</li>
-<li>右键app，选择Run All Tests，或者用快捷键Ctrl+Shift+F10。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192801.png" alt="Run Tests"></li>
-<li>选择模拟器，然后OK。等一会儿<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_192953.png" alt="选择模拟器"></li>
-<li><p>点击下方的Run工具栏，选择test()，窗口中就会打印出错信息了，我这里肯定错了，因为1!=3，错误信息如下：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Running tests</span><br><span class="line">Test running started</span><br><span class="line">junit<span class="class">.framework</span><span class="class">.AssertionFailedError</span>: expected:&lt;<span class="number">1</span>&gt; but was:&lt;<span class="number">3</span>&gt;</span><br><span class="line">at com<span class="class">.yongf</span><span class="class">.sqlitedemo</span><span class="class">.ApplicationTest</span><span class="class">.test</span>(ApplicationTest<span class="class">.java</span>:<span class="number">19</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.AndroidTestRunner</span><span class="class">.runTest</span>(AndroidTestRunner<span class="class">.java</span>:<span class="number">191</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.AndroidTestRunner</span><span class="class">.runTest</span>(AndroidTestRunner<span class="class">.java</span>:<span class="number">176</span>)</span><br><span class="line">at android<span class="class">.test</span><span class="class">.InstrumentationTestRunner</span><span class="class">.onStart</span>(InstrumentationTestRunner<span class="class">.java</span>:<span class="number">555</span>)</span><br><span class="line">at android<span class="class">.app</span><span class="class">.Instrumentation</span><span class="variable">$InstrumentationThread</span>.<span class="function"><span class="title">run</span><span class="params">(Instrumentation.java:<span class="number">1879</span>)</span></span></span><br><span class="line"></span><br><span class="line">Finish</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>从错误信息中，可以轻松定位到出错的位置。如果Test没问题，就会显示Test Passed。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193310.png" alt="打印出错信息"></p>
-</li>
-</ol>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No27-2015-11-30_193237.png" alt="打印出错信息"></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h2 id="Are_You_OK_-_雷军">Are You OK - 雷军</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=31814005&auto=0&height=66"></iframe>
+
+<h2 id="Luv_Letter_-_DJ_OKAWARI">Luv Letter - DJ OKAWARI</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=30780433&auto=0&height=66"></iframe>
+
+<h2 id="Rags_To_Rings_-_Danny_Mc_Carthy">Rags To Rings - Danny Mc Carthy</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=28949412&auto=0&height=66"></iframe>
+
+<h2 id="Chain_Hang_Low_-_Jibbs">Chain Hang Low - Jibbs</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=18803411&auto=0&height=66"></iframe>
+
+<h2 id="Trip_-_Axero">Trip - Axero</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=36492599&auto=0&height=66"></iframe>
+
+<h2 id="感谢">感谢</h2><p><font size="4"><br>乐报,不定期更新,歌慌了?来乐报 :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -153,13 +135,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
+  <a class="article-category-link" href="/categories/乐报/">乐报</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Android开发/">Android开发</a><a href="/tags/单元测试/">单元测试</a>
+  <span></span> <a href="/tags/乐报/">乐报</a>
   </div>
 
 </div>
@@ -204,12 +186,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/Android开发/27.html">No27-原-浅谈使用Android Studio进行Android Tests（单元测试）</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/乐报/49.html">No49-原-4月乐报</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-30 18:59:17</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-04-22 18:04:29</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/Android开发/27.html" title="No27-原-浅谈使用Android Studio进行Android Tests（单元测试）">http://blog.54yongf.com/Android开发/27.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/Android开发/27.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/乐报/49.html" title="No49-原-4月乐报">http://blog.54yongf.com/乐报/49.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/乐报/49.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -233,19 +215,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/C语言/28.html" title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No28-转-再谈C语言函数实现交换两个数的值--包你懂！</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/Android开发/26.html"  title="No26-原-Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]">
+<a href="/Android开发/48.html"  title="No48-原-自定义View之自定义圆形进度条">
  <strong>下一篇：</strong><br/> 
- <span>No26-原-Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]
+ <span>No48-原-自定义View之自定义圆形进度条
 </span>
 </a>
 </div>
@@ -254,7 +228,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="Android开发/27.html" data-title="No27-原-浅谈使用Android Studio进行Android Tests（单元测试）" data-url="http://blog.54yongf.com/Android开发/27.html"></div>
+	<div class="ds-thread" data-thread-key="乐报/49.html" data-title="No49-原-4月乐报" data-url="http://blog.54yongf.com/乐报/49.html"></div>
 </section>
 
 
@@ -266,7 +240,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_Tests"><span class="toc-number">2.</span> <span class="toc-text">Android Tests</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Light"><span class="toc-number">1.</span> <span class="toc-text">Light</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Are_You_OK_-_雷军"><span class="toc-number">2.</span> <span class="toc-text">Are You OK - 雷军</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luv_Letter_-_DJ_OKAWARI"><span class="toc-number">3.</span> <span class="toc-text">Luv Letter - DJ OKAWARI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rags_To_Rings_-_Danny_Mc_Carthy"><span class="toc-number">4.</span> <span class="toc-text">Rags To Rings - Danny Mc Carthy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chain_Hang_Low_-_Jibbs"><span class="toc-number">5.</span> <span class="toc-text">Chain Hang Low - Jibbs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Trip_-_Axero"><span class="toc-number">6.</span> <span class="toc-text">Trip - Axero</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
