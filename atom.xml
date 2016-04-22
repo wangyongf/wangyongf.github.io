@@ -22,16 +22,11 @@
     <updated>2016-04-22T10:04:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Light">Light</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No49-3.jpg" alt="石兰"></p>
 <a id="more"></a>
-<h2 id="Are_You_OK_-_雷军">Are You OK - 雷军</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=31814005&auto=0&height=66"></iframe>
-
-<h2 id="Luv_Letter_-_DJ_OKAWARI">Luv Letter - DJ OKAWARI</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=30780433&auto=0&height=66"></iframe>
-
-<h2 id="Rags_To_Rings_-_Danny_Mc_Carthy">Rags To Rings - Danny Mc Carthy</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=28949412&auto=0&height=66"></iframe>
-
-<h2 id="Chain_Hang_Low_-_Jibbs">Chain Hang Low - Jibbs</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=18803411&auto=0&height=66"></iframe>
-
-<h2 id="Trip_-_Axero">Trip - Axero</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=36492599&auto=0&height=66"></iframe>
-
+<h2 id="Are_You_OK_-_雷军">Are You OK - 雷军</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=31814005&auto=0&height=66"></iframe></p>
+<h2 id="Luv_Letter_-_DJ_OKAWARI">Luv Letter - DJ OKAWARI</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=30780433&auto=0&height=66"></iframe></p>
+<h2 id="Rags_To_Rings_-_Danny_Mc_Carthy">Rags To Rings - Danny Mc Carthy</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=28949412&auto=0&height=66"></iframe></p>
+<h2 id="Chain_Hang_Low_-_Jibbs">Chain Hang Low - Jibbs</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=18803411&auto=0&height=66"></iframe></p>
+<h2 id="Trip_-_Axero">Trip - Axero</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=36492599&auto=0&height=66"></iframe></p>
 <h2 id="感谢">感谢</h2><p><font size="4"><br>乐报,不定期更新,歌慌了?来乐报 :)</font></p>
 ]]></content>
     <summary type="html">
@@ -251,8 +246,8 @@
   
   <entry>
     <title><![CDATA[No42-原-Windows下Apache使用问题总结（持续更新）]]></title>
-    <link href="http://blog.54yongf.com/%E6%9C%8D%E5%8A%A1%E5%99%A8/42.html"/>
-    <id>http://blog.54yongf.com/服务器/42.html</id>
+    <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/42.html"/>
+    <id>http://blog.54yongf.com/杂谈/42.html</id>
     <published>2016-03-31T10:56:41.000Z</published>
     <updated>2016-03-31T10:56:41.000Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。</font></p>
@@ -287,7 +282,7 @@
     
       <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
     
-      <category term="服务器" scheme="http://blog.54yongf.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
@@ -532,8 +527,8 @@
   
   <entry>
     <title><![CDATA[No37-原-ThinkPHP3.2.3学习笔记]]></title>
-    <link href="http://blog.54yongf.com/php/37.html"/>
-    <id>http://blog.54yongf.com/php/37.html</id>
+    <link href="http://blog.54yongf.com/PHP/37.html"/>
+    <id>http://blog.54yongf.com/PHP/37.html</id>
     <published>2016-03-16T11:19:25.000Z</published>
     <updated>2016-03-16T11:19:25.000Z</updated>
     <content type="html"><![CDATA[<h2 id="说在前面">说在前面</h2><p><font size="4"><br>最近接到了一个紧急任务（一个课程设计），要在一周之内做出一个轻型博客系统，必须快速开发，于是我想到了thinkphp。虽然我之前学过一个PHP，也早就听说过thinkphp，但是对thinkphp是一无所知，火速下载官方文档。开始学习！</font></p>
@@ -556,21 +551,21 @@
 <h2 id="再贴一下thinkphp官方开发规范">再贴一下thinkphp官方开发规范</h2><font size="4">
 
 <ol>
-<li>类文件都是以.class.php为后缀（这里是指的ThinkPHP内部使用的类库文件，不代表外部加载的类库文件），使用驼峰法命名，并且首字母大写，例如 DbMysql.class.php； </li>
-<li>类的命名空间地址和所在的路径地址一致，例如 Home\Controller\UserController类所在的路径应该是 Application/Home/Controller/UserController.class.php； </li>
-<li>确保文件的命名和调用大小写一致，是由于在类Unix系统上面，对大小写是敏感的（而ThinkPHP在调试模式下面，即使在Windows平台也会严格检查大小写）； </li>
-<li>类名和文件名一致（包括上面说的大小写一致），例如 UserController类的文件命名是UserController.class.php， InfoModel类的文件名是InfoModel.class.php， 并且不同的类库的类命名有一定的规范； </li>
-<li>函数、配置文件等其他类库文件之外的一般是以.php为后缀（第三方引入的不做要求）； </li>
-<li>函数的命名使用小写字母和下划线的方式，例如 get_client_ip； </li>
-<li>方法的命名使用驼峰法，并且首字母小写或者使用下划线“_”，例如 getUserName，_parseType，通常下划线开头的方法属于私有方法； </li>
-<li>属性的命名使用驼峰法，并且首字母小写或者使用下划线“_”，例如 tableName、_instance，通常下划线开头的属性属于私有属性； </li>
-<li>以双下划线“<strong>”打头的函数或方法作为魔法方法，例如 </strong>call 和 __autoload； </li>
-<li>常量以大写字母和下划线命名，例如 HAS_ONE和 MANY_TO_MANY； </li>
-<li>配置参数以大写字母和下划线命名，例如HTML_CACHE_ON； </li>
-<li>语言变量以大写字母和下划线命名，例如MY_LANG，以下划线打头的语言变量通常用于系统语言变量，例如 _CLASS_NOT<em>EXIST</em>； </li>
-<li>对变量的命名没有强制的规范，可以根据团队规范来进行； </li>
-<li>ThinkPHP的模板文件默认是以.html 为后缀（可以通过配置修改）； </li>
-<li>数据表和字段采用小写加下划线方式命名，并注意字段名不要以下划线开头，例如 think_user 表和 user_name字段是正确写法，类似 _username 这样的数据表字段可能会被过滤。 </li>
+<li>类文件都是以.class.php为后缀（这里是指的ThinkPHP内部使用的类库文件，不代表外部加载的类库文件），使用驼峰法命名，并且首字母大写，例如 DbMysql.class.php；</li>
+<li>类的命名空间地址和所在的路径地址一致，例如 Home\Controller\UserController类所在的路径应该是 Application/Home/Controller/UserController.class.php；</li>
+<li>确保文件的命名和调用大小写一致，是由于在类Unix系统上面，对大小写是敏感的（而ThinkPHP在调试模式下面，即使在Windows平台也会严格检查大小写）；</li>
+<li>类名和文件名一致（包括上面说的大小写一致），例如 UserController类的文件命名是UserController.class.php， InfoModel类的文件名是InfoModel.class.php， 并且不同的类库的类命名有一定的规范；</li>
+<li>函数、配置文件等其他类库文件之外的一般是以.php为后缀（第三方引入的不做要求）；</li>
+<li>函数的命名使用小写字母和下划线的方式，例如 get_client_ip；</li>
+<li>方法的命名使用驼峰法，并且首字母小写或者使用下划线“_”，例如 getUserName，_parseType，通常下划线开头的方法属于私有方法；</li>
+<li>属性的命名使用驼峰法，并且首字母小写或者使用下划线“_”，例如 tableName、_instance，通常下划线开头的属性属于私有属性；</li>
+<li>以双下划线“<strong>”打头的函数或方法作为魔法方法，例如 </strong>call 和 __autoload；</li>
+<li>常量以大写字母和下划线命名，例如 HAS_ONE和 MANY_TO_MANY；</li>
+<li>配置参数以大写字母和下划线命名，例如HTML_CACHE_ON；</li>
+<li>语言变量以大写字母和下划线命名，例如MY_LANG，以下划线打头的语言变量通常用于系统语言变量，例如 _CLASS_NOT<em>EXIST</em>；</li>
+<li>对变量的命名没有强制的规范，可以根据团队规范来进行；</li>
+<li>ThinkPHP的模板文件默认是以.html 为后缀（可以通过配置修改）；</li>
+<li>数据表和字段采用小写加下划线方式命名，并注意字段名不要以下划线开头，例如 think_user 表和 user_name字段是正确写法，类似 _username 这样的数据表字段可能会被过滤。</li>
 </ol>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 </font></font>]]></content>
@@ -583,7 +578,7 @@
     
       <category term="thinkphp" scheme="http://blog.54yongf.com/tags/thinkphp/"/>
     
-      <category term="php" scheme="http://blog.54yongf.com/categories/php/"/>
+      <category term="PHP" scheme="http://blog.54yongf.com/categories/PHP/"/>
     
   </entry>
   

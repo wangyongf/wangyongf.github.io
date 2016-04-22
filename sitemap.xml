@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.54yongf.com/Qt/19.html</loc>
+    <lastmod>2016-04-22T11:27:42.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/27.html</loc>
+    <lastmod>2016-04-22T11:24:36.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.54yongf.com/%E4%B9%90%E6%8A%A5/49.html</loc>
     <lastmod>2016-04-22T10:04:29.000Z</lastmod>
   </url>
@@ -27,16 +37,6 @@
   </url>
   
   <url>
-    <loc>http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/27.html</loc>
-    <lastmod>2016-04-15T15:19:35.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.54yongf.com/qt/19.html</loc>
-    <lastmod>2016-04-15T15:18:08.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://blog.54yongf.com/about/index.html</loc>
     <lastmod>2016-04-15T12:04:01.000Z</lastmod>
   </url>
@@ -52,7 +52,7 @@
   </url>
   
   <url>
-    <loc>http://blog.54yongf.com/%E6%9C%8D%E5%8A%A1%E5%99%A8/42.html</loc>
+    <loc>http://blog.54yongf.com/%E6%9D%82%E8%B0%88/42.html</loc>
     <lastmod>2016-03-31T10:56:41.000Z</lastmod>
   </url>
   
@@ -77,7 +77,7 @@
   </url>
   
   <url>
-    <loc>http://blog.54yongf.com/php/37.html</loc>
+    <loc>http://blog.54yongf.com/PHP/37.html</loc>
     <lastmod>2016-03-16T11:19:25.000Z</lastmod>
   </url>
   
@@ -117,12 +117,12 @@
   </url>
   
   <url>
-    <loc>http://blog.54yongf.com/C%E8%AF%AD%E8%A8%80/29.html</loc>
+    <loc>http://blog.54yongf.com/C-C/29.html</loc>
     <lastmod>2015-12-14T09:07:38.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.54yongf.com/C%E8%AF%AD%E8%A8%80/28.html</loc>
+    <loc>http://blog.54yongf.com/C-C/28.html</loc>
     <lastmod>2015-12-14T08:44:57.000Z</lastmod>
   </url>
   
@@ -187,7 +187,7 @@
   </url>
   
   <url>
-    <loc>http://blog.54yongf.com/hexo/14.html</loc>
+    <loc>http://blog.54yongf.com/Git/14.html</loc>
     <lastmod>2015-11-13T17:39:41.000Z</lastmod>
   </url>
   
@@ -202,7 +202,7 @@
   </url>
   
   <url>
-    <loc>http://blog.54yongf.com/%E8%B5%84%E6%BA%90/11.html</loc>
+    <loc>http://blog.54yongf.com/%E6%9D%82%E8%B0%88/11.html</loc>
     <lastmod>2015-11-13T11:12:21.000Z</lastmod>
   </url>
   

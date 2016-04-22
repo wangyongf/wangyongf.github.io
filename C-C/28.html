@@ -14,7 +14,7 @@
     <meta name="description" content="摘要　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No28-转-再谈C语言函数实现交换两个数的值--包你懂！">
-<meta property="og:url" content="http://blog.54yongf.com/C语言/28.html">
+<meta property="og:url" content="http://blog.54yongf.com/C-C/28.html">
 <meta property="og:site_name" content="Scott Wang's blog">
 <meta property="og:description" content="摘要　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。">
 <meta property="og:updated_time" content="2015-12-14T08:44:57.000Z">
@@ -91,7 +91,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/C语言/28.html" title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！" itemprop="url">No28-转-再谈C语言函数实现交换两个数的值--包你懂！</a>
+      <a href="/C-C/28.html" title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！" itemprop="url">No28-转-再谈C语言函数实现交换两个数的值--包你懂！</a>
   </h1>
   <p class="article-author">By
        
@@ -99,7 +99,7 @@
 		
   <p class="article-time">
     <time datetime="2015-12-14T08:44:57.000Z" itemprop="datePublished">
-      发布于2015-12-14 16:44:57，更新于2015-12-14 16:44:57 <span class="ds-thread-count" data-thread-key="C语言/28.html" data-count-type="comments"></span>
+      发布于2015-12-14 16:44:57，更新于2015-12-14 16:44:57 <span class="ds-thread-count" data-thread-key="C-C/28.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -116,9 +116,9 @@
 		
 		<h2 id="摘要">摘要</h2><p><font size="4"><br>　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。</font></p>
 <a id="more"></a>
-<h2 id="代码">代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">     </span><br><span class="line">    temp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_with_pt</span><span class="params">(<span class="keyword">int</span> * x,<span class="keyword">int</span> * y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">     </span><br><span class="line">    temp = *x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap_with_pt: x = %d,y = %d\n"</span>,*x,*y);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>,y = <span class="number">10</span>;</span><br><span class="line">     </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap(x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"-------------------------------\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap_with_pt(&amp;x,&amp;y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码">代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line"></span><br><span class="line">    temp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_with_pt</span><span class="params">(<span class="keyword">int</span> * x,<span class="keyword">int</span> * y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line"></span><br><span class="line">    temp = *x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap_with_pt: x = %d,y = %d\n"</span>,*x,*y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>,y = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap(x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"-------------------------------\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap_with_pt(&amp;x,&amp;y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="输出">输出</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Before swap: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">In swap: x = <span class="number">10</span>,y = <span class="number">5</span></span><br><span class="line">After swap: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">---------------------------------</span><br><span class="line">Before swap_with_pt: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">In swap_with_pt: x =<span class="number">10</span>,y = <span class="number">5</span></span><br><span class="line">After swap_with_pt: x = <span class="number">10</span>,y = <span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h2 id="解释">解释</h2><p><font size="4"><br>　　swap函数调用时首先创建x，y的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap函数里有意义），并将main函数中x，y的值传给变量x2，y2，然后函数交换了x2，y2的值，运行完函数后x2，y2变量生命期结束。所以，x和y的值是不变的。            </font></p>
+<h2 id="解释">解释</h2><p><font size="4"><br>　　swap函数调用时首先创建x，y的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap函数里有意义），并将main函数中x，y的值传给变量x2，y2，然后函数交换了x2，y2的值，运行完函数后x2，y2变量生命期结束。所以，x和y的值是不变的。</font></p>
 <font size="4">
 
 <p>　　swap_with_pt函数调用时同样创建x，y的指针的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap_with_pt函数里有意义），并将x，y的地址值传给x2，y2，这个时候x2和y2是指向main函数中x，y的，然后通过<em>运算修改x，y的值。注意，“</em>+指针名”是可以改变它所指向的变量的值的。</p>
@@ -130,13 +130,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/C语言/">C语言</a>
+  <a class="article-category-link" href="/categories/C-C/">C/C++</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/C语言/">C语言</a><a href="/tags/指针/">指针</a>
+  <span></span> <a href="/tags/C-C/">C/C++</a><a href="/tags/指针/">指针</a>
   </div>
 
 </div>
@@ -181,12 +181,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/C语言/28.html">No28-转-再谈C语言函数实现交换两个数的值--包你懂！</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/C-C/28.html">No28-转-再谈C语言函数实现交换两个数的值--包你懂！</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">网络</a></p>
   <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-12-14 16:44:57</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/C语言/28.html" title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！">http://blog.54yongf.com/C语言/28.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/C语言/28.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/C-C/28.html" title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！">http://blog.54yongf.com/C-C/28.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/C-C/28.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -211,7 +211,7 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/C语言/29.html" title="No29-转-C语言不用临时变量交换两个数程序分析">
+ <a href="/C-C/29.html" title="No29-转-C语言不用临时变量交换两个数程序分析">
   <strong>上一篇：</strong><br/>
   <span>
   No29-转-C语言不用临时变量交换两个数程序分析</span>
@@ -231,7 +231,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="C语言/28.html" data-title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！" data-url="http://blog.54yongf.com/C语言/28.html"></div>
+	<div class="ds-thread" data-thread-key="C-C/28.html" data-title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！" data-url="http://blog.54yongf.com/C-C/28.html"></div>
 </section>
 
 
@@ -298,11 +298,13 @@
 		  
 		
 		  
-			<li><a href="/categories/C语言/" title="C语言">C语言<sup>2</sup></a></li>
+			<li><a href="/categories/C-C/" title="C/C++">C/C++<sup>2</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Git/" title="Git">Git<sup>2</sup></a></li>
+		
+		  
+			<li><a href="/categories/Git/" title="Git">Git<sup>3</sup></a></li>
 		  
 		
 		  
@@ -310,15 +312,19 @@
 		  
 		
 		  
-			<li><a href="/categories/hexo/" title="hexo">hexo<sup>8</sup></a></li>
+			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/php/" title="php">php<sup>1</sup></a></li>
+			<li><a href="/categories/Qt/" title="Qt">Qt<sup>1</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/qt/" title="qt">qt<sup>1</sup></a></li>
+			<li><a href="/categories/hexo/" title="hexo">hexo<sup>7</sup></a></li>
+		  
+		
+		  
+		
 		  
 		
 		  
@@ -330,11 +336,9 @@
 		  
 		
 		  
-			<li><a href="/categories/服务器/" title="服务器">服务器<sup>1</sup></a></li>
-		  
 		
 		  
-			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>16</sup></a></li>
+			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>18</sup></a></li>
 		  
 		
 		  
@@ -354,8 +358,6 @@
 		  
 		
 		  
-			<li><a href="/categories/资源/" title="资源">资源<sup>1</sup></a></li>
-		  
 		
 		</ul>
 </div>
@@ -365,7 +367,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 12.5px;">C语言</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Ubuntu/" style="font-size: 12.5px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 10px;">Visual Studio Code</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/乐报/" style="font-size: 10px;">乐报</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 20px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Qt/" style="font-size: 10px;">Qt</a> <a href="/tags/Ubuntu/" style="font-size: 12.5px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 10px;">Visual Studio Code</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/乐报/" style="font-size: 10px;">乐报</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/感受/" style="font-size: 10px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 20px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
   </div>
 

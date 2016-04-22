@@ -4,23 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No14-原-使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法 | Scott Wang&#39;s blog</title>
+    <title>No29-转-C语言不用临时变量交换两个数程序分析 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="隔壁老王">
     
 
     
-    <meta name="description" content="前言在Windows上使用git来deploy到gitcafe服务器上的时候，每次都要填写用户名/邮箱、密码，灰常烦人有木有。关键是我的电脑上已经设置了SSH了。">
+    <meta name="description" content="摘要首先看这样一个程序
+123int a, b;a = a + b;b = a - b;
+此时b = (a + b) - b = a;     (经过第一步a为a+b）a = a - b;此时a = (a + b) - a = b; (经过第二步时b已为a)可见这个程序实现了a和b的交换。注意+和-互为逆运算，可以得到(a+b)-b=a，埋个伏笔先。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No14-原-使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法">
-<meta property="og:url" content="http://blog.54yongf.com/hexo/14.html">
+<meta property="og:title" content="No29-转-C语言不用临时变量交换两个数程序分析">
+<meta property="og:url" content="http://blog.54yongf.com/C-C/29.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="前言在Windows上使用git来deploy到gitcafe服务器上的时候，每次都要填写用户名/邮箱、密码，灰常烦人有木有。关键是我的电脑上已经设置了SSH了。">
-<meta property="og:updated_time" content="2015-11-13T17:39:41.000Z">
+<meta property="og:description" content="摘要首先看这样一个程序
+123int a, b;a = a + b;b = a - b;
+此时b = (a + b) - b = a;     (经过第一步a为a+b）a = a - b;此时a = (a + b) - a = b; (经过第二步时b已为a)可见这个程序实现了a和b的交换。注意+和-互为逆运算，可以得到(a+b)-b=a，埋个伏笔先。">
+<meta property="og:updated_time" content="2015-12-14T09:07:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No14-原-使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法">
-<meta name="twitter:description" content="前言在Windows上使用git来deploy到gitcafe服务器上的时候，每次都要填写用户名/邮箱、密码，灰常烦人有木有。关键是我的电脑上已经设置了SSH了。">
+<meta name="twitter:title" content="No29-转-C语言不用临时变量交换两个数程序分析">
+<meta name="twitter:description" content="摘要首先看这样一个程序
+123int a, b;a = a + b;b = a - b;
+此时b = (a + b) - b = a;     (经过第一步a为a+b）a = a - b;此时a = (a + b) - a = b; (经过第二步时b已为a)可见这个程序实现了a和b的交换。注意+和-互为逆运算，可以得到(a+b)-b=a，埋个伏笔先。">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -91,15 +97,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/hexo/14.html" title="No14-原-使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法" itemprop="url">No14-原-使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法</a>
+      <a href="/C-C/29.html" title="No29-转-C语言不用临时变量交换两个数程序分析" itemprop="url">No29-转-C语言不用临时变量交换两个数程序分析</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="隔壁老王" target="_blank" itemprop="author">隔壁老王</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-13T17:39:41.000Z" itemprop="datePublished">
-      发布于2015-11-14 01:39:41，更新于2015-11-14 01:39:41 <span class="ds-thread-count" data-thread-key="hexo/14.html" data-count-type="comments"></span>
+    <time datetime="2015-12-14T09:07:38.000Z" itemprop="datePublished">
+      发布于2015-12-14 17:07:38，更新于2015-12-14 17:07:38 <span class="ds-thread-count" data-thread-key="C-C/29.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -110,18 +116,16 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用SSH"><span class="toc-number">2.</span> <span class="toc-text">使用SSH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用HTTTPS"><span class="toc-number">3.</span> <span class="toc-text">使用HTTTPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转载，详情请见"><span class="toc-number">2.</span> <span class="toc-text">转载，详情请见</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="前言">前言</h2><p><font size="4"><br>在Windows上使用git来deploy到gitcafe服务器上的时候，每次都要填写用户名/邮箱、密码，灰常烦人有木有。关键是我的电脑上已经设置了SSH了。</font></p>
+		<h2 id="摘要">摘要</h2><p><font size="4"><br>首先看这样一个程序<br></font></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br></pre></td></tr></table></figure>
+<p>此时b = (a + b) - b = a;     (经过第一步a为a+b）<br><br>a = a - b;此时a = (a + b) - a = b; (经过第二步时b已为a)<br><br>可见这个程序实现了a和b的交换。注意+和-互为逆运算，可以得到(a+b)-b=a，埋个伏笔先。</p>
 <a id="more"></a>
-<h2 id="使用SSH">使用SSH</h2><p><font size="4"><br>后面发现，是hexo中配置文件中deploy部分设置的问题，将deploy部分设置成下面的样式就行了（注意替换）：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy</span><br><span class="line">    type: git</span><br><span class="line">    repository: git@gitcafe<span class="class">.com</span>:your_username/your_username<span class="class">.git</span></span><br><span class="line">    branch: gitcafe-pages</span><br><span class="line">    message: update</span><br></pre></td></tr></table></figure></font></p>
-<p><font size="4"><br>注意替换！注意替换！注意替换！重要的事情说三遍。<br>但是，设置为上述的之后，每次<code>hexo deploy</code>的时候，不用输入用户名了，不过还是要输入密码（passphrase），还是不完美<br>目前，还没找到更好的使用SSH的方法。如果你有更好的方法，望留言共享</font></p>
-<h2 id="使用HTTTPS">使用HTTTPS</h2><p><font size="4"><br>之后，经过查证，也可以使用HTTPS，而且，经过<a href="http://zipperary.com/2013/05/26/ssh-errors-with-github/" title="关于解决这个问题的博文" target="_blank" rel="external">Zipperary大神</a>的博文，解决了这个问题。<br>要使用这种方法，请确保你的deploy设置为如下格式：<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy</span><br><span class="line">    <span class="keyword">type</span>: git</span><br><span class="line">    repository: https:<span class="comment">//gitcafe.com/your_username/your_name.git</span></span><br><span class="line">    branch: gitcafe-pages</span><br><span class="line">    <span class="keyword">message</span>: update</span><br></pre></td></tr></table></figure></font></p>
-<p><font size="4"><br>后面的步骤就不赘述了，请参考Zipperary的博客：<a href="http://zipperary.com/2013/05/26/ssh-errors-with-github/" target="_blank" rel="external">http://zipperary.com/2013/05/26/ssh-errors-with-github/</a></font></p>
-<p><strong>注：</strong>如果链接不可用，请在评论中回复，以进一步处理。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="转载，详情请见">转载，详情请见</h2><p><a href="http://blog.csdn.net/pegasuswang_/article/details/9131751" target="_blank" rel="external">CSDN-C语言不用临时变量交换两个数的程序分析</a></p>
+<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -129,13 +133,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  <a class="article-category-link" href="/categories/C-C/">C/C++</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/git/">git</a><a href="/tags/githubOrgitcafe/">githubOrgitcafe</a><a href="/tags/hexo/">hexo</a><a href="/tags/ssh/">ssh</a>
+  <span></span> <a href="/tags/C语言/">C语言</a><a href="/tags/杂谈/">杂谈</a>
   </div>
 
 </div>
@@ -180,12 +184,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/hexo/14.html">No14-原-使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法</a></p>
-  <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-11-14 01:39:41</font</p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/C-C/29.html">No29-转-C语言不用临时变量交换两个数程序分析</a></p>
+  <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">CSDN_PegasusWang_</a></p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2015-12-14 17:07:38</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/hexo/14.html" title="No14-原-使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法">http://blog.54yongf.com/hexo/14.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/hexo/14.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/C-C/29.html" title="No29-转-C语言不用临时变量交换两个数程序分析">http://blog.54yongf.com/C-C/29.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/C-C/29.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -210,18 +214,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/计算机组成原理/15.html" title="No15-原-用Verilog实现一个桶形移位器">
+ <a href="/算法/30.html" title="No30-转-扩展欧几里德定理">
   <strong>上一篇：</strong><br/>
   <span>
-  No15-原-用Verilog实现一个桶形移位器</span>
+  No30-转-扩展欧几里德定理</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/杂谈/13.html"  title="No13-原-IE浏览器连不上网电脑无法联网">
+<a href="/C-C/28.html"  title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！">
  <strong>下一篇：</strong><br/> 
- <span>No13-原-IE浏览器连不上网电脑无法联网
+ <span>No28-转-再谈C语言函数实现交换两个数的值--包你懂！
 </span>
 </a>
 </div>
@@ -230,7 +234,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="hexo/14.html" data-title="No14-原-使用hexo时deploy部署网站到github或gitcafe的gitpages时重复输入用户名密码的解决办法" data-url="http://blog.54yongf.com/hexo/14.html"></div>
+	<div class="ds-thread" data-thread-key="C-C/29.html" data-title="No29-转-C语言不用临时变量交换两个数程序分析" data-url="http://blog.54yongf.com/C-C/29.html"></div>
 </section>
 
 
@@ -242,7 +246,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用SSH"><span class="toc-number">2.</span> <span class="toc-text">使用SSH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用HTTTPS"><span class="toc-number">3.</span> <span class="toc-text">使用HTTTPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转载，详情请见"><span class="toc-number">2.</span> <span class="toc-text">转载，详情请见</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -297,11 +301,13 @@
 		  
 		
 		  
-			<li><a href="/categories/C语言/" title="C语言">C语言<sup>2</sup></a></li>
+			<li><a href="/categories/C-C/" title="C/C++">C/C++<sup>2</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Git/" title="Git">Git<sup>2</sup></a></li>
+		
+		  
+			<li><a href="/categories/Git/" title="Git">Git<sup>3</sup></a></li>
 		  
 		
 		  
@@ -309,15 +315,19 @@
 		  
 		
 		  
-			<li><a href="/categories/hexo/" title="hexo">hexo<sup>8</sup></a></li>
+			<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/php/" title="php">php<sup>1</sup></a></li>
+			<li><a href="/categories/Qt/" title="Qt">Qt<sup>1</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/qt/" title="qt">qt<sup>1</sup></a></li>
+			<li><a href="/categories/hexo/" title="hexo">hexo<sup>7</sup></a></li>
+		  
+		
+		  
+		
 		  
 		
 		  
@@ -329,11 +339,9 @@
 		  
 		
 		  
-			<li><a href="/categories/服务器/" title="服务器">服务器<sup>1</sup></a></li>
-		  
 		
 		  
-			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>16</sup></a></li>
+			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>18</sup></a></li>
 		  
 		
 		  
@@ -353,8 +361,6 @@
 		  
 		
 		  
-			<li><a href="/categories/资源/" title="资源">资源<sup>1</sup></a></li>
-		  
 		
 		</ul>
 </div>
@@ -364,7 +370,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/CPU/" style="font-size: 10px;">CPU</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 12.5px;">C语言</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Ubuntu/" style="font-size: 12.5px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Assist-X/" style="font-size: 10px;">Visual Assist X</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 10px;">Visual Studio Code</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/githubOrgitcafe/" style="font-size: 10px;">githubOrgitcafe</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/hexo写作/" style="font-size: 10px;">hexo写作</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/qt/" style="font-size: 10px;">qt</a> <a href="/tags/qt-creator/" style="font-size: 10px;">qt creator</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/上进/" style="font-size: 10px;">上进</a> <a href="/tags/乐报/" style="font-size: 10px;">乐报</a> <a href="/tags/人生/" style="font-size: 12.5px;">人生</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/博客自定义/" style="font-size: 10px;">博客自定义</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/小米/" style="font-size: 10px;">小米</a> <a href="/tags/感受/" style="font-size: 12.5px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/故障/" style="font-size: 10px;">故障</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 20px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/浏览器/" style="font-size: 10px;">浏览器</a> <a href="/tags/电子书/" style="font-size: 10px;">电子书</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络连接/" style="font-size: 10px;">网络连接</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/联网/" style="font-size: 10px;">联网</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Qt/" style="font-size: 10px;">Qt</a> <a href="/tags/Ubuntu/" style="font-size: 12.5px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 10px;">Visual Studio Code</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/乐报/" style="font-size: 10px;">乐报</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/感受/" style="font-size: 10px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 20px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
   </div>
 
