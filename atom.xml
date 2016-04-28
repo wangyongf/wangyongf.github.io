@@ -54,13 +54,14 @@
     <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/50.html"/>
     <id>http://blog.54yongf.com/杂谈/50.html</id>
     <published>2016-04-27T12:34:49.000Z</published>
-    <updated>2016-04-27T12:34:49.000Z</updated>
+    <updated>2016-04-28T12:39:49.000Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>看到这个标题,你可能会想,估计又是个标题党,好吧,我承认,又装了.但是我保证,绝对不坑,挺好用的.我使用的是Ubuntu Kylin 14.04 LTS</font></p>
 <p>但是,可能需要翻墙(我不确定,因为使用Ubuntu的时候我一直在墙外 :-)</p>
 <p>需要使用的软件:</p>
 <ul>
 <li>Kazam(用于屏幕录制,在软件商店里有)</li>
 </ul>
+<a id="more"></a>
 <h2 id="Kazam">Kazam</h2><p><font size="4"><br>先说说Kazam,这是一个屏幕录制软件+截图软件,特性如下:</font></p>
 <ol>
 <li>屏幕录制: 支持全屏录制,选择区域录制,窗口录制,支持录制鼠标,录制电脑声音,录制麦克风声音.支持延时录制</li>
@@ -85,8 +86,13 @@
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>看到这个标题,你可能会想,估计又是个标题党,好吧,我承认,又装了.但是我保证,绝对不坑,挺好用的.我使用的是Ubuntu Kylin 14.04 LTS</font></p>
-<p>但是,可能需要翻]]>
+    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>看到这个标题,你可能会想,估计又是个标题党,好吧,我承认,又装了.但是我保证,绝对不坑,挺好用的.我使用的是Ubuntu Kylin 14.04 LTS</p>
+<p>但是,可能需要翻墙(我不确定,因为使用Ubuntu的时候我一直在墙外 :-)</p>
+<p>需要使用的软件:</p>
+<ul>
+<li>Kazam(用于屏幕录制,在软件商店里有)</li>
+</ul>]]>
+    
     </summary>
     
       <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
@@ -126,13 +132,14 @@
     <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/48.html"/>
     <id>http://blog.54yongf.com/Android开发/48.html</id>
     <published>2016-04-21T04:41:44.000Z</published>
-    <updated>2016-04-21T04:41:44.000Z</updated>
+    <updated>2016-04-28T12:40:20.000Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.</font></p>
+<a id="more"></a>
 <p>这次实现自定义圆形进度条,我使用的是继承LinearLayout的方式.最终的实现效果如下:</p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-1.png" alt="图片1"></p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-2.png" alt="图片2"></p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-3.png" alt="图片3"></p>
-<a id="more"></a>
+<!--more-->
 <h2 id="我的想法">我的想法</h2><p><font size="4"><br>要实现这个简单的效果,我的想法是,将circle_progress_view作为背景,进度条用Paint画一条弧实现,作为子组件.只要当前进度发生变化,就进行重绘.</font></p>
 <p>circle_progress_view.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">LinearLayout</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"70dp"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"70dp"</span></span><br><span class="line">    <span class="attribute">android:layout_alignParentRight</span>=<span class="value">"true"</span></span><br><span class="line">    <span class="attribute">android:gravity</span>=<span class="value">"center"</span></span><br><span class="line">    <span class="attribute">android:orientation</span>=<span class="value">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">ImageView</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/cpv_iv_icon"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"32dp"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"32dp"</span></span><br><span class="line">        <span class="attribute">android:src</span>=<span class="value">"@drawable/ic_download"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">TextView</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/cpv_tv_des"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_marginTop</span>=<span class="value">"5dp"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"下载"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="关于onDraw和dispatchDraw">关于onDraw和dispatchDraw</h2><p><font size="4"><br>绘制View本身的内容,调用View.onDraw方法;绘制自己的孩子,则通过dispatchDraw来实现.</font></p>
@@ -144,11 +151,7 @@
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.</p>
-<p>这次实现自定义圆形进度条,我使用的是继承LinearLayout的方式.最终的实现效果如下:</p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-1.png" alt="图片1"></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-2.png" alt="图片2"></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-3.png" alt="图片3"></p>]]>
+    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.</p>]]>
     
     </summary>
     

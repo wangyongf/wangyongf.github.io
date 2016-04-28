@@ -11,22 +11,19 @@
     
 
     
-    <meta name="description" content="前言自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.
-这次实现自定义圆形进度条,我使用的是继承LinearLayout的方式.最终的实现效果如下:">
+    <meta name="description" content="前言自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No48-原-自定义View之自定义圆形进度条">
 <meta property="og:url" content="http://blog.54yongf.com/Android开发/48.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="前言自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.
-这次实现自定义圆形进度条,我使用的是继承LinearLayout的方式.最终的实现效果如下:">
+<meta property="og:description" content="前言自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No48-1.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No48-2.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No48-3.png">
-<meta property="og:updated_time" content="2016-04-21T04:41:44.000Z">
+<meta property="og:updated_time" content="2016-04-28T12:40:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No48-原-自定义View之自定义圆形进度条">
-<meta name="twitter:description" content="前言自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.
-这次实现自定义圆形进度条,我使用的是继承LinearLayout的方式.最终的实现效果如下:">
+<meta name="twitter:description" content="前言自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -105,7 +102,7 @@
 		
   <p class="article-time">
     <time datetime="2016-04-21T04:41:44.000Z" itemprop="datePublished">
-      发布于2016-04-21 12:41:44，更新于2016-04-21 12:41:44 <span class="ds-thread-count" data-thread-key="Android开发/48.html" data-count-type="comments"></span>
+      发布于2016-04-21 12:41:44，更新于2016-04-28 20:40:20 <span class="ds-thread-count" data-thread-key="Android开发/48.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -121,11 +118,12 @@
 		</div>
 		
 		<h2 id="前言">前言</h2><p><font size="4"><br>自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.</font></p>
+<a id="more"></a>
 <p>这次实现自定义圆形进度条,我使用的是继承LinearLayout的方式.最终的实现效果如下:</p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-1.png" alt="图片1"></p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-2.png" alt="图片2"></p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No48-3.png" alt="图片3"></p>
-<a id="more"></a>
+<!--more-->
 <h2 id="我的想法">我的想法</h2><p><font size="4"><br>要实现这个简单的效果,我的想法是,将circle_progress_view作为背景,进度条用Paint画一条弧实现,作为子组件.只要当前进度发生变化,就进行重绘.</font></p>
 <p>circle_progress_view.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">LinearLayout</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"70dp"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"70dp"</span></span><br><span class="line">    <span class="attribute">android:layout_alignParentRight</span>=<span class="value">"true"</span></span><br><span class="line">    <span class="attribute">android:gravity</span>=<span class="value">"center"</span></span><br><span class="line">    <span class="attribute">android:orientation</span>=<span class="value">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">ImageView</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/cpv_iv_icon"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"32dp"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"32dp"</span></span><br><span class="line">        <span class="attribute">android:src</span>=<span class="value">"@drawable/ic_download"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">TextView</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/cpv_tv_des"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_marginTop</span>=<span class="value">"5dp"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"下载"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="关于onDraw和dispatchDraw">关于onDraw和dispatchDraw</h2><p><font size="4"><br>绘制View本身的内容,调用View.onDraw方法;绘制自己的孩子,则通过dispatchDraw来实现.</font></p>
