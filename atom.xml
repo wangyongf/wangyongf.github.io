@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-04-28T12:16:22.000Z</updated>
+  <updated>2016-04-29T16:09:33.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No52-原-Android开发常见问题汇总]]></title>
+    <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/52.html"/>
+    <id>http://blog.54yongf.com/Android开发/52.html</id>
+    <published>2016-04-29T16:09:33.000Z</published>
+    <updated>2016-04-29T16:09:33.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供解决思路.</font></p>
+<h2 id="Android_Studio的不支持HttpClient的问题">Android Studio的不支持HttpClient的问题</h2><p><font size="4"><br>在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:</font></p>
+<ol>
+<li><p>添加legacy支持,在build.gradle中添加,</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">android</span> &#123;</span><br><span class="line">    <span class="title">useLibrary</span> <span class="string">'org.apache.http.legacy'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将项目的SDK降到API21或者以下.</p>
+</li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供解决思路.</font></p>
+<h2 id="Android_Studio的不支持HttpClient的问题">Android Stud]]>
+    </summary>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No51-原-用实例理解HashSet]]></title>
@@ -809,44 +837,6 @@
       <category term="语义规则" scheme="http://blog.54yongf.com/tags/%E8%AF%AD%E4%B9%89%E8%A7%84%E5%88%99/"/>
     
       <category term="编译原理" scheme="http://blog.54yongf.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No32-原-离线版MSDN文档的安装和配置]]></title>
-    <link href="http://blog.54yongf.com/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/32.html"/>
-    <id>http://blog.54yongf.com/开发工具/32.html</id>
-    <published>2015-12-29T03:14:28.000Z</published>
-    <updated>2015-12-29T03:14:28.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="离线MSDN">离线MSDN</h2><p><font size="4"><br>大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
-<a id="more"></a>
-<h2 id="第一种方式">第一种方式</h2><p><font size="4"><br>使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：</font></p>
-<ol>
-<li>下载安装Microsoft Help Viewer v2.2；</li>
-<li>桌面右键，新建快捷方式，格式如下（注意路径，<strong>直接从网页拷贝此路径可能有问题！</strong>）</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"C:\Program Files (x86)\Microsoft Help Viewer\v2.2\HlpViewer.exe"</span> /catalogName VisualStudio14</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">VisualStudio10 代表 Visual Studio <span class="number">2010</span></span><br><span class="line">VisualStudio12 代表 Visual Studio <span class="number">2013</span></span><br><span class="line">VisualStudio14 代表 Visual Studio <span class="number">2015</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>点击该快捷方式，打开了Microsoft Help Viewer，现在可以选择你想要的文档，然后下载即可；</li>
-</ol>
-<h2 id="第二种方式">第二种方式</h2><p><font size="4"><br>前面大部分都一样，不过可以直接下载网上打包好的离线MSDN文档库，这种方式下载速度快，因为可以使用迅雷等下载：</font></p>
-<ol>
-<li>下载安装Microsoft Help Viewer v2.2；</li>
-<li>解压离线MSDN文档库之后，在我下载的资源中，有一个快捷方式MSDN2015，直接就可以打开了，然后更新即可。</li>
-<li>上述第二步可能有问题，是快捷方式的问题，可以选择自己新建快捷方式，具体做法参考上述<strong>第一种方式</strong>的<strong>第二步</strong></li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="离线MSDN">离线MSDN</h2><p><font size=4><br>大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</p>]]>
-    
-    </summary>
-    
-      <category term="MSDN" scheme="http://blog.54yongf.com/tags/MSDN/"/>
-    
-      <category term="Visual Studio" scheme="http://blog.54yongf.com/tags/Visual-Studio/"/>
-    
-      <category term="开发工具" scheme="http://blog.54yongf.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

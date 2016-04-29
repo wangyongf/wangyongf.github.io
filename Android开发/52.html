@@ -4,24 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No36-原-老生常谈之如何获取最新版Chrome | Scott Wang&#39;s blog</title>
+    <title>No52-原-Android开发常见问题汇总 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="隔壁老王">
     
 
     
-    <meta name="description" content="如何获取最新版Chrome就目前这个网络环境来说，对开发者甚是不利，不过该翻墙的还是得翻墙啊，毕竟Chrome大法好。那么问题就来了，如何获取最新版的Chrome呢（Chrome自动更新老是失败。）？其实稍微关注下还是有很多方法的，我亲自使用过的，觉得比较安全的也就知道一个。">
+    <meta name="description" content="前言在Android开发中,有各种各样的坑,本文为一些问题提供解决思路.
+Android Studio的不支持HttpClient的问题在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:
+
+添加legacy支持,在build.gradle中添加,
+123android &amp;#123;    useLibrary &apos;org.apache.http.l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No36-原-老生常谈之如何获取最新版Chrome">
-<meta property="og:url" content="http://blog.54yongf.com/杂谈/37.html">
+<meta property="og:title" content="No52-原-Android开发常见问题汇总">
+<meta property="og:url" content="http://blog.54yongf.com/Android开发/52.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="如何获取最新版Chrome就目前这个网络环境来说，对开发者甚是不利，不过该翻墙的还是得翻墙啊，毕竟Chrome大法好。那么问题就来了，如何获取最新版的Chrome呢（Chrome自动更新老是失败。）？其实稍微关注下还是有很多方法的，我亲自使用过的，觉得比较安全的也就知道一个。">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No36-%E6%94%AF%E6%8C%81%EF%BC%81.jpg">
-<meta property="og:updated_time" content="2016-03-15T07:12:28.000Z">
+<meta property="og:description" content="前言在Android开发中,有各种各样的坑,本文为一些问题提供解决思路.
+Android Studio的不支持HttpClient的问题在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:
+
+添加legacy支持,在build.gradle中添加,
+123android &amp;#123;    useLibrary &apos;org.apache.http.l">
+<meta property="og:updated_time" content="2016-04-29T16:09:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No36-原-老生常谈之如何获取最新版Chrome">
-<meta name="twitter:description" content="如何获取最新版Chrome就目前这个网络环境来说，对开发者甚是不利，不过该翻墙的还是得翻墙啊，毕竟Chrome大法好。那么问题就来了，如何获取最新版的Chrome呢（Chrome自动更新老是失败。）？其实稍微关注下还是有很多方法的，我亲自使用过的，觉得比较安全的也就知道一个。">
+<meta name="twitter:title" content="No52-原-Android开发常见问题汇总">
+<meta name="twitter:description" content="前言在Android开发中,有各种各样的坑,本文为一些问题提供解决思路.
+Android Studio的不支持HttpClient的问题在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:
+
+添加legacy支持,在build.gradle中添加,
+123android &amp;#123;    useLibrary &apos;org.apache.http.l">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -92,15 +103,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/杂谈/37.html" title="No36-原-老生常谈之如何获取最新版Chrome" itemprop="url">No36-原-老生常谈之如何获取最新版Chrome</a>
+      <a href="/Android开发/52.html" title="No52-原-Android开发常见问题汇总" itemprop="url">No52-原-Android开发常见问题汇总</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="隔壁老王" target="_blank" itemprop="author">隔壁老王</a>
 		
   <p class="article-time">
-    <time datetime="2016-03-15T07:12:28.000Z" itemprop="datePublished">
-      发布于2016-03-15 15:12:28，更新于2016-03-15 15:12:28 <span class="ds-thread-count" data-thread-key="杂谈/37.html" data-count-type="comments"></span>
+    <time datetime="2016-04-29T16:09:33.000Z" itemprop="datePublished">
+      发布于2016-04-30 00:09:33，更新于2016-04-30 00:09:33 <span class="ds-thread-count" data-thread-key="Android开发/52.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -111,41 +122,34 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何获取最新版Chrome"><span class="toc-number">1.</span> <span class="toc-text">如何获取最新版Chrome</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网址"><span class="toc-number">2.</span> <span class="toc-text">网址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意！"><span class="toc-number">3.</span> <span class="toc-text">注意！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">4.</span> <span class="toc-text">其它</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写在最后"><span class="toc-number">5.</span> <span class="toc-text">写在最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">6.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_Studio的不支持HttpClient的问题"><span class="toc-number">2.</span> <span class="toc-text">Android Studio的不支持HttpClient的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="如何获取最新版Chrome">如何获取最新版Chrome</h2><p><font size="4">就目前这个网络环境来说，对开发者甚是不利，不过该翻墙的还是得翻墙啊，毕竟Chrome大法好。那么问题就来了，如何获取最新版的Chrome呢（Chrome自动更新老是失败。）？其实稍微关注下还是有很多方法的，我亲自使用过的，觉得比较安全的也就知道一个。</font></p>
-<a id="more"></a>
-<h2 id="网址">网址</h2><p><font size="4">网址是：<a href="http://dl.chromeba.com" target="_blank" rel="external">http://dl.chromeba.com</a><br>感谢Chrome吧及相关支持者！玩贴吧的可以关注Chrome吧，置顶帖有教程<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No36-%E6%94%AF%E6%8C%81%EF%BC%81.jpg" alt="支持"></font></p>
-<h2 id="注意！">注意！</h2><p><font size="5" color="red">前方高能！</font><br><br><br><br><br><br><br><br><br><br></p>
+		<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供解决思路.</font></p>
+<h2 id="Android_Studio的不支持HttpClient的问题">Android Studio的不支持HttpClient的问题</h2><p><font size="4"><br>在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:</font></p>
 <ol>
-<li>最好不要通过百度、腾讯管家、360、XX下载站下载Chrome，有风险</li>
-<li>Chrome从V50开始不再支持XP，XP用户下载时请选择&lt;=V49的版本（不过老XP也该退休了）</li>
+<li><p>添加legacy支持,在build.gradle中添加,</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">android</span> &#123;</span><br><span class="line">    <span class="title">useLibrary</span> <span class="string">'org.apache.http.legacy'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将项目的SDK降到API21或者以下.</p>
+</li>
 </ol>
-<h2 id="其它">其它</h2><font size="4">
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
-<ol>
-<li>如果你在使用Chrome的过程中，出现了种种问题，比如打不开了（就像今天我这样，这也是写本文的缘由），比如点击的时候<strong>应用程序无法启动,因为应用程序的并行配置不正确</strong>，你就可以考虑重装Chrome了:(</li>
-<li>在旧版本的Chrome卸载完全之前，可能无法安装新版本，具体表现就是双击Chrome安装包无反应。这时候，可能需要清理注册表，你可以用360、腾讯电脑管家等安全软件卸载，然后清理残留。但是我遇到的情况是根本无法卸载，系统无法找到Chrome，于是我将Chrome安装路径上的Google文件夹整个删除了（如果你还有其他Google就不能这样搞），然后用官方提供的<a href="http://7xo5vs.com1.z0.glb.clouddn.com/No36-chrome%E5%8D%B8%E8%BD%BD%20remove.reg" target="_blank" rel="external"><strong>remove.reg</strong></a>。使用方式是下载之后双击，然后导入注册表就OK了</li>
-<li>注意！上述清理注册表的小工具会删除全部Google软件的注册表项，如果你的电脑上还有其他Google软件（Android Studio不算…），请慎重使用。</li>
-</ol>
-<h2 id="写在最后">写在最后</h2><p><font size="4">限于个人能力，上述可能有纰漏之处，如果你有不同看法，欢迎在评论中与我交流，荣幸之至。此外，如果你有其他的Chrome小技巧，也可以与我交流。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-</font>
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
+  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Chrome/">Chrome</a><a href="/tags/杂谈/">杂谈</a>
+  <span></span> <a href="/tags/Android开发/">Android开发</a>
   </div>
 
 </div>
@@ -190,12 +194,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;text-align:center;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/杂谈/37.html">No36-原-老生常谈之如何获取最新版Chrome</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/Android开发/52.html">No52-原-Android开发常见问题汇总</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-03-15 15:12:28</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-04-30 00:09:33</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/杂谈/37.html" title="No36-原-老生常谈之如何获取最新版Chrome">http://blog.54yongf.com/杂谈/37.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/杂谈/37.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/Android开发/52.html" title="No52-原-Android开发常见问题汇总">http://blog.54yongf.com/Android开发/52.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/Android开发/52.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -219,19 +223,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/PHP/37.html" title="No37-原-ThinkPHP3.2.3学习笔记">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No37-原-ThinkPHP3.2.3学习笔记</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/杂谈/35.html"  title="No35-原-Windows系统论设置还原点的重要性">
+<a href="/Java/51.html"  title="No51-原-用实例理解HashSet">
  <strong>下一篇：</strong><br/> 
- <span>No35-原-Windows系统论设置还原点的重要性
+ <span>No51-原-用实例理解HashSet
 </span>
 </a>
 </div>
@@ -240,7 +236,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="杂谈/37.html" data-title="No36-原-老生常谈之如何获取最新版Chrome" data-url="http://blog.54yongf.com/杂谈/37.html"></div>
+	<div class="ds-thread" data-thread-key="Android开发/52.html" data-title="No52-原-Android开发常见问题汇总" data-url="http://blog.54yongf.com/Android开发/52.html"></div>
 </section>
 
 
@@ -252,7 +248,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何获取最新版Chrome"><span class="toc-number">1.</span> <span class="toc-text">如何获取最新版Chrome</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网址"><span class="toc-number">2.</span> <span class="toc-text">网址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意！"><span class="toc-number">3.</span> <span class="toc-text">注意！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">4.</span> <span class="toc-text">其它</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写在最后"><span class="toc-number">5.</span> <span class="toc-text">写在最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">6.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_Studio的不支持HttpClient的问题"><span class="toc-number">2.</span> <span class="toc-text">Android Studio的不支持HttpClient的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
