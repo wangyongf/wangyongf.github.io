@@ -139,11 +139,7 @@
 <li>关于scrollTo<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明：在当前视图内容偏移至<span class="comment">(x , y)</span>坐标处，即显示<span class="comment">(可视)</span>区域位于<span class="comment">(x , y)</span>坐标处。</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>在理解的时候,可以以视图原点(不是屏幕的左上角!)为参考点.以scrollTo(0, 100)为例,调用这个方法之后,View是不动的,动的是View原点处显示的内容,也就是移动画布,这里应该是显示画布(0, 100)处的内容,需要注意的是,画布的原点和View的原点是一样的,不过画布的原点在变化(因为画布在移动),可以参考下图,scrollTo(0, 100)的实际效果就是将画布上移,相当于隐藏了一部分内容<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No52-Android%E4%B8%AD%E6%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.png" alt="图片说明"></p>
-<ol>
-<li>关于scrollBy<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明：在当前视图内容继续偏移<span class="comment">(x , y)</span>个单位，显示<span class="comment">(可视)</span>区域也跟着偏移<span class="comment">(x,y)</span>个单位。</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>在理解的时候,可以以视图原点(不是屏幕的左上角!)为参考点.以scrollTo(0, 100)为例,调用这个方法之后,View是不动的,动的是View原点处显示的内容,也就是移动画布,这里应该是显示画布(0, 100)处的内容,需要注意的是,画布的原点和View的原点是一样的,不过画布的原点在变化(因为画布在移动),可以参考下图,scrollTo(0, 100)的实际效果就是将画布上移,相当于隐藏了一部分内容<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No52-Android%E4%B8%AD%E6%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.png" alt="图片说明"><br>6.关于scrollBy<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明：在当前视图内容继续偏移<span class="comment">(x , y)</span>个单位，显示<span class="comment">(可视)</span>区域也跟着偏移<span class="comment">(x,y)</span>个单位。</span><br></pre></td></tr></table></figure></p>
 <p>只要理解了scrollTo,这个应当也不难理解,这是相对移动,而不是scrollTo的绝对移动,一点差别而已.</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
