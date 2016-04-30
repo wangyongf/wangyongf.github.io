@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-04-29T16:09:33.000Z</updated>
+  <updated>2016-04-30T07:19:30.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/52.html"/>
     <id>http://blog.54yongf.com/Android开发/52.html</id>
     <published>2016-04-29T16:09:33.000Z</published>
-    <updated>2016-04-29T16:09:33.000Z</updated>
+    <updated>2016-04-30T07:19:30.000Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.</font></p>
 <a id="more"></a>
 <h2 id="Android_Studio的不支持HttpClient的问题">Android Studio的不支持HttpClient的问题</h2><p><font size="4"><br>在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:</font></p>
