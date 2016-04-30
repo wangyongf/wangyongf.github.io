@@ -20,7 +20,8 @@
     <id>http://blog.54yongf.com/Android开发/52.html</id>
     <published>2016-04-29T16:09:33.000Z</published>
     <updated>2016-04-29T16:09:33.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供解决思路.</font></p>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.</font></p>
+<a id="more"></a>
 <h2 id="Android_Studio的不支持HttpClient的问题">Android Studio的不支持HttpClient的问题</h2><p><font size="4"><br>在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:</font></p>
 <ol>
 <li><p>添加legacy支持,在build.gradle中添加,</p>
@@ -29,11 +30,31 @@
 <li><p>将项目的SDK降到API21或者以下.</p>
 </li>
 </ol>
+<h2 id="关于Android的滑屏问题,scrollTo()和scrollBy()的纠结">关于Android的滑屏问题,scrollTo()和scrollBy()的纠结</h2><p><font size="4"><br>相信很多童鞋和我一样,都曾经被这个问题搞得焦头烂额,不懂啊,也一定看过很多的文章,但是越看越糊涂,因为信息太爆炸,互联网的信息真真假假,对对错错,有很多错误的观点一直在误导我们,所以尽量看一些大V写的文章比较好.扯远了,快回来.</font></p>
+<p>关于滑屏问题,我觉得比较好的是:</p>
+<ol>
+<li><a href="http://blog.csdn.net/qinjuning/article/details/7247126" title="关于Android的滑屏问题" target="_blank" rel="external"> Android中滑屏初探 —- scrollTo 以及 scrollBy方法使用说明</a></li>
+</ol>
+<p>下面说一下我的一些见解,如有问题,请留言:</p>
+<ol>
+<li>Android View视图是没有边界的，Canvas是没有边界的,你看不到只是因为他没有绘制出来,但是客观上是存在的.所谓不因你的存在而存在.</li>
+<li>一个视图的在屏幕的起始坐标位于视图坐标起始处.</li>
+<li>自始自终,View的位置是不会变化的,即scrollTo和scrollBy不会改变View的位置,改变的只是View上面绘制的内容也就是画布一直在变,而我们知道,画布是没有边界的.</li>
+<li>当前视图内容指的是当前时刻绘制在当前坐标处的内容.</li>
+<li>关于scrollTo<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明：在当前视图内容偏移至<span class="comment">(x , y)</span>坐标处，即显示<span class="comment">(可视)</span>区域位于<span class="comment">(x , y)</span>坐标处。</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在理解的时候,可以以视图原点(不是屏幕的左上角!)为参考点.以scrollTo(0, 100)为例,调用这个方法之后,View是不动的,动的是View原点处显示的内容,也就是移动画布,这里应该是显示画布(0, 100)处的内容,需要注意的是,画布的原点和View的原点是一样的,不过画布的原点在变化(因为画布在移动),可以参考下图,scrollTo(0, 100)的实际效果就是将画布上移,相当于隐藏了一部分内容<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No52-Android%E4%B8%AD%E6%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.png" alt="图片说明"></p>
+<ol>
+<li>关于scrollBy<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明：在当前视图内容继续偏移<span class="comment">(x , y)</span>个单位，显示<span class="comment">(可视)</span>区域也跟着偏移<span class="comment">(x,y)</span>个单位。</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>只要理解了scrollTo,这个应当也不难理解,这是相对移动,而不是scrollTo的绝对移动,一点差别而已.</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供解决思路.</font></p>
-<h2 id="Android_Studio的不支持HttpClient的问题">Android Stud]]>
+    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.</p>]]>
+    
     </summary>
     
       <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
