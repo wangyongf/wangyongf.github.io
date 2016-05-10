@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-04-30T07:19:30.000Z</updated>
+  <updated>2016-05-10T11:45:21.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No53-原-5月乐报]]></title>
+    <link href="http://blog.54yongf.com/%E4%B9%90%E6%8A%A5/53.html"/>
+    <id>http://blog.54yongf.com/乐报/53.html</id>
+    <published>2016-05-10T11:45:21.000Z</published>
+    <updated>2016-05-10T11:45:21.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Lover">Lover</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg" alt=""></p>
+<a id="more"></a>
+<h2 id="南方姑娘_-_赵雷">南方姑娘 - 赵雷</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=202373&auto=1&height=66"></iframe></p>
+<h2 id="老男孩_-_筷子兄弟">老男孩 - 筷子兄弟</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=362998&auto=1&height=66"></iframe></p>
+<h2 id="夏洛特烦恼_-_金志文">夏洛特烦恼 - 金志文</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=34916642&auto=1&height=66"></iframe></p>
+<h2 id="牵丝戏_-_银临/Aki阿杰">牵丝戏 - 银临/Aki阿杰</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=30352891&auto=1&height=66"></iframe></p>
+<h2 id="青花瓷_-_周杰伦">青花瓷 - 周杰伦</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=185811&auto=1&height=66"></iframe></p>
+<h2 id="感谢">感谢</h2><p><font size="4"><br>乐报,不定期更新,歌慌了?来乐报 :-)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Lover">Lover</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg" alt=""></p>]]>
+    
+    </summary>
+    
+      <category term="乐报" scheme="http://blog.54yongf.com/tags/%E4%B9%90%E6%8A%A5/"/>
+    
+      <category term="乐报" scheme="http://blog.54yongf.com/categories/%E4%B9%90%E6%8A%A5/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No52-原-Android开发常见问题汇总]]></title>
@@ -825,36 +851,6 @@
       <category term="android studio" scheme="http://blog.54yongf.com/tags/android-studio/"/>
     
       <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No33-原-根据语义规则产生布尔表达式三地址代码]]></title>
-    <link href="http://blog.54yongf.com/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/33.html"/>
-    <id>http://blog.54yongf.com/编译原理/33.html</id>
-    <published>2016-01-08T12:07:19.000Z</published>
-    <updated>2016-01-08T12:07:19.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="问题">问题</h2><p><font size="4"><br>考虑如下表达式：a &lt; b or c &lt; d and e &lt; f<br><br>假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）<br></font></p>
-<a id="more"></a>
-<h2 id="产生布尔表达式三地址代码的语义规则">产生布尔表达式三地址代码的语义规则</h2><p><font size="4"><br>语义规则如下：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" alt="布尔表达式"></font></p>
-<h2 id="生成三地址中间代码的步骤">生成三地址中间代码的步骤</h2><p><font size="4"><br>生成三地址中间代码的过程如下：<br></font></p>
-<h3 id="语法树">语法树</h3><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%A0%91.png" alt="语法分析树"></p>
-<h3 id="对表达式进行归约">对表达式进行归约</h3><p><font size="4"><br>根据产生式，语义规则，进行相应的语义动作：<br></font></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97.png" alt="语义计算"></p>
-<h3 id="三地址代码">三地址代码</h3><p><font size="4"><br>生成的三地址代码为：<br></font></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> a &lt; b <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> L2</span><br><span class="line">L2: <span class="keyword">if</span> c &lt; d <span class="keyword">goto</span> L1</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br><span class="line">L1: <span class="keyword">if</span> e &lt; f <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br></pre></td></tr></table></figure>
-<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="问题">问题</h2><p><font size=4><br>考虑如下表达式：a &lt; b or c &lt; d and e &lt; f<br/><br>假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）<br/></p>]]>
-    
-    </summary>
-    
-      <category term="编译原理" scheme="http://blog.54yongf.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-      <category term="语义规则" scheme="http://blog.54yongf.com/tags/%E8%AF%AD%E4%B9%89%E8%A7%84%E5%88%99/"/>
-    
-      <category term="编译原理" scheme="http://blog.54yongf.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   

@@ -92,6 +92,75 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/C-C/29.html" title="No29-转-C语言不用临时变量交换两个数程序分析" itemprop="url">No29-转-C语言不用临时变量交换两个数程序分析</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-14T09:07:38.000Z" itemprop="datePublished">
+      发布于2015-12-14 17:07:38，更新于2015-12-14 17:07:38 <span class="ds-thread-count" data-thread-key="page/4/index.html" data-count-type="comments"></span>
+    </time>
+
+  </p>
+</header>
+
+    <div class="article-content">
+        
+        <h2 id="摘要">摘要</h2><p><font size=4><br>首先看这样一个程序<br/></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br></pre></td></tr></table></figure>
+<p>此时b = (a + b) - b = a;     (经过第一步a为a+b）<br/><br>a = a - b;此时a = (a + b) - a = b; (经过第二步时b已为a)<br/><br>可见这个程序实现了a和b的交换。注意+和-互为逆运算，可以得到(a+b)-b=a，埋个伏笔先。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/C-C/29.html#more">阅读全文</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/C-C/">C/C++</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/C语言/">C语言</a><a href="/tags/杂谈/">杂谈</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/C-C/29.html#comments" class="ds-thread-count comments-count-link" data-thread-key="C-C/29.html" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/C-C/28.html" title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！" itemprop="url">No28-转-再谈C语言函数实现交换两个数的值--包你懂！</a>
   </h1>
   <p class="article-author">By
@@ -561,73 +630,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/杂谈/21.html" title="No21-原-安利一款软件-FolderSize" itemprop="url">No21-原-安利一款软件-FolderSize</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-21T11:55:31.000Z" itemprop="datePublished">
-      发布于2015-11-21 19:55:31，更新于2015-11-21 19:55:31 <span class="ds-thread-count" data-thread-key="page/4/index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="安利一款软件">安利一款软件</h2><p><font size=4><br>最近磁盘又不够用了，1T的，我想看看到底是哪些地方占用了这么多的空间（毕竟以前下的一些软件我都忘了），在网上一搜索，还真有这样的软件，我用的是Folder Size，功能很强大，放个截图吧：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No21-2015-11-21_201052.png" alt="Folder-Size"></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/杂谈/21.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/小工具/">小工具</a><a href="/tags/杂谈/">杂谈</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/杂谈/21.html#comments" class="ds-thread-count comments-count-link" data-thread-key="杂谈/21.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
@@ -711,7 +713,7 @@
 		  
 		
 		  
-			<li><a href="/categories/乐报/" title="乐报">乐报<sup>1</sup></a></li>
+			<li><a href="/categories/乐报/" title="乐报">乐报<sup>2</sup></a></li>
 		  
 		
 		  
@@ -746,7 +748,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HashSet/" style="font-size: 10px;">HashSet</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Qt/" style="font-size: 10px;">Qt</a> <a href="/tags/Ubuntu/" style="font-size: 12.5px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 10px;">Visual Studio Code</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/乐报/" style="font-size: 10px;">乐报</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/感受/" style="font-size: 10px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 20px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HashSet/" style="font-size: 10px;">HashSet</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Qt/" style="font-size: 10px;">Qt</a> <a href="/tags/Ubuntu/" style="font-size: 12.5px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 10px;">Visual Studio Code</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/乐报/" style="font-size: 12.5px;">乐报</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/感受/" style="font-size: 10px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 20px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
   </div>
 

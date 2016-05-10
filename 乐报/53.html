@@ -4,26 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No33-原-根据语义规则产生布尔表达式三地址代码 | Scott Wang&#39;s blog</title>
+    <title>No53-原-5月乐报 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
+    <meta name="description" content="Lover">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No33-原-根据语义规则产生布尔表达式三地址代码">
-<meta property="og:url" content="http://blog.54yongf.com/编译原理/33.html">
+<meta property="og:title" content="No53-原-5月乐报">
+<meta property="og:url" content="http://blog.54yongf.com/乐报/53.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%A0%91.png">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97.png">
-<meta property="og:updated_time" content="2016-01-08T12:07:19.000Z">
+<meta property="og:description" content="Lover">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg">
+<meta property="og:updated_time" content="2016-05-10T11:45:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No33-原-根据语义规则产生布尔表达式三地址代码">
-<meta name="twitter:description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
+<meta name="twitter:title" content="No53-原-5月乐报">
+<meta name="twitter:description" content="Lover">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -94,15 +92,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/编译原理/33.html" title="No33-原-根据语义规则产生布尔表达式三地址代码" itemprop="url">No33-原-根据语义规则产生布尔表达式三地址代码</a>
+      <a href="/乐报/53.html" title="No53-原-5月乐报" itemprop="url">No53-原-5月乐报</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-08T12:07:19.000Z" itemprop="datePublished">
-      发布于2016-01-08 20:07:19，更新于2016-01-08 20:07:19 <span class="ds-thread-count" data-thread-key="编译原理/33.html" data-count-type="comments"></span>
+    <time datetime="2016-05-10T11:45:21.000Z" itemprop="datePublished">
+      发布于2016-05-10 19:45:21，更新于2016-05-10 19:45:21 <span class="ds-thread-count" data-thread-key="乐报/53.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -113,20 +111,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#产生布尔表达式三地址代码的语义规则"><span class="toc-number">2.</span> <span class="toc-text">产生布尔表达式三地址代码的语义规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成三地址中间代码的步骤"><span class="toc-number">3.</span> <span class="toc-text">生成三地址中间代码的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法树"><span class="toc-number">3.1.</span> <span class="toc-text">语法树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对表达式进行归约"><span class="toc-number">3.2.</span> <span class="toc-text">对表达式进行归约</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三地址代码"><span class="toc-number">3.3.</span> <span class="toc-text">三地址代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lover"><span class="toc-number">1.</span> <span class="toc-text">Lover</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#南方姑娘_-_赵雷"><span class="toc-number">2.</span> <span class="toc-text">南方姑娘 - 赵雷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#老男孩_-_筷子兄弟"><span class="toc-number">3.</span> <span class="toc-text">老男孩 - 筷子兄弟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#夏洛特烦恼_-_金志文"><span class="toc-number">4.</span> <span class="toc-text">夏洛特烦恼 - 金志文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#牵丝戏_-_银临/Aki阿杰"><span class="toc-number">5.</span> <span class="toc-text">牵丝戏 - 银临/Aki阿杰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#青花瓷_-_周杰伦"><span class="toc-number">6.</span> <span class="toc-text">青花瓷 - 周杰伦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="问题">问题</h2><p><font size="4"><br>考虑如下表达式：a &lt; b or c &lt; d and e &lt; f<br><br>假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）<br></font></p>
+		<h2 id="Lover">Lover</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg" alt=""></p>
 <a id="more"></a>
-<h2 id="产生布尔表达式三地址代码的语义规则">产生布尔表达式三地址代码的语义规则</h2><p><font size="4"><br>语义规则如下：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" alt="布尔表达式"></font></p>
-<h2 id="生成三地址中间代码的步骤">生成三地址中间代码的步骤</h2><p><font size="4"><br>生成三地址中间代码的过程如下：<br></font></p>
-<h3 id="语法树">语法树</h3><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%A0%91.png" alt="语法分析树"></p>
-<h3 id="对表达式进行归约">对表达式进行归约</h3><p><font size="4"><br>根据产生式，语义规则，进行相应的语义动作：<br></font></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97.png" alt="语义计算"></p>
-<h3 id="三地址代码">三地址代码</h3><p><font size="4"><br>生成的三地址代码为：<br></font></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> a &lt; b <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> L2</span><br><span class="line">L2: <span class="keyword">if</span> c &lt; d <span class="keyword">goto</span> L1</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br><span class="line">L1: <span class="keyword">if</span> e &lt; f <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br></pre></td></tr></table></figure>
-<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h2 id="南方姑娘_-_赵雷">南方姑娘 - 赵雷</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=202373&auto=1&height=66"></iframe></p>
+<h2 id="老男孩_-_筷子兄弟">老男孩 - 筷子兄弟</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=362998&auto=1&height=66"></iframe></p>
+<h2 id="夏洛特烦恼_-_金志文">夏洛特烦恼 - 金志文</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=34916642&auto=1&height=66"></iframe></p>
+<h2 id="牵丝戏_-_银临/Aki阿杰">牵丝戏 - 银临/Aki阿杰</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=30352891&auto=1&height=66"></iframe></p>
+<h2 id="青花瓷_-_周杰伦">青花瓷 - 周杰伦</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=185811&auto=1&height=66"></iframe></p>
+<h2 id="感谢">感谢</h2><p><font size="4"><br>乐报,不定期更新,歌慌了?来乐报 :-)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -134,13 +130,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/编译原理/">编译原理</a>
+  <a class="article-category-link" href="/categories/乐报/">乐报</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/编译原理/">编译原理</a><a href="/tags/语义规则/">语义规则</a>
+  <span></span> <a href="/tags/乐报/">乐报</a>
   </div>
 
 </div>
@@ -185,12 +181,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;text-align:center;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/编译原理/33.html">No33-原-根据语义规则产生布尔表达式三地址代码</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/乐报/53.html">No53-原-5月乐报</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-01-08 20:07:19</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-05-10 19:45:21</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/编译原理/33.html" title="No33-原-根据语义规则产生布尔表达式三地址代码">http://blog.54yongf.com/编译原理/33.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/编译原理/33.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/乐报/53.html" title="No53-原-5月乐报">http://blog.54yongf.com/乐报/53.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/乐报/53.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -214,19 +210,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/Android开发/34.html" title="No34-原-向基于Android Studio的Android开发项目中导入第三方库">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No34-原-向基于Android Studio的Android开发项目中导入第三方库</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/开发工具/32.html"  title="No32-原-离线版MSDN文档的安装和配置">
+<a href="/Android开发/52.html"  title="No52-原-Android开发常见问题汇总">
  <strong>下一篇：</strong><br/> 
- <span>No32-原-离线版MSDN文档的安装和配置
+ <span>No52-原-Android开发常见问题汇总
 </span>
 </a>
 </div>
@@ -235,7 +223,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="编译原理/33.html" data-title="No33-原-根据语义规则产生布尔表达式三地址代码" data-url="http://blog.54yongf.com/编译原理/33.html"></div>
+	<div class="ds-thread" data-thread-key="乐报/53.html" data-title="No53-原-5月乐报" data-url="http://blog.54yongf.com/乐报/53.html"></div>
 </section>
 
 
@@ -247,7 +235,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#产生布尔表达式三地址代码的语义规则"><span class="toc-number">2.</span> <span class="toc-text">产生布尔表达式三地址代码的语义规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成三地址中间代码的步骤"><span class="toc-number">3.</span> <span class="toc-text">生成三地址中间代码的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法树"><span class="toc-number">3.1.</span> <span class="toc-text">语法树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对表达式进行归约"><span class="toc-number">3.2.</span> <span class="toc-text">对表达式进行归约</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三地址代码"><span class="toc-number">3.3.</span> <span class="toc-text">三地址代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lover"><span class="toc-number">1.</span> <span class="toc-text">Lover</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#南方姑娘_-_赵雷"><span class="toc-number">2.</span> <span class="toc-text">南方姑娘 - 赵雷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#老男孩_-_筷子兄弟"><span class="toc-number">3.</span> <span class="toc-text">老男孩 - 筷子兄弟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#夏洛特烦恼_-_金志文"><span class="toc-number">4.</span> <span class="toc-text">夏洛特烦恼 - 金志文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#牵丝戏_-_银临/Aki阿杰"><span class="toc-number">5.</span> <span class="toc-text">牵丝戏 - 银临/Aki阿杰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#青花瓷_-_周杰伦"><span class="toc-number">6.</span> <span class="toc-text">青花瓷 - 周杰伦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
