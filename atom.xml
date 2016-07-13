@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-05-10T11:45:21.000Z</updated>
+  <updated>2016-07-13T17:58:32.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,134 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No57-原-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑]]></title>
+    <link href="http://blog.54yongf.com/Qt/57.html"/>
+    <id>http://blog.54yongf.com/Qt/57.html</id>
+    <published>2016-07-13T17:58:32.000Z</published>
+    <updated>2016-07-13T17:58:32.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="闲扯两句">闲扯两句</h2><p><font size="4"></font></p>
+<blockquote>
+<p>已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如<code>期末考试</code>，不敢怠慢．<br>最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．</p>
+</blockquote>
+<h2 id="软件环境">软件环境</h2><p><font size="4"><br>操作系统: Ubuntu 14.04 64bit<br>Qt版本: Qt5.6 </font></p>
+<h2 id="啰嗦一下">啰嗦一下</h2><p><font size="4"><br>如果你是使用ibus输入系统,看到这里就可以结束了,这里针对的是fcitx框架的输入法(比如说良心搜狗输入法).<br>以搜狗输入法为例(fctix),要使其支持中文输入,关键是要编译出共享库<code>libfcitxplatforminputcontextplugin.so</code>, 这个东西好像是动态库,所以是因人而异的,所以即使你是和我一个版本的操作系统,我也不能将我的库共享给你,<strong>你得自己编译!!!!</strong><br>必须指出,网上好多教程在文章中共享的<code>libfcitxplatforminputcontextplugin.so</code>库是不可用的,因为这家伙是动态库啊啊啊啊啊!!!!!! 所以啊,别用别人的,自己老老实实编译!<br>下面是具体的编译步骤以及可能出现的问题及其解决方法.</font></p>
+<h2 id="编译步骤以及可能出现的问题及其解决方案">编译步骤以及可能出现的问题及其解决方案</h2><p><font size="4"><br>在这一点上,我不想再重复造轮子了,我在开源中国找到了一篇相当完整的博客,你可以按照他的编译步骤慢慢来,出错了也没关系,人家文章中都有解决方案(在此感谢 =_=).<br>很重要的一点,编译出错不要紧,要有耐心,我也是编译了两次才编译成功的(主要是要处理各种依赖问题)<br>如果编译失败,最好删除整个fcitx-qt5文件夹重新弄.</font></p>
+<h2 id="最后">最后</h2><p><font size="4"><br>放张图吧,作为这顿折腾的最终战果:<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No57-2016-07-14%2002:43:11%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="中文OK">  </font></p>
+<p>最后,感谢开源!</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="闲扯两句">闲扯两句</h2><p><font size="4"></font></p>
+<blockquote>
+<p>已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如<code]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.54yongf.com/tags/Linux/"/>
+    
+      <category term="Qt" scheme="http://blog.54yongf.com/tags/Qt/"/>
+    
+      <category term="Qt Creator" scheme="http://blog.54yongf.com/tags/Qt-Creator/"/>
+    
+      <category term="Ubuntu" scheme="http://blog.54yongf.com/tags/Ubuntu/"/>
+    
+      <category term="Qt" scheme="http://blog.54yongf.com/categories/Qt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[No56-原-Java基础之方法传参问题]]></title>
+    <link href="http://blog.54yongf.com/Java/56.html"/>
+    <id>http://blog.54yongf.com/Java/56.html</id>
+    <published>2016-05-16T02:18:34.000Z</published>
+    <updated>2016-05-16T02:18:34.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>本文讲述的是Java中参数传递相关的一些知识点.</font></p>
+<a id="more"></a>
+<p>先来看一段代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by yongf on 16-5-16.</span><br><span class="line"> * 参数传递</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParameterPass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student1 = <span class="keyword">new</span> Student(<span class="string">"张三"</span>, <span class="string">"001"</span>);</span><br><span class="line">        System.out.println(<span class="string">"[修改前]: "</span> + student1);</span><br><span class="line"></span><br><span class="line">         modifyInfo(student1);</span><br><span class="line">        System.out.println(<span class="string">"[修改后]: "</span> + student1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">modifyInfo</span><span class="params">(Student student)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[正在修改]: "</span> + student);</span><br><span class="line">        student = <span class="keyword">new</span> Student(student.name, <span class="string">"002"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    String name;</span><br><span class="line">    String id;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, String id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Student&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", id='"</span> + id + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你能立刻写出这段代码的输出结果么?如果可以,那么后面就不用看了;如果不能,那就继续.</p>
+<p>这段代码的运行结果如下:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_reference">修改前</span>]:<span class="link_url"> Student&#123;name='张三', id='001'&#125;</span></span><br><span class="line">[<span class="link_reference">正在修改</span>]:<span class="link_url"> Student&#123;name='张三', id='001'&#125;</span></span><br><span class="line">[<span class="link_reference">修改后</span>]:<span class="link_url"> Student&#123;name='张三', id='001'&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="一段话解析">一段话解析</h2><p><font size="4"><br>其实是Java中很基础的知识点,所以说,基础很重要.</font></p>
+<blockquote>
+<p>方法传递参数时,对于基本类型的变量,传递的是变量的值的副本;对于引用类型的变量,传递的是地址的值的副本(所以说Java中都是<code>值传递</code>啊).</p>
+</blockquote>
+<p>对于上述例子,modifyInfo方法内部,只是将student地址的副本指向了新的地址,真正的student(即方法外部的)的地址并未发生改变,从而原地址指向的内容也不会改变.所以,输出的结果都不会变啊啊啊啊啊啊啊啊啊啊…</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>本文讲述的是Java中参数传递相关的一些知识点.</p>]]>
+    
+    </summary>
+    
+      <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
+    
+      <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[No55-原-激活代码提示,让WebStorm助力你一码平川]]></title>
+    <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/55.html"/>
+    <id>http://blog.54yongf.com/杂谈/55.html</id>
+    <published>2016-05-15T14:04:13.000Z</published>
+    <updated>2016-05-15T14:04:13.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"></font></p>
+<blockquote>
+<p>最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来了,代码写得好累,不过,今天终于找到了较好的解决方案.</p>
+</blockquote>
+<h2 id="进行一些设置就OK了">进行一些设置就OK了</h2><p><font size="4"><br>File –&gt; Setting –&gt; Languages &amp; Frameworks –&gt; JavaScript –&gt; Libraries. 请看下图:</font></p>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No55-screenshot.png" alt="screenshot"></p>
+<p>不用解释了吧.多说两句:</p>
+<ol>
+<li>这个几乎可以解决一切的代码提示问题.</li>
+<li>可以自由定制,也可以使用官方的</li>
+<li>Add 是添加自己的</li>
+<li>Download是添加官方的支持库,可以用于代码提示,这里有几百个JS库|框架</li>
+<li>可以设置Scope,即提示生效的范围(也可以在文件中右键编辑)</li>
+<li>我说这么多,你不妨试一下?</li>
+<li>以上.</li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"></font></p>
+<blockquote>
+<p>最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来]]>
+    </summary>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[No54-原-打造不一样的ViewPager]]></title>
+    <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/54.html"/>
+    <id>http://blog.54yongf.com/Android开发/54.html</id>
+    <published>2016-05-10T12:25:43.000Z</published>
+    <updated>2016-05-10T12:25:43.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>好久没写文章了,想我否?开个玩笑,说正经的,最近学业甚忙,时间好紧…</font></p>
+<p>今天我们来谈谈ViewPager,关于ViewPager的基础知识就不说了,相信大家都知道,主要谈谈ViewPager的View切换的动画效果,打造不一样的ViewPager.如果你使用小米手机,也许你就知道小米手机长按菜单键就会出现<code>屏幕切换</code>的选项,里面有多达8种桌面切换的特效.没错,今天就是要实现这种效果.</p>
+<h2 id="从何下手">从何下手</h2><p><font size="4"><br>我们都知道,大部分ViewPager都是普通的左右切换,这是默认的效果.但是如何加入不一样的动效呢?如果你去查看ViewPager的API,你会发现<code>setPageTransformer</code>这个方法,这个方法是干嘛的呢?看命名就知道了,大概就是设置页面的切换效果.其实,官方早就给出了关于ViewPagerTransformer的两个样例,可以使ViewPager的切换更炫酷,分别是<code>DepthPageTransformer</code>和<code>ZoomOutPageTransformer</code>.</font></p>
+<h2 id="DepthPageTransformer">DepthPageTransformer</h2><p><font size="4"><br>代码如下:</font></p>
+<p>显示效果如下:</p>
+<h2 id="ZoomOutPageTransformer">ZoomOutPageTransformer</h2><p><font size="4"><br>代码如下:</font></p>
+<p>显示效果如下:</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>好久没写文章了,想我否?开个玩笑,说正经的,最近学业甚忙,时间好紧…</font></p>
+<p>今天我们来谈谈ViewPager,关于ViewPager的基础知识就不说了,相信大家都知道,主要谈谈]]>
+    </summary>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No53-原-5月乐报]]></title>
@@ -680,177 +808,6 @@
       <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
     
       <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No37-原-ThinkPHP3.2.3学习笔记]]></title>
-    <link href="http://blog.54yongf.com/PHP/37.html"/>
-    <id>http://blog.54yongf.com/PHP/37.html</id>
-    <published>2016-03-16T11:19:25.000Z</published>
-    <updated>2016-03-16T11:19:25.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="说在前面">说在前面</h2><p><font size="4"><br>最近接到了一个紧急任务（一个课程设计），要在一周之内做出一个轻型博客系统，必须快速开发，于是我想到了thinkphp。虽然我之前学过一个PHP，也早就听说过thinkphp，但是对thinkphp是一无所知，火速下载官方文档。开始学习！</font></p>
-<a id="more"></a>
-<h2 id="thinkphp学习笔记">thinkphp学习笔记</h2><font size="4">
-
-<ol>
-<li>获取变量I方法的变量类型、变量名和点之间不能有空格，否则出错</li>
-<li>空操作是指系统在找不到请求的操作方法的时候，会定位到空操作_empty方法来执行，利用这个机制，我们可以实现错误页面和一些URL的优化。</li>
-<li>假设访问的链接是<a href="http://localhost/thinkphp/index.php/Home/City/beijing/，如果你修改了默认的操作方法后缀：`&#39;ACTION_SUFFIX" target="_blank" rel="external">http://localhost/thinkphp/index.php/Home/City/beijing/，如果你修改了默认的操作方法后缀：`&#39;ACTION_SUFFIX</a>‘ =&gt; ‘Action’`，然后你想要利用_empty方法输出beijing这个参数（实际上thinkphp一开始认为这是操作方法），那么，_empty($city)方法获取的$city是beijingAction而不是你想要的beijing，这是因为thinkphp默认beijing是操作方法，自动加上了后缀Action。这时，你可以通过thinkphp内置的ACTION_NAME获取beijing！</li>
-<li>如果在某个模型类里面定义了connection属性的话（数组、DSN均可），则实例化该自定义模型的时候会采用定义的数据库连接信息，而不是配置文件中设置的默认连接信息，通常用于某些数据表位于当前数据库连接之外的其它数据库。</li>
-<li>需要注意的是，ThinkPHP的数据库连接的惰性的，所以并不是在实例化的时候就连接数据库，而是在有实际的数据操作的时候才会去连接数据库（额外的情况是，在系统第一次实例化模型的时候，会自动连接数据库获取相关模型类对应的数据表的字段信息）。</li>
-<li>where方法的用法是ThinkPHP查询语言的精髓，也是ThinkPHP ORM的重要组成部分和亮点所在，可以完成包括普通查询、表达式查询、快捷查询、区间查询、组合查询在内的查询操作。使用字符串条件的时候，建议配合预处理机制，确保更加安全。</li>
-<li>一般情况下，无需调用table方法，默认会自动获取当前模型对应或者定义的数据表。</li>
-<li>thinkphp中Include标签支持在包含文件的同时传入参数，但是要注意！使用变量时用[]符号把变量名包起来（<font color="red">不包括$符号！</font>）</li>
-<li>如果插入数据时提示Field <em>*</em> doesn’t have a default value，可以是字段名有问题，有么拼错了，要么是大小写的问题（比如全部换成大写或小写试试？）</li>
-<li>给模板传递变量数组，比如<code>$this-&gt;assign($data)</code>，这里$data是一个数组（$data[‘time’], $data[‘user’]），有两个属性。那么，在模板中，可以直接使用{$time}、{$user}来输出值。注意别写成{$data.time}了哦！</li>
-<li>在thinkphp中使用jQuery的ajax，注意参数正确。最后，如果觉得代码实在没错，重启下服务器试试？</li>
-</ol>
-<h2 id="再贴一下thinkphp官方开发规范">再贴一下thinkphp官方开发规范</h2><font size="4">
-
-<ol>
-<li>类文件都是以.class.php为后缀（这里是指的ThinkPHP内部使用的类库文件，不代表外部加载的类库文件），使用驼峰法命名，并且首字母大写，例如 DbMysql.class.php；</li>
-<li>类的命名空间地址和所在的路径地址一致，例如 Home\Controller\UserController类所在的路径应该是 Application/Home/Controller/UserController.class.php；</li>
-<li>确保文件的命名和调用大小写一致，是由于在类Unix系统上面，对大小写是敏感的（而ThinkPHP在调试模式下面，即使在Windows平台也会严格检查大小写）；</li>
-<li>类名和文件名一致（包括上面说的大小写一致），例如 UserController类的文件命名是UserController.class.php， InfoModel类的文件名是InfoModel.class.php， 并且不同的类库的类命名有一定的规范；</li>
-<li>函数、配置文件等其他类库文件之外的一般是以.php为后缀（第三方引入的不做要求）；</li>
-<li>函数的命名使用小写字母和下划线的方式，例如 get_client_ip；</li>
-<li>方法的命名使用驼峰法，并且首字母小写或者使用下划线“_”，例如 getUserName，_parseType，通常下划线开头的方法属于私有方法；</li>
-<li>属性的命名使用驼峰法，并且首字母小写或者使用下划线“_”，例如 tableName、_instance，通常下划线开头的属性属于私有属性；</li>
-<li>以双下划线“<strong>”打头的函数或方法作为魔法方法，例如 </strong>call 和 __autoload；</li>
-<li>常量以大写字母和下划线命名，例如 HAS_ONE和 MANY_TO_MANY；</li>
-<li>配置参数以大写字母和下划线命名，例如HTML_CACHE_ON；</li>
-<li>语言变量以大写字母和下划线命名，例如MY_LANG，以下划线打头的语言变量通常用于系统语言变量，例如 _CLASS_NOT<em>EXIST</em>；</li>
-<li>对变量的命名没有强制的规范，可以根据团队规范来进行；</li>
-<li>ThinkPHP的模板文件默认是以.html 为后缀（可以通过配置修改）；</li>
-<li>数据表和字段采用小写加下划线方式命名，并注意字段名不要以下划线开头，例如 think_user 表和 user_name字段是正确写法，类似 _username 这样的数据表字段可能会被过滤。</li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-</font></font>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="说在前面">说在前面</h2><p><font size=4><br>最近接到了一个紧急任务（一个课程设计），要在一周之内做出一个轻型博客系统，必须快速开发，于是我想到了thinkphp。虽然我之前学过一个PHP，也早就听说过thinkphp，但是对thinkphp是一无所知，火速下载官方文档。开始学习！</p>]]>
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://blog.54yongf.com/tags/PHP/"/>
-    
-      <category term="thinkphp" scheme="http://blog.54yongf.com/tags/thinkphp/"/>
-    
-      <category term="PHP" scheme="http://blog.54yongf.com/categories/PHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No36-原-老生常谈之如何获取最新版Chrome]]></title>
-    <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/37.html"/>
-    <id>http://blog.54yongf.com/杂谈/37.html</id>
-    <published>2016-03-15T07:12:28.000Z</published>
-    <updated>2016-03-15T07:12:28.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="如何获取最新版Chrome">如何获取最新版Chrome</h2><p><font size="4">就目前这个网络环境来说，对开发者甚是不利，不过该翻墙的还是得翻墙啊，毕竟Chrome大法好。那么问题就来了，如何获取最新版的Chrome呢（Chrome自动更新老是失败。）？其实稍微关注下还是有很多方法的，我亲自使用过的，觉得比较安全的也就知道一个。</font></p>
-<a id="more"></a>
-<h2 id="网址">网址</h2><p><font size="4">网址是：<a href="http://dl.chromeba.com" target="_blank" rel="external">http://dl.chromeba.com</a><br>感谢Chrome吧及相关支持者！玩贴吧的可以关注Chrome吧，置顶帖有教程<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No36-%E6%94%AF%E6%8C%81%EF%BC%81.jpg" alt="支持"></font></p>
-<h2 id="注意！">注意！</h2><p><font size="5" color="red">前方高能！</font><br><br><br><br><br><br><br><br><br><br></p>
-<ol>
-<li>最好不要通过百度、腾讯管家、360、XX下载站下载Chrome，有风险</li>
-<li>Chrome从V50开始不再支持XP，XP用户下载时请选择&lt;=V49的版本（不过老XP也该退休了）</li>
-</ol>
-<h2 id="其它">其它</h2><font size="4">
-
-<ol>
-<li>如果你在使用Chrome的过程中，出现了种种问题，比如打不开了（就像今天我这样，这也是写本文的缘由），比如点击的时候<strong>应用程序无法启动,因为应用程序的并行配置不正确</strong>，你就可以考虑重装Chrome了:(</li>
-<li>在旧版本的Chrome卸载完全之前，可能无法安装新版本，具体表现就是双击Chrome安装包无反应。这时候，可能需要清理注册表，你可以用360、腾讯电脑管家等安全软件卸载，然后清理残留。但是我遇到的情况是根本无法卸载，系统无法找到Chrome，于是我将Chrome安装路径上的Google文件夹整个删除了（如果你还有其他Google就不能这样搞），然后用官方提供的<a href="http://7xo5vs.com1.z0.glb.clouddn.com/No36-chrome%E5%8D%B8%E8%BD%BD%20remove.reg" target="_blank" rel="external"><strong>remove.reg</strong></a>。使用方式是下载之后双击，然后导入注册表就OK了</li>
-<li>注意！上述清理注册表的小工具会删除全部Google软件的注册表项，如果你的电脑上还有其他Google软件（Android Studio不算…），请慎重使用。</li>
-</ol>
-<h2 id="写在最后">写在最后</h2><p><font size="4">限于个人能力，上述可能有纰漏之处，如果你有不同看法，欢迎在评论中与我交流，荣幸之至。此外，如果你有其他的Chrome小技巧，也可以与我交流。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-</font>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="如何获取最新版Chrome">如何获取最新版Chrome</h2><p><font size=4>就目前这个网络环境来说，对开发者甚是不利，不过该翻墙的还是得翻墙啊，毕竟Chrome大法好。那么问题就来了，如何获取最新版的Chrome呢（Chrome自动更新老是失败。）？其实稍微关注下还是有很多方法的，我亲自使用过的，觉得比较安全的也就知道一个。</p>]]>
-    
-    </summary>
-    
-      <category term="Chrome" scheme="http://blog.54yongf.com/tags/Chrome/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No35-原-Windows系统论设置还原点的重要性]]></title>
-    <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/35.html"/>
-    <id>http://blog.54yongf.com/杂谈/35.html</id>
-    <published>2016-03-14T14:15:02.000Z</published>
-    <updated>2016-03-14T14:15:02.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="论设置系统还原点的重要性">论设置系统还原点的重要性</h2><p><font size="4"><br>就在刚才，我室友的电脑又黑了，可能是之前他玩DNF开挂中毒了，然后又用360删了一波东西（趁机黑360 ^_^），结果重启之后电脑就GG了。无论怎么搞都进不了系统，最后只能重装了，一想到他昨天刚刚装完系统，又装了一堆软件（上课的软件+各种开发环境），搞了好半天才弄好的，结果现在又要重来，真是心累:-(<br>然后，我又想起了很久之前，我刚刚装完双系统，还没开始装X呢，用360清理了一波垃圾（再黑一波360 ^_^）。结果重启电脑之后又GG了，当时我的内心是崩溃的<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No35-%E5%BF%83%E5%A1%9E.jpg" alt="好心塞"><br>在这两次事件中，我和我室友当时都没有设置任何系统还原点，结果就只能重装系统了，倘若当时能够设置好还原点，就木有这么多烦恼了。关于如何设置系统还原点，网络上教程一大堆，我想也不必多说了。</font></p>
-<p><font size="7">谨以此文悼念那些在我重装系统的过程中逝去的脑细胞！<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No35-%E5%93%8E%E5%91%A6%E4%B8%8D%E9%94%99%E5%93%A6.jpg" alt="挺好的"></font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="论设置系统还原点的重要性">论设置系统还原点的重要性</h2><p><font size="4"><br>就在刚才，我室友的电脑又黑了，可能是之前他玩DNF开挂中毒了，然后又用360删了一波东西（趁机黑360 ^_^），结果重启之后电脑就GG了。无论怎么搞都进不了]]>
-    </summary>
-    
-      <category term="Windows" scheme="http://blog.54yongf.com/tags/Windows/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No34-原-向基于Android Studio的Android开发项目中导入第三方库]]></title>
-    <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/34.html"/>
-    <id>http://blog.54yongf.com/Android开发/34.html</id>
-    <published>2016-03-06T11:44:24.000Z</published>
-    <updated>2016-03-06T11:44:24.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>有大概两个月没写博客了，很惭愧。一月份写了去年最后一篇博客，然后就复习期末考试，然后是寒假，在家也没机会写，现在开学了，再加上最近在学习Android开发，需要导入第三方库，所以，今天就来谈谈如何在Android Studio中导入第三方库。<br><br></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">软件环境：</span><br><span class="line">Windows 7</span><br><span class="line">Android Studio 1.4</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="导入jar包">导入jar包</h2><p>导入jar包是最方便的，这也是我最想要的形式。<br>步骤如下：</p>
-<ol>
-<li><p>将jar包拷贝到app/libs目录之下。libs目录一般是自动创建的，如果没有可以手动创建</p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No34-1.png" alt="libs目录"></p>
-</li>
-<li><p>右键该jar包，Add as library… OK！</p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No34-2.png" alt="Add as library..."></p>
-</li>
-</ol>
-<h2 id="导入gradle构建的开源库">导入gradle构建的开源库</h2><p>这个也很简单，步骤如下：</p>
-<ol>
-<li>首先下载该开源库，将其library拷贝到项目的根目录，也就是和app目录同级</li>
-<li><p>在项目根目录有个settings.gradle，打开该文件，加入一行代码：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include ':LIBRARY_NAME'         //注意：LIBRARY_NAME为该开源库的名称，不要忘了冒号，gradle中以:作为分隔符</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在app目录下的build.gradle中加入一行代码：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile project(':LIBRARY_NAME')</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Sync Project</p>
-</li>
-</ol>
-<h2 id="导入Eclipse构建的开源库">导入Eclipse构建的开源库</h2><p>稍微复杂一点，步骤如下：</p>
-<ol>
-<li>前两步同上，导入gradle构建的开源库</li>
-<li><p>使用Eclipse构建的开源库是没有build.gradle文件的，这时需要新建一个，在其中写入必要的内容，可参考如下模版：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath 'com.android.tools.build:gradle:0.4.+'</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">apply plugin: 'android-library'</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile 'com.android.support:support-v4:13.0.0'</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion 23</span><br><span class="line">    buildToolsVersion "23.0.2"</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        minSdkVersion 7</span><br><span class="line">        targetSdkVersion 16</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sourceSets &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            java.srcDirs = ['src']</span><br><span class="line">            resources.srcDirs = ['src']</span><br><span class="line">            aidl.srcDirs = ['src']</span><br><span class="line">            renderscript.srcDirs = ['src']</span><br><span class="line">            res.srcDirs = ['res']</span><br><span class="line">            assets.srcDirs = ['assets']</span><br><span class="line"></span><br><span class="line">            manifest.srcFile 'AndroidManifest.xml'</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Sync Project</p>
-</li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p>有大概两个月没写博客了，很惭愧。一月份写了去年最后一篇博客，然后就复习期末考试，然后是寒假，在家也没机会写，现在开学了，再加上最近在学习Android开发，需要导入第三方库，所以，今天就来谈谈如何在Android Studio中导入第三方库。<br><br/></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">软件环境：</span><br><span class="line">Windows 7</span><br><span class="line">Android Studio 1.4</span><br></pre></td></tr></table></figure>]]>
-    
-    </summary>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="android studio" scheme="http://blog.54yongf.com/tags/android-studio/"/>
-    
-      <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   

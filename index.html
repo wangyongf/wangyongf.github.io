@@ -92,6 +92,303 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/Qt/57.html" title="No57-原-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑" itemprop="url">No57-原-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-13T17:58:32.000Z" itemprop="datePublished">
+      发布于2016-07-14 01:58:32，更新于2016-07-14 01:58:32 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
+    </time>
+
+  </p>
+</header>
+
+    <div class="article-content">
+        
+        <h2 id="闲扯两句">闲扯两句</h2><p><font size="4"></font></p>
+<blockquote>
+<p>已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如<code>期末考试</code>，不敢怠慢．<br>最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．</p>
+</blockquote>
+<h2 id="软件环境">软件环境</h2><p><font size="4"><br>操作系统: Ubuntu 14.04 64bit<br>Qt版本: Qt5.6 </font></p>
+<h2 id="啰嗦一下">啰嗦一下</h2><p><font size="4"><br>如果你是使用ibus输入系统,看到这里就可以结束了,这里针对的是fcitx框架的输入法(比如说良心搜狗输入法).<br>以搜狗输入法为例(fctix),要使其支持中文输入,关键是要编译出共享库<code>libfcitxplatforminputcontextplugin.so</code>, 这个东西好像是动态库,所以是因人而异的,所以即使你是和我一个版本的操作系统,我也不能将我的库共享给你,<strong>你得自己编译!!!!</strong><br>必须指出,网上好多教程在文章中共享的<code>libfcitxplatforminputcontextplugin.so</code>库是不可用的,因为这家伙是动态库啊啊啊啊啊!!!!!! 所以啊,别用别人的,自己老老实实编译!<br>下面是具体的编译步骤以及可能出现的问题及其解决方法.</font></p>
+<h2 id="编译步骤以及可能出现的问题及其解决方案">编译步骤以及可能出现的问题及其解决方案</h2><p><font size="4"><br>在这一点上,我不想再重复造轮子了,我在开源中国找到了一篇相当完整的博客,你可以按照他的编译步骤慢慢来,出错了也没关系,人家文章中都有解决方案(在此感谢 =_=).<br>很重要的一点,编译出错不要紧,要有耐心,我也是编译了两次才编译成功的(主要是要处理各种依赖问题)<br>如果编译失败,最好删除整个fcitx-qt5文件夹重新弄.</font></p>
+<h2 id="最后">最后</h2><p><font size="4"><br>放张图吧,作为这顿折腾的最终战果:<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No57-2016-07-14%2002:43:11%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="中文OK">  </font></p>
+<p>最后,感谢开源!</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Qt/">Qt</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Linux/">Linux</a><a href="/tags/Qt/">Qt</a><a href="/tags/Qt-Creator/">Qt Creator</a><a href="/tags/Ubuntu/">Ubuntu</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Qt/57.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Qt/57.html" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/Java/56.html" title="No56-原-Java基础之方法传参问题" itemprop="url">No56-原-Java基础之方法传参问题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-16T02:18:34.000Z" itemprop="datePublished">
+      发布于2016-05-16 10:18:34，更新于2016-05-16 10:18:34 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
+    </time>
+
+  </p>
+</header>
+
+    <div class="article-content">
+        
+        <h2 id="前言">前言</h2><p><font size=4><br>本文讲述的是Java中参数传递相关的一些知识点.</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/Java/56.html#more">阅读全文</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Java/">Java</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Java/56.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Java/56.html" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/杂谈/55.html" title="No55-原-激活代码提示,让WebStorm助力你一码平川" itemprop="url">No55-原-激活代码提示,让WebStorm助力你一码平川</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-15T14:04:13.000Z" itemprop="datePublished">
+      发布于2016-05-15 22:04:13，更新于2016-05-15 22:04:13 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
+    </time>
+
+  </p>
+</header>
+
+    <div class="article-content">
+        
+        <h2 id="前言">前言</h2><p><font size="4"></font></p>
+<blockquote>
+<p>最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来了,代码写得好累,不过,今天终于找到了较好的解决方案.</p>
+</blockquote>
+<h2 id="进行一些设置就OK了">进行一些设置就OK了</h2><p><font size="4"><br>File –&gt; Setting –&gt; Languages &amp; Frameworks –&gt; JavaScript –&gt; Libraries. 请看下图:</font></p>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No55-screenshot.png" alt="screenshot"></p>
+<p>不用解释了吧.多说两句:</p>
+<ol>
+<li>这个几乎可以解决一切的代码提示问题.</li>
+<li>可以自由定制,也可以使用官方的</li>
+<li>Add 是添加自己的</li>
+<li>Download是添加官方的支持库,可以用于代码提示,这里有几百个JS库|框架</li>
+<li>可以设置Scope,即提示生效的范围(也可以在文件中右键编辑)</li>
+<li>我说这么多,你不妨试一下?</li>
+<li>以上.</li>
+</ol>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/杂谈/">杂谈</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/杂谈/55.html#comments" class="ds-thread-count comments-count-link" data-thread-key="杂谈/55.html" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/Android开发/54.html" title="No54-原-打造不一样的ViewPager" itemprop="url">No54-原-打造不一样的ViewPager</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-10T12:25:43.000Z" itemprop="datePublished">
+      发布于2016-05-10 20:25:43，更新于2016-05-10 20:25:43 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
+    </time>
+
+  </p>
+</header>
+
+    <div class="article-content">
+        
+        <h2 id="前言">前言</h2><p><font size="4"><br>好久没写文章了,想我否?开个玩笑,说正经的,最近学业甚忙,时间好紧…</font></p>
+<p>今天我们来谈谈ViewPager,关于ViewPager的基础知识就不说了,相信大家都知道,主要谈谈ViewPager的View切换的动画效果,打造不一样的ViewPager.如果你使用小米手机,也许你就知道小米手机长按菜单键就会出现<code>屏幕切换</code>的选项,里面有多达8种桌面切换的特效.没错,今天就是要实现这种效果.</p>
+<h2 id="从何下手">从何下手</h2><p><font size="4"><br>我们都知道,大部分ViewPager都是普通的左右切换,这是默认的效果.但是如何加入不一样的动效呢?如果你去查看ViewPager的API,你会发现<code>setPageTransformer</code>这个方法,这个方法是干嘛的呢?看命名就知道了,大概就是设置页面的切换效果.其实,官方早就给出了关于ViewPagerTransformer的两个样例,可以使ViewPager的切换更炫酷,分别是<code>DepthPageTransformer</code>和<code>ZoomOutPageTransformer</code>.</font></p>
+<h2 id="DepthPageTransformer">DepthPageTransformer</h2><p><font size="4"><br>代码如下:</font></p>
+<p>显示效果如下:</p>
+<h2 id="ZoomOutPageTransformer">ZoomOutPageTransformer</h2><p><font size="4"><br>代码如下:</font></p>
+<p>显示效果如下:</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android开发/">Android开发</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Android开发/54.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Android开发/54.html" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/乐报/53.html" title="No53-原-5月乐报" itemprop="url">No53-原-5月乐报</a>
   </h1>
   <p class="article-author">By
@@ -359,279 +656,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/乐报/49.html" title="No49-原-4月乐报" itemprop="url">No49-原-4月乐报</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-22T10:04:29.000Z" itemprop="datePublished">
-      发布于2016-04-22 18:04:29，更新于2016-04-22 18:04:29 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="Light">Light</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No49-3.jpg" alt="石兰"></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/乐报/49.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/乐报/">乐报</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/乐报/">乐报</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/乐报/49.html#comments" class="ds-thread-count comments-count-link" data-thread-key="乐报/49.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/Android开发/48.html" title="No48-原-自定义View之自定义圆形进度条" itemprop="url">No48-原-自定义View之自定义圆形进度条</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-21T04:41:44.000Z" itemprop="datePublished">
-      发布于2016-04-21 12:41:44，更新于2016-04-28 20:40:20 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="前言">前言</h2><p><font size=4><br>自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/Android开发/48.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android开发/">Android开发</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/Android开发/48.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Android开发/48.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/Git/47.html" title="No47-原-Git repository corrupt(incorrect header check; loose object is corrupt" itemprop="url">No47-原-Git repository corrupt(incorrect header check; loose object is corrupt</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-17T04:42:36.000Z" itemprop="datePublished">
-      发布于2016-04-17 12:42:36，更新于2016-04-17 12:42:36 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="问题描述">问题描述</h2><p><font size=4><br>今天Coding完之后，正准备commit代码，结果报了个错，从没见过：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% git <span class="operator"><span class="keyword">commit</span></span><br><span class="line"><span class="keyword">error</span>: inflate: <span class="keyword">data</span> stream <span class="keyword">error</span> (incorrect header <span class="keyword">check</span>)</span><br><span class="line"><span class="keyword">error</span>: unable <span class="keyword">to</span> unpack a94406345ac44982b00cf57b4b9660a35436637f header</span><br><span class="line">fatal: a94406345ac44982b00cf57b4b9660a35436637f <span class="keyword">is</span> <span class="keyword">not</span> a valid <span class="keyword">object</span></span></span><br></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/Git/47.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Git/">Git</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Git/">Git</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/Git/47.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Git/47.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/算法/46.html" title="No46-原-计算机算法设计与分析-三个水杯倒水问题" itemprop="url">No46-原-计算机算法设计与分析-三个水杯倒水问题</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-15T15:29:02.000Z" itemprop="datePublished">
-      发布于2016-04-15 23:29:02，更新于2016-04-15 23:29:02 <span class="ds-thread-count" data-thread-key="index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="题目来源">题目来源</h2><p><font size=4><br>南阳理工学院OJ:<a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=21">http://acm.nyist.net/JudgeOnline/problem.php?pid=21</a></p>
-<h2 id="问题描述">问题描述</h2><p><font size=4><br>给出三个水杯，大小不一，并且只有最大的水杯的水是装满的，其余两个为空杯子。三个水杯之间相互倒水，并且水杯没有标识，只能根据给出的水杯体积来计算。现在要求你写出一个程序，使其输出使初始状态到达目标状态的最少次数。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/算法/46.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/算法/">算法</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/算法/">算法</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/算法/46.html#comments" class="ds-thread-count comments-count-link" data-thread-key="算法/46.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
@@ -684,7 +711,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Android开发/" title="Android开发">Android开发<sup>9</sup></a></li>
+			<li><a href="/categories/Android开发/" title="Android开发">Android开发<sup>10</sup></a></li>
 		  
 		
 		  
@@ -696,7 +723,7 @@
 		  
 		
 		  
-			<li><a href="/categories/Java/" title="Java">Java<sup>2</sup></a></li>
+			<li><a href="/categories/Java/" title="Java">Java<sup>3</sup></a></li>
 		  
 		
 		  
@@ -704,7 +731,7 @@
 		  
 		
 		  
-			<li><a href="/categories/Qt/" title="Qt">Qt<sup>1</sup></a></li>
+			<li><a href="/categories/Qt/" title="Qt">Qt<sup>2</sup></a></li>
 		  
 		
 		  
@@ -720,7 +747,7 @@
 		  
 		
 		  
-			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>19</sup></a></li>
+			<li><a href="/categories/杂谈/" title="杂谈">杂谈<sup>20</sup></a></li>
 		  
 		
 		  
@@ -747,7 +774,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 15px;">Android开发</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HashSet/" style="font-size: 10px;">HashSet</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Qt/" style="font-size: 10px;">Qt</a> <a href="/tags/Ubuntu/" style="font-size: 12.5px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 10px;">Visual Studio Code</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/乐报/" style="font-size: 12.5px;">乐报</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/感受/" style="font-size: 10px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 20px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+       <a href="/tags/Android-SDK/" style="font-size: 12.5px;">Android SDK</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android开发/" style="font-size: 17.5px;">Android开发</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HashSet/" style="font-size: 10px;">HashSet</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/Java核心技术/" style="font-size: 10px;">Java核心技术</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Mac-OS-X/" style="font-size: 10px;">Mac OS X</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Qt/" style="font-size: 12.5px;">Qt</a> <a href="/tags/Qt-Creator/" style="font-size: 10px;">Qt Creator</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/Verilog/" style="font-size: 10px;">Verilog</a> <a href="/tags/Visual-Studio/" style="font-size: 12.5px;">Visual Studio</a> <a href="/tags/Visual-Studio-Code/" style="font-size: 10px;">Visual Studio Code</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/Windows日常/" style="font-size: 10px;">Windows日常</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/hexo主题/" style="font-size: 10px;">hexo主题</a> <a href="/tags/kindle/" style="font-size: 10px;">kindle</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/七牛/" style="font-size: 12.5px;">七牛</a> <a href="/tags/乐报/" style="font-size: 12.5px;">乐报</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/小工具/" style="font-size: 10px;">小工具</a> <a href="/tags/感受/" style="font-size: 10px;">感受</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/挖坑and踩坑/" style="font-size: 10px;">挖坑and踩坑</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/杂谈/" style="font-size: 20px;">杂谈</a> <a href="/tags/模版/" style="font-size: 10px;">模版</a> <a href="/tags/测试案例/" style="font-size: 10px;">测试案例</a> <a href="/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/翻墙/" style="font-size: 12.5px;">翻墙</a> <a href="/tags/虚拟化/" style="font-size: 10px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/语义规则/" style="font-size: 10px;">语义规则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
   </div>
 
