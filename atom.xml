@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-08-17T22:45:17.000Z</updated>
+  <updated>2016-08-19T15:11:51.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No59-【原】-Java并发编程23事之AtomicInteger的那点事儿]]></title>
+    <link href="http://blog.54yongf.com/Java/59.html"/>
+    <id>http://blog.54yongf.com/Java/59.html</id>
+    <published>2016-08-19T15:11:51.000Z</published>
+    <updated>2016-08-19T15:11:51.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="首先">首先</h2><p>请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。  </p>
+<a id="more"></a>
+<h2 id="我的第一次">我的第一次</h2><p>话说当初在我看<strong>深入理解Java虚拟机</strong>一书的时候，看到了AtomicInteger这个类，它是并发条件下的原子自增运算，于是我就打开了IDEA，<br>输入这段示例代码，想看看运行结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicInteger;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by scottwang on 16-8-19.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keyword">int</span> race = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> AtomicInteger ai = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        race++;</span><br><span class="line">        ai.incrementAndGet();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> THREAD_COUNT = <span class="number">10000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        Thread[] threads = <span class="keyword">new</span> Thread[THREAD_COUNT];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; THREAD_COUNT; i++) &#123;</span><br><span class="line">            threads[i] = <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">                increase();</span><br><span class="line">            &#125;);</span><br><span class="line">            threads[i].start();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"race = "</span> + race);</span><br><span class="line">        System.out.println(<span class="string">"ai = "</span> + ai);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>蛋是，奇迹发生了！运行结果是这样的：  </p>
+<pre><code>race = <span class="number">9994</span>
+ai = <span class="number">9999</span>
+</code></pre><p>我的天，MD制杖，什么鬼，你跟我说结果不是10000？我把头给看下来，再多运行几次？好勒，次次结果都不一样，我的天！这难道是JDK版本的<br>问题？不对啊，我的是Ubuntu 16.04的JDK8.0，怎么可能有问题！难道是BUG了？我的天，我竟然发现了JDK的BUG，怎么办，好紧张。。。。。。  </p>
+<h2 id="真相只有一个">真相只有一个</h2><p>最后，我才知道，原来是我太猴急了，在开启完全部线程之后，直接读取race和ai的值，这要能对就怪了，结果要是10000才是BUG呢。于是，<br>在输出结果直接加入<code>Thread.sleep(500);</code>，让线程先睡会儿，然后再读取结果，对了！<br>这件事情告诉我们，细节决定成败。开个玩笑，我们下回再见！</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="首先">首先</h2><p>请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。  </p>]]>
+    
+    </summary>
+    
+      <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
+    
+      <category term="并发编程" scheme="http://blog.54yongf.com/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No58-【原】-放一下我的网易云音乐歌单吧]]></title>
@@ -663,163 +693,6 @@
       <category term="Git" scheme="http://blog.54yongf.com/tags/Git/"/>
     
       <category term="Git" scheme="http://blog.54yongf.com/categories/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No39-原-Java核心技术读书笔记]]></title>
-    <link href="http://blog.54yongf.com/Java/39.html"/>
-    <id>http://blog.54yongf.com/Java/39.html</id>
-    <published>2016-03-20T08:54:27.000Z</published>
-    <updated>2016-04-26T11:35:02.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Java核心技术读书笔记">Java核心技术读书笔记</h2><font size="4">
-
-<ol>
-<li>在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）<a id="more"></a></li>
-<li>强烈建议不要在程序中使用char类型，除非确实需要对UTF-16代码单元进行操作（char类型用UTF-16编码描述一个代码单元）:( Why?</li>
-<li>整型和布尔型不能相互转换</li>
-<li>&amp;&amp;和||是按照短路方式求值的。&amp;和|运算符不按照短路方式计算！</li>
-<li>对移位运算符右侧的参数需要进行模32的运算（除非左边的操作数是long类型，此时需模64）。例如，1 &lt;&lt; 35和1 &lt;&lt; 3是相等的</li>
-<li>String类对象是不可变字符串。编译器可以让字符串共享</li>
-<li>字符串比较使用equals方法，千万不要使用==！这个运算符只能确定两个字符串是否放置在同一个虚拟机中位置上（虚拟机完全可能将内容相同的多个字符串的拷贝位置放在不同的地方！）</li>
-<li>如果需要用许多小段的字符串构建一个字符串，那么应该使用StringBuilder。在JDK5.0中引入StringBuilder类。这个类的前身是StringBuffer，其效率稍微有些低，但是允许采用多线程的方式执行添加或删除字符的操作。如果所有的字符串都在一个单线程中编辑（通常情况下），应该用StringBuilder替代它。</li>
-<li>在C++中可以在嵌套的块中重定义一个变量（内层定义的变量会覆盖外层定义的变量），但是这在Java中是不允许的！</li>
-<li>在循环中，检测两个浮点数是否相等需要格外小心！注意舍入误差，即可能浮点数无法用二进制完全表示。</li>
-<li>switch语句的case标签可以是：1. 类型为char, byte, short, int（或者其包装类Character, Byte, Short, Integer）；2. 枚举常量；3. 字符串字面量（Since JDK7.0）</li>
-<li>字符串长度string.length()。数组的长度array.length</li>
-<li>数组长度可以为0，和null不同</li>
-<li>Java中的[]运算符被预定义为检查数组边界，并且没有指针运算，即不能通过a+1得到下一个数组元素</li>
-<li>如果将一个方法应用于null对象上，就会产生空指针异常，这是RuntimeException运行时异常</li>
-<li>全局变量会自动初始化，局部变量不会自动初始化。</li>
-<li>所有Java对象都存储在堆中。</li>
-<li>当且仅当没有给类显式提供任何构造器的情况下，系统才会提供一个默认的构造器</li>
-<li>关于初始化块：首先运行初始化块，然后才运行构造器的主体部分。不过，通常把初始化代码放在构造器中就行了。</li>
-<li>如果在一个类的构造器A中调用另一个构造器B，该调用代码必须写在构造器A的第一行！</li>
-<li><p>Java程序可以没有main方法（但是JDK1.8不可以了）。代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello, World"</span>);</span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">    &#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>静态方法与类绑定–静态绑定。实例化变量之后，变量是什么类型的，就会调用那个类的静态方法（其实是废话）</p>
-</li>
-<li>方法的名字和参数列表称为方法的签名，返回类型不是签名的一部分！</li>
-<li>动态绑定。在运行的时候，调用parent.method的解析过程<ol>
-<li>首先，虚拟机提取object的实际类型的方法表。这既可能是Parent类型，Child1类型，Child2类型…类的其他子类的方法表</li>
-<li>接下来，虚拟机搜索定义method签名的类。此时，虚拟机可以知道应该调用哪个方法。</li>
-<li>最后，虚拟机调用方法。</li>
-</ol>
-</li>
-<li><p>类强制转换：1. 只能在继承层次内进行类型转换。2. 在将父类转换成子类之前，应该使用instanceof进行检查。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (parent <span class="keyword">instanceof</span> child) &#123;</span><br><span class="line">    result = (child)parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过类型转换调整对象的类型并不是一种好的做法。</p>
-</li>
-<li>Java中的受保护部分对于所有子类以及同一个包中的其他所有类都是可见的。</li>
-<li>4个访问修饰符：<ol>
-<li>private: 仅仅对本类可见</li>
-<li>public: 对所有类可见</li>
-<li>protected: 对本包和所有子类可见</li>
-<li>default: 默认，对本包可见，不需要修饰符</li>
-</ol>
-</li>
-<li>在Java中，只有基本类型不是对象，其他一切皆对象。</li>
-<li>如果两个对象持有相同的引用，那么它们一定是相等的。</li>
-<li>对于数组类型的域，可以使用静态的Arrays.equals方法检测相应的数组元素是否相等。</li>
-<li>字符串的散列码hashCode是由内容导出的。在StringBuffer内部没有定义hashCode方法，它的散列码是由Object类的默认hashCode到处的对象存储地址。</li>
-<li>建议：Equals和hashCode的定义一致。两个相等的对象拥有相等的散列码。空对象的散列码为0</li>
-<li>ArrayList从JDK7.0开始，可以省略右边的类型参数</li>
-<li>JDK5.0之前没有提供泛型类，而是有一个ArrayList类，其中保存的类型是Object，它是自适应大小的集合</li>
-<li>ArrayList的CRUD都不能越界！</li>
-<li>9个包装器类（Integer, Long, Float, Double, Short, Byte, Character, Void, Boolean）。对象包装器类是不可变的，一旦构造了包装器，就不允许改变其中的值。同时，对象包装器类还是final，因此不能定义它们的子类</li>
-<li>自动装箱、自动拆箱</li>
-<li>自动装箱规范要求boolean, byte, char &lt;= 127 ,介于-128~127之间的short和int被包装到固定的对象中。装箱和拆箱是编译器认可的，而不是虚拟机。</li>
-<li>Java中方法都是值传递的</li>
-<li>JDK5.0之前，每个Java方法都有固定数量的参数，但是之后支持变参方法Vararg</li>
-<li>只在必要的时候使用反射。</li>
-<li>接口中的所有方法自动地属于public，常量都自动是public static final。不能有实例域和静态方法！</li>
-<li>默认的克隆操作是浅拷贝，如果要深拷贝，必须重载clone</li>
-<li>内部类可以访问外围类的私有变量。内部类引用局部变量，必须是final</li>
-<li>final变量可以为空（全局变量，自动初始化）</li>
-<li>当内部类不需要访问外围类对象的时候，应该使用静态内部类（其它都一样）。声明在接口中的内部类自动成为static, public类</li>
-<li>代理（since JDK1.3）：利用代理可以在运行时创建一个实现了一组给定接口的新类。只有在编译时无法确定需要实现哪个接口时才有必要使用。</li>
-<li>Throwable =&gt; Error + Exception.由程序错误导致的异常属于RuntimeException；而程序本身没有问题，但由于像I/O错误这类问题导致的异常属于其他异常</li>
-<li>常见的RuntimeException：1. 错误的类型转换ClassCastException。2. 数组访问越界IndexOutOfBoundException。3. 访问空指针NullPointerException</li>
-<li>其他异常：1. 试图在文件尾部后面读取数据。2. 试图打开一个不存在的文件。3. 试图根据给定的字符串查找Class对象，而这个字符串表示的类并不存在。</li>
-<li>Java语言规范将派生于Error类或RuntimeException类的所有异常成为未检查unchecked异常，所有其他的异常称为已检查异常checked</li>
-<li>实际上，所有的错误都发生在运行时。</li>
-<li>假设在try和finally块中均含有return语句，利用return语句从try语句块中退出。在方法返回前，finally子句的内容将被执行。如果finally子句中也有一个return语句，这个返回值会覆盖原来的返回值。</li>
-<li>泛型程序设计意味着编写的代码可以被很多不同类型的对象所重用</li>
-<li>数组在连续的存储位置上存放对象引用，链表将每个对象存放在独立的结点中。在Java中，所有链表实际上都是双向链表</li>
-<li>为了避免发生并发修改的异常，请遵循下述规则：可以根据需要给容器添加许多迭代器，但是这些迭代器只能读取列表。另外，再单独附加一个既能读又能写的迭代器</li>
-<li>list的get方法（最好不要使用）：每次查找一个元素都要从列表的头部重新开始搜索。LinkedList对象根本不做任何缓存位置信息的操作。</li>
-<li>TreeSet树集（有序集合）：在对集合进行遍历时，每个值将自动地按照排序后的顺序呈现。</li>
-<li>TreeSet添加元素快于数组|链表，慢于散列表。如果树中包含n个元素，查找新元素的正确位置平均需要log2 n次比较。</li>
-<li>优先级队列（Priority Queue）中的元素可以按照任意的顺序插入，却总是按照排序的顺序进行检索（所以，总是获得最小的那个元素）。优先级队列使用了堆（heap）-一个可以自我调整的二叉树。</li>
-<li>Hashtable和HashMap几乎是一样的。唯一的区别是：Hashtable的方法是同步的，而HashMap不是。</li>
-<li>如果向一个变量写入值，而这个变量接下来可能会被另一个线程读取，或者，从一个变量读值，而这个变量可能是之前被另一个线程写入的，此时必须使用同步</li>
-<li>volatile关键字为实例域的同步访问提供了一种免锁机制。如果声明一个域为volatile，那么编译器和虚拟机就知道该域是可能被另一个线程并发更新的。</li>
-<li>对象序列化是以特殊的文件格式存储对象数据的。（每个文件都是以AC ED开头的）</li>
-<li>Path和Files类since JDK7.0</li>
-<li>每个Java程序至少拥有三个类加载器：1. 引导类加载器。2. 扩展类加载器。3. 系统类（应用类）加载器。引导类加载器负责加载系统类（通常从JAR文件rt.jar中进行加载），引导类加载器没有对应的ClassLoader对象。扩展类加载器用于从jre/lib/ext目录加载标准扩展。系统类加载器用于加载应用类。引导类加载器通常使用C语言实现的，扩展类加载器和系统类加载器通常是用Java来实现的。</li>
-</ol>
-<h4 id="volatile变量不能提供原子性！">volatile变量不能提供原子性！</h4><p><font size="4"><br>volatile只提供了保证访问该变量时，每次都是从内存中读取最新值，并不会使用寄存器缓存该值——每次都会从内存中读取。而对该变量的修改，volatile并不提供原子性的保证。那么编译器究竟是直接修改内存的值，还是使用寄存器修改都符合volatile的定义。所以，一句话，volatile并不提供原子性的保证。所以，下面的代码并不能确保number的递增。还是要使用synchronized</font></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add_number</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ++number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="字节码校验">字节码校验</h4><p><font size="4"><br>在类加载器将新加载的字节码传递给虚拟机时，这些字节码首先要接受校验器的校验。下面是校验器执行的一些检查：</font></p>
-<ol>
-<li>变量要在使用之前初始化</li>
-<li>方法调用与对象引用类型之间要匹配</li>
-<li>访问私有变量和方法的规则没有被违反</li>
-<li>对本地变量的访问都落在运行时堆栈内</li>
-<li>运行时堆栈没有溢出</li>
-</ol>
-<h4 id="调用构造器的具体处理步骤">调用构造器的具体处理步骤</h4><font size="4">
-
-<ol>
-<li>所有数据域被初始化为默认值（0 =&gt; 数值型, false =&gt; 布尔型, null =&gt; 对象类型）</li>
-<li>按照在类声明中出现的次序，依次执行所有域初始化语句和初始化块</li>
-<li>如果在构造器第一行调用了第二个构造器，则执行第二个构造器的主体</li>
-<li>执行这个构造器的主体</li>
-</ol>
-<h4 id="泛型的约束和局限性">泛型的约束和局限性</h4><ol>
-<li>不能用基本类型实例化类型参数（用包装类）</li>
-<li>运行时类型查询只适用于原始类型</li>
-<li>不要创建参数化类型的数组</li>
-<li>不能实例化类型变量</li>
-<li>泛型类的静态（变量、方法）上下文中类型无效</li>
-</ol>
-<h4 id="对象拷贝与对象克隆的区别">对象拷贝与对象克隆的区别</h4><ol>
-<li>当拷贝一个对象时，原始变量和拷贝变量引用同一个对象</li>
-<li>当克隆一个对象时，引用新的对象</li>
-</ol>
-<h4 id="编写equals方法的建议">编写equals方法的建议</h4><ol>
-<li>显式参数命名为otherObject，稍后需要将它转换成另一个叫做other的变量。</li>
-<li>检测this与otherObject是否引用同一个对象，即如果this == otherObject，返回true</li>
-<li>检测otherObject是否为null，如果是null，返回false</li>
-<li>比较this与otherObject是否属于同一个类。如果equals的语义在每个子类都有变化，就用getClass判断。如果所有的子类都拥有统一的语义，就用instanceof检测</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!(getClass() == otherObject.getClass()) </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!(otherObject <span class="keyword">instanceof</span> ClassName))</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>将otherObject转换为相应的类类型变量</li>
-<li>对所有需要比较的域进行比较。使用==比较基本类型于，使用equals比较对象与。如果所有的域都匹配，就返回true；否则返回false。</li>
-<li><p>如果在子类中重新定义equals，就要在其中包含调用super.equals(other)。</p>
-<h2 id="关于动态绑定">关于动态绑定</h2><p><font size="4"><br>必须明确的一点是,动态绑定针对的是对象的方法,这一点尤为重要!因此,在向上转型的情况下，对象的方法可以找到子类，而对象的属性还是父类的属性。</font></p>
-</li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-</font></font>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="Java核心技术读书笔记">Java核心技术读书笔记</h2><font size=4>
-
-<ol>
-<li>在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）]]>
-    
-    </summary>
-    
-      <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
-    
-      <category term="Java核心技术" scheme="http://blog.54yongf.com/tags/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="读书笔记" scheme="http://blog.54yongf.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
     
   </entry>
   

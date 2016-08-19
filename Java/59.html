@@ -4,24 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No53-【原】-5月乐报 | Scott Wang&#39;s blog</title>
+    <title>No59-【原】-Java并发编程23事之AtomicInteger的那点事儿 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="Lover">
+    <meta name="description" content="首先请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No53-【原】-5月乐报">
-<meta property="og:url" content="http://blog.54yongf.com/乐报/53.html">
+<meta property="og:title" content="No59-【原】-Java并发编程23事之AtomicInteger的那点事儿">
+<meta property="og:url" content="http://blog.54yongf.com/Java/59.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="Lover">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg">
-<meta property="og:updated_time" content="2016-08-17T22:34:11.000Z">
+<meta property="og:description" content="首先请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。">
+<meta property="og:updated_time" content="2016-08-19T15:11:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No53-【原】-5月乐报">
-<meta name="twitter:description" content="Lover">
+<meta name="twitter:title" content="No59-【原】-Java并发编程23事之AtomicInteger的那点事儿">
+<meta name="twitter:description" content="首先请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -92,15 +91,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/乐报/53.html" title="No53-【原】-5月乐报" itemprop="url">No53-【原】-5月乐报</a>
+      <a href="/Java/59.html" title="No59-【原】-Java并发编程23事之AtomicInteger的那点事儿" itemprop="url">No59-【原】-Java并发编程23事之AtomicInteger的那点事儿</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-10T11:45:21.000Z" itemprop="datePublished">
-      发布于2016-05-10 19:45:21，更新于2016-08-18 06:34:11 <span class="ds-thread-count" data-thread-key="乐报/53.html" data-count-type="comments"></span>
+    <time datetime="2016-08-19T15:11:51.000Z" itemprop="datePublished">
+      发布于2016-08-19 23:11:51，更新于2016-08-19 23:11:51 <span class="ds-thread-count" data-thread-key="Java/59.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -111,18 +110,20 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lover"><span class="toc-number">1.</span> <span class="toc-text">Lover</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#南方姑娘_-_赵雷"><span class="toc-number">2.</span> <span class="toc-text">南方姑娘 - 赵雷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#老男孩_-_筷子兄弟"><span class="toc-number">3.</span> <span class="toc-text">老男孩 - 筷子兄弟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#夏洛特烦恼_-_金志文"><span class="toc-number">4.</span> <span class="toc-text">夏洛特烦恼 - 金志文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#牵丝戏_-_银临/Aki阿杰"><span class="toc-number">5.</span> <span class="toc-text">牵丝戏 - 银临/Aki阿杰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#青花瓷_-_周杰伦"><span class="toc-number">6.</span> <span class="toc-text">青花瓷 - 周杰伦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先"><span class="toc-number">1.</span> <span class="toc-text">首先</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的第一次"><span class="toc-number">2.</span> <span class="toc-text">我的第一次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#真相只有一个"><span class="toc-number">3.</span> <span class="toc-text">真相只有一个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="Lover">Lover</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg" alt=""></p>
+		<h2 id="首先">首先</h2><p>请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。  </p>
 <a id="more"></a>
-<h2 id="南方姑娘_-_赵雷">南方姑娘 - 赵雷</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=202373&auto=0&height=66"></iframe></p>
-<h2 id="老男孩_-_筷子兄弟">老男孩 - 筷子兄弟</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=362998&auto=0&height=66"></iframe></p>
-<h2 id="夏洛特烦恼_-_金志文">夏洛特烦恼 - 金志文</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=34916642&auto=0&height=66"></iframe></p>
-<h2 id="牵丝戏_-_银临/Aki阿杰">牵丝戏 - 银临/Aki阿杰</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=30352891&auto=0&height=66"></iframe></p>
-<h2 id="青花瓷_-_周杰伦">青花瓷 - 周杰伦</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=185811&auto=0&height=66"></iframe></p>
-<h2 id="感谢">感谢</h2><p><font size="4"><br>乐报,不定期更新,歌慌了?来乐报 :-)</font></p>
+<h2 id="我的第一次">我的第一次</h2><p>话说当初在我看<strong>深入理解Java虚拟机</strong>一书的时候，看到了AtomicInteger这个类，它是并发条件下的原子自增运算，于是我就打开了IDEA，<br>输入这段示例代码，想看看运行结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicInteger;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by scottwang on 16-8-19.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keyword">int</span> race = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> AtomicInteger ai = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        race++;</span><br><span class="line">        ai.incrementAndGet();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> THREAD_COUNT = <span class="number">10000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        Thread[] threads = <span class="keyword">new</span> Thread[THREAD_COUNT];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; THREAD_COUNT; i++) &#123;</span><br><span class="line">            threads[i] = <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">                increase();</span><br><span class="line">            &#125;);</span><br><span class="line">            threads[i].start();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"race = "</span> + race);</span><br><span class="line">        System.out.println(<span class="string">"ai = "</span> + ai);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>蛋是，奇迹发生了！运行结果是这样的：  </p>
+<pre><code>race = <span class="number">9994</span>
+ai = <span class="number">9999</span>
+</code></pre><p>我的天，MD制杖，什么鬼，你跟我说结果不是10000？我把头给看下来，再多运行几次？好勒，次次结果都不一样，我的天！这难道是JDK版本的<br>问题？不对啊，我的是Ubuntu 16.04的JDK8.0，怎么可能有问题！难道是BUG了？我的天，我竟然发现了JDK的BUG，怎么办，好紧张。。。。。。  </p>
+<h2 id="真相只有一个">真相只有一个</h2><p>最后，我才知道，原来是我太猴急了，在开启完全部线程之后，直接读取race和ai的值，这要能对就怪了，结果要是10000才是BUG呢。于是，<br>在输出结果直接加入<code>Thread.sleep(500);</code>，让线程先睡会儿，然后再读取结果，对了！<br>这件事情告诉我们，细节决定成败。开个玩笑，我们下回再见！</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -130,13 +131,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/乐报/">乐报</a>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/乐报/">乐报</a>
+  <span></span> <a href="/tags/Java/">Java</a><a href="/tags/并发编程/">并发编程</a>
   </div>
 
 </div>
@@ -181,12 +182,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;text-align:center;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/乐报/53.html">No53-【原】-5月乐报</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/Java/59.html">No59-【原】-Java并发编程23事之AtomicInteger的那点事儿</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-05-10 19:45:21</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-08-19 23:11:51</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/乐报/53.html" title="No53-【原】-5月乐报">http://blog.54yongf.com/乐报/53.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/乐报/53.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/Java/59.html" title="No59-【原】-Java并发编程23事之AtomicInteger的那点事儿">http://blog.54yongf.com/Java/59.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/Java/59.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -210,19 +211,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/Android开发/54.html" title="No54-【原】-打造不一样的ViewPager">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No54-【原】-打造不一样的ViewPager</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/Android开发/52.html"  title="No52-【原】-Android开发常见问题汇总">
+<a href="/乐报/58.html"  title="No58-【原】-放一下我的网易云音乐歌单吧">
  <strong>下一篇：</strong><br/> 
- <span>No52-【原】-Android开发常见问题汇总
+ <span>No58-【原】-放一下我的网易云音乐歌单吧
 </span>
 </a>
 </div>
@@ -231,7 +224,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="乐报/53.html" data-title="No53-【原】-5月乐报" data-url="http://blog.54yongf.com/乐报/53.html"></div>
+	<div class="ds-thread" data-thread-key="Java/59.html" data-title="No59-【原】-Java并发编程23事之AtomicInteger的那点事儿" data-url="http://blog.54yongf.com/Java/59.html"></div>
 </section>
 
 
@@ -243,7 +236,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lover"><span class="toc-number">1.</span> <span class="toc-text">Lover</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#南方姑娘_-_赵雷"><span class="toc-number">2.</span> <span class="toc-text">南方姑娘 - 赵雷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#老男孩_-_筷子兄弟"><span class="toc-number">3.</span> <span class="toc-text">老男孩 - 筷子兄弟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#夏洛特烦恼_-_金志文"><span class="toc-number">4.</span> <span class="toc-text">夏洛特烦恼 - 金志文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#牵丝戏_-_银临/Aki阿杰"><span class="toc-number">5.</span> <span class="toc-text">牵丝戏 - 银临/Aki阿杰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#青花瓷_-_周杰伦"><span class="toc-number">6.</span> <span class="toc-text">青花瓷 - 周杰伦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先"><span class="toc-number">1.</span> <span class="toc-text">首先</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的第一次"><span class="toc-number">2.</span> <span class="toc-text">我的第一次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#真相只有一个"><span class="toc-number">3.</span> <span class="toc-text">真相只有一个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
