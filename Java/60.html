@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No55-【原】-激活代码提示,让WebStorm助力你一码平川 | Scott Wang&#39;s blog</title>
+    <title>No60-【原】-Java基础23事之彻底搞定Return-Finally | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,28 +12,19 @@
 
     
     <meta name="description" content="前言
-
-最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来了,代码写得好累,不过,今天终于找到了较好的解决方案.
-
-进行一些设置就OK了File –&amp;gt; Setting –&amp;gt; Languages &amp;amp; Frameworks –&amp;gt; JavaScript –&amp;gt; Librari">
+也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No55-【原】-激活代码提示,让WebStorm助力你一码平川">
-<meta property="og:url" content="http://blog.54yongf.com/杂谈/55.html">
+<meta property="og:title" content="No60-【原】-Java基础23事之彻底搞定Return-Finally">
+<meta property="og:url" content="http://blog.54yongf.com/Java/60.html">
 <meta property="og:site_name" content="Scott Wang's blog">
 <meta property="og:description" content="前言
-
-最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来了,代码写得好累,不过,今天终于找到了较好的解决方案.
-
-进行一些设置就OK了File –&amp;gt; Setting –&amp;gt; Languages &amp;amp; Frameworks –&amp;gt; JavaScript –&amp;gt; Librari">
-<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No55-screenshot.png">
-<meta property="og:updated_time" content="2016-08-15T22:29:20.000Z">
+也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)">
+<meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No60-Java-Return-Finally.bmp">
+<meta property="og:updated_time" content="2016-08-20T09:14:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No55-【原】-激活代码提示,让WebStorm助力你一码平川">
+<meta name="twitter:title" content="No60-【原】-Java基础23事之彻底搞定Return-Finally">
 <meta name="twitter:description" content="前言
-
-最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来了,代码写得好累,不过,今天终于找到了较好的解决方案.
-
-进行一些设置就OK了File –&amp;gt; Setting –&amp;gt; Languages &amp;amp; Frameworks –&amp;gt; JavaScript –&amp;gt; Librari">
+也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -104,15 +95,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/杂谈/55.html" title="No55-【原】-激活代码提示,让WebStorm助力你一码平川" itemprop="url">No55-【原】-激活代码提示,让WebStorm助力你一码平川</a>
+      <a href="/Java/60.html" title="No60-【原】-Java基础23事之彻底搞定Return-Finally" itemprop="url">No60-【原】-Java基础23事之彻底搞定Return-Finally</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-15T14:04:13.000Z" itemprop="datePublished">
-      发布于2016-05-15 22:04:13，更新于2016-08-16 06:29:20 <span class="ds-thread-count" data-thread-key="杂谈/55.html" data-count-type="comments"></span>
+    <time datetime="2016-08-20T09:14:11.000Z" itemprop="datePublished">
+      发布于2016-08-20 17:14:11，更新于2016-08-20 17:14:11 <span class="ds-thread-count" data-thread-key="Java/60.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -123,26 +114,32 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进行一些设置就OK了"><span class="toc-number">2.</span> <span class="toc-text">进行一些设置就OK了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#再谈Java中的Return-Finally问题"><span class="toc-number">2.</span> <span class="toc-text">再谈Java中的Return-Finally问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#先说说返回值的事"><span class="toc-number">3.</span> <span class="toc-text">先说说返回值的事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字节码"><span class="toc-number">4.</span> <span class="toc-text">字节码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用图示来增进理解吧"><span class="toc-number">5.</span> <span class="toc-text">用图示来增进理解吧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">6.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="前言">前言</h2><p><font size="4"></font></p>
-<blockquote>
-<p>最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来了,代码写得好累,不过,今天终于找到了较好的解决方案.</p>
+		<h2 id="前言">前言</h2><blockquote>
+<p>也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)</p>
 </blockquote>
-<h2 id="进行一些设置就OK了">进行一些设置就OK了</h2><p><font size="4"><br>File –&gt; Setting –&gt; Languages &amp; Frameworks –&gt; JavaScript –&gt; Libraries. 请看下图:</font></p>
-<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No55-screenshot.png" alt="screenshot"></p>
-<p>不用解释了吧.多说两句:</p>
+<a id="more"></a>
+<h2 id="再谈Java中的Return-Finally问题">再谈Java中的Return-Finally问题</h2><p>先来看看下面这段代码：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">testReturnFinally</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            x++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>你能马上回答出上述函数的返回值么？如果是，并且知其所以然，那么你就可以直接跳转到本文的后面部分了；如果不是，且听我娓娓道来。  </p>
+<h2 id="先说说返回值的事">先说说返回值的事</h2><p>我们都知道，所谓finally，就是无论出现什么情况，在<code>try</code>结束或<code>catch</code>块结束之后执行的都是<code>finally</code>代码块。那么这是如何实现的呢？对！我们可以<br>在<code>try</code>和<code>catch</code>代码块之后插入<code>finally</code>代码块，这样，无论是执行哪一个分支，最后一定会执行<code>finally</code>代码块！</p>
+<h2 id="字节码">字节码</h2><p>那么，我们就来看看上述Java代码的字节码吧，如何查看？终端下使用指令<code>javap -verbose TestReturnFinally.class</code>，其中，TestReturnFinally.class是要查看的字节码文件。<br>上述Java代码的字节码如下所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">0</span>: iconst_1                        <span class="comment">//将int型1推送至Java虚拟机栈顶</span></span><br><span class="line"> <span class="number">1</span>: istore_0                        <span class="comment">//将栈顶int型数值存入第一个本地变量（x=1）</span></span><br><span class="line"> <span class="number">2</span>: iload_0                         <span class="comment">//将本地第一个int型本地变量推送至Java虚拟机栈顶</span></span><br><span class="line"> <span class="number">3</span>: istore_1                        <span class="comment">//将栈顶int型数值存入第二个本地变量，方法返回前将返回值存在一个临时变量中</span></span><br><span class="line"> <span class="number">4</span>: iinc          <span class="number">0</span>, <span class="number">1</span>              <span class="comment">//第4,7条指令是由编译器强行插入到第8条指令之前的，为了确保finally一定执行</span></span><br><span class="line"> <span class="number">7</span>: iload_1                        <span class="comment">//指令4：将第一个本地变量自增1（x++） 指令7：将第2个本地变量推送至栈顶</span></span><br><span class="line"> <span class="number">8</span>: ireturn                         <span class="comment">//方法返回，返回值为第二个本地变量，因此返回值为1！</span></span><br><span class="line"> <span class="number">9</span>: astore_2                      <span class="comment">//关于第9-14条指令，我其实不是特别清楚，我的猜想是因为我们没有在代码中明确进行</span></span><br><span class="line">                                        <span class="comment">//catch操作，所以编译器插入了一个catch的操作，实际上可能没什么用......</span></span><br><span class="line"><span class="number">10</span>: iinc          <span class="number">0</span>, <span class="number">1</span></span><br><span class="line"><span class="number">13</span>: aload_2</span><br><span class="line"><span class="number">14</span>: athrow</span><br></pre></td></tr></table></figure>
+<p>编译出来之后共14条字节码指令，指令的相关含义已经在后面注明了。看完上述字节码，我们可以知道：</p>
 <ol>
-<li>这个几乎可以解决一切的代码提示问题.</li>
-<li>可以自由定制,也可以使用官方的</li>
-<li>Add 是添加自己的</li>
-<li>Download是添加官方的支持库,可以用于代码提示,这里有几百个JS库|框架</li>
-<li>可以设置Scope,即提示生效的范围(也可以在文件中右键编辑)</li>
-<li>我说这么多,你不妨试一下?</li>
-<li>以上.</li>
+<li>try中的return之后，返回值其实已经确定了，真正的返回值被存在Java虚拟机栈的一个临时变量中，我们之后对x进行的操作并不会改变返回值的大小，只是改变的x的大小。</li>
+<li>不过这里有一点需要注意，如果在finally中也有return语句，那么finally中的return会覆盖之前try块中的return语句，所以返回值会发生变化，你可以亲自写代码试验一下。</li>
 </ol>
+<h2 id="用图示来增进理解吧">用图示来增进理解吧</h2><p>还是上述那段代码，我们画个图来增强一下理解：  </p>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No60-Java-Return-Finally.bmp" alt="图解"></p>
+<p>对上图的一些说明：</p>
+<ol>
+<li>在JVM中，Java虚拟机栈包含操作数栈和局部变量，但是在上图中，我将其画成了两列，这只是为了方便理解。</li>
+</ol>
+<h2 id="参考资料">参考资料</h2><p>深入理解Java虚拟机-周志明<br><a href="http://www.cnblogs.com/averey/p/4379646.html" target="_blank" rel="external">你真的了解try{ return }finally{}中的return？</a></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
@@ -151,13 +148,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/杂谈/">杂谈</a>
+  <span></span> <a href="/tags/Java/">Java</a>
   </div>
 
 </div>
@@ -202,12 +199,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;text-align:center;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/杂谈/55.html">No55-【原】-激活代码提示,让WebStorm助力你一码平川</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/Java/60.html">No60-【原】-Java基础23事之彻底搞定Return-Finally</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-05-15 22:04:13</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-08-20 17:14:11</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/杂谈/55.html" title="No55-【原】-激活代码提示,让WebStorm助力你一码平川">http://blog.54yongf.com/杂谈/55.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/杂谈/55.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/Java/60.html" title="No60-【原】-Java基础23事之彻底搞定Return-Finally">http://blog.54yongf.com/Java/60.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/Java/60.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -231,19 +228,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/Java/56.html" title="No56-【原】-Java基础之方法传参问题">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No56-【原】-Java基础之方法传参问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/Android开发/54.html"  title="No54-【原】-打造不一样的ViewPager">
+<a href="/Java/59.html"  title="No59-【原】-Java并发编程23事之AtomicInteger的那点事儿">
  <strong>下一篇：</strong><br/> 
- <span>No54-【原】-打造不一样的ViewPager
+ <span>No59-【原】-Java并发编程23事之AtomicInteger的那点事儿
 </span>
 </a>
 </div>
@@ -252,7 +241,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="杂谈/55.html" data-title="No55-【原】-激活代码提示,让WebStorm助力你一码平川" data-url="http://blog.54yongf.com/杂谈/55.html"></div>
+	<div class="ds-thread" data-thread-key="Java/60.html" data-title="No60-【原】-Java基础23事之彻底搞定Return-Finally" data-url="http://blog.54yongf.com/Java/60.html"></div>
 </section>
 
 
@@ -264,7 +253,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进行一些设置就OK了"><span class="toc-number">2.</span> <span class="toc-text">进行一些设置就OK了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#再谈Java中的Return-Finally问题"><span class="toc-number">2.</span> <span class="toc-text">再谈Java中的Return-Finally问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#先说说返回值的事"><span class="toc-number">3.</span> <span class="toc-text">先说说返回值的事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字节码"><span class="toc-number">4.</span> <span class="toc-text">字节码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用图示来增进理解吧"><span class="toc-number">5.</span> <span class="toc-text">用图示来增进理解吧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">6.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">7.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 

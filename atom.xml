@@ -4,7 +4,7 @@
   <subtitle><![CDATA[越努力，越幸运]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-08-19T15:11:51.000Z</updated>
+  <updated>2016-08-20T09:14:11.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -13,6 +13,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[No60-【原】-Java基础23事之彻底搞定Return-Finally]]></title>
+    <link href="http://blog.54yongf.com/Java/60.html"/>
+    <id>http://blog.54yongf.com/Java/60.html</id>
+    <published>2016-08-20T09:14:11.000Z</published>
+    <updated>2016-08-20T09:14:11.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><blockquote>
+<p>也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="再谈Java中的Return-Finally问题">再谈Java中的Return-Finally问题</h2><p>先来看看下面这段代码：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">testReturnFinally</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            x++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>你能马上回答出上述函数的返回值么？如果是，并且知其所以然，那么你就可以直接跳转到本文的后面部分了；如果不是，且听我娓娓道来。  </p>
+<h2 id="先说说返回值的事">先说说返回值的事</h2><p>我们都知道，所谓finally，就是无论出现什么情况，在<code>try</code>结束或<code>catch</code>块结束之后执行的都是<code>finally</code>代码块。那么这是如何实现的呢？对！我们可以<br>在<code>try</code>和<code>catch</code>代码块之后插入<code>finally</code>代码块，这样，无论是执行哪一个分支，最后一定会执行<code>finally</code>代码块！</p>
+<h2 id="字节码">字节码</h2><p>那么，我们就来看看上述Java代码的字节码吧，如何查看？终端下使用指令<code>javap -verbose TestReturnFinally.class</code>，其中，TestReturnFinally.class是要查看的字节码文件。<br>上述Java代码的字节码如下所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">0</span>: iconst_1                        <span class="comment">//将int型1推送至Java虚拟机栈顶</span></span><br><span class="line"> <span class="number">1</span>: istore_0                        <span class="comment">//将栈顶int型数值存入第一个本地变量（x=1）</span></span><br><span class="line"> <span class="number">2</span>: iload_0                         <span class="comment">//将本地第一个int型本地变量推送至Java虚拟机栈顶</span></span><br><span class="line"> <span class="number">3</span>: istore_1                        <span class="comment">//将栈顶int型数值存入第二个本地变量，方法返回前将返回值存在一个临时变量中</span></span><br><span class="line"> <span class="number">4</span>: iinc          <span class="number">0</span>, <span class="number">1</span>              <span class="comment">//第4,7条指令是由编译器强行插入到第8条指令之前的，为了确保finally一定执行</span></span><br><span class="line"> <span class="number">7</span>: iload_1                        <span class="comment">//指令4：将第一个本地变量自增1（x++） 指令7：将第2个本地变量推送至栈顶</span></span><br><span class="line"> <span class="number">8</span>: ireturn                         <span class="comment">//方法返回，返回值为第二个本地变量，因此返回值为1！</span></span><br><span class="line"> <span class="number">9</span>: astore_2                      <span class="comment">//关于第9-14条指令，我其实不是特别清楚，我的猜想是因为我们没有在代码中明确进行</span></span><br><span class="line">                                        <span class="comment">//catch操作，所以编译器插入了一个catch的操作，实际上可能没什么用......</span></span><br><span class="line"><span class="number">10</span>: iinc          <span class="number">0</span>, <span class="number">1</span></span><br><span class="line"><span class="number">13</span>: aload_2</span><br><span class="line"><span class="number">14</span>: athrow</span><br></pre></td></tr></table></figure>
+<p>编译出来之后共14条字节码指令，指令的相关含义已经在后面注明了。看完上述字节码，我们可以知道：</p>
+<ol>
+<li>try中的return之后，返回值其实已经确定了，真正的返回值被存在Java虚拟机栈的一个临时变量中，我们之后对x进行的操作并不会改变返回值的大小，只是改变的x的大小。</li>
+<li>不过这里有一点需要注意，如果在finally中也有return语句，那么finally中的return会覆盖之前try块中的return语句，所以返回值会发生变化，你可以亲自写代码试验一下。</li>
+</ol>
+<h2 id="用图示来增进理解吧">用图示来增进理解吧</h2><p>还是上述那段代码，我们画个图来增强一下理解：  </p>
+<p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No60-Java-Return-Finally.bmp" alt="图解"></p>
+<p>对上图的一些说明：</p>
+<ol>
+<li>在JVM中，Java虚拟机栈包含操作数栈和局部变量，但是在上图中，我将其画成了两列，这只是为了方便理解。</li>
+</ol>
+<h2 id="参考资料">参考资料</h2><p>深入理解Java虚拟机-周志明<br><a href="http://www.cnblogs.com/averey/p/4379646.html" target="_blank" rel="external">你真的了解try{ return }finally{}中的return？</a></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><blockquote>
+<p>也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
+    
+      <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[No59-【原】-Java并发编程23事之AtomicInteger的那点事儿]]></title>
@@ -665,34 +708,6 @@ ai = <span class="number">9999</span>
       <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
     
       <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No40-原-Git push的时候出错状况及其解决办法]]></title>
-    <link href="http://blog.54yongf.com/Git/40.html"/>
-    <id>http://blog.54yongf.com/Git/40.html</id>
-    <published>2016-03-29T14:24:39.000Z</published>
-    <updated>2016-03-29T15:44:29.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="先说问题">先说问题</h2><p><font size="4"><br>老规矩，先说问题。今天想把之前做的一个博客项目<a href="http://www.thinkblog.org" target="_blank" rel="external">ThinkBlog</a>推送到Github。但是遇到了一个以前从没遇到过的问题。错误信息如下：</font></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">error: RPC failed; result=7, HTTP code = 0</span><br></pre></td></tr></table></figure>
-<p>弄了好久才把这个问题干掉，特来分享。</p>
-<h2 id="解决办法">解决办法</h2><p><font size="4"><br>我是在stackoverflow上找到的答案。原链接如下：<a href="http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。" target="_blank" rel="external">http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly。</a></font></p>
-<ol>
-<li>运行：git config –global http.postBuffer 524288000</li>
-<li>重新推送</li>
-<li>OK！</li>
-</ol>
-<h2 id="其他">其他</h2><p><font size="4"><br>如果一次性推送的文件内容过多，也可能会引发上述问题。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="先说问题">先说问题</h2><p><font size="4"><br>老规矩，先说问题。今天想把之前做的一个博客项目<a href="http://www.thinkblog.org" target="_blank" rel="external">ThinkB]]>
-    </summary>
-    
-      <category term="Git" scheme="http://blog.54yongf.com/tags/Git/"/>
-    
-      <category term="Git" scheme="http://blog.54yongf.com/categories/Git/"/>
     
   </entry>
   
