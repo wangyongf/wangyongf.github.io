@@ -4,25 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No42-原-Windows下Apache使用问题总结（持续更新） | Scott Wang&#39;s blog</title>
+    <title>No61-【原】-Linux下Jetbrains系软件无法输入中文 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="前言在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。">
+    <meta name="description" content="前言
+Jetbrains大法好，的确，他家多有良心，出品的开发工具不仅好使，而且人家还支持三大平台，真是没谁了。今天，我们来聊聊Ubuntu下无法输入中文的问题。
+
+在Jetbrains系IDE中输入中文系统：Ubuntu16.04软件：IDEA/Clion/Pycharm/PHPStorm/Rider问题：Fcitx，搜狗输入法，不能输入中文解决：去安装目录bin文件夹下找到idea.sh,用编">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No42-原-Windows下Apache使用问题总结（持续更新）">
-<meta property="og:url" content="http://blog.54yongf.com/杂谈/42.html">
+<meta property="og:title" content="No61-【原】-Linux下Jetbrains系软件无法输入中文">
+<meta property="og:url" content="http://blog.54yongf.com/开发工具/61.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="前言在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。">
-<meta property="og:image" content="http://img.blog.csdn.net/20151016095853606">
-<meta property="og:image" content="http://img.blog.csdn.net/20151016100602872">
-<meta property="og:updated_time" content="2016-03-31T10:56:41.000Z">
+<meta property="og:description" content="前言
+Jetbrains大法好，的确，他家多有良心，出品的开发工具不仅好使，而且人家还支持三大平台，真是没谁了。今天，我们来聊聊Ubuntu下无法输入中文的问题。
+
+在Jetbrains系IDE中输入中文系统：Ubuntu16.04软件：IDEA/Clion/Pycharm/PHPStorm/Rider问题：Fcitx，搜狗输入法，不能输入中文解决：去安装目录bin文件夹下找到idea.sh,用编">
+<meta property="og:updated_time" content="2016-09-07T11:11:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No42-原-Windows下Apache使用问题总结（持续更新）">
-<meta name="twitter:description" content="前言在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。">
+<meta name="twitter:title" content="No61-【原】-Linux下Jetbrains系软件无法输入中文">
+<meta name="twitter:description" content="前言
+Jetbrains大法好，的确，他家多有良心，出品的开发工具不仅好使，而且人家还支持三大平台，真是没谁了。今天，我们来聊聊Ubuntu下无法输入中文的问题。
+
+在Jetbrains系IDE中输入中文系统：Ubuntu16.04软件：IDEA/Clion/Pycharm/PHPStorm/Rider问题：Fcitx，搜狗输入法，不能输入中文解决：去安装目录bin文件夹下找到idea.sh,用编">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -93,15 +100,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/杂谈/42.html" title="No42-原-Windows下Apache使用问题总结（持续更新）" itemprop="url">No42-原-Windows下Apache使用问题总结（持续更新）</a>
+      <a href="/开发工具/61.html" title="No61-【原】-Linux下Jetbrains系软件无法输入中文" itemprop="url">No61-【原】-Linux下Jetbrains系软件无法输入中文</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
 		
   <p class="article-time">
-    <time datetime="2016-03-31T10:56:41.000Z" itemprop="datePublished">
-      发布于2016-03-31 18:56:41，更新于2016-03-31 18:56:41 <span class="ds-thread-count" data-thread-key="杂谈/42.html" data-count-type="comments"></span>
+    <time datetime="2016-09-07T11:11:10.000Z" itemprop="datePublished">
+      发布于2016-09-07 19:11:10，更新于2016-09-07 19:11:10 <span class="ds-thread-count" data-thread-key="开发工具/61.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -112,32 +119,16 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apache无法启动"><span class="toc-number">2.</span> <span class="toc-text">apache无法启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apache无法启动终极解决办法"><span class="toc-number">3.</span> <span class="toc-text">apache无法启动终极解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在Jetbrains系IDE中输入中文"><span class="toc-number">2.</span> <span class="toc-text">在Jetbrains系IDE中输入中文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="前言">前言</h2><p><font size="4"><br>在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。</font></p>
-<a id="more"></a>
-<h2 id="apache无法启动">apache无法启动</h2><p><font size="4"><br>The request operation has failed</font></p>
-<p><font size="4">一般来说，都是端口被占用所导致的。apache默认使用80端口，如果80端口被占用，apache就会启动失败。目前我已知的会占用80端口的软件有：迅雷，IIS，Skype。欢迎补充！<br></font></p>
-<p><strong>解决办法</strong><br></p>
-<ol>
-<li>修改apache的默认端口，或者开机后，立即启动apache，让它使用80端口。</li>
-<li>也可以关闭或杀死使用80端口的软件，但如果是IIS，最好修改一下端口。</li>
-</ol>
-<h2 id="apache无法启动终极解决办法">apache无法启动终极解决办法</h2><p><font size="4"><br>上面所说的只是比较特殊的情况，也许并不能找到问题之所在。下面说一个比较一般的方法，对各种问题基本通吃–使用命令行启动apache服务。用命令行模式启动apache，并带上参数，apache会提示你哪句有误，然后就可以针对性的解决，可以发现端口冲突问题，软件冲突问题，http.conf配置问题等。</font></p>
-<ol>
-<li>在N:\MyWorks\Apache\bin目录处打开cmd命令行，输入如下命令：</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd<span class="class">.exe</span> -w -n <span class="string">"Apache"</span> -k start</span><br></pre></td></tr></table></figure>
-<p>这里，引号内的是你的apache服务的名称，不同的机子可以有些许差别。</p>
-<ol>
-<li>之后等一会，如果启动不成功，会提示详细的错误信息。根据错误信息，去做响应的修改即可。</li>
-<li>我的问题是启动服务时提示the requested operation has failed，一开始以为是80端口被占用的问题，用netstat -ano一看，80端口没有被占用啊！但就是启动不了，很郁闷。使用上述方法用命令行启动后，提示信息如下：<br><img src="http://img.blog.csdn.net/20151016095853606" alt="这里写图片描述"></li>
-<li>我明明配置apache监听80端口，也就是默认的，但是竟然还需要监听443端口，难怪，443端口被别的软件所占用了，apache启动自然报错了！不过，有这个方法，以后apache出问题也可以很好地差错了。</li>
-<li>关于如何kill掉占用端口的进程：用netstat -ano找到占用该端口的进程号，也就是PID，然后打开任务管理器，切换到【服务】一栏：<br><img src="http://img.blog.csdn.net/20151016100602872" alt="这里写图片描述"></li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+		<h2 id="前言">前言</h2><blockquote>
+<p>Jetbrains大法好，的确，他家多有良心，出品的开发工具不仅好使，而且人家还支持三大平台，真是没谁了。今天，我们来聊聊Ubuntu下无法输入中文的问题。</p>
+</blockquote>
+<h2 id="在Jetbrains系IDE中输入中文">在Jetbrains系IDE中输入中文</h2><p>系统：Ubuntu16.04<br>软件：IDEA/Clion/Pycharm/PHPStorm/Rider<br>问题：Fcitx，搜狗输入法，不能输入中文<br>解决：去安装目录bin文件夹下找到idea.sh,用编辑器打开，添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br><span class="line"><span class="built_in">export</span> XMODIFIERS</span><br></pre></td></tr></table></figure>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -145,13 +136,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
+  <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/apache/">apache</a><a href="/tags/杂谈/">杂谈</a>
+  <span></span> <a href="/tags/Jetbrains/">Jetbrains</a>
   </div>
 
 </div>
@@ -196,12 +187,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;text-align:center;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/杂谈/42.html">No42-原-Windows下Apache使用问题总结（持续更新）</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/开发工具/61.html">No61-【原】-Linux下Jetbrains系软件无法输入中文</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-03-31 18:56:41</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2016-09-07 19:11:10</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/杂谈/42.html" title="No42-原-Windows下Apache使用问题总结（持续更新）">http://blog.54yongf.com/杂谈/42.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/杂谈/42.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/开发工具/61.html" title="No61-【原】-Linux下Jetbrains系软件无法输入中文">http://blog.54yongf.com/开发工具/61.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/开发工具/61.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -225,19 +216,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/算法/43.html" title="No43-【原】-计算机算法设计与分析-统计数字问题">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No43-【原】-计算机算法设计与分析-统计数字问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/杂谈/41.html"  title="No41-原-Ubuntu用apt-get方式安装php5.6">
+<a href="/Java/60.html"  title="No60-【原】-Java基础23事之彻底搞定Return-Finally">
  <strong>下一篇：</strong><br/> 
- <span>No41-原-Ubuntu用apt-get方式安装php5.6
+ <span>No60-【原】-Java基础23事之彻底搞定Return-Finally
 </span>
 </a>
 </div>
@@ -246,7 +229,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="杂谈/42.html" data-title="No42-原-Windows下Apache使用问题总结（持续更新）" data-url="http://blog.54yongf.com/杂谈/42.html"></div>
+	<div class="ds-thread" data-thread-key="开发工具/61.html" data-title="No61-【原】-Linux下Jetbrains系软件无法输入中文" data-url="http://blog.54yongf.com/开发工具/61.html"></div>
 </section>
 
 
@@ -258,7 +241,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apache无法启动"><span class="toc-number">2.</span> <span class="toc-text">apache无法启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apache无法启动终极解决办法"><span class="toc-number">3.</span> <span class="toc-text">apache无法启动终极解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在Jetbrains系IDE中输入中文"><span class="toc-number">2.</span> <span class="toc-text">在Jetbrains系IDE中输入中文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
