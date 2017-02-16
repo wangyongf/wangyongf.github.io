@@ -1,25 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Scott Wang's blog]]></title>
-  <subtitle><![CDATA[越努力，越幸运]]></subtitle>
+  <title>Scott Wang&#39;s blog</title>
+  <subtitle>越努力，越幸运</subtitle>
   <link href="/atom.xml" rel="self"/>
+  
   <link href="http://blog.54yongf.com/"/>
-  <updated>2016-09-07T11:11:10.000Z</updated>
+  <updated>2017-02-16T07:12:48.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
-    <name><![CDATA[老码]]></name>
-    <email><![CDATA[1059613472@qq.com]]></email>
+    <name>老码</name>
+    <email>1059613472@qq.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[No61-【原】-Linux下Jetbrains系软件无法输入中文]]></title>
+    <title>No63-【原】-UWP开发中SQLite的使用：结合EntityFramework</title>
+    <link href="http://blog.54yongf.com/UWP/63.html"/>
+    <id>http://blog.54yongf.com/UWP/63.html</id>
+    <published>2017-02-16T07:12:48.000Z</published>
+    <updated>2017-02-16T07:12:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><blockquote>
+<p>我爱UWP，正如我所爱的这片土地（滑稽→_→）。</p>
+</blockquote>
+<h2 id="环境">环境</h2><p>系统：Windows10一周年版<br>软件：Visual Studio 2015<br>硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）</p>
+<a id="more"></a>
+<h2 id="UWP上的数据存储">UWP上的数据存储</h2><p>如果要在UWP上使用数据存储，可以使用SQLite，这东西挺好用，而且SQLite已经进入了UWP官方的SDK，得到了官方支持，可靠。<br>在UWP上使用SQLite可以有多种方式，可以自行diy，也可以使用UWP SDK中的SQLite，本文中，使用的是EntityFramework + UWP SDK’s SQLite的方式。</p>
+<h2 id="新建项目">新建项目</h2><p>第一步是新建一个UWP的C#项目，使用Visual Studio 2015，具体过程不再赘述。</p>
+<h2 id="添加依赖">添加依赖</h2><p>第二步是添加项目依赖：</p>
+<ol>
+<li>使用NuGet，选择<code>工具-&gt;NuGet包管理器-&gt;管理解决方案的NuGet程序包</code>，如图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_153748.png" alt="进入NuGet"></li>
+<li>使用NuGet包管理器更新<code>Microsoft.NETCore.UniversalWindowsPlatform</code>，注意！，更新到5.2.2即可，不要更新到5.3.0，<br>因为5.3.0是VS2017专用的……<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_154113.png" alt="安装依赖"></li>
+<li>安装<code>Microsoft.EntityFrameworkCore.Sqlite</code>, <code>Microsoft.EntityFrameworkCore.Tools –Pre</code>依赖，（选中包括预发行版）</li>
+<li>依赖添加完毕</li>
+</ol>
+<h2 id="编写代码">编写代码</h2><p>使用EntityFramework进行编码，可以参考<a href="https://docs.microsoft.com/en-us/ef/core/get-started/uwp/getting-started#create-your-model" target="_blank" rel="external">官方文档</a></p>
+<h2 id="编译运行">编译运行</h2><p>编译运行，在本机上跑是没有任何问题的，如果你只是要在本机上运行，那么本文到此结束。</p>
+<h2 id="在移动设备上运行">在移动设备上运行</h2><p>不过，如果你需要在移动设备上进行运行，那么仅仅参考上述官方文档还不够，因为你直接跑会报错，还是因为缺少某些依赖。<br>你需要安装VS2015扩展–SQLite for UniversalWindowsPlatform。安装完毕之后，重启VS2015，然后在项目下添加引用，如图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_155445.png" alt="添加引用"></p>
+<h2 id="大功告成">大功告成</h2><p>至此，一个完整的UWP应用OK了，既能在PC上，也能在移动设备上运行。</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;我爱UWP，正如我所爱的这片土地（滑稽→_→）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;环境&quot;&gt;环境&lt;/h2&gt;&lt;p&gt;系统：Windows10一周年版&lt;br&gt;软件：Visual Studio 2015&lt;br&gt;硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="UWP" scheme="http://blog.54yongf.com/categories/UWP/"/>
+    
+    
+      <category term="C#" scheme="http://blog.54yongf.com/tags/C/"/>
+    
+      <category term="Microsoft" scheme="http://blog.54yongf.com/tags/Microsoft/"/>
+    
+      <category term="UWP" scheme="http://blog.54yongf.com/tags/UWP/"/>
+    
+      <category term="移动开发" scheme="http://blog.54yongf.com/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>No62-【原】-UWP真机调试</title>
+    <link href="http://blog.54yongf.com/UWP/62.html"/>
+    <id>http://blog.54yongf.com/UWP/62.html</id>
+    <published>2017-02-16T05:32:36.000Z</published>
+    <updated>2017-02-16T05:32:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><blockquote>
+<p>我爱UWP，正如我所爱的这片土地（滑稽→_→）。</p>
+</blockquote>
+<h2 id="环境">环境</h2><p>系统：Windows10一周年版<br>软件：Visual Studio 2015<br>硬件：Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机</p>
+<a id="more"></a>
+<h2 id="在UWP开发中进行真机调试">在UWP开发中进行真机调试</h2><p>在VS2015中开发好一个Demo之后，想在自己的Lumia650上安装试试，折腾了一会之后，终于弄好了，步骤如下：</p>
+<ol>
+<li>在设置中开启手机的开发者模式</li>
+<li>当然，首先你的项目得本地编译通过，然后按照下图所示进行操作：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No62-1.png" alt="设置"></li>
+<li>这时候应该OK了，如果不OK， 可能是没开启手机的开发者模式，或者根据对应的错误信息进行搜索</li>
+</ol>
+<h2 id="多说一句">多说一句</h2><p>如果是使用Windows平板等设备进行UWP开发调试，可以进行<code>远程调试</code>，可以参考<a href="https://my.oschina.net/jjyuangu/blog/716941?nocache=1487140944453" target="_blank" rel="external">这篇博客</a></p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;我爱UWP，正如我所爱的这片土地（滑稽→_→）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;环境&quot;&gt;环境&lt;/h2&gt;&lt;p&gt;系统：Windows10一周年版&lt;br&gt;软件：Visual Studio 2015&lt;br&gt;硬件：Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="UWP" scheme="http://blog.54yongf.com/categories/UWP/"/>
+    
+    
+      <category term="C#" scheme="http://blog.54yongf.com/tags/C/"/>
+    
+      <category term="Microsoft" scheme="http://blog.54yongf.com/tags/Microsoft/"/>
+    
+      <category term="UWP" scheme="http://blog.54yongf.com/tags/UWP/"/>
+    
+      <category term="移动开发" scheme="http://blog.54yongf.com/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="调试" scheme="http://blog.54yongf.com/tags/%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>No61-【原】-Linux下Jetbrains系软件无法输入中文</title>
     <link href="http://blog.54yongf.com/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/61.html"/>
     <id>http://blog.54yongf.com/开发工具/61.html</id>
     <published>2016-09-07T11:11:10.000Z</published>
     <updated>2016-09-07T11:11:10.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><blockquote>
 <p>Jetbrains大法好，的确，他家多有良心，出品的开发工具不仅好使，而且人家还支持三大平台，真是没谁了。今天，我们来聊聊Ubuntu下无法输入中文的问题。</p>
 </blockquote>
@@ -27,25 +125,30 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br><span class="line"><span class="built_in">export</span> XMODIFIERS</span><br></pre></td></tr></table></figure>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><blockquote>
-<p>Jetbrains大法好，的确，他家多有良心，出品的开发工具不仅好使，而且人家还支持三大平台，真是没谁了。今天，我们来聊聊Ubuntu下无法输入中文的问题。</p>
-</blockquote>
-<h2 id="]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Jetbrains大法好，的确，他家多有良心，出品的开发工具不仅好使，而且人家还支持三大平台，真是没谁了。今天，我们来聊聊Ubuntu下无法输入中文的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;
+    
     </summary>
     
-      <category term="Jetbrains" scheme="http://blog.54yongf.com/tags/Jetbrains/"/>
-    
       <category term="开发工具" scheme="http://blog.54yongf.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Jetbrains" scheme="http://blog.54yongf.com/tags/Jetbrains/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No60-【原】-Java基础23事之彻底搞定Return-Finally]]></title>
+    <title>No60-【原】-Java基础23事之彻底搞定Return-Finally</title>
     <link href="http://blog.54yongf.com/Java/60.html"/>
     <id>http://blog.54yongf.com/Java/60.html</id>
     <published>2016-08-20T09:14:11.000Z</published>
     <updated>2016-08-20T09:14:11.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><blockquote>
 <p>也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)</p>
 </blockquote>
@@ -70,25 +173,29 @@
 <h2 id="参考资料">参考资料</h2><p>深入理解Java虚拟机-周志明<br><a href="http://www.cnblogs.com/averey/p/4379646.html" target="_blank" rel="external">你真的了解try{ return }finally{}中的return？</a></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><blockquote>
-<p>也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)</p>
-</blockquote>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;也许你已经看过好几篇类似的文章了，但是还没搞定Return-Finally问题？那不妨给我一次机会，看看我的这篇文章，也许有收获呢(⊙o⊙)&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
-      <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
-    
       <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No59-【原】-Java并发编程23事之AtomicInteger的那点事儿]]></title>
+    <title>No59-【原】-Java并发编程23事之AtomicInteger的那点事儿</title>
     <link href="http://blog.54yongf.com/Java/59.html"/>
     <id>http://blog.54yongf.com/Java/59.html</id>
     <published>2016-08-19T15:11:51.000Z</published>
     <updated>2016-08-19T15:11:51.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="首先">首先</h2><p>请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。  </p>
 <a id="more"></a>
 <h2 id="我的第一次">我的第一次</h2><p>话说当初在我看<strong>深入理解Java虚拟机</strong>一书的时候，看到了AtomicInteger这个类，它是并发条件下的原子自增运算，于是我就打开了IDEA，<br>输入这段示例代码，想看看运行结果：</p>
@@ -100,25 +207,29 @@ ai = <span class="number">9999</span>
 <h2 id="真相只有一个">真相只有一个</h2><p>最后，我才知道，原来是我太猴急了，在开启完全部线程之后，直接读取race和ai的值，这要能对就怪了，结果要是10000才是BUG呢。于是，<br>在输出结果直接加入<code>Thread.sleep(500);</code>，让线程先睡会儿，然后再读取结果，对了！<br>这件事情告诉我们，细节决定成败。开个玩笑，我们下回再见！</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="首先">首先</h2><p>请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。  </p>]]>
+    
+      &lt;h2 id=&quot;首先&quot;&gt;首先&lt;/h2&gt;&lt;p&gt;请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。  &lt;/p&gt;
     
     </summary>
+    
+      <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
+    
     
       <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
     
       <category term="并发编程" scheme="http://blog.54yongf.com/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[No58-【原】-放一下我的网易云音乐歌单吧]]></title>
+    <title>No58-【原】-放一下我的网易云音乐歌单吧</title>
     <link href="http://blog.54yongf.com/%E4%B9%90%E6%8A%A5/58.html"/>
     <id>http://blog.54yongf.com/乐报/58.html</id>
     <published>2016-08-17T22:45:17.000Z</published>
     <updated>2016-08-17T22:45:17.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="我的网易云音乐">我的网易云音乐</h2><blockquote>
 <p>客官，你要一份云音乐吗？下面是我的几张歌单，每首歌都是亲自挑选，也许也有你的菜哦。我的云音乐用户名是ScottWang1024。</p>
 </blockquote>
@@ -136,25 +247,29 @@ ai = <span class="number">9999</span>
 
 <h2 id="感谢">感谢</h2><p><font size="4"><br>乐报,不定期更新,歌慌了?来乐报 :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="我的网易云音乐">我的网易云音乐</h2><blockquote>
-<p>客官，你要一份云音乐吗？下面是我的几张歌单，每首歌都是亲自挑选，也许也有你的菜哦。我的云音乐用户名是ScottWang1024。</p>
-</blockquote>]]>
+    
+      &lt;h2 id=&quot;我的网易云音乐&quot;&gt;我的网易云音乐&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;客官，你要一份云音乐吗？下面是我的几张歌单，每首歌都是亲自挑选，也许也有你的菜哦。我的云音乐用户名是ScottWang1024。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
-      <category term="乐报" scheme="http://blog.54yongf.com/tags/%E4%B9%90%E6%8A%A5/"/>
-    
       <category term="乐报" scheme="http://blog.54yongf.com/categories/%E4%B9%90%E6%8A%A5/"/>
+    
+    
+      <category term="乐报" scheme="http://blog.54yongf.com/tags/%E4%B9%90%E6%8A%A5/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No57-【原】-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑]]></title>
+    <title>No57-【原】-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑</title>
     <link href="http://blog.54yongf.com/Qt/57.html"/>
     <id>http://blog.54yongf.com/Qt/57.html</id>
     <published>2016-07-13T17:58:32.000Z</published>
     <updated>2016-08-17T22:16:20.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="闲扯两句">闲扯两句</h2><p><font size="4"></font></p>
 <blockquote>
 <p>已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如<code>期末考试</code>，不敢怠慢．<br>最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．</p>
@@ -167,14 +282,19 @@ ai = <span class="number">9999</span>
 <p>最后,感谢开源!</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="闲扯两句">闲扯两句</h2><p><font size=4></p>
-<blockquote>
-<p>已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如<code>期末考试</code>，不敢怠慢．<br>最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．</p>
-</blockquote>
-<h2 id="软件环境">软件环境</h2><p><font size=4><br>操作系统: Ubuntu 14.04 64bit<br>Qt版本: Qt5.6 </p>]]>
+    
+      &lt;h2 id=&quot;闲扯两句&quot;&gt;闲扯两句&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如&lt;code&gt;期末考试&lt;/code&gt;，不敢怠慢．&lt;br&gt;最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;软件环境&quot;&gt;软件环境&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;操作系统: Ubuntu 14.04 64bit&lt;br&gt;Qt版本: Qt5.6 &lt;/p&gt;
     
     </summary>
+    
+      <category term="Qt" scheme="http://blog.54yongf.com/categories/Qt/"/>
+    
     
       <category term="Linux" scheme="http://blog.54yongf.com/tags/Linux/"/>
     
@@ -184,16 +304,15 @@ ai = <span class="number">9999</span>
     
       <category term="Ubuntu" scheme="http://blog.54yongf.com/tags/Ubuntu/"/>
     
-      <category term="Qt" scheme="http://blog.54yongf.com/categories/Qt/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[No56-【原】-Java基础之方法传参问题]]></title>
+    <title>No56-【原】-Java基础之方法传参问题</title>
     <link href="http://blog.54yongf.com/Java/56.html"/>
     <id>http://blog.54yongf.com/Java/56.html</id>
     <published>2016-05-16T02:18:34.000Z</published>
     <updated>2016-08-17T22:28:34.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>本文讲述的是Java中参数传递相关的一些知识点.</font></p>
 <a id="more"></a>
 <p>先来看一段代码:</p>
@@ -208,23 +327,27 @@ ai = <span class="number">9999</span>
 <p>对于上述例子,modifyInfo方法内部,只是将student地址的副本指向了新的地址,真正的student(即方法外部的)的地址并未发生改变,从而原地址指向的内容也不会改变.所以,输出的结果都不会变啊啊啊啊啊啊啊啊啊啊…</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>本文讲述的是Java中参数传递相关的一些知识点.</p>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;本文讲述的是Java中参数传递相关的一些知识点.&lt;/p&gt;
     
     </summary>
     
-      <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
-    
       <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No55-【原】-激活代码提示,让WebStorm助力你一码平川]]></title>
+    <title>No55-【原】-激活代码提示,让WebStorm助力你一码平川</title>
     <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/55.html"/>
     <id>http://blog.54yongf.com/杂谈/55.html</id>
     <published>2016-05-15T14:04:13.000Z</published>
     <updated>2016-08-15T22:29:20.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"></font></p>
 <blockquote>
 <p>最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来了,代码写得好累,不过,今天终于找到了较好的解决方案.</p>
@@ -243,24 +366,29 @@ ai = <span class="number">9999</span>
 </ol>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"></font></p>
-<blockquote>
-<p>最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最近开始学习NodeJS + MongoDB, 不过WebStorm默认只对NodeJS有较好的代码提示功能,至于MongoDB的驱动… 于是问题就来
+    
     </summary>
     
-      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
       <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No54-【原】-打造不一样的ViewPager]]></title>
+    <title>No54-【原】-打造不一样的ViewPager</title>
     <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/54.html"/>
     <id>http://blog.54yongf.com/Android开发/54.html</id>
     <published>2016-05-10T12:25:43.000Z</published>
     <updated>2016-08-17T22:33:15.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>好久没写文章了,想我否?开个玩笑,说正经的,最近学业甚忙,时间好紧…</font></p>
 <p>今天我们来谈谈ViewPager,关于ViewPager的基础知识就不说了,相信大家都知道,主要谈谈ViewPager的View切换的动画效果,打造不一样的ViewPager.如果你使用小米手机,也许你就知道小米手机长按菜单键就会出现<code>屏幕切换</code>的选项,里面有多达8种桌面切换的特效.没错,今天就是要实现这种效果.</p>
 <h2 id="从何下手">从何下手</h2><p><font size="4"><br>我们都知道,大部分ViewPager都是普通的左右切换,这是默认的效果.但是如何加入不一样的动效呢?如果你去查看ViewPager的API,你会发现<code>setPageTransformer</code>这个方法,这个方法是干嘛的呢?看命名就知道了,大概就是设置页面的切换效果.其实,官方早就给出了关于ViewPagerTransformer的两个样例,可以使ViewPager的切换更炫酷,分别是<code>DepthPageTransformer</code>和<code>ZoomOutPageTransformer</code>.</font></p>
@@ -270,23 +398,28 @@ ai = <span class="number">9999</span>
 <p>显示效果如下:</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>好久没写文章了,想我否?开个玩笑,说正经的,最近学业甚忙,时间好紧…</font></p>
-<p>今天我们来谈谈ViewPager,关于ViewPager的基础知识就不说了,相信大家都知道,主要谈谈]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;好久没写文章了,想我否?开个玩笑,说正经的,最近学业甚忙,时间好紧…&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;今天我们来谈谈ViewPager,关于ViewPager的基础知识就不说了,相信大家都知道,主要谈谈
+    
     </summary>
     
-      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
       <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No53-【原】-5月乐报]]></title>
+    <title>No53-【原】-5月乐报</title>
     <link href="http://blog.54yongf.com/%E4%B9%90%E6%8A%A5/53.html"/>
     <id>http://blog.54yongf.com/乐报/53.html</id>
     <published>2016-05-10T11:45:21.000Z</published>
     <updated>2016-08-17T22:34:11.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="Lover">Lover</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg" alt=""></p>
 <a id="more"></a>
 <h2 id="南方姑娘_-_赵雷">南方姑娘 - 赵雷</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=202373&auto=0&height=66"></iframe></p>
@@ -296,23 +429,27 @@ ai = <span class="number">9999</span>
 <h2 id="青花瓷_-_周杰伦">青花瓷 - 周杰伦</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=185811&auto=0&height=66"></iframe></p>
 <h2 id="感谢">感谢</h2><p><font size="4"><br>乐报,不定期更新,歌慌了?来乐报 :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="Lover">Lover</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg" alt=""></p>]]>
+    
+      &lt;h2 id=&quot;Lover&quot;&gt;Lover&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xo5vs.com1.z0.glb.clouddn.com/No53-%E5%A4%A7%E5%9C%A3%E5%BD%92%E6%9D%A5.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
-      <category term="乐报" scheme="http://blog.54yongf.com/tags/%E4%B9%90%E6%8A%A5/"/>
-    
       <category term="乐报" scheme="http://blog.54yongf.com/categories/%E4%B9%90%E6%8A%A5/"/>
+    
+    
+      <category term="乐报" scheme="http://blog.54yongf.com/tags/%E4%B9%90%E6%8A%A5/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No52-【原】-Android开发常见问题汇总]]></title>
+    <title>No52-【原】-Android开发常见问题汇总</title>
     <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/52.html"/>
     <id>http://blog.54yongf.com/Android开发/52.html</id>
     <published>2016-04-29T16:09:33.000Z</published>
     <updated>2016-08-17T22:35:30.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.</font></p>
 <a id="more"></a>
 <h2 id="Android_Studio的不支持HttpClient的问题">Android Studio的不支持HttpClient的问题</h2><p><font size="4"><br>在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:</font></p>
@@ -342,23 +479,27 @@ ai = <span class="number">9999</span>
 <h2 id="关于SQLiteOpenHelper这个辅助类">关于SQLiteOpenHelper这个辅助类</h2><p><font size="4"><br>getReadableDatabase()和 getWriteableDatabase()都可以得到一个可既可以读又可以写的数据库对象，不同的是，当磁盘空间满了之后， getReadableDatabase()得到的是一个只读的对象，而 getWriteableDatabase()则会抛出异常。</font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.</p>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.&lt;/p&gt;
     
     </summary>
     
-      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
       <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No51-【原】-用实例理解HashSet]]></title>
+    <title>No51-【原】-用实例理解HashSet</title>
     <link href="http://blog.54yongf.com/Java/51.html"/>
     <id>http://blog.54yongf.com/Java/51.html</id>
     <published>2016-04-28T06:37:22.000Z</published>
     <updated>2016-08-17T22:36:02.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>众所周知,HashSet中不含有重复的元素.本文用几个例子来加深对不重复的理解.</font></p>
 <a id="more"></a>
 <h2 id="一个奇怪的问题">一个奇怪的问题</h2><p><font size="4"><br>先来看一段代码,代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yongf.algorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by yongf on 16-4-28.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UnderstandingHashSet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HashSet&lt;Person&gt; hs = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="string">"Scott Wang"</span>, <span class="number">20</span>);</span><br><span class="line">        hs.add(person);</span><br><span class="line"></span><br><span class="line">        person.setName(<span class="string">"王用"</span>);</span><br><span class="line">        person.setAge(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">        hs.add(person);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"hs = "</span> + hs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
@@ -375,25 +516,29 @@ ai = <span class="number">9999</span>
 <p>OK,这个结果在预料之中.那么,我们下次再见 =_=</p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>众所周知,HashSet中不含有重复的元素.本文用几个例子来加深对不重复的理解.</p>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;众所周知,HashSet中不含有重复的元素.本文用几个例子来加深对不重复的理解.&lt;/p&gt;
     
     </summary>
+    
+      <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
+    
     
       <category term="HashSet" scheme="http://blog.54yongf.com/tags/HashSet/"/>
     
       <category term="Java" scheme="http://blog.54yongf.com/tags/Java/"/>
     
-      <category term="Java" scheme="http://blog.54yongf.com/categories/Java/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[No50-原-Ubuntu下录制GIF的最佳解决方案]]></title>
+    <title>No50-原-Ubuntu下录制GIF的最佳解决方案</title>
     <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/50.html"/>
     <id>http://blog.54yongf.com/杂谈/50.html</id>
     <published>2016-04-27T12:34:49.000Z</published>
     <updated>2016-04-28T12:39:49.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>看到这个标题,你可能会想,估计又是个标题党,好吧,我承认,又装了.但是我保证,绝对不坑,挺好用的.我使用的是Ubuntu Kylin 14.04 LTS</font></p>
 <p>但是,可能需要翻墙(我不确定,因为使用Ubuntu的时候我一直在墙外 :-)</p>
 <p>需要使用的软件:</p>
@@ -424,28 +569,32 @@ ai = <span class="number">9999</span>
 <h2 id="最后">最后</h2><p><font size="4"><br>由于是在网页端进行操作,所以需要联网,对网速有一定要求,可能需要翻墙.还有一点,视频不要太大了,否则可能得不到想要的效果(这种需求应该不会有吧 -_- | )….</font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>看到这个标题,你可能会想,估计又是个标题党,好吧,我承认,又装了.但是我保证,绝对不坑,挺好用的.我使用的是Ubuntu Kylin 14.04 LTS</p>
-<p>但是,可能需要翻墙(我不确定,因为使用Ubuntu的时候我一直在墙外 :-)</p>
-<p>需要使用的软件:</p>
-<ul>
-<li>Kazam(用于屏幕录制,在软件商店里有)</li>
-</ul>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;看到这个标题,你可能会想,估计又是个标题党,好吧,我承认,又装了.但是我保证,绝对不坑,挺好用的.我使用的是Ubuntu Kylin 14.04 LTS&lt;/p&gt;
+&lt;p&gt;但是,可能需要翻墙(我不确定,因为使用Ubuntu的时候我一直在墙外 :-)&lt;/p&gt;
+&lt;p&gt;需要使用的软件:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kazam(用于屏幕录制,在软件商店里有)&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
-      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
       <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No49-【原】-4月乐报]]></title>
+    <title>No49-【原】-4月乐报</title>
     <link href="http://blog.54yongf.com/%E4%B9%90%E6%8A%A5/49.html"/>
     <id>http://blog.54yongf.com/乐报/49.html</id>
     <published>2016-04-22T10:04:29.000Z</published>
     <updated>2016-08-17T22:36:35.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="Light">Light</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No49-3.jpg" alt="石兰"></p>
 <a id="more"></a>
 <h2 id="Are_You_OK_-_雷军">Are You OK - 雷军</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=31814005&auto=0&height=66"></iframe></p>
@@ -455,23 +604,27 @@ ai = <span class="number">9999</span>
 <h2 id="Trip_-_Axero">Trip - Axero</h2><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="http://music.163.com/outchain/player?type=2&id=36492599&auto=0&height=66"></iframe></p>
 <h2 id="感谢">感谢</h2><p><font size="4"><br>乐报,不定期更新,歌慌了?来乐报 :)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="Light">Light</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No49-3.jpg" alt="石兰"></p>]]>
+    
+      &lt;h2 id=&quot;Light&quot;&gt;Light&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xo5vs.com1.z0.glb.clouddn.com/No49-3.jpg&quot; alt=&quot;石兰&quot;&gt;&lt;/p&gt;
     
     </summary>
     
-      <category term="乐报" scheme="http://blog.54yongf.com/tags/%E4%B9%90%E6%8A%A5/"/>
-    
       <category term="乐报" scheme="http://blog.54yongf.com/categories/%E4%B9%90%E6%8A%A5/"/>
+    
+    
+      <category term="乐报" scheme="http://blog.54yongf.com/tags/%E4%B9%90%E6%8A%A5/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No48-【原】-自定义View之自定义圆形进度条]]></title>
+    <title>No48-【原】-自定义View之自定义圆形进度条</title>
     <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/48.html"/>
     <id>http://blog.54yongf.com/Android开发/48.html</id>
     <published>2016-04-21T04:41:44.000Z</published>
     <updated>2016-08-17T22:37:05.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.</font></p>
 <a id="more"></a>
 <p>这次实现自定义圆形进度条,我使用的是继承LinearLayout的方式.最终的实现效果如下:</p>
@@ -489,23 +642,27 @@ ai = <span class="number">9999</span>
 <h2 id="MainActivity-java">MainActivity.java</h2><p><font size="4"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yongf.circleprogressview;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.AsyncTask;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.os.SystemClock;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> CircleProgressView cpv = (CircleProgressView) findViewById(R.id.cpv);</span><br><span class="line">        cpv.setDesc(<span class="string">"下载"</span>);</span><br><span class="line">        cpv.setIcon(R.drawable.ic_pause);</span><br><span class="line"></span><br><span class="line">        cpv.setProgressEnable(<span class="keyword">true</span>);</span><br><span class="line">        cpv.setMax(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">        cpv.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">new</span> AsyncTask&lt;Void, Integer, Void&gt;() &#123;</span><br><span class="line">                    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">                    <span class="annotation">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">protected</span> Void <span class="title">doInBackground</span><span class="params">(Void... params)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">                            publishProgress(i);</span><br><span class="line">                            SystemClock.sleep(<span class="number">100</span>);</span><br><span class="line">                            <span class="keyword">if</span> (i &gt;= <span class="number">100</span>) &#123;</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                            i++;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="annotation">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onProgressUpdate</span><span class="params">(Integer... values)</span> </span>&#123;</span><br><span class="line">                        Integer value = values[<span class="number">0</span>];</span><br><span class="line">                        cpv.setProgress(i);</span><br><span class="line">                        cpv.setDesc(i + <span class="string">"%"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;.execute();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.</p>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;自定义View有多种实现类型,分别为继承自View完全自定义,继承自现有控件(如ImageView)实现特定效果,继承自ViewGroup实现布局类.这里面涉及到View的测量和布局,View的绘制,处理触摸事件,动画等.&lt;/p&gt;
     
     </summary>
     
-      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
       <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No47-【原】-Git repository corrupt(incorrect header check; loose object is corrupt]]></title>
+    <title>No47-【原】-Git repository corrupt(incorrect header check; loose object is corrupt</title>
     <link href="http://blog.54yongf.com/Git/47.html"/>
     <id>http://blog.54yongf.com/Git/47.html</id>
     <published>2016-04-17T04:42:36.000Z</published>
     <updated>2016-08-17T22:37:35.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p><font size="4"><br>今天Coding完之后，正准备commit代码，结果报了个错，从没见过：</font></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% git <span class="operator"><span class="keyword">commit</span></span><br><span class="line"><span class="keyword">error</span>: inflate: <span class="keyword">data</span> stream <span class="keyword">error</span> (incorrect header <span class="keyword">check</span>)</span><br><span class="line"><span class="keyword">error</span>: unable <span class="keyword">to</span> unpack a94406345ac44982b00cf57b4b9660a35436637f header</span><br><span class="line">fatal: a94406345ac44982b00cf57b4b9660a35436637f <span class="keyword">is</span> <span class="keyword">not</span> a valid <span class="keyword">object</span></span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -531,24 +688,28 @@ ai = <span class="number">9999</span>
 <h2 id="总结">总结</h2><p><font size="4"><br>咳咳，简单总结一下。果然是Google大法好，StackOverflow大法好，我在百度搜了好久没找到这个答案，而在Google直接就找到了。果然是百度娱乐，Google学术啊。<br>我的Github：<a href="http://github.com/wangyongf" target="_blank" rel="external">http://github.com/wangyongf</a></font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="问题描述">问题描述</h2><p><font size=4><br>今天Coding完之后，正准备commit代码，结果报了个错，从没见过：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% git <span class="operator"><span class="keyword">commit</span></span><br><span class="line"><span class="keyword">error</span>: inflate: <span class="keyword">data</span> stream <span class="keyword">error</span> (incorrect header <span class="keyword">check</span>)</span><br><span class="line"><span class="keyword">error</span>: unable <span class="keyword">to</span> unpack a94406345ac44982b00cf57b4b9660a35436637f header</span><br><span class="line">fatal: a94406345ac44982b00cf57b4b9660a35436637f <span class="keyword">is</span> <span class="keyword">not</span> a valid <span class="keyword">object</span></span></span><br></pre></td></tr></table></figure>]]>
+    
+      &lt;h2 id=&quot;问题描述&quot;&gt;问题描述&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;今天Coding完之后，正准备commit代码，结果报了个错，从没见过：&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;% git &lt;span class=&quot;operator&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;commit&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt;: inflate: &lt;span class=&quot;keyword&quot;&gt;data&lt;/span&gt; stream &lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt; (incorrect header &lt;span class=&quot;keyword&quot;&gt;check&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt;: unable &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; unpack a94406345ac44982b00cf57b4b9660a35436637f header&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fatal: a94406345ac44982b00cf57b4b9660a35436637f &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; a valid &lt;span class=&quot;keyword&quot;&gt;object&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
-      <category term="Git" scheme="http://blog.54yongf.com/tags/Git/"/>
-    
       <category term="Git" scheme="http://blog.54yongf.com/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="http://blog.54yongf.com/tags/Git/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No46-【原】-计算机算法设计与分析-三个水杯倒水问题]]></title>
+    <title>No46-【原】-计算机算法设计与分析-三个水杯倒水问题</title>
     <link href="http://blog.54yongf.com/%E7%AE%97%E6%B3%95/46.html"/>
     <id>http://blog.54yongf.com/算法/46.html</id>
     <published>2016-04-15T15:29:02.000Z</published>
     <updated>2016-08-17T22:38:45.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="题目来源">题目来源</h2><p><font size="4"><br>南阳理工学院OJ:<a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=21" target="_blank" rel="external">http://acm.nyist.net/JudgeOnline/problem.php?pid=21</a></font></p>
 <h2 id="问题描述">问题描述</h2><p><font size="4"><br>给出三个水杯，大小不一，并且只有最大的水杯的水是装满的，其余两个为空杯子。三个水杯之间相互倒水，并且水杯没有标识，只能根据给出的水杯体积来计算。现在要求你写出一个程序，使其输出使初始状态到达目标状态的最少次数。</font></p>
 <a id="more"></a>
@@ -559,24 +720,28 @@ ai = <span class="number">9999</span>
 <h2 id="C++实现">C++实现</h2><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">* @Author: Scott Wang</span><br><span class="line">* @Date:   2016-04-15 21:36:02</span><br><span class="line">* @Last Modified by:   Scott Wang</span><br><span class="line">* @Last Modified time: 2016-04-15 23:08:34</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Node</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> id;                     <span class="comment">//当前节点在vector中的位置</span></span><br><span class="line">    <span class="keyword">int</span> current[<span class="number">3</span>];         <span class="comment">//当前３个水杯中的水量</span></span><br><span class="line">    <span class="keyword">int</span> step;                   <span class="comment">//已走的步数</span></span><br><span class="line">    <span class="keyword">int</span> father;                 <span class="comment">//标记上一步</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStep</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output2Terminal</span><span class="params">(<span class="keyword">bool</span> result)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">bool</span> result)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> work[<span class="number">6</span>][<span class="number">2</span>] = &#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">2</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">2</span>&#125;, &#123;<span class="number">2</span>, <span class="number">0</span>&#125;, &#123;<span class="number">2</span>, <span class="number">1</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> src[<span class="number">3</span>];</span><br><span class="line"><span class="keyword">int</span> des[<span class="number">3</span>];</span><br><span class="line"><span class="built_in">vector</span>&lt;Node&gt; v;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> result;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化数据</span></span><br><span class="line">    input();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 进行广度优先遍历</span></span><br><span class="line">    result = bfs();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在控制台输出结果</span></span><br><span class="line">    output2Terminal(result);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果到output.txt</span></span><br><span class="line">    output(result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 初始化杯子的容量和目标水量</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">ifstream <span class="title">input</span><span class="params">(<span class="string">"input.txt"</span>, ios::in)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!input.is_open())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"Can't open input.txt"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    input &gt;&gt; src[<span class="number">0</span>] &gt;&gt; src[<span class="number">1</span>] &gt;&gt; src[<span class="number">2</span>];</span><br><span class="line">    input &gt;&gt; des[<span class="number">0</span>] &gt;&gt; des[<span class="number">1</span>] &gt;&gt; des[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">    input.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 进行广度优先遍历</span><br><span class="line"> * @return 判断结果</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> front = <span class="number">0</span>, rear = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> foot[<span class="number">100</span>][<span class="number">100</span>][<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    Node temp = &#123;<span class="number">0</span>, &#123;src[<span class="number">0</span>], <span class="number">0</span>, <span class="number">0</span>&#125;, <span class="number">0</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">    foot[temp.current[<span class="number">0</span>]][temp.current[<span class="number">1</span>]][temp.current[<span class="number">2</span>]] = <span class="literal">true</span>;</span><br><span class="line">    v.push_back(temp);</span><br><span class="line">    rear++;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (front &lt; rear)</span><br><span class="line">    &#123;</span><br><span class="line">        index++;</span><br><span class="line">        temp = v[front++];</span><br><span class="line">        <span class="keyword">if</span> (temp.current[<span class="number">0</span>] == des[<span class="number">0</span>] &amp;&amp;</span><br><span class="line">                temp.current[<span class="number">1</span>] == des[<span class="number">1</span>] &amp;&amp;</span><br><span class="line">                temp.current[<span class="number">2</span>] == des[<span class="number">2</span>] )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Node temp1 = temp;</span><br><span class="line">            temp1.step++;</span><br><span class="line">            temp1.father = temp.step;</span><br><span class="line">            <span class="keyword">int</span> s = work[i][<span class="number">0</span>], d = work[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> available = src[d] - temp1.current[d];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="number">0</span> == temp1.current[s] || <span class="number">0</span> == available)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (temp1.current[s] &lt;= available)</span><br><span class="line">            &#123;</span><br><span class="line">                temp1.current[d] += temp1.current[s];</span><br><span class="line">                temp1.current[s] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                temp1.current[s] -= available;</span><br><span class="line">                temp1.current[d] = src[d];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!foot[temp1.current[<span class="number">0</span>]][temp1.current[<span class="number">1</span>]][temp1.current[<span class="number">2</span>]])</span><br><span class="line">            &#123;</span><br><span class="line">                temp1.id = v.size() - <span class="number">1</span>;</span><br><span class="line">                v.push_back(temp1);</span><br><span class="line">                rear++;</span><br><span class="line">                foot[temp1.current[<span class="number">0</span>]][temp1.current[<span class="number">1</span>]][temp1.current[<span class="number">2</span>]] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 输出倒水的步骤</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStep</span><span class="params">(<span class="keyword">int</span> id)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (id)</span><br><span class="line">    &#123;</span><br><span class="line">        printStep(v[id].father);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; v[id].current[<span class="number">0</span>] &lt;&lt; <span class="string">"\t"</span> &lt;&lt; v[id].current[<span class="number">1</span>] &lt;&lt; <span class="string">"\t"</span> &lt;&lt; v[id].current[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 输出结果到控制台</span><br><span class="line"> * @param result 结果</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output2Terminal</span><span class="params">(<span class="keyword">bool</span> result)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (result)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"共需"</span> &lt;&lt; v.back().step &lt;&lt; <span class="string">"次"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"步骤为："</span> &lt;&lt; endl;</span><br><span class="line">        printStep(v.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"此题无解"</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 返回结果 - 是否找到满足条件的倒法</span><br><span class="line"> * @param result 结果 true or false</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">bool</span> result)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">output</span><span class="params">(<span class="string">"output.txt"</span>, ios::out)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!output.is_open())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"Can't open output.txt"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    output &lt;&lt; (result ? <span class="string">"true"</span> : <span class="string">"false"</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    output.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="题目来源">题目来源</h2><p><font size=4><br>南阳理工学院OJ:<a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=21">http://acm.nyist.net/JudgeOnline/problem.php?pid=21</a></p>
-<h2 id="问题描述">问题描述</h2><p><font size=4><br>给出三个水杯，大小不一，并且只有最大的水杯的水是装满的，其余两个为空杯子。三个水杯之间相互倒水，并且水杯没有标识，只能根据给出的水杯体积来计算。现在要求你写出一个程序，使其输出使初始状态到达目标状态的最少次数。</p>]]>
+    
+      &lt;h2 id=&quot;题目来源&quot;&gt;题目来源&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;南阳理工学院OJ:&lt;a href=&quot;http://acm.nyist.net/JudgeOnline/problem.php?pid=21&quot;&gt;http://acm.nyist.net/JudgeOnline/problem.php?pid=21&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;问题描述&quot;&gt;问题描述&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;给出三个水杯，大小不一，并且只有最大的水杯的水是装满的，其余两个为空杯子。三个水杯之间相互倒水，并且水杯没有标识，只能根据给出的水杯体积来计算。现在要求你写出一个程序，使其输出使初始状态到达目标状态的最少次数。&lt;/p&gt;
     
     </summary>
     
-      <category term="算法" scheme="http://blog.54yongf.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="算法" scheme="http://blog.54yongf.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://blog.54yongf.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No45-【原】-Android中使用自定义字体-使用Android Studio]]></title>
+    <title>No45-【原】-Android中使用自定义字体-使用Android Studio</title>
     <link href="http://blog.54yongf.com/Android%E5%BC%80%E5%8F%91/45.html"/>
     <id>http://blog.54yongf.com/Android开发/45.html</id>
     <published>2016-04-11T17:45:32.000Z</published>
     <updated>2016-08-17T22:39:19.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>最近在开发一款APP（其实是学习中），想要在一个页面中使用自定义字体。在使用过程中遇到了一些坑，特在此分享。我使用的是Android Studio 1.4, Win7</font></p>
 <a id="more"></a>
 <h2 id="使用自定义字体">使用自定义字体</h2><p><font size="4"></font></p>
@@ -597,23 +762,27 @@ ai = <span class="number">9999</span>
 <h2 id="参考">参考</h2><p><font size="4"><br>StackOverflow：<a href="http://stackoverflow.com/questions/12766930/native-typeface-cannot-be-made-only-for-some-people" target="_blank" rel="external">http://stackoverflow.com/questions/12766930/native-typeface-cannot-be-made-only-for-some-people</a></font></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>最近在开发一款APP（其实是学习中），想要在一个页面中使用自定义字体。在使用过程中遇到了一些坑，特在此分享。我使用的是Android Studio 1.4, Win7</p>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;最近在开发一款APP（其实是学习中），想要在一个页面中使用自定义字体。在使用过程中遇到了一些坑，特在此分享。我使用的是Android Studio 1.4, Win7&lt;/p&gt;
     
     </summary>
     
-      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
       <category term="Android开发" scheme="http://blog.54yongf.com/categories/Android%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[No44-【原】-Visual Studio Code使用初体验]]></title>
+    <title>No44-【原】-Visual Studio Code使用初体验</title>
     <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/44.html"/>
     <id>http://blog.54yongf.com/杂谈/44.html</id>
     <published>2016-04-10T14:08:27.000Z</published>
     <updated>2016-08-17T22:40:14.000Z</updated>
+    
     <content type="html"><![CDATA[<h2 id="Visual_Studio_Code_使用初体验">Visual Studio Code 使用初体验</h2><p><font size="4"><br>作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好,CSS,JS还没试,应该可以的吧.我是在Ubuntu 14.04下使用VSC的,使用的是<code>Monokai</code>主题,颜值和我使用Sublime Text 3有的一拼.<br><br>之前在Ubuntu下一直没有找到一款好用的Markdown编辑器(如果你有好的推荐,请留言哦 ^_^ ),现在,我可以用VSC写Markdown写得飞起了.VSC的缺点也挺多,比如说BUG稍微有点多,插件呢,也相对比较少,毕竟作为新人嘛,到现在为止,还在<code>0.10.11</code>版本,算是预览版吧.不过,现在巨硬也一直在推荐VSC,VSC一直在发展,相信会有越来越多的人喜欢上这款编辑器的.</font></p>
 <h2 id="关于VSC的Markdown写作的特性">关于VSC的Markdown写作的特性</h2><p><font size="4"></font></p>
 <ol>
@@ -626,86 +795,19 @@ ai = <span class="number">9999</span>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No44-VSCODE.png" alt="我的VSC"></p>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="Visual_Studio_Code_使用初体验">Visual Studio Code 使用初体验</h2><p><font size="4"><br>作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好]]>
+    
+      &lt;h2 id=&quot;Visual_Studio_Code_使用初体验&quot;&gt;Visual Studio Code 使用初体验&lt;/h2&gt;&lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好
+    
     </summary>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
     
       <category term="Visual Studio Code" scheme="http://blog.54yongf.com/tags/Visual-Studio-Code/"/>
     
       <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No43-【原】-计算机算法设计与分析-统计数字问题]]></title>
-    <link href="http://blog.54yongf.com/%E7%AE%97%E6%B3%95/43.html"/>
-    <id>http://blog.54yongf.com/算法/43.html</id>
-    <published>2016-04-10T12:43:58.000Z</published>
-    <updated>2016-08-17T22:40:42.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目来源">题目来源</h2><p><font size="4"><br>计算机算法设计与分析第二版-王晓东 P8</font></p>
-<h4 id="问题描述">问题描述</h4><p><font size="4"><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</font></p>
-<a id="more"></a>
-<h4 id="算法设计">算法设计</h4><p><font size="4"><br>给定表示书的总页码的十进制数n(1&lt;=n&lt;=10^9),计算书的全部页码中分别用到多少次数字0, 1, 2, …, 9.</font></p>
-<h4 id="数据输入">数据输入</h4><p><font size="4"><br>输入数据由文件名为input.txt的文本文件提供.每个文件只有一行,给出表示书的总页码的整数n.</font></p>
-<h4 id="结果输出">结果输出</h4><p><font size="4"><br>将计算结果输出到文件output.txt.输出文件共有10行,在第k行输出页码中用到数字k-1的次数,k = 1, 2, …, 10.</font></p>
-<h4 id="输入文件示例">输入文件示例</h4><p><font size="4"><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">input</span><span class="class">.txt</span></span><br><span class="line"><span class="number">11</span></span><br></pre></td></tr></table></figure></font></p>
-<h4 id="输出文件示例">输出文件示例</h4><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">output.txt</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></font></p>
-<h4 id="C++实现">C++实现</h4><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">* @Author: Scott Wang</span><br><span class="line">* @Date:   2016-04-07 23:18:13</span><br><span class="line">* @Last Modified by:   Scott Wang</span><br><span class="line">* @Last Modified time: 2016-04-10 21:38:01</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">"stdlib.h"</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initNumber</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span>* result)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* result, <span class="keyword">int</span> count)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number;</span><br><span class="line">    <span class="keyword">int</span> result[<span class="number">10</span>] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    number = initNumber();</span><br><span class="line"></span><br><span class="line">    calculate(number, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> count = <span class="keyword">sizeof</span>(result) / <span class="keyword">sizeof</span>(result[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    output(result, count);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 从文件中获取数字</span><br><span class="line"> * @return 书的页码</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initNumber</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">istringstream</span> iss;</span><br><span class="line">    <span class="built_in">string</span> line;</span><br><span class="line">    <span class="function">ifstream <span class="title">input</span><span class="params">(<span class="string">"input.txt"</span>, ios::in)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!input.is_open())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"Can't open input.txt"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getline(input, line);</span><br><span class="line">    iss.str(line);</span><br><span class="line">    iss &gt;&gt; num;</span><br><span class="line">    iss.clear();</span><br><span class="line"></span><br><span class="line">    input.close();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 计算页码</span><br><span class="line"> * @param number 页码</span><br><span class="line"> * @param result 存储结果的数组(全部页码分别用到0-9多少次)</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span>* result)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// cout&lt;&lt;number&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= number; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        j = i;</span><br><span class="line">        <span class="keyword">while</span> (j &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result[j % <span class="number">10</span>]++;</span><br><span class="line"></span><br><span class="line">            j = j / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 将计算结果输出</span><br><span class="line"> * @param result 要输出的结果(result[10])</span><br><span class="line"> * @param count 结果数组的大小</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* result, <span class="keyword">int</span> count)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">output</span><span class="params">(<span class="string">"output.txt"</span>, ios::out)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        output &lt;&lt; result[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    output.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目来源">题目来源</h2><p><font size=4><br>计算机算法设计与分析第二版-王晓东 P8</p>
-<h4 id="问题描述">问题描述</h4><p><font size=4><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</p>]]>
-    
-    </summary>
-    
-      <category term="算法" scheme="http://blog.54yongf.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法" scheme="http://blog.54yongf.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[No42-原-Windows下Apache使用问题总结（持续更新）]]></title>
-    <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/42.html"/>
-    <id>http://blog.54yongf.com/杂谈/42.html</id>
-    <published>2016-03-31T10:56:41.000Z</published>
-    <updated>2016-03-31T10:56:41.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><font size="4"><br>在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。</font></p>
-<a id="more"></a>
-<h2 id="apache无法启动">apache无法启动</h2><p><font size="4"><br>The request operation has failed</font></p>
-<p><font size="4">一般来说，都是端口被占用所导致的。apache默认使用80端口，如果80端口被占用，apache就会启动失败。目前我已知的会占用80端口的软件有：迅雷，IIS，Skype。欢迎补充！<br></font></p>
-<p><strong>解决办法</strong><br></p>
-<ol>
-<li>修改apache的默认端口，或者开机后，立即启动apache，让它使用80端口。</li>
-<li>也可以关闭或杀死使用80端口的软件，但如果是IIS，最好修改一下端口。</li>
-</ol>
-<h2 id="apache无法启动终极解决办法">apache无法启动终极解决办法</h2><p><font size="4"><br>上面所说的只是比较特殊的情况，也许并不能找到问题之所在。下面说一个比较一般的方法，对各种问题基本通吃–使用命令行启动apache服务。用命令行模式启动apache，并带上参数，apache会提示你哪句有误，然后就可以针对性的解决，可以发现端口冲突问题，软件冲突问题，http.conf配置问题等。</font></p>
-<ol>
-<li>在N:\MyWorks\Apache\bin目录处打开cmd命令行，输入如下命令：</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd<span class="class">.exe</span> -w -n <span class="string">"Apache"</span> -k start</span><br></pre></td></tr></table></figure>
-<p>这里，引号内的是你的apache服务的名称，不同的机子可以有些许差别。</p>
-<ol>
-<li>之后等一会，如果启动不成功，会提示详细的错误信息。根据错误信息，去做响应的修改即可。</li>
-<li>我的问题是启动服务时提示the requested operation has failed，一开始以为是80端口被占用的问题，用netstat -ano一看，80端口没有被占用啊！但就是启动不了，很郁闷。使用上述方法用命令行启动后，提示信息如下：<br><img src="http://img.blog.csdn.net/20151016095853606" alt="这里写图片描述"></li>
-<li>我明明配置apache监听80端口，也就是默认的，但是竟然还需要监听443端口，难怪，443端口被别的软件所占用了，apache启动自然报错了！不过，有这个方法，以后apache出问题也可以很好地差错了。</li>
-<li>关于如何kill掉占用端口的进程：用netstat -ano找到占用该端口的进程号，也就是PID，然后打开任务管理器，切换到【服务】一栏：<br><img src="http://img.blog.csdn.net/20151016100602872" alt="这里写图片描述"></li>
-</ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><font size=4><br>在使用apache的过程中，遇到了很多问题，也学会了很多，特将一些常见的问题总结出来，以供参考。</p>]]>
-    
-    </summary>
-    
-      <category term="apache" scheme="http://blog.54yongf.com/tags/apache/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
