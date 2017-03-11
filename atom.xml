@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.54yongf.com/"/>
-  <updated>2017-02-22T15:39:35.000Z</updated>
+  <updated>2017-03-11T08:33:22.000Z</updated>
   <id>http://blog.54yongf.com/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>No67-【原】-Visual Studio 2017正式发布了，随便说两句</title>
+    <link href="http://blog.54yongf.com/%E6%9D%82%E8%B0%88/67.html"/>
+    <id>http://blog.54yongf.com/杂谈/67.html</id>
+    <published>2017-03-11T08:33:22.000Z</published>
+    <updated>2017-03-11T08:33:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><blockquote>
+<p>前几天VS2017正式发布，作为“宇宙第一IDE”，自然是一件盛事，我还特地把Launch Event从头到尾看了一遍，感觉挺好的。就目前来说，我用Visual Studio主要是用来进行UWP开发（没错，就是那个1%）,在用了几天之后，我来谈谈我的感受。</p>
+</blockquote>
+<h2 id="说说一些变化吧">说说一些变化吧</h2><h3 id="安装过程挺友好">安装过程挺友好</h3><p>使用在线安装的时候，先选择要安装的组件，像我的话，就是选了个通用UWP开发套件以及C++ for UWP支持。然后很重要的一点是，你可以在安装时选择安装的语言，我在第一次安装VS2017的时候忘了切换语言，结果安装成VS2017中文版，这不是我想要的啊啊啊啊啊，然后去搜索VS2017 Language Pack，结果没搜到。。。。最后，还是在Visual Studio Install Guide上发现原来可以直接用安装程序修改语言。爽！</p>
+<h3 id="启动更快了">启动更快了</h3><p>之前使用的VS2015，每次启动IDE都需要3-4分钟，没办法，4年前的渣渣笔记本。。。现在VS2017的启动速度达到了1-2分钟，爽！</p>
+<h3 id="对UWP开发者更友好了">对UWP开发者更友好了</h3><p>之前开发一个UWP应用，对于应用图标问题真的是老大难，这么多种规格的图标都得自己弄，哎呀，麻烦！在VS2017中，提供了一个内置的Asset generator，你只需要一张源图片，直接可以生成各种规格的图标，爽！</p>
+<h3 id="还有很多改进">还有很多改进</h3><p>VS2017改进太多，上面只是我感受较深的（我还只是一只菜鸟。。。）</p>
+<h2 id="最后">最后</h2><p>在最后，我还想说一句，要说我最喜欢那个IDE，还是Jetbrains家的IntelliJ平台，包括IDEA, Android Studio等，感觉Visual Studio和IntelliJ在易用性还是有点差距的。。。。纯属个人看法，不喜勿喷 ^_^</p>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;前几天VS2017正式发布，作为“宇宙第一IDE”，自然是一件盛事，我还特地把Launch Event从头到尾看了一遍，感觉挺好的。就目前来说，我用Visual Studio主要是用来进行UWP开发（没错，就是
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="Visual Studio" scheme="http://blog.54yongf.com/tags/Visual-Studio/"/>
+    
+      <category term="杂谈" scheme="http://blog.54yongf.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
   
   <entry>
     <title>No66-【原】-假如你内存不足了，然后你用Chrome...</title>
@@ -749,53 +783,6 @@ ai = <span class="number">9999</span>
     
     
       <category term="Android开发" scheme="http://blog.54yongf.com/tags/Android%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>No47-【原】-Git repository corrupt(incorrect header check; loose object is corrupt</title>
-    <link href="http://blog.54yongf.com/Git/47.html"/>
-    <id>http://blog.54yongf.com/Git/47.html</id>
-    <published>2016-04-17T04:42:36.000Z</published>
-    <updated>2016-08-17T22:37:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p><font size="4"><br>今天Coding完之后，正准备commit代码，结果报了个错，从没见过：</font></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% git <span class="operator"><span class="keyword">commit</span></span><br><span class="line"><span class="keyword">error</span>: inflate: <span class="keyword">data</span> stream <span class="keyword">error</span> (incorrect header <span class="keyword">check</span>)</span><br><span class="line"><span class="keyword">error</span>: unable <span class="keyword">to</span> unpack a94406345ac44982b00cf57b4b9660a35436637f header</span><br><span class="line">fatal: a94406345ac44982b00cf57b4b9660a35436637f <span class="keyword">is</span> <span class="keyword">not</span> a valid <span class="keyword">object</span></span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="开始分析">开始分析</h2><p><font size="4"><br>我一看，是data stream error, 又想到今天刚刚把移动硬盘强行拔掉，导致硬盘部分文件受损的事，我一想，完犊子，估计是git文件出问题了。然而我不懂啊，最后，狠下心，算了，直接先从github上clone昨天的代码，然后慢慢改吧（话说今天改了很多代码，加了很多代码来着）。</font></p>
-<h2 id="Clone远程库">Clone远程库</h2><p><font size="4"><br>开始克隆远程库，使用Android Studio，突然，蹦出个错：</font></p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Clone failed Out <span class="keyword">of</span> memory, malloc failed (tried <span class="keyword">to</span> allocate <span class="number">2934353408</span> bytes)</span><br><span class="line"><span class="command">write</span> <span class="keyword">error</span>: Invalid argument</span><br></pre></td></tr></table></figure>
-<p>看到这个，我猜到可能是传输数据大小限制问题，详情请查看我<a href="/Git/40.html" title="Git Push出问题">另外一篇博文</a>。解决掉这个问题之后，顺利克隆远程库。</p>
-<h2 id="正式解决问题">正式解决问题</h2><p><font size="4"><br>但是，我还是不甘心，我实在是不想在昨天的代码上慢慢改了。于是，开始Google。在StackOverflow上，找到了一个同样的问题，下面有个21个赞的回答，我一想，有救了~&gt;_&lt;~+。没想到竟然真的治好了我，步骤如下：</font></p>
-<ol>
-<li>进入本地git库，也就是.git文件夹的位置</li>
-<li><p>运行<code>git fsck --full</code>，关于这条指令的作用，<a href="http://blog.csdn.net/hudashi/article/details/7668795" title="Git维护" target="_blank" rel="external">请看这里</a>。然后，你可能看到下面这样的</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Checking object directories: 100% (256/256), done.</span><br><span class="line">error: inflate: data stream error (incorrect header <span class="operator"><span class="keyword">check</span>)</span><br><span class="line"><span class="keyword">error</span>: unable <span class="keyword">to</span> unpack <span class="number">86e7247</span>af5865e857a3b61eed99986e2d9538df1 header</span><br><span class="line"><span class="keyword">error</span>: inflate: <span class="keyword">data</span> stream <span class="keyword">error</span> (incorrect header <span class="keyword">check</span>)</span><br><span class="line">fatal: loose <span class="keyword">object</span> <span class="number">86e7247</span>af5865e857a3b61eed99986e2d9538df1 (<span class="keyword">stored</span> <span class="keyword">in</span> .git/objects/<span class="number">86</span>/e7247af5865e857a3b61eed99986e2d9538df1) <span class="keyword">is</span> corrupt</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在执行下面的操作之前，墙裂建议<strong>备份.git/objects文件夹</strong>！</p>
-</li>
-<li>删除上述文件<code>.git/objects/86/e7247af5865e857a3b61eed99986e2d9538df1</code>，然后再次运行<code>git fsck --full</code></li>
-<li><p>重复步骤4，直到<code>git fsck --full</code>的提示信息变成类似下面这样的<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No47-git%E5%8F%88%E5%87%BA%E9%97%AE%E9%A2%98%E4%BA%86.png" alt="提醒信息：dangling blob"></p>
-</li>
-<li><p>我只删了一次文件就OK了，然后重新commit，竟然OK，OMG。不过原帖中答主可是删了5次文件才弄好的。</p>
-</li>
-</ol>
-<h2 id="参考资料">参考资料</h2><p><font size="4"><br><a href="http://stackoverflow.com/questions/23725925/git-repository-corrupt-incorrect-header-check-loose-object-is-corrupt" target="_blank" rel="external">http://stackoverflow.com/questions/23725925/git-repository-corrupt-incorrect-header-check-loose-object-is-corrupt</a></font></p>
-<h2 id="总结">总结</h2><p><font size="4"><br>咳咳，简单总结一下。果然是Google大法好，StackOverflow大法好，我在百度搜了好久没找到这个答案，而在Google直接就找到了。果然是百度娱乐，Google学术啊。<br>我的Github：<a href="http://github.com/wangyongf" target="_blank" rel="external">http://github.com/wangyongf</a></font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;问题描述&quot;&gt;问题描述&lt;/h2&gt;&lt;p&gt;&lt;font size=4&gt;&lt;br&gt;今天Coding完之后，正准备commit代码，结果报了个错，从没见过：&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;% git &lt;span class=&quot;operator&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;commit&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt;: inflate: &lt;span class=&quot;keyword&quot;&gt;data&lt;/span&gt; stream &lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt; (incorrect header &lt;span class=&quot;keyword&quot;&gt;check&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt;: unable &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; unpack a94406345ac44982b00cf57b4b9660a35436637f header&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fatal: a94406345ac44982b00cf57b4b9660a35436637f &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; a valid &lt;span class=&quot;keyword&quot;&gt;object&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Git" scheme="http://blog.54yongf.com/categories/Git/"/>
-    
-    
-      <category term="Git" scheme="http://blog.54yongf.com/tags/Git/"/>
     
   </entry>
   
