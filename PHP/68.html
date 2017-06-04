@@ -4,22 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Scott Wang&#39;s blog</title>
+    <title>No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7 | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="车到山前必有路。我是王用@Scott Wang，我在这里分享技术心得，学习体会，偶尔也谈谈人生。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Scott Wang's blog">
-<meta property="og:url" content="http://blog.54yongf.com/page/6/index.html">
+    <meta name="description" content="前言
+毕设用Laravel5.4做了个简单的点餐系统,需要PHP版本大于5.6.3,而我的阿里云ECS上的还是用的5.5.9.索性把它升到PHP7算了,但是在升级的过程中遇到了一些问题,在此记录一下. 我使用的是Apache+Mysql+PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7">
+<meta property="og:url" content="http://blog.54yongf.com/PHP/68.html">
 <meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="车到山前必有路。我是王用@Scott Wang，我在这里分享技术心得，学习体会，偶尔也谈谈人生。">
+<meta property="og:description" content="前言
+毕设用Laravel5.4做了个简单的点餐系统,需要PHP版本大于5.6.3,而我的阿里云ECS上的还是用的5.5.9.索性把它升到PHP7算了,但是在升级的过程中遇到了一些问题,在此记录一下. 我使用的是Apache+Mysql+PHP">
+<meta property="og:updated_time" content="2017-06-04T10:28:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Scott Wang's blog">
-<meta name="twitter:description" content="车到山前必有路。我是王用@Scott Wang，我在这里分享技术心得，学习体会，偶尔也谈谈人生。">
+<meta name="twitter:title" content="No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7">
+<meta name="twitter:description" content="前言
+毕设用Laravel5.4做了个简单的点餐系统,需要PHP版本大于5.6.3,而我的阿里云ECS上的还是用的5.5.9.索性把它升到PHP7算了,但是在升级的过程中遇到了一些问题,在此记录一下. 我使用的是Apache+Mysql+PHP">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -84,557 +88,179 @@
 
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/C-C/28.html" title="No28-转-再谈C语言函数实现交换两个数的值--包你懂！" itemprop="url">No28-转-再谈C语言函数实现交换两个数的值--包你懂！</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
-		
-  <p class="article-time">
-    <time datetime="2015-12-14T08:44:57.000Z" itemprop="datePublished">
-      发布于2015-12-14 16:44:57，更新于2015-12-14 16:44:57 <span class="ds-thread-count" data-thread-key="page/6/index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="摘要">摘要</h2><p><font size=4><br>　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/C-C/28.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/C-C/">C/C++</a>
-</div>
-
-
-  <div class="article-tags">
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
-  <span></span> <a href="/tags/C-C/">C/C++</a><a href="/tags/指针/">指针</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/C-C/28.html#comments" class="ds-thread-count comments-count-link" data-thread-key="C-C/28.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+	<article itemprop="articleBody">
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/Android开发/27.html" title="No27-原-浅谈使用Android Studio进行Android Tests（单元测试）" itemprop="url">No27-原-浅谈使用Android Studio进行Android Tests（单元测试）</a>
+      <a href="/PHP/68.html" title="No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7" itemprop="url">No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-30T10:59:17.000Z" itemprop="datePublished">
-      发布于2015-11-30 18:59:17，更新于2016-04-22 19:24:36 <span class="ds-thread-count" data-thread-key="page/6/index.html" data-count-type="comments"></span>
+    <time datetime="2017-06-04T10:28:02.000Z" itemprop="datePublished">
+      发布于2017-06-04 18:28:02，更新于2017-06-04 18:28:02 <span class="ds-thread-count" data-thread-key="PHP/68.html" data-count-type="comments"></span>
     </time>
 
   </p>
 </header>
 
-    <div class="article-content">
-        
-        <h2 id="摘要">摘要</h2><p><font size=4><br>本文写作时，yongf处于Android开发入门阶段，所以，如果文中有任何不妥之处，欢迎在评论中留言，共同探讨。<br>网上关于eclipse进行单元测试的教程比较多，而AndroidStudio的相对较少。不过，作为Google的亲儿子，AndroidStudio的确在飞快成长，感觉比eclipse强大 :) ，除去开始使用AS时的不适应之外。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/Android开发/27.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android开发/">Android开发</a><a href="/tags/单元测试/">单元测试</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/Android开发/27.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Android开发/27.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/Android开发/26.html" title="No26-原-Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]" itemprop="url">No26-原-Failure_[INSTALL_FAILED_INSUFFICIENT_STORAGE]</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+	<div class="article-content">
 		
-  <p class="article-time">
-    <time datetime="2015-11-27T17:15:05.000Z" itemprop="datePublished">
-      发布于2015-11-28 01:15:05，更新于2015-11-28 01:15:05 <span class="ds-thread-count" data-thread-key="page/6/index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="问题描述">问题描述</h2><p><font size=4><br>Failure [INSTALL_FAILED_INSUFFICIENT_STORAGE]</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/Android开发/26.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android-Studio/">Android Studio</a><a href="/tags/Android开发/">Android开发</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/Android开发/26.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Android开发/26.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/杂谈/25.html" title="No25-原-说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？" itemprop="url">No25-原-说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
 		
-  <p class="article-time">
-    <time datetime="2015-11-27T16:28:52.000Z" itemprop="datePublished">
-      发布于2015-11-28 00:28:52，更新于2015-11-28 00:28:52 <span class="ds-thread-count" data-thread-key="page/6/index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="关于CPU虚拟化">关于CPU虚拟化</h2><p><font size=4><br>什么是CPU虚拟化？</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/杂谈/25.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/虚拟化/">虚拟化</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/杂谈/25.html#comments" class="ds-thread-count comments-count-link" data-thread-key="杂谈/25.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/Android开发/24.html" title="No24-原-Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源" itemprop="url">No24-原-Android_SDK更新不了？今天推荐几个Android_SDK更新镜像源</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件环境"><span class="toc-number">2.</span> <span class="toc-text">软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-number">3.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_卸载旧版PHP5"><span class="toc-number">4.</span> <span class="toc-text">1. 卸载旧版PHP5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_安装PHP7"><span class="toc-number">5.</span> <span class="toc-text">2. 安装PHP7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_配置Apache"><span class="toc-number">6.</span> <span class="toc-text">3. 配置Apache</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闲扯两句"><span class="toc-number">7.</span> <span class="toc-text">闲扯两句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">8.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
-  <p class="article-time">
-    <time datetime="2015-11-24T05:49:00.000Z" itemprop="datePublished">
-      发布于2015-11-24 13:49:00，更新于2015-11-24 13:49:00 <span class="ds-thread-count" data-thread-key="page/6/index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="烦恼">烦恼</h2><p><font size=4><br>学习Android开发，首先要有Android SDK，然而这是我大天朝，各位还是乖乖地翻墙吧，什么？出不去？那怎么更新SDK，那就给大家推荐几个Android SDK 在线更新镜像服务器资源吧，如果觉得好，请传播出去，散播欢笑散播爱嘛。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/Android开发/24.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android-SDK/">Android SDK</a><a href="/tags/Android开发/">Android开发</a><a href="/tags/翻墙/">翻墙</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/Android开发/24.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Android开发/24.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/Android开发/23.html" title="No23-原-SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿" itemprop="url">No23-原-SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
+		</div>
 		
-  <p class="article-time">
-    <time datetime="2015-11-24T05:09:17.000Z" itemprop="datePublished">
-      发布于2015-11-24 13:09:17，更新于2015-11-24 13:09:17 <span class="ds-thread-count" data-thread-key="page/6/index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="一点说道">一点说道</h2><p><font size=4><br>这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/Android开发/23.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android-SDK/">Android SDK</a><a href="/tags/翻墙/">翻墙</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/Android开发/23.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Android开发/23.html" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/Android开发/22.html" title="No22-原-Android开发时如何用小米3进行真机调试" itemprop="url">No22-原-Android开发时如何用小米3进行真机调试</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-24T01:20:39.000Z" itemprop="datePublished">
-      发布于2015-11-24 09:20:39，更新于2015-11-24 09:20:39 <span class="ds-thread-count" data-thread-key="page/6/index.html" data-count-type="comments"></span>
-    </time>
-
-  </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="前言">前言</h2><p><font size=4><br>今天，开始学习Android开发。刚刚新建了一个Android项目，HelloAndroid，我电脑上Android_Studio自带的模拟器有问题，打不开（而且，好像大家都极力推荐真机调试）。刚好，我有个小米3，就用它了。但是，打开小米3的USB调试用了点时间，记录一下。</p>
-<p>软硬件环境:</p>
-<ul>
-<li>小米3</li>
-<li>MIUI 7</li>
-<li>Android Studio 1.4</li>
+		<h2 id="前言">前言</h2><blockquote>
+<p>毕设用Laravel5.4做了个简单的点餐系统,需要PHP版本大于5.6.3,而我的阿里云ECS上的还是用的5.5.9.索性把它升到PHP7算了,但是在升级的过程中遇到了一些问题,在此记录一下. 我使用的是Apache+Mysql+PHP</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="软件环境">软件环境</h2><ul>
+<li>操作系统: Ubuntu 14.04  </li>
+<li>涉及PHP版本: PHP5.6 PHP7</li>
+<li>服务器: Apache 2.4</li>
 </ul>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/Android开发/22.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+<h2 id="注意事项">注意事项</h2><p>本文适用于LAMP环境已经搭建好,单纯想从PHP5升级到PHP7的同学. 如何搭建LAMP环境不再赘述</p>
+<h2 id="1-_卸载旧版PHP5">1. 卸载旧版PHP5</h2><p>所使用的命令如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude purge `dpkg -l | grep php| awk &#39;&#123;print $2&#125;&#39; |tr &#34;\n&#34; &#34;`</span><br></pre></td></tr></table></figure></p>
+<p><strong>请注意!上述命令会卸载系统所有已经安装的PHP版本,请结合自身需要食用</strong></p>
+<h2 id="2-_安装PHP7">2. 安装PHP7</h2><ul>
+<li><p>添加PPA(Personal Package Archives):</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-software-properties software-properties-common&#10;sudo add-apt-repository ppa:ondrej/php&#10;sudo apt-get update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装PHP7以及一些必要的扩展:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php7.0-fpm php7.0-cli php7.0-mcrypt php7.0-mysql php7.0-mbstring php7.0-xml</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-_配置Apache">3. 配置Apache</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2dismod php5                          # &#31105;&#29992;Apache&#30340;PHP5&#27169;&#22359;&#10;sudo a2enmod php7.0                         # &#21551;&#29992;Apache&#30340;PHP7&#27169;&#22359;&#10;sudo systemctl restart apache2              # &#37325;&#21551;Apache</span><br></pre></td></tr></table></figure>
+<p>至此,如果没有任何问题的话,应该是成功地升级到了PHP7了. 如果启动Apache失败,可以打开Apache的错误日志进行对症下药~</p>
+<h2 id="闲扯两句">闲扯两句</h2><ul>
+<li>禁用Apache模块: <code>a2enmod xxx</code>, 例如<code>a2enmod php7.0</code></li>
+<li>启用Apache模块: <code>a2dismod xxx</code>, 例如<code>a2dismod php5</code></li>
+<li>Ubuntu下Apache的错误日志的默认位置是: /var/log/apache2/error.log, 不过这个文件夹需要root权限</li>
+<li>启用PHP模块: <code>sudo phpenmod xxx</code>, 例如<code>sudo phpenmod mcrypt</code></li>
+</ul>
+<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android开发/">Android开发</a>
+  <a class="article-category-link" href="/categories/PHP/">PHP</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Android开发/">Android开发</a><a href="/tags/调试/">调试</a>
+  <span></span> <a href="/tags/Linux/">Linux</a><a href="/tags/PHP/">PHP</a><a href="/tags/Ubuntu/">Ubuntu</a>
   </div>
 
 </div>
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-	  	<span></span>
-		<a href="/Android开发/22.html#comments" class="ds-thread-count comments-count-link" data-thread-key="Android开发/22.html" data-count-type="comments">&nbsp;</a>
-	
+	<div class="share-jiathis">
+	  
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_googleplus"></a>
+	<a class="jiathis_button_douban"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+     ralateuid:{"tsina":"2902237231"},hideMore:false}
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+1059613472" charset="utf-8"></script>      
+
+	 </div>
+	
+	</div>
+
 
 </footer>
 
 
-    </article>
+	</article>
+	<script src="/js/clipboard.min.js"></script>
 
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/杂谈/21.html" title="No21-原-安利一款软件-FolderSize" itemprop="url">No21-原-安利一款软件-FolderSize</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-21T11:55:31.000Z" itemprop="datePublished">
-      发布于2015-11-21 19:55:31，更新于2015-11-21 19:55:31 <span class="ds-thread-count" data-thread-key="page/6/index.html" data-count-type="comments"></span>
-    </time>
-
+<div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;text-align:center;" ><br/>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/PHP/68.html">No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7</a></p>
+  <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2017-06-04 18:28:02</font</p>
+  <p align="left">
+    <span><font color="black">　　原始链接：</font></span><a href="/PHP/68.html" title="No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7">http://blog.54yongf.com/PHP/68.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/PHP/68.html" title="点击复制文章链接">
+        <i class="fa fa-clipboard"></i>
+    </span>
   </p>
-</header>
-
-    <div class="article-content">
-        
-        <h2 id="安利一款软件">安利一款软件</h2><p><font size=4><br>最近磁盘又不够用了，1T的，我想看看到底是哪些地方占用了这么多的空间（毕竟以前下的一些软件我都忘了），在网上一搜索，还真有这样的软件，我用的是Folder Size，功能很强大，放个截图吧：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No21-2015-11-21_201052.png" alt="Folder-Size"></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/杂谈/21.html#more">阅读全文</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
+  <p align="left"><span><font color="black">　　许可协议：</font></span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p><br/>
+  <script> var clipboard = new Clipboard('.btn'); </script>
 </div>
+<style type="text/css">
+  .copyright p .btn {
+    margin-left: 1em;
+  }
+  .copyright:hover p .btn::after {
+    content: "点击复制(Chrome)";
+    color: "#2CA6CB";
+  }
+  .copyright p .btn:hover {
+      color: gray;
+      cursor: pointer;
+    };
+</style>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/小工具/">小工具</a><a href="/tags/杂谈/">杂谈</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
 	
-	  	<span></span>
-		<a href="/杂谈/21.html#comments" class="ds-thread-count comments-count-link" data-thread-key="杂谈/21.html" data-count-type="comments">&nbsp;</a>
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/杂谈/67.html"  title="No67-【原】-Visual Studio 2017正式发布了，随便说两句">
+ <strong>下一篇：</strong><br/> 
+ <span>No67-【原】-Visual Studio 2017正式发布了，随便说两句
+</span>
+</a>
+</div>
+
+</nav>
+
 	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="PHP/68.html" data-title="No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7" data-url="http://blog.54yongf.com/PHP/68.html"></div>
+</section>
+
+
+
 </div>
 
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/5/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next<span></span></a>
-  </nav>
-
-</div>
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
+ 
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件环境"><span class="toc-number">2.</span> <span class="toc-text">软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-number">3.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_卸载旧版PHP5"><span class="toc-number">4.</span> <span class="toc-text">1. 卸载旧版PHP5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_安装PHP7"><span class="toc-number">5.</span> <span class="toc-text">2. 安装PHP7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_配置Apache"><span class="toc-number">6.</span> <span class="toc-text">3. 配置Apache</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闲扯两句"><span class="toc-number">7.</span> <span class="toc-text">闲扯两句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">8.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -918,7 +544,35 @@ $(document).ready(function(){
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
       
+      $('#toc.toc-aside').css('display', 'none');
+      
     }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
 });
 </script>
@@ -1029,4 +683,4 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>
