@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No67-【原】-Visual Studio 2017正式发布了，随便说两句 | Scott Wang&#39;s blog</title>
+    <title>No69-原-使用Let&#39;s Encrypt配置网站https | Scott Wang&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,18 +12,18 @@
 
     
     <meta name="description" content="前言
-前几天VS2017正式发布，作为“宇宙第一IDE”，自然是一件盛事，我还特地把Launch Event从头到尾看了一遍，感觉挺好的。就目前来说，我用Visual Studio主要是用来进行UWP开发（没错，就是那个1%）,在用了几天之后，我来谈谈我的感受。">
+最近在测试小程序支付相关的东西，但是小程序支付要求后端是https的，只好先把后端https化，好在没有遇到太多的坑，特此记录一下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No67-【原】-Visual Studio 2017正式发布了，随便说两句">
-<meta property="og:url" content="http://blog.54yongf.com/杂谈/67.html">
+<meta property="og:title" content="No69-原-使用Let's Encrypt配置网站https">
+<meta property="og:url" content="http://blog.54yongf.com/Ubuntu/69.html">
 <meta property="og:site_name" content="Scott Wang's blog">
 <meta property="og:description" content="前言
-前几天VS2017正式发布，作为“宇宙第一IDE”，自然是一件盛事，我还特地把Launch Event从头到尾看了一遍，感觉挺好的。就目前来说，我用Visual Studio主要是用来进行UWP开发（没错，就是那个1%）,在用了几天之后，我来谈谈我的感受。">
-<meta property="og:updated_time" content="2017-03-11T08:33:22.000Z">
+最近在测试小程序支付相关的东西，但是小程序支付要求后端是https的，只好先把后端https化，好在没有遇到太多的坑，特此记录一下">
+<meta property="og:updated_time" content="2017-12-04T15:08:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No67-【原】-Visual Studio 2017正式发布了，随便说两句">
+<meta name="twitter:title" content="No69-原-使用Let's Encrypt配置网站https">
 <meta name="twitter:description" content="前言
-前几天VS2017正式发布，作为“宇宙第一IDE”，自然是一件盛事，我还特地把Launch Event从头到尾看了一遍，感觉挺好的。就目前来说，我用Visual Studio主要是用来进行UWP开发（没错，就是那个1%）,在用了几天之后，我来谈谈我的感受。">
+最近在测试小程序支付相关的东西，但是小程序支付要求后端是https的，只好先把后端https化，好在没有遇到太多的坑，特此记录一下">
 <link rel="publisher" href="103252988093400142507">
 
     
@@ -94,15 +94,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/杂谈/67.html" title="No67-【原】-Visual Studio 2017正式发布了，随便说两句" itemprop="url">No67-【原】-Visual Studio 2017正式发布了，随便说两句</a>
+      <a href="/Ubuntu/69.html" title="No69-原-使用Let&#39;s Encrypt配置网站https" itemprop="url">No69-原-使用Let&#39;s Encrypt配置网站https</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/103252988093400142507?rel=author" title="老码" target="_blank" itemprop="author">老码</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-11T08:33:22.000Z" itemprop="datePublished">
-      发布于2017-03-11 16:33:22，更新于2017-03-11 16:33:22 <span class="ds-thread-count" data-thread-key="杂谈/67.html" data-count-type="comments"></span>
+    <time datetime="2017-12-04T15:08:19.000Z" itemprop="datePublished">
+      发布于2017-12-04 23:08:19，更新于2017-12-04 23:08:19 <span class="ds-thread-count" data-thread-key="Ubuntu/69.html" data-count-type="comments"></span>
     </time>
 
   </p>
@@ -113,19 +113,44 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说说一些变化吧"><span class="toc-number">2.</span> <span class="toc-text">说说一些变化吧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装过程挺友好"><span class="toc-number">2.1.</span> <span class="toc-text">安装过程挺友好</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动更快了"><span class="toc-number">2.2.</span> <span class="toc-text">启动更快了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对UWP开发者更友好了"><span class="toc-number">2.3.</span> <span class="toc-text">对UWP开发者更友好了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#还有很多改进"><span class="toc-number">2.4.</span> <span class="toc-text">还有很多改进</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-number">3.</span> <span class="toc-text">最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件环境"><span class="toc-number">2.</span> <span class="toc-text">软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Let’s_Encrypt"><span class="toc-number">3.</span> <span class="toc-text">Let’s Encrypt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作步骤"><span class="toc-number">4.</span> <span class="toc-text">操作步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
 		<h2 id="前言">前言</h2><blockquote>
-<p>前几天VS2017正式发布，作为“宇宙第一IDE”，自然是一件盛事，我还特地把Launch Event从头到尾看了一遍，感觉挺好的。就目前来说，我用Visual Studio主要是用来进行UWP开发（没错，就是那个1%）,在用了几天之后，我来谈谈我的感受。</p>
+<p>最近在测试小程序支付相关的东西，但是小程序支付要求后端是https的，只好先把后端https化，好在没有遇到太多的坑，特此记录一下</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="说说一些变化吧">说说一些变化吧</h2><h3 id="安装过程挺友好">安装过程挺友好</h3><p>使用在线安装的时候，先选择要安装的组件，像我的话，就是选了个通用UWP开发套件以及C++ for UWP支持。然后很重要的一点是，你可以在安装时选择安装的语言，我在第一次安装VS2017的时候忘了切换语言，结果安装成VS2017中文版，这不是我想要的啊啊啊啊啊，然后去搜索VS2017 Language Pack，结果没搜到。。。。最后，还是在Visual Studio Install Guide上发现原来可以直接用安装程序修改语言。爽！</p>
-<h3 id="启动更快了">启动更快了</h3><p>之前使用的VS2015，每次启动IDE都需要3-4分钟，没办法，4年前的渣渣笔记本。。。现在VS2017的启动速度达到了1-2分钟，爽！</p>
-<h3 id="对UWP开发者更友好了">对UWP开发者更友好了</h3><p>之前开发一个UWP应用，对于应用图标问题真的是老大难，这么多种规格的图标都得自己弄，哎呀，麻烦！在VS2017中，提供了一个内置的Asset generator，你只需要一张源图片，直接可以生成各种规格的图标，爽！</p>
-<h3 id="还有很多改进">还有很多改进</h3><p>VS2017改进太多，上面只是我感受较深的（我还只是一只菜鸟。。。）</p>
-<h2 id="最后">最后</h2><p>在最后，我还想说一句，要说我最喜欢那个IDE，还是Jetbrains家的IntelliJ平台，包括IDEA, Android Studio等，感觉Visual Studio和IntelliJ在易用性还是有点差距的。。。。纯属个人看法，不喜勿喷 ^_^</p>
+<h2 id="软件环境">软件环境</h2><ul>
+<li>操作系统：服务器Ubuntu 16.04</li>
+<li>服务器：Nginx 1.10.3</li>
+</ul>
+<h2 id="Let’s_Encrypt">Let’s Encrypt</h2><p>正常来说，https证书是收费的，比如阿里云、腾讯云、百度云、七牛这些，而且收费都是一年好几千的，表示用不起，还是用免费的吧，但是嘞，免费的也得用好用的，受信任的免费证书，不然没啥用。于是我就找到了<a href="https://letsencrypt.org" target="_blank" rel="external">Let’s Encrypt</a>。</p>
+<p>废话不多说，下面开始讲我怎么配置Let’s Encrypt证书的。</p>
+<h2 id="操作步骤">操作步骤</h2><ol>
+<li>进入<a href="https://certbot.eff.org/#ubuntuxenial-nginx，我假定你用的是Ubuntu" target="_blank" rel="external">https://certbot.eff.org/#ubuntuxenial-nginx，我假定你用的是Ubuntu</a> 16.04上的Nginx服务器提供后端服务，如果不是也没关系，那就选择你自己的。</li>
+<li>下述步骤我假定你用的是Ubuntu 16.04的Nginx，其他的仅供参考～</li>
+<li><p>安装必备依赖</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update&#10;sudo apt-get install software-properties-common&#10;sudo add-apt-repository ppa:certbot/certbot&#10;sudo apt-get update&#10;sudo apt-get install python-certbot-nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装证书，我选择手动模式-自己修改Nginx配置文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx certonly</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>交互式输入各种信息，感觉也并不困难～</p>
+</li>
+<li>最后，会将下载好的证书保存在本地目录，这个路径可能不是固定的，看你上面这条命令的输出即可<ol>
+<li>ssl证书文件：<code>/etc/letsencrypt/live/your.domain/fullchain.pem</code></li>
+<li>ssl证书秘钥文件：<code>/etc/letsencrypt/live/your.domain/privkey.pem</code></li>
+</ol>
+</li>
+<li><p>接下来可以手动修改Nginx配置文件了，Nginx如何配置不在本文讨论范围之内，下面贴一个示例</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">server</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="title">listen</span> <span class="number">443</span> ssl;</span><br><span class="line"></span><br><span class="line">    <span class="title">server_name</span> 需要访问的网址;</span><br><span class="line"></span><br><span class="line">    <span class="title">ssl</span> <span class="built_in">on</span>;</span><br><span class="line"></span><br><span class="line">    <span class="title">ssl_certificate</span> 服务器存放ssl证书文件绝对路径/domain.crt;</span><br><span class="line"></span><br><span class="line">    <span class="title">ssl_certificate_key</span> 服务器存放ssl证书密钥文件绝对路径/domain.key;</span><br><span class="line"></span><br><span class="line">    <span class="title">location</span> / &#123;</span><br><span class="line"></span><br><span class="line">        <span class="title">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line"></span><br><span class="line">        <span class="title">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line"></span><br><span class="line">        <span class="title">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line"></span><br><span class="line">        <span class="title">proxy_set_header</span> X-NginX-Proxy <span class="built_in">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="title">proxy_pass</span> <span class="url">http://localhost:2000</span>;</span><br><span class="line"></span><br><span class="line">        <span class="title">proxy_redirect</span> <span class="built_in">off</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Nginx配置修改之后，可以试下<code>nginx -t</code>，检查一下配置文件是否有错误，如果没有错误，那就愉快地重启Nginx吧<code>sudo service nginx restart</code>，然后试着用https访问以下，应该可以啦～</p>
+</li>
+<li>Done!</li>
+<li>PS: 安装证书的自动模式本人未亲自尝试过，所以不知道会不会有问题（感觉应该不会有问题吧？）</li>
+</ol>
 <h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
@@ -134,13 +159,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
+  <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Visual-Studio/">Visual Studio</a><a href="/tags/杂谈/">杂谈</a>
+  <span></span> <a href="/tags/Linux/">Linux</a><a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/https/">https</a>
   </div>
 
 </div>
@@ -185,12 +210,12 @@
 	<script src="/js/clipboard.min.js"></script>
 
 <div class="copyright" style="font-size:16px;font-weight:bold;font-family:font-icon-family;text-align:center;" ><br/>
-  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/杂谈/67.html">No67-【原】-Visual Studio 2017正式发布了，随便说两句</a></p>
+  <p align="left"><span><font color="black">　　本文标题：</font></span><a href="/Ubuntu/69.html">No69-原-使用Let's Encrypt配置网站https</a></p>
   <p align="left"><span><font color="black">　　文章作者：</font></span><a href="/" title="Scott Wang's blog">王用</a></p>
-  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2017-03-11 16:33:22</font</p>
+  <p align="left" class="article-time"><span><font color="black">　　发布时间：</font></span><font color="black">2017-12-04 23:08:19</font</p>
   <p align="left">
-    <span><font color="black">　　原始链接：</font></span><a href="/杂谈/67.html" title="No67-【原】-Visual Studio 2017正式发布了，随便说两句">http://blog.54yongf.com/杂谈/67.html</a>
-    <span class="btn" data-clipboard-text="http://blog.54yongf.com/杂谈/67.html" title="点击复制文章链接">
+    <span><font color="black">　　原始链接：</font></span><a href="/Ubuntu/69.html" title="No69-原-使用Let's Encrypt配置网站https">http://blog.54yongf.com/Ubuntu/69.html</a>
+    <span class="btn" data-clipboard-text="http://blog.54yongf.com/Ubuntu/69.html" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -214,19 +239,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/PHP/68.html" title="No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7">
-  <strong>上一篇：</strong><br/>
-  <span>
-  No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/杂谈/66.html"  title="No66-【原】-假如你内存不足了，然后你用Chrome...">
+<a href="/PHP/68.html"  title="No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7">
  <strong>下一篇：</strong><br/> 
- <span>No66-【原】-假如你内存不足了，然后你用Chrome...
+ <span>No68-[原]-将阿里云Ubuntu14.04的PHP5升级到PHP7
 </span>
 </a>
 </div>
@@ -235,7 +252,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="杂谈/67.html" data-title="No67-【原】-Visual Studio 2017正式发布了，随便说两句" data-url="http://blog.54yongf.com/杂谈/67.html"></div>
+	<div class="ds-thread" data-thread-key="Ubuntu/69.html" data-title="No69-原-使用Let's Encrypt配置网站https" data-url="http://blog.54yongf.com/Ubuntu/69.html"></div>
 </section>
 
 
@@ -247,7 +264,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说说一些变化吧"><span class="toc-number">2.</span> <span class="toc-text">说说一些变化吧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装过程挺友好"><span class="toc-number">2.1.</span> <span class="toc-text">安装过程挺友好</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动更快了"><span class="toc-number">2.2.</span> <span class="toc-text">启动更快了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对UWP开发者更友好了"><span class="toc-number">2.3.</span> <span class="toc-text">对UWP开发者更友好了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#还有很多改进"><span class="toc-number">2.4.</span> <span class="toc-text">还有很多改进</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-number">3.</span> <span class="toc-text">最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件环境"><span class="toc-number">2.</span> <span class="toc-text">软件环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Let’s_Encrypt"><span class="toc-number">3.</span> <span class="toc-text">Let’s Encrypt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作步骤"><span class="toc-number">4.</span> <span class="toc-text">操作步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
