@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No28-转-再谈C语言函数实现交换两个数的值--包你懂！ | Scott Wang&#39;s blog</title>
+    <title>No28-转-再谈C语言函数实现交换两个数的值--包你懂！ | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="摘要　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。">
+<meta name="keywords" content="C&#x2F;C++,指针">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No28-转-再谈C语言函数实现交换两个数的值--包你懂！">
 <meta property="og:url" content="http://blog.54yongf.com/C-C/28.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="摘要　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-12-14T08:44:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No28-转-再谈C语言函数实现交换两个数的值--包你懂！">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -114,15 +116,15 @@
 		
 		</div>
 		
-		<h2 id="摘要">摘要</h2><p><font size="4"><br>　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。</font></p>
+		<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p><font size="4"><br>　　本文是对c语言函数实现交换两个数的值的讲解，对学习C编程技术有所帮助,与大家分享。</font></p>
 <a id="more"></a>
-<h2 id="代码">代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line"></span><br><span class="line">    temp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_with_pt</span><span class="params">(<span class="keyword">int</span> * x,<span class="keyword">int</span> * y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line"></span><br><span class="line">    temp = *x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap_with_pt: x = %d,y = %d\n"</span>,*x,*y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>,y = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap(x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"-------------------------------\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap_with_pt(&amp;x,&amp;y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="输出">输出</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Before swap: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">In swap: x = <span class="number">10</span>,y = <span class="number">5</span></span><br><span class="line">After swap: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">---------------------------------</span><br><span class="line">Before swap_with_pt: x = <span class="number">5</span>,y = <span class="number">10</span></span><br><span class="line">In swap_with_pt: x =<span class="number">10</span>,y = <span class="number">5</span></span><br><span class="line">After swap_with_pt: x = <span class="number">10</span>,y = <span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h2 id="解释">解释</h2><p><font size="4"><br>　　swap函数调用时首先创建x，y的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap函数里有意义），并将main函数中x，y的值传给变量x2，y2，然后函数交换了x2，y2的值，运行完函数后x2，y2变量生命期结束。所以，x和y的值是不变的。</font></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line"></span><br><span class="line">    temp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_with_pt</span><span class="params">(<span class="keyword">int</span> * x,<span class="keyword">int</span> * y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line"></span><br><span class="line">    temp = *x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = temp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"In swap_with_pt: x = %d,y = %d\n"</span>,*x,*y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>,y = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap(x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"-------------------------------\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Before swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line">    swap_with_pt(&amp;x,&amp;y);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"After swap_with_pt: x = %d,y = %d\n"</span>,x,y);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Before swap: <span class="attr">x</span> = <span class="number">5</span>,<span class="attr">y</span> = <span class="number">10</span></span><br><span class="line">In swap: <span class="attr">x</span> = <span class="number">10</span>,<span class="attr">y</span> = <span class="number">5</span></span><br><span class="line">After swap: <span class="attr">x</span> = <span class="number">5</span>,<span class="attr">y</span> = <span class="number">10</span></span><br><span class="line">---------------------------------</span><br><span class="line">Before swap_with_pt: <span class="attr">x</span> = <span class="number">5</span>,<span class="attr">y</span> = <span class="number">10</span></span><br><span class="line">In swap_with_pt: <span class="attr">x</span> =<span class="number">10</span>,<span class="attr">y</span> = <span class="number">5</span></span><br><span class="line">After swap_with_pt: <span class="attr">x</span> = <span class="number">10</span>,<span class="attr">y</span> = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p><font size="4"><br>　　swap函数调用时首先创建x，y的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap函数里有意义），并将main函数中x，y的值传给变量x2，y2，然后函数交换了x2，y2的值，运行完函数后x2，y2变量生命期结束。所以，x和y的值是不变的。</font></p>
 <font size="4">
 
 <p>　　swap_with_pt函数调用时同样创建x，y的指针的变量副本，我们姑且称之为x2，y2（其实名字依然是x和y，只不过这里的x和y只在swap_with_pt函数里有意义），并将x，y的地址值传给x2，y2，这个时候x2和y2是指向main函数中x，y的，然后通过<em>运算修改x，y的值。注意，“</em>+指针名”是可以改变它所指向的变量的值的。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 </font>
 	</div>
 		<footer class="article-footer clearfix">
@@ -279,10 +281,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -435,58 +437,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

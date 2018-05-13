@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No59-【原】-Java并发编程23事之AtomicInteger的那点事儿 | Scott Wang&#39;s blog</title>
+    <title>No59-【原】-Java并发编程23事之AtomicInteger的那点事儿 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="首先请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。">
+<meta name="keywords" content="Java,并发编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No59-【原】-Java并发编程23事之AtomicInteger的那点事儿">
 <meta property="og:url" content="http://blog.54yongf.com/Java/59.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="首先请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-08-19T15:11:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No59-【原】-Java并发编程23事之AtomicInteger的那点事儿">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -114,16 +116,16 @@
 		
 		</div>
 		
-		<h2 id="首先">首先</h2><p>请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。  </p>
+		<h2 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h2><p>请允许我做一次标题党（严肃脸），在这篇文章，咱不谈并发编程，也不论AtomicInteger，说点儿我初次使用AtomicInteger时的趣事儿。  </p>
 <a id="more"></a>
-<h2 id="我的第一次">我的第一次</h2><p>话说当初在我看<strong>深入理解Java虚拟机</strong>一书的时候，看到了AtomicInteger这个类，它是并发条件下的原子自增运算，于是我就打开了IDEA，<br>输入这段示例代码，想看看运行结果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicInteger;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by scottwang on 16-8-19.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keyword">int</span> race = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> AtomicInteger ai = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        race++;</span><br><span class="line">        ai.incrementAndGet();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> THREAD_COUNT = <span class="number">10000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        Thread[] threads = <span class="keyword">new</span> Thread[THREAD_COUNT];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; THREAD_COUNT; i++) &#123;</span><br><span class="line">            threads[i] = <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">                increase();</span><br><span class="line">            &#125;);</span><br><span class="line">            threads[i].start();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"race = "</span> + race);</span><br><span class="line">        System.out.println(<span class="string">"ai = "</span> + ai);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="我的第一次"><a href="#我的第一次" class="headerlink" title="我的第一次"></a>我的第一次</h2><p>话说当初在我看<strong>深入理解Java虚拟机</strong>一书的时候，看到了AtomicInteger这个类，它是并发条件下的原子自增运算，于是我就打开了IDEA，<br>输入这段示例代码，想看看运行结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicInteger;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by scottwang on 16-8-19.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keyword">int</span> race = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> AtomicInteger ai = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        race++;</span><br><span class="line">        ai.incrementAndGet();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> THREAD_COUNT = <span class="number">10000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        Thread[] threads = <span class="keyword">new</span> Thread[THREAD_COUNT];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; THREAD_COUNT; i++) &#123;</span><br><span class="line">            threads[i] = <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">                increase();</span><br><span class="line">            &#125;);</span><br><span class="line">            threads[i].start();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"race = "</span> + race);</span><br><span class="line">        System.out.println(<span class="string">"ai = "</span> + ai);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>蛋是，奇迹发生了！运行结果是这样的：  </p>
-<pre><code>race = <span class="number">9994</span>
-ai = <span class="number">9999</span>
+<pre><code>race = 9994
+ai = 9999
 </code></pre><p>我的天，MD制杖，什么鬼，你跟我说结果不是10000？我把头给看下来，再多运行几次？好勒，次次结果都不一样，我的天！这难道是JDK版本的<br>问题？不对啊，我的是Ubuntu 16.04的JDK8.0，怎么可能有问题！难道是BUG了？我的天，我竟然发现了JDK的BUG，怎么办，好紧张。。。。。。  </p>
-<h2 id="真相只有一个">真相只有一个</h2><p>最后，我才知道，原来是我太猴急了，在开启完全部线程之后，直接读取race和ai的值，这要能对就怪了，结果要是10000才是BUG呢。于是，<br>在输出结果直接加入<code>Thread.sleep(500);</code>，让线程先睡会儿，然后再读取结果，对了！<br>这件事情告诉我们，细节决定成败。开个玩笑，我们下回再见！</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+<h2 id="真相只有一个"><a href="#真相只有一个" class="headerlink" title="真相只有一个"></a>真相只有一个</h2><p>最后，我才知道，原来是我太猴急了，在开启完全部线程之后，直接读取race和ai的值，这要能对就怪了，结果要是10000才是BUG呢。于是，<br>在输出结果直接加入<code>Thread.sleep(500);</code>，让线程先睡会儿，然后再读取结果，对了！<br>这件事情告诉我们，细节决定成败。开个玩笑，我们下回再见！</p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -280,10 +282,10 @@ ai = <span class="number">9999</span>
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -436,58 +438,68 @@ ai = <span class="number">9999</span>
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

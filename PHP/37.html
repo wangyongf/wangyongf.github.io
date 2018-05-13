@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No37-原-ThinkPHP3.2.3学习笔记 | Scott Wang&#39;s blog</title>
+    <title>No37-原-ThinkPHP3.2.3学习笔记 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="说在前面最近接到了一个紧急任务（一个课程设计），要在一周之内做出一个轻型博客系统，必须快速开发，于是我想到了thinkphp。虽然我之前学过一个PHP，也早就听说过thinkphp，但是对thinkphp是一无所知，火速下载官方文档。开始学习！">
+<meta name="keywords" content="PHP,thinkphp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No37-原-ThinkPHP3.2.3学习笔记">
 <meta property="og:url" content="http://blog.54yongf.com/PHP/37.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="说在前面最近接到了一个紧急任务（一个课程设计），要在一周之内做出一个轻型博客系统，必须快速开发，于是我想到了thinkphp。虽然我之前学过一个PHP，也早就听说过thinkphp，但是对thinkphp是一无所知，火速下载官方文档。开始学习！">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-03-16T11:19:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No37-原-ThinkPHP3.2.3学习笔记">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -114,24 +116,24 @@
 		
 		</div>
 		
-		<h2 id="说在前面">说在前面</h2><p><font size="4"><br>最近接到了一个紧急任务（一个课程设计），要在一周之内做出一个轻型博客系统，必须快速开发，于是我想到了thinkphp。虽然我之前学过一个PHP，也早就听说过thinkphp，但是对thinkphp是一无所知，火速下载官方文档。开始学习！</font></p>
+		<h2 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h2><p><font size="4"><br>最近接到了一个紧急任务（一个课程设计），要在一周之内做出一个轻型博客系统，必须快速开发，于是我想到了thinkphp。虽然我之前学过一个PHP，也早就听说过thinkphp，但是对thinkphp是一无所知，火速下载官方文档。开始学习！</font></p>
 <a id="more"></a>
-<h2 id="thinkphp学习笔记">thinkphp学习笔记</h2><font size="4">
+<h2 id="thinkphp学习笔记"><a href="#thinkphp学习笔记" class="headerlink" title="thinkphp学习笔记"></a>thinkphp学习笔记</h2><font size="4">
 
 <ol>
 <li>获取变量I方法的变量类型、变量名和点之间不能有空格，否则出错</li>
 <li>空操作是指系统在找不到请求的操作方法的时候，会定位到空操作_empty方法来执行，利用这个机制，我们可以实现错误页面和一些URL的优化。</li>
-<li>假设访问的链接是<a href="http://localhost/thinkphp/index.php/Home/City/beijing/，如果你修改了默认的操作方法后缀：`&#39;ACTION_SUFFIX" target="_blank" rel="external">http://localhost/thinkphp/index.php/Home/City/beijing/，如果你修改了默认的操作方法后缀：`&#39;ACTION_SUFFIX</a>‘ =&gt; ‘Action’`，然后你想要利用_empty方法输出beijing这个参数（实际上thinkphp一开始认为这是操作方法），那么，_empty($city)方法获取的$city是beijingAction而不是你想要的beijing，这是因为thinkphp默认beijing是操作方法，自动加上了后缀Action。这时，你可以通过thinkphp内置的ACTION_NAME获取beijing！</li>
+<li>假设访问的链接是<a href="http://localhost/thinkphp/index.php/Home/City/beijing/，如果你修改了默认的操作方法后缀：`&#39;ACTION_SUFFIX&#39;" target="_blank" rel="noopener">http://localhost/thinkphp/index.php/Home/City/beijing/，如果你修改了默认的操作方法后缀：`&#39;ACTION_SUFFIX&#39;</a> =&gt; ‘Action’`，然后你想要利用_empty方法输出beijing这个参数（实际上thinkphp一开始认为这是操作方法），那么，_empty($city)方法获取的$city是beijingAction而不是你想要的beijing，这是因为thinkphp默认beijing是操作方法，自动加上了后缀Action。这时，你可以通过thinkphp内置的ACTION_NAME获取beijing！</li>
 <li>如果在某个模型类里面定义了connection属性的话（数组、DSN均可），则实例化该自定义模型的时候会采用定义的数据库连接信息，而不是配置文件中设置的默认连接信息，通常用于某些数据表位于当前数据库连接之外的其它数据库。</li>
 <li>需要注意的是，ThinkPHP的数据库连接的惰性的，所以并不是在实例化的时候就连接数据库，而是在有实际的数据操作的时候才会去连接数据库（额外的情况是，在系统第一次实例化模型的时候，会自动连接数据库获取相关模型类对应的数据表的字段信息）。</li>
 <li>where方法的用法是ThinkPHP查询语言的精髓，也是ThinkPHP ORM的重要组成部分和亮点所在，可以完成包括普通查询、表达式查询、快捷查询、区间查询、组合查询在内的查询操作。使用字符串条件的时候，建议配合预处理机制，确保更加安全。</li>
 <li>一般情况下，无需调用table方法，默认会自动获取当前模型对应或者定义的数据表。</li>
 <li>thinkphp中Include标签支持在包含文件的同时传入参数，但是要注意！使用变量时用[]符号把变量名包起来（<font color="red">不包括$符号！</font>）</li>
-<li>如果插入数据时提示Field <em>*</em> doesn’t have a default value，可以是字段名有问题，有么拼错了，要么是大小写的问题（比如全部换成大写或小写试试？）</li>
+<li>如果插入数据时提示Field *** doesn’t have a default value，可以是字段名有问题，有么拼错了，要么是大小写的问题（比如全部换成大写或小写试试？）</li>
 <li>给模板传递变量数组，比如<code>$this-&gt;assign($data)</code>，这里$data是一个数组（$data[‘time’], $data[‘user’]），有两个属性。那么，在模板中，可以直接使用{$time}、{$user}来输出值。注意别写成{$data.time}了哦！</li>
 <li>在thinkphp中使用jQuery的ajax，注意参数正确。最后，如果觉得代码实在没错，重启下服务器试试？</li>
 </ol>
-<h2 id="再贴一下thinkphp官方开发规范">再贴一下thinkphp官方开发规范</h2><font size="4">
+<h2 id="再贴一下thinkphp官方开发规范"><a href="#再贴一下thinkphp官方开发规范" class="headerlink" title="再贴一下thinkphp官方开发规范"></a>再贴一下thinkphp官方开发规范</h2><font size="4">
 
 <ol>
 <li>类文件都是以.class.php为后缀（这里是指的ThinkPHP内部使用的类库文件，不代表外部加载的类库文件），使用驼峰法命名，并且首字母大写，例如 DbMysql.class.php；</li>
@@ -145,12 +147,12 @@
 <li>以双下划线“<strong>”打头的函数或方法作为魔法方法，例如 </strong>call 和 __autoload；</li>
 <li>常量以大写字母和下划线命名，例如 HAS_ONE和 MANY_TO_MANY；</li>
 <li>配置参数以大写字母和下划线命名，例如HTML_CACHE_ON；</li>
-<li>语言变量以大写字母和下划线命名，例如MY_LANG，以下划线打头的语言变量通常用于系统语言变量，例如 _CLASS_NOT<em>EXIST</em>；</li>
+<li>语言变量以大写字母和下划线命名，例如MY_LANG，以下划线打头的语言变量通常用于系统语言变量，例如 _CLASS_NOT_EXIST_；</li>
 <li>对变量的命名没有强制的规范，可以根据团队规范来进行；</li>
 <li>ThinkPHP的模板文件默认是以.html 为后缀（可以通过配置修改）；</li>
 <li>数据表和字段采用小写加下划线方式命名，并注意字段名不要以下划线开头，例如 think_user 表和 user_name字段是正确写法，类似 _username 这样的数据表字段可能会被过滤。</li>
 </ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 </font></font>
 	</div>
 		<footer class="article-footer clearfix">
@@ -307,10 +309,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -463,58 +465,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

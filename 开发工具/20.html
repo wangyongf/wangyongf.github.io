@@ -4,38 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No20-原-破解完VisualAssist后VisualStudio打不开了的解决办法 | Scott Wang&#39;s blog</title>
+    <title>No20-原-破解完VisualAssist后VisualStudio打不开了的解决办法 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="先说说软件环境
-Windows10
-Visual Studio 2015
-Visual Assist X 2058">
+    <meta name="description" content="先说说软件环境 Windows10 Visual Studio 2015 Visual Assist X 2058">
+<meta name="keywords" content="Visual Studio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No20-原-破解完VisualAssist后VisualStudio打不开了的解决办法">
 <meta property="og:url" content="http://blog.54yongf.com/开发工具/20.html">
-<meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="先说说软件环境
-Windows10
-Visual Studio 2015
-Visual Assist X 2058">
+<meta property="og:site_name" content="移动开发技术小黑屋">
+<meta property="og:description" content="先说说软件环境 Windows10 Visual Studio 2015 Visual Assist X 2058">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png">
 <meta property="og:updated_time" content="2015-11-20T08:15:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No20-原-破解完VisualAssist后VisualStudio打不开了的解决办法">
-<meta name="twitter:description" content="先说说软件环境
-Windows10
-Visual Studio 2015
-Visual Assist X 2058">
+<meta name="twitter:description" content="先说说软件环境 Windows10 Visual Studio 2015 Visual Assist X 2058">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -44,7 +38,7 @@ Visual Assist X 2058">
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -63,12 +57,12 @@ Visual Assist X 2058">
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -125,21 +119,21 @@ Visual Assist X 2058">
 		
 		</div>
 		
-		<h2 id="先说说软件环境">先说说软件环境</h2><ul>
+		<h2 id="先说说软件环境"><a href="#先说说软件环境" class="headerlink" title="先说说软件环境"></a>先说说软件环境</h2><ul>
 <li>Windows10</li>
 <li>Visual Studio 2015</li>
 <li>Visual Assist X 2058</li>
 </ul>
 <a id="more"></a>
-<h2 id="出现的问题">出现的问题</h2><p><font size="4"><br>在按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息如下：</font></p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The security <span class="keyword">key</span> <span class="keyword">for</span> this program currently stored <span class="keyword">on</span> your system does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> this version <span class="keyword">of</span> the program.<span class="keyword">Select</span> Yes <span class="keyword">to</span> enter a <span class="keyword">new</span> <span class="keyword">key</span>, <span class="keyword">or</span> No <span class="keyword">to</span> revert <span class="keyword">to</span> the <span class="keyword">default</span> setting (<span class="keyword">if</span> any)</span><br></pre></td></tr></table></figure>
+<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><p><font size="4"><br>在按照网上的破解教程，安装Visual Assist X 2058并且破解之后，Visual Studio 2015打不开了，错误信息如下：</font></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The security key <span class="keyword">for</span> this program currently stored on your<span class="built_in"> system </span>does <span class="keyword">not</span> appear <span class="keyword">to</span> be valid <span class="keyword">for</span> this version of the program.Select <span class="literal">Yes</span> <span class="keyword">to</span> enter a new key, <span class="keyword">or</span> <span class="literal">No</span> <span class="keyword">to</span> revert <span class="keyword">to</span> the<span class="built_in"> default </span>setting (<span class="keyword">if</span> any)</span><br></pre></td></tr></table></figure>
 <p><font size="4">不多说了，上图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201727.png" alt="错误提示"></font></p>
 <p><font size="4">这不是关键，关键是，点击Yes或No之后，直接就<font color="red">失去响应</font>了！点Cancel也没用。崩溃中。。。网上找不到类似的资料，最重要的是–Visual Studio打不开了！我的天，难道要重装？！不，我是拒绝的，这鬼东西重装太久了，Oh My God！</font></p>
-<h2 id="解决办法">解决办法</h2><p><font size="4"><br>最后，经过我坚持不懈的努力，终于找到了解决办法：</font></p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p><font size="4"><br>最后，经过我坚持不懈的努力，终于找到了解决办法：</font></p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">连续点击<span class="keyword">Cancel</span>四次！</span><br></pre></td></tr></table></figure>
 <p><font size="4"><br>OK，Visual Studio可以打开了，但是Visual Assist X并不能用，因为它是灰色的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No20-2015-11-18_201826.png" alt="Visual Assist X"></font></p>
 <p>不过不要紧，还是等以后买个正版的吧。要想以后启动Visual Studio的时候不出现这个问题，就赶紧在VS里面把Visual Assist X卸载吧。<br>其实Visual Studio 2015的智能提示功能已经很不错了。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -296,10 +290,10 @@ Visual Assist X 2058">
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -452,58 +446,68 @@ Visual Assist X 2058">
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

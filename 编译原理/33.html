@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No33-原-根据语义规则产生布尔表达式三地址代码 | Scott Wang&#39;s blog</title>
+    <title>No33-原-根据语义规则产生布尔表达式三地址代码 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
+<meta name="keywords" content="语义规则,编译原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No33-原-根据语义规则产生布尔表达式三地址代码">
 <meta property="og:url" content="http://blog.54yongf.com/编译原理/33.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%A0%91.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97.png">
@@ -24,10 +26,11 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No33-原-根据语义规则产生布尔表达式三地址代码">
 <meta name="twitter:description" content="问题考虑如下表达式：a &amp;lt; b or c &amp;lt; d and e &amp;lt; f假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -36,7 +39,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -55,12 +58,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -117,16 +120,16 @@
 		
 		</div>
 		
-		<h2 id="问题">问题</h2><p><font size="4"><br>考虑如下表达式：a &lt; b or c &lt; d and e &lt; f<br><br>假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）<br></font></p>
+		<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><font size="4"><br>考虑如下表达式：a &lt; b or c &lt; d and e &lt; f<br><br>假定整个表达式的真假出口已分别置为Ltrue和Lfalse，则按表下面的语义规则生成的三地址代码为？（假定and优先级高于or）<br></font></p>
 <a id="more"></a>
-<h2 id="产生布尔表达式三地址代码的语义规则">产生布尔表达式三地址代码的语义规则</h2><p><font size="4"><br>语义规则如下：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" alt="布尔表达式"></font></p>
-<h2 id="生成三地址中间代码的步骤">生成三地址中间代码的步骤</h2><p><font size="4"><br>生成三地址中间代码的过程如下：<br></font></p>
-<h3 id="语法树">语法树</h3><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%A0%91.png" alt="语法分析树"></p>
-<h3 id="对表达式进行归约">对表达式进行归约</h3><p><font size="4"><br>根据产生式，语义规则，进行相应的语义动作：<br></font></p>
+<h2 id="产生布尔表达式三地址代码的语义规则"><a href="#产生布尔表达式三地址代码的语义规则" class="headerlink" title="产生布尔表达式三地址代码的语义规则"></a>产生布尔表达式三地址代码的语义规则</h2><p><font size="4"><br>语义规则如下：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" alt="布尔表达式"></font></p>
+<h2 id="生成三地址中间代码的步骤"><a href="#生成三地址中间代码的步骤" class="headerlink" title="生成三地址中间代码的步骤"></a>生成三地址中间代码的步骤</h2><p><font size="4"><br>生成三地址中间代码的过程如下：<br></font></p>
+<h3 id="语法树"><a href="#语法树" class="headerlink" title="语法树"></a>语法树</h3><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%A0%91.png" alt="语法分析树"></p>
+<h3 id="对表达式进行归约"><a href="#对表达式进行归约" class="headerlink" title="对表达式进行归约"></a>对表达式进行归约</h3><p><font size="4"><br>根据产生式，语义规则，进行相应的语义动作：<br></font></p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No33%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97.png" alt="语义计算"></p>
-<h3 id="三地址代码">三地址代码</h3><p><font size="4"><br>生成的三地址代码为：<br></font></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> a &lt; b <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> L2</span><br><span class="line">L2: <span class="keyword">if</span> c &lt; d <span class="keyword">goto</span> L1</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br><span class="line">L1: <span class="keyword">if</span> e &lt; f <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br></pre></td></tr></table></figure>
-<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h3 id="三地址代码"><a href="#三地址代码" class="headerlink" title="三地址代码"></a>三地址代码</h3><p><font size="4"><br>生成的三地址代码为：<br></font></p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> a &lt; b <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> L2</span><br><span class="line">L2: <span class="keyword">if</span> c &lt; d <span class="keyword">goto</span> L1</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br><span class="line">L1: <span class="keyword">if</span> e &lt; f <span class="keyword">goto</span> Ltrue</span><br><span class="line">    <span class="keyword">goto</span> Lfalse</span><br></pre></td></tr></table></figure>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -140,7 +143,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/编译原理/">编译原理</a><a href="/tags/语义规则/">语义规则</a>
+  <span></span> <a href="/tags/语义规则/">语义规则</a><a href="/tags/编译原理/">编译原理</a>
   </div>
 
 </div>
@@ -283,10 +286,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -439,58 +442,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

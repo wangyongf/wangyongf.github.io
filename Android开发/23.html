@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No23-原-SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿 | Scott Wang&#39;s blog</title>
+    <title>No23-原-SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,21 +12,24 @@
 
     
     <meta name="description" content="一点说道这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。">
+<meta name="keywords" content="Android SDK,翻墙">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No23-原-SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿">
 <meta property="og:url" content="http://blog.54yongf.com/Android开发/23.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="一点说道这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132839.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132746.png">
 <meta property="og:updated_time" content="2015-11-24T05:09:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No23-原-SDK更新失败无法翻墙？这是最笨的办法--仅供娱乐，请勿模仿">
 <meta name="twitter:description" content="一点说道这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132839.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -35,7 +38,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -54,12 +57,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -116,22 +119,22 @@
 		
 		</div>
 		
-		<h2 id="一点说道">一点说道</h2><p><font size="4"><br>这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。</font></p>
+		<h2 id="一点说道"><a href="#一点说道" class="headerlink" title="一点说道"></a>一点说道</h2><p><font size="4"><br>这种方法的成功的前提是你的浏览器能够翻墙（好像是吧？），本文仅供娱乐，如有雷同，纯属巧合。</font></p>
 <a id="more"></a>
-<h2 id="更新SDK">更新SDK</h2><p><font size="4"><br>安装完Android Studio之后，更新SDK，因为我的SDK不是最新的。然而，在我大天朝，不翻墙是不行的，我电脑上开了『蓝灯』，于是在SDK Manager中将HTTP proxy设置为<code>127.0.0.1:16823</code>，然而，报错了。使用正常的网络？我这可怜的校园网更悲催，还是报错–连不上！  但是，我的浏览器是可以直接从墙外下载的。</font></p>
+<h2 id="更新SDK"><a href="#更新SDK" class="headerlink" title="更新SDK"></a>更新SDK</h2><p><font size="4"><br>安装完Android Studio之后，更新SDK，因为我的SDK不是最新的。然而，在我大天朝，不翻墙是不行的，我电脑上开了『蓝灯』，于是在SDK Manager中将HTTP proxy设置为<code>127.0.0.1:16823</code>，然而，报错了。使用正常的网络？我这可怜的校园网更悲催，还是报错–连不上！  但是，我的浏览器是可以直接从墙外下载的。</font></p>
 <blockquote>
-<p>Failed to fetch URL <a href="http://dl-ssl.google.com/android/repository/addons_list" target="_blank" rel="external">http://dl-ssl.google.com/android/repository/addons_list</a></p>
+<p>Failed to fetch URL <a href="http://dl-ssl.google.com/android/repository/addons_list" target="_blank" rel="noopener">http://dl-ssl.google.com/android/repository/addons_list</a></p>
 </blockquote>
 <p>最后，想了个笨办法，你不是要这两个链接么，反正浏览器是可以翻墙的，不如直接在浏览器中打开这两个链接，看看是什么情况。<br>浏览器访问：</p>
 <blockquote>
-<p><a href="https://dl-ssl.google.com/android/repository/repository.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/repository.xml</a><br><a href="https://dl-ssl.google.com/android/repository/addon.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/addon.xml</a></p>
+<p><a href="https://dl-ssl.google.com/android/repository/repository.xml" target="_blank" rel="noopener">https://dl-ssl.google.com/android/repository/repository.xml</a><br><a href="https://dl-ssl.google.com/android/repository/addon.xml" target="_blank" rel="noopener">https://dl-ssl.google.com/android/repository/addon.xml</a></p>
 </blockquote>
 <p>发现，它们是这样的：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132839.png" alt="图片1"></p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No23-2015-11-24_132746.png" alt="图片2"></p>
 <p><font size="4"><br>不知你有否发现其中之玄机→_→</font></p>
-<p>找到xml节点下的 google_apis-3-r03.zip platform-tools_r09-windows.zip 各种API<br>然后<a href="https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip</a><br>手动下载。</p>
-<h2 id="最后">最后</h2><p><font size="4"><br>是不是很鸡贼？再次申明，本文仅供娱乐哦    ╮(╯3╰)╭   </font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<p>找到xml节点下的 google_apis-3-r03.zip platform-tools_r09-windows.zip 各种API<br>然后<a href="https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip" target="_blank" rel="noopener">https://dl-ssl.google.com/android/repository/platform-tools_r09-windows.zip</a><br>手动下载。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p><font size="4"><br>是不是很鸡贼？再次申明，本文仅供娱乐哦    ╮(╯3╰)╭   </font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -288,10 +291,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -444,58 +447,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

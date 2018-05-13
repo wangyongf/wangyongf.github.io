@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No52-【原】-Android开发常见问题汇总 | Scott Wang&#39;s blog</title>
+    <title>No52-【原】-Android开发常见问题汇总 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,20 +12,23 @@
 
     
     <meta name="description" content="前言在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.">
+<meta name="keywords" content="Android开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No52-【原】-Android开发常见问题汇总">
 <meta property="og:url" content="http://blog.54yongf.com/Android开发/52.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="前言在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No52-Android%E4%B8%AD%E6%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.png">
 <meta property="og:updated_time" content="2016-08-17T22:35:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No52-【原】-Android开发常见问题汇总">
 <meta name="twitter:description" content="前言在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No52-Android%E4%B8%AD%E6%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -34,7 +37,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -53,12 +56,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -111,24 +114,24 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_Studio的不支持HttpClient的问题"><span class="toc-number">2.</span> <span class="toc-text">Android Studio的不支持HttpClient的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Android的滑屏问题,scrollTo()和scrollBy()的纠结"><span class="toc-number">3.</span> <span class="toc-text">关于Android的滑屏问题,scrollTo()和scrollBy()的纠结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于SQLiteOpenHelper这个辅助类"><span class="toc-number">4.</span> <span class="toc-text">关于SQLiteOpenHelper这个辅助类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio的不支持HttpClient的问题"><span class="toc-number">2.</span> <span class="toc-text">Android Studio的不支持HttpClient的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Android的滑屏问题-scrollTo-和scrollBy-的纠结"><span class="toc-number">3.</span> <span class="toc-text">关于Android的滑屏问题,scrollTo()和scrollBy()的纠结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于SQLiteOpenHelper这个辅助类"><span class="toc-number">4.</span> <span class="toc-text">关于SQLiteOpenHelper这个辅助类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="前言">前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.</font></p>
+		<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><font size="4"><br>在Android开发中,有各种各样的坑,本文为一些问题提供一些解决思路.</font></p>
 <a id="more"></a>
-<h2 id="Android_Studio的不支持HttpClient的问题">Android Studio的不支持HttpClient的问题</h2><p><font size="4"><br>在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:</font></p>
+<h2 id="Android-Studio的不支持HttpClient的问题"><a href="#Android-Studio的不支持HttpClient的问题" class="headerlink" title="Android Studio的不支持HttpClient的问题"></a>Android Studio的不支持HttpClient的问题</h2><p><font size="4"><br>在Android高版本中,移除了对HttpClient的支持,如果项目中使用之,会报错,解决方法有二:</font></p>
 <ol>
 <li><p>添加legacy支持,在build.gradle中添加,</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">android</span> &#123;</span><br><span class="line">    <span class="title">useLibrary</span> <span class="string">'org.apache.http.legacy'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">android</span> &#123;</span><br><span class="line">    <span class="attribute">useLibrary</span> <span class="string">'org.apache.http.legacy'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将项目的SDK降到API21或者以下.</p>
 </li>
 </ol>
-<h2 id="关于Android的滑屏问题,scrollTo()和scrollBy()的纠结">关于Android的滑屏问题,scrollTo()和scrollBy()的纠结</h2><p><font size="4"><br>相信很多童鞋和我一样,都曾经被这个问题搞得焦头烂额,不懂啊,也一定看过很多的文章,但是越看越糊涂,因为信息太爆炸,互联网的信息真真假假,对对错错,有很多错误的观点一直在误导我们,所以尽量看一些大V写的文章比较好.扯远了,快回来.</font></p>
+<h2 id="关于Android的滑屏问题-scrollTo-和scrollBy-的纠结"><a href="#关于Android的滑屏问题-scrollTo-和scrollBy-的纠结" class="headerlink" title="关于Android的滑屏问题,scrollTo()和scrollBy()的纠结"></a>关于Android的滑屏问题,scrollTo()和scrollBy()的纠结</h2><p><font size="4"><br>相信很多童鞋和我一样,都曾经被这个问题搞得焦头烂额,不懂啊,也一定看过很多的文章,但是越看越糊涂,因为信息太爆炸,互联网的信息真真假假,对对错错,有很多错误的观点一直在误导我们,所以尽量看一些大V写的文章比较好.扯远了,快回来.</font></p>
 <p>关于滑屏问题,我觉得比较好的是:</p>
 <ol>
-<li><a href="http://blog.csdn.net/qinjuning/article/details/7247126" title="关于Android的滑屏问题" target="_blank" rel="external"> Android中滑屏初探 —- scrollTo 以及 scrollBy方法使用说明</a></li>
+<li><a href="http://blog.csdn.net/qinjuning/article/details/7247126" title="关于Android的滑屏问题" target="_blank" rel="noopener"> Android中滑屏初探 —- scrollTo 以及 scrollBy方法使用说明</a></li>
 </ol>
 <p>下面说一下我的一些见解,如有问题,请留言:</p>
 <ol>
@@ -141,8 +144,8 @@
 </ol>
 <p>在理解的时候,可以以视图原点(不是屏幕的左上角!)为参考点.以scrollTo(0, 100)为例,调用这个方法之后,View是不动的,动的是View原点处显示的内容,也就是移动画布,这里应该是显示画布(0, 100)处的内容,需要注意的是,画布的原点和View的原点是一样的,不过画布的原点在变化(因为画布在移动),可以参考下图,scrollTo(0, 100)的实际效果就是将画布上移,相当于隐藏了一部分内容<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No52-Android%E4%B8%AD%E6%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.png" alt="图片说明"><br>6.关于scrollBy<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明：在当前视图内容继续偏移<span class="comment">(x , y)</span>个单位，显示<span class="comment">(可视)</span>区域也跟着偏移<span class="comment">(x,y)</span>个单位。</span><br></pre></td></tr></table></figure></p>
 <p>只要理解了scrollTo,这个应当也不难理解,这是相对移动,而不是scrollTo的绝对移动,一点差别而已.</p>
-<h2 id="关于SQLiteOpenHelper这个辅助类">关于SQLiteOpenHelper这个辅助类</h2><p><font size="4"><br>getReadableDatabase()和 getWriteableDatabase()都可以得到一个可既可以读又可以写的数据库对象，不同的是，当磁盘空间满了之后， getReadableDatabase()得到的是一个只读的对象，而 getWriteableDatabase()则会抛出异常。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+<h2 id="关于SQLiteOpenHelper这个辅助类"><a href="#关于SQLiteOpenHelper这个辅助类" class="headerlink" title="关于SQLiteOpenHelper这个辅助类"></a>关于SQLiteOpenHelper这个辅助类</h2><p><font size="4"><br>getReadableDatabase()和 getWriteableDatabase()都可以得到一个可既可以读又可以写的数据库对象，不同的是，当磁盘空间满了之后， getReadableDatabase()得到的是一个只读的对象，而 getWriteableDatabase()则会抛出异常。</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -263,7 +266,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_Studio的不支持HttpClient的问题"><span class="toc-number">2.</span> <span class="toc-text">Android Studio的不支持HttpClient的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Android的滑屏问题,scrollTo()和scrollBy()的纠结"><span class="toc-number">3.</span> <span class="toc-text">关于Android的滑屏问题,scrollTo()和scrollBy()的纠结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于SQLiteOpenHelper这个辅助类"><span class="toc-number">4.</span> <span class="toc-text">关于SQLiteOpenHelper这个辅助类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio的不支持HttpClient的问题"><span class="toc-number">2.</span> <span class="toc-text">Android Studio的不支持HttpClient的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Android的滑屏问题-scrollTo-和scrollBy-的纠结"><span class="toc-number">3.</span> <span class="toc-text">关于Android的滑屏问题,scrollTo()和scrollBy()的纠结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于SQLiteOpenHelper这个辅助类"><span class="toc-number">4.</span> <span class="toc-text">关于SQLiteOpenHelper这个辅助类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">5.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -299,10 +302,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -455,58 +458,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

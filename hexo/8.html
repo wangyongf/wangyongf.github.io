@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No8-原-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图 | Scott Wang&#39;s blog</title>
+    <title>No8-原-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="开始使用七牛云储存现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。">
+<meta name="keywords" content="hexo,七牛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No8-原-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图">
 <meta property="og:url" content="http://blog.54yongf.com/hexo/8.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="开始使用七牛云储存现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_202745.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_202933.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_203031.png">
@@ -28,10 +30,11 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No8-原-如何借助七牛云对图片进行简单处理，制作图片水印以及缩略图">
 <meta name="twitter:description" content="开始使用七牛云储存现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_202745.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -40,7 +43,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -59,12 +62,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -121,9 +124,9 @@
 		
 		</div>
 		
-		<h2 id="开始使用七牛云储存">开始使用七牛云储存</h2><p><font size="4">现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。</font></p>
+		<h2 id="开始使用七牛云储存"><a href="#开始使用七牛云储存" class="headerlink" title="开始使用七牛云储存"></a>开始使用七牛云储存</h2><p><font size="4">现在越来越多的人开始使用七牛云储存来存放自己的图片、缓存等，今天，我们来探讨一下如何使用七牛来定制输出的图片，制作图片水印，以及输出缩略图。</font></p>
 <a id="more"></a>
-<h2 id="步骤">步骤</h2><p><font size="4"></font></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p><font size="4"></font></p>
 <ol>
 <li><p>登录七牛，进入后台管理界面，选择一个已有的空间。<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_202745.png" alt="登录七牛云储存"></p>
 </li>
@@ -133,9 +136,9 @@
 </li>
 </ol>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/2015-11-12_203045.png" alt="设置水印"></p>
-<h2 id="如何引用带样式的图片">如何引用带样式的图片</h2><p><font size="4">在得到一个样式之后，会有一段字符串。形如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205134.png" alt="图片样式"></font></p>
+<h2 id="如何引用带样式的图片"><a href="#如何引用带样式的图片" class="headerlink" title="如何引用带样式的图片"></a>如何引用带样式的图片</h2><p><font size="4">在得到一个样式之后，会有一段字符串。形如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205134.png" alt="图片样式"></font></p>
 <p><font size="4">在图中的样式之后的字符串，就是代表着这个样式。<br>使用图片时，我们是引用图片的外链：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205150.png" alt="外链"><br>那么，如何应用这个样式呢？很简单，在外链之后加一个<code>？</code>，然后再加上<code>样式</code>这段字符串。举个栗子：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No8-2015-11-12_205748.png" alt="如何应用样式"><br>是不是很简单？</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -292,10 +295,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -448,58 +451,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No25-原-说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？ | Scott Wang&#39;s blog</title>
+    <title>No25-原-说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？ | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="关于CPU虚拟化什么是CPU虚拟化？">
+<meta name="keywords" content="虚拟化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No25-原-说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？">
 <meta property="og:url" content="http://blog.54yongf.com/杂谈/25.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="关于CPU虚拟化什么是CPU虚拟化？">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010338.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010729.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010939.png">
@@ -24,10 +26,11 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No25-原-说一说开启Intel的CPU虚拟化的问题：明明开了，可是还是有问题？">
 <meta name="twitter:description" content="关于CPU虚拟化什么是CPU虚拟化？">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010338.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -36,7 +39,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -55,12 +58,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -117,12 +120,12 @@
 		
 		</div>
 		
-		<h2 id="关于CPU虚拟化">关于CPU虚拟化</h2><p><font size="4"><br>什么是CPU虚拟化？</font></p>
+		<h2 id="关于CPU虚拟化"><a href="#关于CPU虚拟化" class="headerlink" title="关于CPU虚拟化"></a>关于CPU虚拟化</h2><p><font size="4"><br>什么是CPU虚拟化？</font></p>
 <a id="more"></a>
-<p>在计算机中，虚拟化（英语：Virtualization）是一种资源管理技术，是将计算机的各种实体资源，如服务器、网络、内存及存储等，予以抽象、转换后呈现出来，打破实体结构间的不可切割的障碍，使用户可以比原本的组态更好的方式来应用这些资源。这些资源的新虚拟部份是不受现有资源的架设方式，地域或物理组态所限制。一般所指的虚拟化资源包括计算能力和资料存储。（以上资料来自<a href="http://baike.baidu.com/link?url=Mas0pVcsdr85LbyUuvlxjEKRVbQDjq3IGyFtppFDVfFaq479_DaiQlphu1_jX9Fn" target="_blank" rel="external">百度百科</a>）</p>
-<h2 id="什么时候用到CPU虚拟化">什么时候用到CPU虚拟化</h2><p><font size="4"><br>就我个人而言，两个地方：安装虚拟机和Android开发的时候。</font></p>
-<h2 id="如何开启CPU虚拟化">如何开启CPU虚拟化</h2><p><font size="4"><br>不同的电脑略有不同，都是开机时进入BIOS设置界面，找到VT-x这一项，改成Enable（因为一般电脑都是默认关闭|Disable虚拟化的）。然后保存，重启即可。</font></p>
-<h2 id="可能遇到的问题">可能遇到的问题</h2><font size="4">
+<p>在计算机中，虚拟化（英语：Virtualization）是一种资源管理技术，是将计算机的各种实体资源，如服务器、网络、内存及存储等，予以抽象、转换后呈现出来，打破实体结构间的不可切割的障碍，使用户可以比原本的组态更好的方式来应用这些资源。这些资源的新虚拟部份是不受现有资源的架设方式，地域或物理组态所限制。一般所指的虚拟化资源包括计算能力和资料存储。（以上资料来自<a href="http://baike.baidu.com/link?url=Mas0pVcsdr85LbyUuvlxjEKRVbQDjq3IGyFtppFDVfFaq479_DaiQlphu1_jX9Fn" target="_blank" rel="noopener">百度百科</a>）</p>
+<h2 id="什么时候用到CPU虚拟化"><a href="#什么时候用到CPU虚拟化" class="headerlink" title="什么时候用到CPU虚拟化"></a>什么时候用到CPU虚拟化</h2><p><font size="4"><br>就我个人而言，两个地方：安装虚拟机和Android开发的时候。</font></p>
+<h2 id="如何开启CPU虚拟化"><a href="#如何开启CPU虚拟化" class="headerlink" title="如何开启CPU虚拟化"></a>如何开启CPU虚拟化</h2><p><font size="4"><br>不同的电脑略有不同，都是开机时进入BIOS设置界面，找到VT-x这一项，改成Enable（因为一般电脑都是默认关闭|Disable虚拟化的）。然后保存，重启即可。</font></p>
+<h2 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h2><font size="4">
 
 <ol>
 <li>如何进入BIOS<br>答：请根据自己的电脑型号百度或者Google，也可以在刚按下开机键之后按Esc进入。</li>
@@ -133,7 +136,7 @@
 </li>
 <li>本文所说均为Intel的CPU下的操作，AMD不在讨论范围之内。</li>
 </ol>
-<h2 id="如何关闭360的Intel-VT核晶防护引擎">如何关闭360的Intel-VT核晶防护引擎</h2><p><font size="4"><br>使用的360安全卫士主程序版本：10.2.0.1003</font></p>
+<h2 id="如何关闭360的Intel-VT核晶防护引擎"><a href="#如何关闭360的Intel-VT核晶防护引擎" class="headerlink" title="如何关闭360的Intel-VT核晶防护引擎"></a>如何关闭360的Intel-VT核晶防护引擎</h2><p><font size="4"><br>使用的360安全卫士主程序版本：10.2.0.1003</font></p>
 <p>操作步骤如下：</p>
 <ol>
 <li>打开360安全卫士，找到主界面的『安全防护中心』<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010338.png" alt="enter description here"></li>
@@ -141,14 +144,14 @@
 <li>确保其处于关闭状态<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No25-2015-11-28_010939.png" alt="![enter description here][4]"></li>
 <li>OK了！</li>
 </ol>
-<h2 id="关于360的Intel-VT核晶防护引擎">关于360的Intel-VT核晶防护引擎</h2><p><font size="4"><br>由于硬件虚拟化技术的限制，核晶防护引擎不能与部分虚拟机等软件同时开启，否则可能出现一些兼容性问题，先列出已知的问题供您参考：</font></p>
+<h2 id="关于360的Intel-VT核晶防护引擎"><a href="#关于360的Intel-VT核晶防护引擎" class="headerlink" title="关于360的Intel-VT核晶防护引擎"></a>关于360的Intel-VT核晶防护引擎</h2><p><font size="4"><br>由于硬件虚拟化技术的限制，核晶防护引擎不能与部分虚拟机等软件同时开启，否则可能出现一些兼容性问题，先列出已知的问题供您参考：</font></p>
 <ol>
 <li>开启核晶防护引擎的情况下，vmware等虚拟机无法运行。</li>
 <li>开启核晶防护引擎的情况下，运行安卓模拟器比如bluestack，可能出现蓝屏等异常。</li>
 <li>在INTEL 的CPU的环境上，360卫士和腾迅视频共存时，如果选择临时关闭卫士的核晶防护，正在运行的腾迅视频可能崩溃</li>
 </ol>
 <p>因此，如果你有上述一些问题也可以参照解决哦 ^_^  </p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 </font>
 	</div>
 		<footer class="article-footer clearfix">
@@ -305,10 +308,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -461,58 +464,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

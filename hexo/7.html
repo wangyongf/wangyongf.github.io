@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No7-原-谈谈hexo博客写作中的图片问题 | Scott Wang&#39;s blog</title>
+    <title>No7-原-谈谈hexo博客写作中的图片问题 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="hexo博客的图片问题自从将博客搬到hexo上之后，感觉一直很好，很喜欢这种简洁的博客发布方式，但是，在开始的时候，我有点犯愁，markdown中的图片放哪里。有两类解决方案，一种是将图片随博客一起发布到服务器上，另外一种是使用图床的形式，将所需的图片先上传到网络上，然后通过外链引用。">
+<meta name="keywords" content="hexo,markdown,七牛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No7-原-谈谈hexo博客写作中的图片问题">
 <meta property="og:url" content="http://blog.54yongf.com/hexo/7.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="hexo博客的图片问题自从将博客搬到hexo上之后，感觉一直很好，很喜欢这种简洁的博客发布方式，但是，在开始的时候，我有点犯愁，markdown中的图片放哪里。有两类解决方案，一种是将图片随博客一起发布到服务器上，另外一种是使用图床的形式，将所需的图片先上传到网络上，然后通过外链引用。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-11-12T11:34:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No7-原-谈谈hexo博客写作中的图片问题">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -114,13 +116,13 @@
 		
 		</div>
 		
-		<h2 id="hexo博客的图片问题">hexo博客的图片问题</h2><p><font size="4">自从将博客搬到hexo上之后，感觉一直很好，很喜欢这种简洁的博客发布方式，但是，在开始的时候，我有点犯愁，markdown中的图片放哪里。有两类解决方案，一种是将图片随博客一起发布到服务器上，另外一种是使用图床的形式，将所需的图片先上传到网络上，然后通过外链引用。</font></p>
+		<h2 id="hexo博客的图片问题"><a href="#hexo博客的图片问题" class="headerlink" title="hexo博客的图片问题"></a>hexo博客的图片问题</h2><p><font size="4">自从将博客搬到hexo上之后，感觉一直很好，很喜欢这种简洁的博客发布方式，但是，在开始的时候，我有点犯愁，markdown中的图片放哪里。有两类解决方案，一种是将图片随博客一起发布到服务器上，另外一种是使用图床的形式，将所需的图片先上传到网络上，然后通过外链引用。</font></p>
 <a id="more"></a>
-<h2 id="将图片随博客一起发布">将图片随博客一起发布</h2><p><font size="4">我们可以将图片和博客一起发布，这也是很自然的一件事。但是，有个问题，可能比较耗费空间（加入空间不大的话），因为，随着你写的博文越来越多，图片也会越来越多，像我这样将博客托管在gitcafe上的，空间才512M，如何够用。</font></p>
+<h2 id="将图片随博客一起发布"><a href="#将图片随博客一起发布" class="headerlink" title="将图片随博客一起发布"></a>将图片随博客一起发布</h2><p><font size="4">我们可以将图片和博客一起发布，这也是很自然的一件事。但是，有个问题，可能比较耗费空间（加入空间不大的话），因为，随着你写的博文越来越多，图片也会越来越多，像我这样将博客托管在gitcafe上的，空间才512M，如何够用。</font></p>
 <p><font size="4">所以，这种方式只适合在博客刚刚开始运作的时候，一旦你决定长期写下去，这样并不好。</font></p>
-<h2 id="使用图床—-专门存储图片的地方">使用图床—-专门存储图片的地方</h2><p><font size="4">我们也可以使用专门的网络空间来存储图片，貌似这样更易于管理。可能你会说，难道网络空间不要钱吗，非也非也，还真的是不要钱。推荐一个，七牛云存储，也就是我现在在用的，可能你也听说过。</font></p>
-<p><font size="4">先说明，七牛并没有给我广告费（事实上，我也还没成长到这个高度→_→），而是真的好用，就目前来说，七牛注册用户有1G的免费空间，如果通过身份认证，手机认证，就有10G的免费空间，够用了吧。不仅体现在体量上，还可以对图片进行处理。比如，图片的放大缩小，图片的的输出格式，图片的各种简单处理，图片文字水印，等等，各种功能，很强大，还可以对图片进行保护，防止盗图，具体功能，可以去<a href="http://qiniu.com" title="七牛云官网" target="_blank" rel="external">七牛官网</a>看看更多详细的介绍。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="使用图床—-专门存储图片的地方"><a href="#使用图床—-专门存储图片的地方" class="headerlink" title="使用图床—-专门存储图片的地方"></a>使用图床—-专门存储图片的地方</h2><p><font size="4">我们也可以使用专门的网络空间来存储图片，貌似这样更易于管理。可能你会说，难道网络空间不要钱吗，非也非也，还真的是不要钱。推荐一个，七牛云存储，也就是我现在在用的，可能你也听说过。</font></p>
+<p><font size="4">先说明，七牛并没有给我广告费（事实上，我也还没成长到这个高度→_→），而是真的好用，就目前来说，七牛注册用户有1G的免费空间，如果通过身份认证，手机认证，就有10G的免费空间，够用了吧。不仅体现在体量上，还可以对图片进行处理。比如，图片的放大缩小，图片的的输出格式，图片的各种简单处理，图片文字水印，等等，各种功能，很强大，还可以对图片进行保护，防止盗图，具体功能，可以去<a href="http://qiniu.com" title="七牛云官网" target="_blank" rel="noopener">七牛官网</a>看看更多详细的介绍。</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -277,10 +279,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -433,58 +435,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

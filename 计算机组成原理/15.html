@@ -4,49 +4,31 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No15-原-用Verilog实现一个桶形移位器 | Scott Wang&#39;s blog</title>
+    <title>No15-原-用Verilog实现一个桶形移位器 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="实验六 桶型移位器
-实验介绍本实验使用Verilog语言设计实现一个32位桶型移位器。
-实验目标
-
-使用ISE软件设计并进行仿真
-学会使用Modelsim
-理解桶型移位器原理，使用logicsim软件搭建一个8位的桶型移位器
-用verilog实现一个32位桶型移位器">
+    <meta name="description" content="实验六 桶型移位器 实验介绍本实验使用Verilog语言设计实现一个32位桶型移位器。 实验目标  使用ISE软件设计并进行仿真 学会使用Modelsim 理解桶型移位器原理，使用logicsim软件搭建一个8位的桶型移位器 用verilog实现一个32位桶型移位器">
+<meta name="keywords" content="计算机组成原理,Verilog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No15-原-用Verilog实现一个桶形移位器">
 <meta property="og:url" content="http://blog.54yongf.com/计算机组成原理/15.html">
-<meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="实验六 桶型移位器
-实验介绍本实验使用Verilog语言设计实现一个32位桶型移位器。
-实验目标
-
-使用ISE软件设计并进行仿真
-学会使用Modelsim
-理解桶型移位器原理，使用logicsim软件搭建一个8位的桶型移位器
-用verilog实现一个32位桶型移位器">
+<meta property="og:site_name" content="移动开发技术小黑屋">
+<meta property="og:description" content="实验六 桶型移位器 实验介绍本实验使用Verilog语言设计实现一个32位桶型移位器。 实验目标  使用ISE软件设计并进行仿真 学会使用Modelsim 理解桶型移位器原理，使用logicsim软件搭建一个8位的桶型移位器 用verilog实现一个32位桶型移位器">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No15-2015-11-14_135914.png">
 <meta property="og:updated_time" content="2015-11-14T05:37:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No15-原-用Verilog实现一个桶形移位器">
-<meta name="twitter:description" content="实验六 桶型移位器
-实验介绍本实验使用Verilog语言设计实现一个32位桶型移位器。
-实验目标
-
-使用ISE软件设计并进行仿真
-学会使用Modelsim
-理解桶型移位器原理，使用logicsim软件搭建一个8位的桶型移位器
-用verilog实现一个32位桶型移位器">
+<meta name="twitter:description" content="实验六 桶型移位器 实验介绍本实验使用Verilog语言设计实现一个32位桶型移位器。 实验目标  使用ISE软件设计并进行仿真 学会使用Modelsim 理解桶型移位器原理，使用logicsim软件搭建一个8位的桶型移位器 用verilog实现一个32位桶型移位器">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No15-2015-11-14_135914.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -55,7 +37,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -74,12 +56,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -132,13 +114,13 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实验六_桶型移位器"><span class="toc-number">1.</span> <span class="toc-text">实验六 桶型移位器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实验介绍"><span class="toc-number">1.1.</span> <span class="toc-text">实验介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验目标"><span class="toc-number">1.2.</span> <span class="toc-text">实验目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验原理"><span class="toc-number">1.3.</span> <span class="toc-text">实验原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Verilog代码"><span class="toc-number">1.4.</span> <span class="toc-text">Verilog代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实验六-桶型移位器"><span class="toc-number">1.</span> <span class="toc-text">实验六 桶型移位器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实验介绍"><span class="toc-number">1.1.</span> <span class="toc-text">实验介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验目标"><span class="toc-number">1.2.</span> <span class="toc-text">实验目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验原理"><span class="toc-number">1.3.</span> <span class="toc-text">实验原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Verilog代码"><span class="toc-number">1.4.</span> <span class="toc-text">Verilog代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="实验六_桶型移位器">实验六 桶型移位器</h2><p><font size="4"></font></p>
-<h3 id="实验介绍">实验介绍</h3><p><font size="4">本实验使用Verilog语言设计实现一个32位桶型移位器。</font></p>
-<h3 id="实验目标">实验目标</h3><p><font size="4"></font></p>
+		<h2 id="实验六-桶型移位器"><a href="#实验六-桶型移位器" class="headerlink" title="实验六 桶型移位器"></a>实验六 桶型移位器</h2><p><font size="4"></font></p>
+<h3 id="实验介绍"><a href="#实验介绍" class="headerlink" title="实验介绍"></a>实验介绍</h3><p><font size="4">本实验使用Verilog语言设计实现一个32位桶型移位器。</font></p>
+<h3 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h3><p><font size="4"></font></p>
 <ol>
 <li>使用ISE软件设计并进行仿真</li>
 <li>学会使用Modelsim</li>
@@ -146,7 +128,7 @@
 <li>用verilog实现一个32位桶型移位器</li>
 </ol>
 <a id="more"></a>
-<h3 id="实验原理">实验原理</h3><p><font size="4"><br>桶型移位器是一个多输入、单输出电路。对于输入a[31:0]，移位器首先会根据aluc[1:0]值来确定做何种移位，然后根据b[4:0]的值来确定移多少位，最后将结果c[31:0]输出。<br>下表为aluc的值所对应的运算：</font></p>
+<h3 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h3><p><font size="4"><br>桶型移位器是一个多输入、单输出电路。对于输入a[31:0]，移位器首先会根据aluc[1:0]值来确定做何种移位，然后根据b[4:0]的值来确定移多少位，最后将结果c[31:0]输出。<br>下表为aluc的值所对应的运算：</font></p>
 <table>
 <thead>
 <tr>
@@ -184,8 +166,8 @@
 </tbody>
 </table>
 <p><font size="4"><br>下图为桶型移位器的逻辑流程图，可根据其流程编写行为及的桶型移位器<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No15-2015-11-14_135914.png" alt="桶型移位器的逻辑流程图"></font></p>
-<h3 id="Verilog代码">Verilog代码</h3><p>代码如下：<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">`</span><span class="keyword">timescale</span> <span class="number">1</span>ns <span class="keyword">/</span> <span class="number">1</span>ps</span><br><span class="line"><span class="comment">//////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// Company:</span></span><br><span class="line"><span class="comment">// Engineer:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Create Date:    14:17:05 11/13/2015</span></span><br><span class="line"><span class="comment">// Design Name:</span></span><br><span class="line"><span class="comment">// Module Name:    barrelshifter32</span></span><br><span class="line"><span class="comment">// Project Name:</span></span><br><span class="line"><span class="comment">// Target Devices:</span></span><br><span class="line"><span class="comment">// Tool versions:</span></span><br><span class="line"><span class="comment">// Description:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Dependencies:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Revision:</span></span><br><span class="line"><span class="comment">// Revision 0.01 - File Created</span></span><br><span class="line"><span class="comment">// Additional Comments:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="keyword">module</span> barrelshifter32(</span><br><span class="line">    <span class="keyword">input</span> [<span class="number">31</span><span class="keyword">:</span><span class="number">0</span>] a,     <span class="comment">// 32 位原始输入数据</span></span><br><span class="line">    <span class="keyword">input</span> [<span class="number">4</span><span class="keyword">:</span><span class="number">0</span>] b,      <span class="comment">// 5 位输入数据，控制移位的位数</span></span><br><span class="line">    <span class="keyword">input</span> [<span class="number">1</span><span class="keyword">:</span><span class="number">0</span>] aluc,   <span class="comment">// 2 位输入控制移位的方式</span></span><br><span class="line">    <span class="keyword">output</span> <span class="typename">reg</span> [<span class="number">31</span><span class="keyword">:</span><span class="number">0</span>] c     <span class="comment">// 32 位输出，由a 经过b 位通过aluc 指定的移位方式移位而得</span></span><br><span class="line">);</span><br><span class="line">    <span class="typename">reg</span> [<span class="number">31</span><span class="keyword">:</span><span class="number">0</span>] temp;</span><br><span class="line">    <span class="keyword">always</span> <span class="keyword">@</span> (a <span class="keyword">or</span> b <span class="keyword">or</span> aluc) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">case</span>(aluc)</span><br><span class="line">        <span class="number">2'b00</span><span class="keyword">:</span> <span class="keyword">begin</span></span><br><span class="line">            temp <span class="keyword">=</span> b[<span class="number">0</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span>a[<span class="number">31</span>]<span class="keyword">&#125;</span>, a[<span class="number">31</span><span class="keyword">:</span><span class="number">1</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> a;</span><br><span class="line">            temp <span class="keyword">=</span> b[<span class="number">1</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span><span class="number">2</span><span class="keyword">&#123;</span>temp[<span class="number">31</span>]<span class="keyword">&#125;</span><span class="keyword">&#125;</span>, temp[<span class="number">31</span><span class="keyword">:</span><span class="number">2</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line"><span class="comment">//             b = sext ? &#123;&#123;(32-WIDTH)&#123;a[WIDTH-1]&#125;&#125;,a&#125; : &#123;32'b0, a&#125;;</span></span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">2</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span><span class="number">4</span><span class="keyword">&#123;</span>temp[<span class="number">31</span>]<span class="keyword">&#125;</span><span class="keyword">&#125;</span>, temp[<span class="number">31</span><span class="keyword">:</span><span class="number">4</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">3</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span><span class="number">8</span><span class="keyword">&#123;</span>temp[<span class="number">31</span>]<span class="keyword">&#125;</span><span class="keyword">&#125;</span>, temp[<span class="number">31</span><span class="keyword">:</span><span class="number">8</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">4</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span><span class="number">16</span><span class="keyword">&#123;</span>temp[<span class="number">31</span>]<span class="keyword">&#125;</span><span class="keyword">&#125;</span>, temp[<span class="number">31</span><span class="keyword">:</span><span class="number">16</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="number">2'b01</span><span class="keyword">:</span> <span class="keyword">begin</span></span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">0</span>] ? <span class="keyword">&#123;</span><span class="number">32'b0</span>, a[<span class="number">31</span><span class="keyword">:</span><span class="number">1</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> a;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">1</span>] ? <span class="keyword">&#123;</span><span class="number">32'b0</span>, temp[<span class="number">31</span><span class="keyword">:</span><span class="number">2</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">2</span>] ? <span class="keyword">&#123;</span><span class="number">32'b0</span>, temp[<span class="number">31</span><span class="keyword">:</span><span class="number">4</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">3</span>] ? <span class="keyword">&#123;</span><span class="number">32'b0</span>, temp[<span class="number">31</span><span class="keyword">:</span><span class="number">8</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">4</span>] ? <span class="keyword">&#123;</span><span class="number">32'b0</span>, temp[<span class="number">31</span><span class="keyword">:</span><span class="number">16</span>]<span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="number">2'b10</span>, <span class="number">2'b11</span><span class="keyword">:</span> <span class="keyword">begin</span></span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">0</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span>a[<span class="number">30</span><span class="keyword">:</span><span class="number">0</span>]<span class="keyword">&#125;</span>, <span class="number">1'b0</span><span class="keyword">&#125;</span> <span class="keyword">:</span> a;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">1</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span>temp[<span class="number">29</span><span class="keyword">:</span><span class="number">0</span>]<span class="keyword">&#125;</span>, <span class="number">2'b0</span><span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">2</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span>temp[<span class="number">27</span><span class="keyword">:</span><span class="number">0</span>]<span class="keyword">&#125;</span>, <span class="number">4'b0</span><span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">3</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span>temp[<span class="number">23</span><span class="keyword">:</span><span class="number">0</span>]<span class="keyword">&#125;</span>, <span class="number">8'b0</span><span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">             temp <span class="keyword">=</span> b[<span class="number">4</span>] ? <span class="keyword">&#123;</span><span class="keyword">&#123;</span>temp[<span class="number">15</span><span class="keyword">:</span><span class="number">0</span>]<span class="keyword">&#125;</span>, <span class="number">16'b0</span><span class="keyword">&#125;</span> <span class="keyword">:</span> temp;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">endcase</span></span><br><span class="line">     c <span class="keyword">=</span> temp;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h3 id="Verilog代码"><a href="#Verilog代码" class="headerlink" title="Verilog代码"></a>Verilog代码</h3><p>代码如下：<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">timescale</span> 1ns / 1ps</span></span><br><span class="line"><span class="comment">//////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// Company:</span></span><br><span class="line"><span class="comment">// Engineer:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Create Date:    14:17:05 11/13/2015</span></span><br><span class="line"><span class="comment">// Design Name:</span></span><br><span class="line"><span class="comment">// Module Name:    barrelshifter32</span></span><br><span class="line"><span class="comment">// Project Name:</span></span><br><span class="line"><span class="comment">// Target Devices:</span></span><br><span class="line"><span class="comment">// Tool versions:</span></span><br><span class="line"><span class="comment">// Description:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Dependencies:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Revision:</span></span><br><span class="line"><span class="comment">// Revision 0.01 - File Created</span></span><br><span class="line"><span class="comment">// Additional Comments:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="keyword">module</span> barrelshifter32(</span><br><span class="line">    <span class="keyword">input</span> [<span class="number">31</span>:<span class="number">0</span>] a,     <span class="comment">// 32 位原始输入数据</span></span><br><span class="line">    <span class="keyword">input</span> [<span class="number">4</span>:<span class="number">0</span>] b,      <span class="comment">// 5 位输入数据，控制移位的位数</span></span><br><span class="line">    <span class="keyword">input</span> [<span class="number">1</span>:<span class="number">0</span>] aluc,   <span class="comment">// 2 位输入控制移位的方式</span></span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] c     <span class="comment">// 32 位输出，由a 经过b 位通过aluc 指定的移位方式移位而得</span></span><br><span class="line">);</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] temp;</span><br><span class="line">    <span class="keyword">always</span> @ (a <span class="keyword">or</span> b <span class="keyword">or</span> aluc) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">case</span>(aluc)</span><br><span class="line">        <span class="number">2'b00</span>: <span class="keyword">begin</span></span><br><span class="line">            temp = b[<span class="number">0</span>] ? &#123;&#123;a[<span class="number">31</span>]&#125;, a[<span class="number">31</span>:<span class="number">1</span>]&#125; : a;</span><br><span class="line">            temp = b[<span class="number">1</span>] ? &#123;&#123;<span class="number">2</span>&#123;temp[<span class="number">31</span>]&#125;&#125;, temp[<span class="number">31</span>:<span class="number">2</span>]&#125; : temp;</span><br><span class="line"><span class="comment">//             b = sext ? &#123;&#123;(32-WIDTH)&#123;a[WIDTH-1]&#125;&#125;,a&#125; : &#123;32'b0, a&#125;;</span></span><br><span class="line">             temp = b[<span class="number">2</span>] ? &#123;&#123;<span class="number">4</span>&#123;temp[<span class="number">31</span>]&#125;&#125;, temp[<span class="number">31</span>:<span class="number">4</span>]&#125; : temp;</span><br><span class="line">             temp = b[<span class="number">3</span>] ? &#123;&#123;<span class="number">8</span>&#123;temp[<span class="number">31</span>]&#125;&#125;, temp[<span class="number">31</span>:<span class="number">8</span>]&#125; : temp;</span><br><span class="line">             temp = b[<span class="number">4</span>] ? &#123;&#123;<span class="number">16</span>&#123;temp[<span class="number">31</span>]&#125;&#125;, temp[<span class="number">31</span>:<span class="number">16</span>]&#125; : temp;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="number">2'b01</span>: <span class="keyword">begin</span></span><br><span class="line">             temp = b[<span class="number">0</span>] ? &#123;<span class="number">32'b0</span>, a[<span class="number">31</span>:<span class="number">1</span>]&#125; : a;</span><br><span class="line">             temp = b[<span class="number">1</span>] ? &#123;<span class="number">32'b0</span>, temp[<span class="number">31</span>:<span class="number">2</span>]&#125; : temp;</span><br><span class="line">             temp = b[<span class="number">2</span>] ? &#123;<span class="number">32'b0</span>, temp[<span class="number">31</span>:<span class="number">4</span>]&#125; : temp;</span><br><span class="line">             temp = b[<span class="number">3</span>] ? &#123;<span class="number">32'b0</span>, temp[<span class="number">31</span>:<span class="number">8</span>]&#125; : temp;</span><br><span class="line">             temp = b[<span class="number">4</span>] ? &#123;<span class="number">32'b0</span>, temp[<span class="number">31</span>:<span class="number">16</span>]&#125; : temp;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="number">2'b10</span>, <span class="number">2'b11</span>: <span class="keyword">begin</span></span><br><span class="line">             temp = b[<span class="number">0</span>] ? &#123;&#123;a[<span class="number">30</span>:<span class="number">0</span>]&#125;, <span class="number">1'b0</span>&#125; : a;</span><br><span class="line">             temp = b[<span class="number">1</span>] ? &#123;&#123;temp[<span class="number">29</span>:<span class="number">0</span>]&#125;, <span class="number">2'b0</span>&#125; : temp;</span><br><span class="line">             temp = b[<span class="number">2</span>] ? &#123;&#123;temp[<span class="number">27</span>:<span class="number">0</span>]&#125;, <span class="number">4'b0</span>&#125; : temp;</span><br><span class="line">             temp = b[<span class="number">3</span>] ? &#123;&#123;temp[<span class="number">23</span>:<span class="number">0</span>]&#125;, <span class="number">8'b0</span>&#125; : temp;</span><br><span class="line">             temp = b[<span class="number">4</span>] ? &#123;&#123;temp[<span class="number">15</span>:<span class="number">0</span>]&#125;, <span class="number">16'b0</span>&#125; : temp;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">endcase</span></span><br><span class="line">     c = temp;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -199,7 +181,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Verilog/">Verilog</a><a href="/tags/计算机组成原理/">计算机组成原理</a>
+  <span></span> <a href="/tags/计算机组成原理/">计算机组成原理</a><a href="/tags/Verilog/">Verilog</a>
   </div>
 
 </div>
@@ -306,7 +288,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实验六_桶型移位器"><span class="toc-number">1.</span> <span class="toc-text">实验六 桶型移位器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实验介绍"><span class="toc-number">1.1.</span> <span class="toc-text">实验介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验目标"><span class="toc-number">1.2.</span> <span class="toc-text">实验目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验原理"><span class="toc-number">1.3.</span> <span class="toc-text">实验原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Verilog代码"><span class="toc-number">1.4.</span> <span class="toc-text">Verilog代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实验六-桶型移位器"><span class="toc-number">1.</span> <span class="toc-text">实验六 桶型移位器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实验介绍"><span class="toc-number">1.1.</span> <span class="toc-text">实验介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验目标"><span class="toc-number">1.2.</span> <span class="toc-text">实验目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验原理"><span class="toc-number">1.3.</span> <span class="toc-text">实验原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Verilog代码"><span class="toc-number">1.4.</span> <span class="toc-text">Verilog代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -342,10 +324,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -498,58 +480,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

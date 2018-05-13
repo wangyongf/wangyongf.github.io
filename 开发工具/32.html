@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No32-原-离线版MSDN文档的安装和配置 | Scott Wang&#39;s blog</title>
+    <title>No32-原-离线版MSDN文档的安装和配置 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="离线MSDN大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。">
+<meta name="keywords" content="Visual Studio,MSDN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No32-原-离线版MSDN文档的安装和配置">
 <meta property="og:url" content="http://blog.54yongf.com/开发工具/32.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="离线MSDN大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-12-29T03:14:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No32-原-离线版MSDN文档的安装和配置">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -114,24 +116,24 @@
 		
 		</div>
 		
-		<h2 id="离线MSDN">离线MSDN</h2><p><font size="4"><br>大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
+		<h2 id="离线MSDN"><a href="#离线MSDN" class="headerlink" title="离线MSDN"></a>离线MSDN</h2><p><font size="4"><br>大致有两种方法，大同小异，效率问题而已。只不过第一种直接下载的方式的文档库是最新的，而第二种使用网上打包好的离线MSDN文档库一般都不是最新的，可以更新。</font></p>
 <a id="more"></a>
-<h2 id="第一种方式">第一种方式</h2><p><font size="4"><br>使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：</font></p>
+<h2 id="第一种方式"><a href="#第一种方式" class="headerlink" title="第一种方式"></a>第一种方式</h2><p><font size="4"><br>使用Microsoft Help Viewer v2.2从微软的源直接下载文档库。这种方式对网速的要求比较高，建议量力而行，不然可能卡死在下载过程中：</font></p>
 <ol>
 <li>下载安装Microsoft Help Viewer v2.2；</li>
 <li>桌面右键，新建快捷方式，格式如下（注意路径，<strong>直接从网页拷贝此路径可能有问题！</strong>）</li>
 </ol>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"C:\Program Files (x86)\Microsoft Help Viewer\v2.2\HlpViewer.exe"</span> /catalogName VisualStudio14</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">VisualStudio10 代表 Visual Studio <span class="number">2010</span></span><br><span class="line">VisualStudio12 代表 Visual Studio <span class="number">2013</span></span><br><span class="line">VisualStudio14 代表 Visual Studio <span class="number">2015</span></span><br></pre></td></tr></table></figure>
-<ol>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"C:\Program Files (x86)\Microsoft Help Viewer\v2.2\HlpViewer.exe"</span> /catalogName VisualStudio14</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">VisualStudio10 代表 Visual Studio <span class="number">2010</span></span><br><span class="line">VisualStudio12 代表 Visual Studio <span class="number">2013</span></span><br><span class="line">VisualStudio14 代表 Visual Studio <span class="number">2015</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
 <li>点击该快捷方式，打开了Microsoft Help Viewer，现在可以选择你想要的文档，然后下载即可；</li>
 </ol>
-<h2 id="第二种方式">第二种方式</h2><p><font size="4"><br>前面大部分都一样，不过可以直接下载网上打包好的离线MSDN文档库，这种方式下载速度快，因为可以使用迅雷等下载：</font></p>
+<h2 id="第二种方式"><a href="#第二种方式" class="headerlink" title="第二种方式"></a>第二种方式</h2><p><font size="4"><br>前面大部分都一样，不过可以直接下载网上打包好的离线MSDN文档库，这种方式下载速度快，因为可以使用迅雷等下载：</font></p>
 <ol>
 <li>下载安装Microsoft Help Viewer v2.2；</li>
 <li>解压离线MSDN文档库之后，在我下载的资源中，有一个快捷方式MSDN2015，直接就可以打开了，然后更新即可。</li>
 <li>上述第二步可能有问题，是快捷方式的问题，可以选择自己新建快捷方式，具体做法参考上述<strong>第一种方式</strong>的<strong>第二步</strong></li>
 </ol>
-<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -145,7 +147,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/MSDN/">MSDN</a><a href="/tags/Visual-Studio/">Visual Studio</a>
+  <span></span> <a href="/tags/Visual-Studio/">Visual Studio</a><a href="/tags/MSDN/">MSDN</a>
   </div>
 
 </div>
@@ -288,10 +290,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -444,58 +446,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

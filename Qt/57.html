@@ -4,40 +4,31 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No57-【原】-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑 | Scott Wang&#39;s blog</title>
+    <title>No57-【原】-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="闲扯两句
-
-已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如期末考试，不敢怠慢．最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．
-
-软件环境">
+    <meta name="description" content="闲扯两句  已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如期末考试，不敢怠慢．最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．  软件环境">
+<meta name="keywords" content="Qt,Ubuntu,Linux,Qt Creator">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No57-【原】-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑">
 <meta property="og:url" content="http://blog.54yongf.com/Qt/57.html">
-<meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="闲扯两句
-
-已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如期末考试，不敢怠慢．最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．
-
-软件环境">
+<meta property="og:site_name" content="移动开发技术小黑屋">
+<meta property="og:description" content="闲扯两句  已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如期末考试，不敢怠慢．最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．  软件环境">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No57-2016-07-14%2002:43:11%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
 <meta property="og:updated_time" content="2016-08-17T22:16:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No57-【原】-Ubuntu 14.04下Qt5.6中Qt Creator中文输入的那些坑">
-<meta name="twitter:description" content="闲扯两句
-
-已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如期末考试，不敢怠慢．最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．
-
-软件环境">
+<meta name="twitter:description" content="闲扯两句  已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如期末考试，不敢怠慢．最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．  软件环境">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No57-2016-07-14%2002:43:11%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -46,7 +37,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -65,12 +56,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -127,17 +118,17 @@
 		
 		</div>
 		
-		<h2 id="闲扯两句">闲扯两句</h2><p><font size="4"></font></p>
+		<h2 id="闲扯两句"><a href="#闲扯两句" class="headerlink" title="闲扯两句"></a>闲扯两句</h2><p><font size="4"></font></p>
 <blockquote>
 <p>已经好久没有写博客了，我上一篇博客大概是在５月１６号，今天７月１４号，大概两个月．这段时间一直在弄一些其他事情，比如课程设计，再比如<code>期末考试</code>，不敢怠慢．<br>最近在学习Linux平台的Qt程序设计，但是有个很蛋疼的问题，Qt Creator不支持中文输入！！！我的个乖乖，为了弄好这个，百度了好多教程，走了很多弯路，同时也认识到网上存在一些错误的观点，特地记录一下，希望能有所帮助．</p>
 </blockquote>
-<h2 id="软件环境">软件环境</h2><p><font size="4"><br>操作系统: Ubuntu 14.04 64bit<br>Qt版本: Qt5.6 </font></p>
+<h2 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h2><p><font size="4"><br>操作系统: Ubuntu 14.04 64bit<br>Qt版本: Qt5.6 </font></p>
 <a id="more"></a>
-<h2 id="啰嗦一下">啰嗦一下</h2><p><font size="4"><br>如果你是使用ibus输入系统,看到这里就可以结束了,这里针对的是fcitx框架的输入法(比如说良心搜狗输入法).<br>以搜狗输入法为例(fctix),要使其支持中文输入,关键是要编译出共享库<code>libfcitxplatforminputcontextplugin.so</code>, 这个东西好像是动态库,所以是因人而异的,所以即使你是和我一个版本的操作系统,我也不能将我的库共享给你,<strong>你得自己编译!!!!</strong><br>必须指出,网上好多教程在文章中共享的<code>libfcitxplatforminputcontextplugin.so</code>库是不可用的,因为这家伙是动态库啊啊啊啊啊!!!!!! 所以啊,不要用别人编译好的,十有八九不管用,自己老老实实编译!<br>下面是具体的编译步骤以及可能出现的问题及其解决方法.</font></p>
-<h2 id="编译步骤以及可能出现的问题及其解决方案">编译步骤以及可能出现的问题及其解决方案</h2><p><font size="4"><br>在这一点上,我不想再重复造轮子了,我在开源中国找到了一篇相当完整的博客,你可以按照他的编译步骤慢慢来,出错了也没关系,人家文章中都有解决方案(在此感谢 =_=).<br>参考链接: <a href="http://my.oschina.net/lieefu/blog/505363" target="_blank" rel="external">http://my.oschina.net/lieefu/blog/505363</a><br>很重要的一点,编译出错不要紧,要有耐心,我也是编译了两次才编译成功的(主要是要处理各种依赖问题)<br>如果编译失败,最好删除整个fcitx-qt5文件夹重新弄.</font></p>
-<h2 id="最后">最后</h2><p><font size="4"><br>放张图吧,作为这顿折腾的最终战果:<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No57-2016-07-14%2002:43:11%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="中文OK">  </font></p>
+<h2 id="啰嗦一下"><a href="#啰嗦一下" class="headerlink" title="啰嗦一下"></a>啰嗦一下</h2><p><font size="4"><br>如果你是使用ibus输入系统,看到这里就可以结束了,这里针对的是fcitx框架的输入法(比如说良心搜狗输入法).<br>以搜狗输入法为例(fctix),要使其支持中文输入,关键是要编译出共享库<code>libfcitxplatforminputcontextplugin.so</code>, 这个东西好像是动态库,所以是因人而异的,所以即使你是和我一个版本的操作系统,我也不能将我的库共享给你,<strong>你得自己编译!!!!</strong><br>必须指出,网上好多教程在文章中共享的<code>libfcitxplatforminputcontextplugin.so</code>库是不可用的,因为这家伙是动态库啊啊啊啊啊!!!!!! 所以啊,不要用别人编译好的,十有八九不管用,自己老老实实编译!<br>下面是具体的编译步骤以及可能出现的问题及其解决方法.</font></p>
+<h2 id="编译步骤以及可能出现的问题及其解决方案"><a href="#编译步骤以及可能出现的问题及其解决方案" class="headerlink" title="编译步骤以及可能出现的问题及其解决方案"></a>编译步骤以及可能出现的问题及其解决方案</h2><p><font size="4"><br>在这一点上,我不想再重复造轮子了,我在开源中国找到了一篇相当完整的博客,你可以按照他的编译步骤慢慢来,出错了也没关系,人家文章中都有解决方案(在此感谢 =_=).<br>参考链接: <a href="http://my.oschina.net/lieefu/blog/505363" target="_blank" rel="noopener">http://my.oschina.net/lieefu/blog/505363</a><br>很重要的一点,编译出错不要紧,要有耐心,我也是编译了两次才编译成功的(主要是要处理各种依赖问题)<br>如果编译失败,最好删除整个fcitx-qt5文件夹重新弄.</font></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p><font size="4"><br>放张图吧,作为这顿折腾的最终战果:<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No57-2016-07-14%2002:43:11%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="中文OK">  </font></p>
 <p>最后,感谢开源!</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -151,7 +142,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Linux/">Linux</a><a href="/tags/Qt/">Qt</a><a href="/tags/Qt-Creator/">Qt Creator</a><a href="/tags/Ubuntu/">Ubuntu</a>
+  <span></span> <a href="/tags/Qt/">Qt</a><a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/Linux/">Linux</a><a href="/tags/Qt-Creator/">Qt Creator</a>
   </div>
 
 </div>
@@ -294,10 +285,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -450,58 +441,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

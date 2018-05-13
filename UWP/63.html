@@ -4,39 +4,33 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No63-【原】-UWP开发中SQLite的使用：结合EntityFramework | Scott Wang&#39;s blog</title>
+    <title>No63-【原】-UWP开发中SQLite的使用：结合EntityFramework | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="前言
-我爱UWP，正如我所爱的这片土地（滑稽→_→）。
-
-环境系统：Windows10一周年版软件：Visual Studio 2015硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）">
+    <meta name="description" content="前言 我爱UWP，正如我所爱的这片土地（滑稽→_→）。  环境系统：Windows10一周年版软件：Visual Studio 2015硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）">
+<meta name="keywords" content="UWP,C#,Microsoft,移动开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No63-【原】-UWP开发中SQLite的使用：结合EntityFramework">
 <meta property="og:url" content="http://blog.54yongf.com/UWP/63.html">
-<meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="前言
-我爱UWP，正如我所爱的这片土地（滑稽→_→）。
-
-环境系统：Windows10一周年版软件：Visual Studio 2015硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）">
+<meta property="og:site_name" content="移动开发技术小黑屋">
+<meta property="og:description" content="前言 我爱UWP，正如我所爱的这片土地（滑稽→_→）。  环境系统：Windows10一周年版软件：Visual Studio 2015硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_153748.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_154113.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_155445.png">
 <meta property="og:updated_time" content="2017-02-16T07:12:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No63-【原】-UWP开发中SQLite的使用：结合EntityFramework">
-<meta name="twitter:description" content="前言
-我爱UWP，正如我所爱的这片土地（滑稽→_→）。
-
-环境系统：Windows10一周年版软件：Visual Studio 2015硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）">
+<meta name="twitter:description" content="前言 我爱UWP，正如我所爱的这片土地（滑稽→_→）。  环境系统：Windows10一周年版软件：Visual Studio 2015硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_153748.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -45,7 +39,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -64,12 +58,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -126,25 +120,25 @@
 		
 		</div>
 		
-		<h2 id="前言">前言</h2><blockquote>
+		<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>我爱UWP，正如我所爱的这片土地（滑稽→_→）。</p>
 </blockquote>
-<h2 id="环境">环境</h2><p>系统：Windows10一周年版<br>软件：Visual Studio 2015<br>硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>系统：Windows10一周年版<br>软件：Visual Studio 2015<br>硬件：可选（Lumia650/Lumia640/Lumia640XL/Lumia950/Lumia950XL等能够运行新版Windows10 Mobile系统的Windows手机）</p>
 <a id="more"></a>
-<h2 id="UWP上的数据存储">UWP上的数据存储</h2><p>如果要在UWP上使用数据存储，可以使用SQLite，这东西挺好用，而且SQLite已经进入了UWP官方的SDK，得到了官方支持，可靠。<br>在UWP上使用SQLite可以有多种方式，可以自行diy，也可以使用UWP SDK中的SQLite，本文中，使用的是EntityFramework + UWP SDK’s SQLite的方式。</p>
-<h2 id="新建项目">新建项目</h2><p>第一步是新建一个UWP的C#项目，使用Visual Studio 2015，具体过程不再赘述。</p>
-<h2 id="添加依赖">添加依赖</h2><p>第二步是添加项目依赖：</p>
+<h2 id="UWP上的数据存储"><a href="#UWP上的数据存储" class="headerlink" title="UWP上的数据存储"></a>UWP上的数据存储</h2><p>如果要在UWP上使用数据存储，可以使用SQLite，这东西挺好用，而且SQLite已经进入了UWP官方的SDK，得到了官方支持，可靠。<br>在UWP上使用SQLite可以有多种方式，可以自行diy，也可以使用UWP SDK中的SQLite，本文中，使用的是EntityFramework + UWP SDK’s SQLite的方式。</p>
+<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>第一步是新建一个UWP的C#项目，使用Visual Studio 2015，具体过程不再赘述。</p>
+<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><p>第二步是添加项目依赖：</p>
 <ol>
 <li>使用NuGet，选择<code>工具-&gt;NuGet包管理器-&gt;管理解决方案的NuGet程序包</code>，如图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_153748.png" alt="进入NuGet"></li>
 <li>使用NuGet包管理器更新<code>Microsoft.NETCore.UniversalWindowsPlatform</code>，注意！，更新到5.2.2即可，不要更新到5.3.0，<br>因为5.3.0是VS2017专用的……<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_154113.png" alt="安装依赖"></li>
 <li>安装<code>Microsoft.EntityFrameworkCore.Sqlite</code>, <code>Microsoft.EntityFrameworkCore.Tools –Pre</code>依赖，（选中包括预发行版）</li>
 <li>依赖添加完毕</li>
 </ol>
-<h2 id="编写代码">编写代码</h2><p>使用EntityFramework进行编码，可以参考<a href="https://docs.microsoft.com/en-us/ef/core/get-started/uwp/getting-started#create-your-model" target="_blank" rel="external">官方文档</a></p>
-<h2 id="编译运行">编译运行</h2><p>编译运行，在本机上跑是没有任何问题的，如果你只是要在本机上运行，那么本文到此结束。</p>
-<h2 id="在移动设备上运行">在移动设备上运行</h2><p>不过，如果你需要在移动设备上进行运行，那么仅仅参考上述官方文档还不够，因为你直接跑会报错，还是因为缺少某些依赖。<br>你需要安装VS2015扩展–SQLite for UniversalWindowsPlatform。安装完毕之后，重启VS2015，然后在项目下添加引用，如图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_155445.png" alt="添加引用"></p>
-<h2 id="大功告成">大功告成</h2><p>至此，一个完整的UWP应用OK了，既能在PC上，也能在移动设备上运行。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+<h2 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h2><p>使用EntityFramework进行编码，可以参考<a href="https://docs.microsoft.com/en-us/ef/core/get-started/uwp/getting-started#create-your-model" target="_blank" rel="noopener">官方文档</a></p>
+<h2 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h2><p>编译运行，在本机上跑是没有任何问题的，如果你只是要在本机上运行，那么本文到此结束。</p>
+<h2 id="在移动设备上运行"><a href="#在移动设备上运行" class="headerlink" title="在移动设备上运行"></a>在移动设备上运行</h2><p>不过，如果你需要在移动设备上进行运行，那么仅仅参考上述官方文档还不够，因为你直接跑会报错，还是因为缺少某些依赖。<br>你需要安装VS2015扩展–SQLite for UniversalWindowsPlatform。安装完毕之后，重启VS2015，然后在项目下添加引用，如图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No63-2017-02-16_155445.png" alt="添加引用"></p>
+<h2 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h2><p>至此，一个完整的UWP应用OK了，既能在PC上，也能在移动设备上运行。</p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -158,7 +152,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/C/">C#</a><a href="/tags/Microsoft/">Microsoft</a><a href="/tags/UWP/">UWP</a><a href="/tags/移动开发/">移动开发</a>
+  <span></span> <a href="/tags/UWP/">UWP</a><a href="/tags/C/">C#</a><a href="/tags/Microsoft/">Microsoft</a><a href="/tags/移动开发/">移动开发</a>
   </div>
 
 </div>
@@ -301,10 +295,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -457,58 +451,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

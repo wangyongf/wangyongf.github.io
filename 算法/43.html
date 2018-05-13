@@ -4,30 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No43-【原】-计算机算法设计与分析-统计数字问题 | Scott Wang&#39;s blog</title>
+    <title>No43-【原】-计算机算法设计与分析-统计数字问题 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="题目来源计算机算法设计与分析第二版-王晓东 P8
-问题描述一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.">
+    <meta name="description" content="题目来源计算机算法设计与分析第二版-王晓东 P8 问题描述一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No43-【原】-计算机算法设计与分析-统计数字问题">
 <meta property="og:url" content="http://blog.54yongf.com/算法/43.html">
-<meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="题目来源计算机算法设计与分析第二版-王晓东 P8
-问题描述一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.">
+<meta property="og:site_name" content="移动开发技术小黑屋">
+<meta property="og:description" content="题目来源计算机算法设计与分析第二版-王晓东 P8 问题描述一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-08-17T22:40:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No43-【原】-计算机算法设计与分析-统计数字问题">
-<meta name="twitter:description" content="题目来源计算机算法设计与分析第二版-王晓东 P8
-问题描述一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.">
+<meta name="twitter:description" content="题目来源计算机算法设计与分析第二版-王晓东 P8 问题描述一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -36,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -55,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -113,20 +112,20 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目来源"><span class="toc-number">1.</span> <span class="toc-text">题目来源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法设计"><span class="toc-number">1.0.2.</span> <span class="toc-text">算法设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据输入"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果输出"><span class="toc-number">1.0.4.</span> <span class="toc-text">结果输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入文件示例"><span class="toc-number">1.0.5.</span> <span class="toc-text">输入文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出文件示例"><span class="toc-number">1.0.6.</span> <span class="toc-text">输出文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C++实现"><span class="toc-number">1.0.7.</span> <span class="toc-text">C++实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目来源"><span class="toc-number">1.</span> <span class="toc-text">题目来源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法设计"><span class="toc-number">1.0.2.</span> <span class="toc-text">算法设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据输入"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果输出"><span class="toc-number">1.0.4.</span> <span class="toc-text">结果输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入文件示例"><span class="toc-number">1.0.5.</span> <span class="toc-text">输入文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出文件示例"><span class="toc-number">1.0.6.</span> <span class="toc-text">输出文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-实现"><span class="toc-number">1.0.7.</span> <span class="toc-text">C++实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题目来源">题目来源</h2><p><font size="4"><br>计算机算法设计与分析第二版-王晓东 P8</font></p>
-<h4 id="问题描述">问题描述</h4><p><font size="4"><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</font></p>
+		<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><font size="4"><br>计算机算法设计与分析第二版-王晓东 P8</font></p>
+<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p><font size="4"><br>一本书的页码从自然数1开始顺序编码直到自然数n.书的页码按照通常的习惯编排,每个页码都不含多余的前导数字0.例如,第6页用数字6表示,而不是06或006等.数字计数问题要求对给定书的总页码n,计算出书的全部页码中分别用到多少次数字0, 1, 2, 3, 4, …, 9.</font></p>
 <a id="more"></a>
-<h4 id="算法设计">算法设计</h4><p><font size="4"><br>给定表示书的总页码的十进制数n(1&lt;=n&lt;=10^9),计算书的全部页码中分别用到多少次数字0, 1, 2, …, 9.</font></p>
-<h4 id="数据输入">数据输入</h4><p><font size="4"><br>输入数据由文件名为input.txt的文本文件提供.每个文件只有一行,给出表示书的总页码的整数n.</font></p>
-<h4 id="结果输出">结果输出</h4><p><font size="4"><br>将计算结果输出到文件output.txt.输出文件共有10行,在第k行输出页码中用到数字k-1的次数,k = 1, 2, …, 10.</font></p>
-<h4 id="输入文件示例">输入文件示例</h4><p><font size="4"><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">input</span><span class="class">.txt</span></span><br><span class="line"><span class="number">11</span></span><br></pre></td></tr></table></figure></font></p>
-<h4 id="输出文件示例">输出文件示例</h4><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">output.txt</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></font></p>
-<h4 id="C++实现">C++实现</h4><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">* @Author: Scott Wang</span><br><span class="line">* @Date:   2016-04-07 23:18:13</span><br><span class="line">* @Last Modified by:   Scott Wang</span><br><span class="line">* @Last Modified time: 2016-04-10 21:38:01</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">"stdlib.h"</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initNumber</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span>* result)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* result, <span class="keyword">int</span> count)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number;</span><br><span class="line">    <span class="keyword">int</span> result[<span class="number">10</span>] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    number = initNumber();</span><br><span class="line"></span><br><span class="line">    calculate(number, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> count = <span class="keyword">sizeof</span>(result) / <span class="keyword">sizeof</span>(result[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    output(result, count);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 从文件中获取数字</span><br><span class="line"> * @return 书的页码</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initNumber</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">istringstream</span> iss;</span><br><span class="line">    <span class="built_in">string</span> line;</span><br><span class="line">    <span class="function">ifstream <span class="title">input</span><span class="params">(<span class="string">"input.txt"</span>, ios::in)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!input.is_open())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"Can't open input.txt"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="built_in">exit</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getline(input, line);</span><br><span class="line">    iss.str(line);</span><br><span class="line">    iss &gt;&gt; num;</span><br><span class="line">    iss.clear();</span><br><span class="line"></span><br><span class="line">    input.close();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 计算页码</span><br><span class="line"> * @param number 页码</span><br><span class="line"> * @param result 存储结果的数组(全部页码分别用到0-9多少次)</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span>* result)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// cout&lt;&lt;number&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= number; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        j = i;</span><br><span class="line">        <span class="keyword">while</span> (j &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result[j % <span class="number">10</span>]++;</span><br><span class="line"></span><br><span class="line">            j = j / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 将计算结果输出</span><br><span class="line"> * @param result 要输出的结果(result[10])</span><br><span class="line"> * @param count 结果数组的大小</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* result, <span class="keyword">int</span> count)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">output</span><span class="params">(<span class="string">"output.txt"</span>, ios::out)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        output &lt;&lt; result[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    output.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h4 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h4><p><font size="4"><br>给定表示书的总页码的十进制数n(1&lt;=n&lt;=10^9),计算书的全部页码中分别用到多少次数字0, 1, 2, …, 9.</font></p>
+<h4 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h4><p><font size="4"><br>输入数据由文件名为input.txt的文本文件提供.每个文件只有一行,给出表示书的总页码的整数n.</font></p>
+<h4 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出"></a>结果输出</h4><p><font size="4"><br>将计算结果输出到文件output.txt.输出文件共有10行,在第k行输出页码中用到数字k-1的次数,k = 1, 2, …, 10.</font></p>
+<h4 id="输入文件示例"><a href="#输入文件示例" class="headerlink" title="输入文件示例"></a>输入文件示例</h4><p><font size="4"><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span>.txt</span><br><span class="line"><span class="number">11</span></span><br></pre></td></tr></table></figure></font></p>
+<h4 id="输出文件示例"><a href="#输出文件示例" class="headerlink" title="输出文件示例"></a>输出文件示例</h4><p><font size="4"><br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">output.txt</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></font></p>
+<h4 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h4><p><font size="4"><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @Author: Scott Wang</span></span><br><span class="line"><span class="comment">* @Date:   2016-04-07 23:18:13</span></span><br><span class="line"><span class="comment">* @Last Modified by:   Scott Wang</span></span><br><span class="line"><span class="comment">* @Last Modified time: 2016-04-10 21:38:01</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdlib.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initNumber</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span>* result)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* result, <span class="keyword">int</span> count)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number;</span><br><span class="line">    <span class="keyword">int</span> result[<span class="number">10</span>] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    number = initNumber();</span><br><span class="line"></span><br><span class="line">    calculate(number, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> count = <span class="keyword">sizeof</span>(result) / <span class="keyword">sizeof</span>(result[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    output(result, count);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 从文件中获取数字</span></span><br><span class="line"><span class="comment"> * @return 书的页码</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initNumber</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">istringstream</span> iss;</span><br><span class="line">    <span class="built_in">string</span> line;</span><br><span class="line">    <span class="function">ifstream <span class="title">input</span><span class="params">(<span class="string">"input.txt"</span>, ios::in)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!input.is_open())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"Can't open input.txt"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getline(input, line);</span><br><span class="line">    iss.str(line);</span><br><span class="line">    iss &gt;&gt; num;</span><br><span class="line">    iss.clear();</span><br><span class="line"></span><br><span class="line">    input.close();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 计算页码</span></span><br><span class="line"><span class="comment"> * @param number 页码</span></span><br><span class="line"><span class="comment"> * @param result 存储结果的数组(全部页码分别用到0-9多少次)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span>* result)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// cout&lt;&lt;number&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= number; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        j = i;</span><br><span class="line">        <span class="keyword">while</span> (j &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result[j % <span class="number">10</span>]++;</span><br><span class="line"></span><br><span class="line">            j = j / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将计算结果输出</span></span><br><span class="line"><span class="comment"> * @param result 要输出的结果(result[10])</span></span><br><span class="line"><span class="comment"> * @param count 结果数组的大小</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(<span class="keyword">int</span>* result, <span class="keyword">int</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">output</span><span class="params">(<span class="string">"output.txt"</span>, ios::out)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        output &lt;&lt; result[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    output.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -247,7 +246,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目来源"><span class="toc-number">1.</span> <span class="toc-text">题目来源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法设计"><span class="toc-number">1.0.2.</span> <span class="toc-text">算法设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据输入"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果输出"><span class="toc-number">1.0.4.</span> <span class="toc-text">结果输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入文件示例"><span class="toc-number">1.0.5.</span> <span class="toc-text">输入文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出文件示例"><span class="toc-number">1.0.6.</span> <span class="toc-text">输出文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C++实现"><span class="toc-number">1.0.7.</span> <span class="toc-text">C++实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目来源"><span class="toc-number">1.</span> <span class="toc-text">题目来源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法设计"><span class="toc-number">1.0.2.</span> <span class="toc-text">算法设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据输入"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果输出"><span class="toc-number">1.0.4.</span> <span class="toc-text">结果输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入文件示例"><span class="toc-number">1.0.5.</span> <span class="toc-text">输入文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出文件示例"><span class="toc-number">1.0.6.</span> <span class="toc-text">输出文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-实现"><span class="toc-number">1.0.7.</span> <span class="toc-text">C++实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">2.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -283,10 +282,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -439,58 +438,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

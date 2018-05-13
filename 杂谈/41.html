@@ -4,36 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No41-原-Ubuntu用apt-get方式安装php5.6 | Scott Wang&#39;s blog</title>
+    <title>No41-原-Ubuntu用apt-get方式安装php5.6 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。
-1sudo apt-get autoremove php5
-然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。
-添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
+    <meta name="description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。 1sudo apt-get autoremove php5 然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。 添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
+<meta name="keywords" content="杂谈,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No41-原-Ubuntu用apt-get方式安装php5.6">
 <meta property="og:url" content="http://blog.54yongf.com/杂谈/41.html">
-<meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。
-1sudo apt-get autoremove php5
-然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。
-添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
+<meta property="og:site_name" content="移动开发技术小黑屋">
+<meta property="og:description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。 1sudo apt-get autoremove php5 然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。 添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-03-31T10:27:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No41-原-Ubuntu用apt-get方式安装php5.6">
-<meta name="twitter:description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。
-1sudo apt-get autoremove php5
-然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。
-添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
+<meta name="twitter:description" content="前言请注意，本文讲述的不是编译安装php5.6！！！如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。 1sudo apt-get autoremove php5 然后使用php -v查看php是否卸载成功。如果提示No such file or directory说明卸载成功。 添加php5.6的PPA源下面有三个选择，分别对应php5.4, php5.5, php5.6。请">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -42,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -61,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -123,14 +116,14 @@
 		
 		</div>
 		
-		<h2 id="前言">前言</h2><p><font size="4"><br>请注意，本文讲述的不是编译安装php5.6！！！<br>如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。</font></p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> autoremove php5</span><br></pre></td></tr></table></figure>
+		<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><font size="4"><br>请注意，本文讲述的不是编译安装php5.6！！！<br>如果电脑上安装了php5.5.9或者以下（php5）的版本，先卸载之。</font></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> autoremove php5</span><br></pre></td></tr></table></figure>
 <p>然后使用<code>php -v</code>查看php是否卸载成功。如果提示<code>No such file or directory</code>说明卸载成功。</p>
-<h2 id="添加php5-6的PPA源">添加php5.6的PPA源</h2><p>下面有三个选择，分别对应php5.4, php5.5, php5.6。请自行选择</p>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//安装ph<span class="variable">p5</span>.4</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span>-oldstable</span><br><span class="line">//安装ph<span class="variable">p5</span>.5</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span></span><br><span class="line">//安装ph<span class="variable">p5</span>.6</span><br><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:ondrej/ph<span class="variable">p5</span>-5.6</span><br></pre></td></tr></table></figure>
-<h2 id="更新源并安装php5-6">更新源并安装php5.6</h2><p><font size="4"><br>添加完源之后，安装php5.6：</font></p>
-<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install php5-<span class="number">5.6</span></span><br></pre></td></tr></table></figure>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h2 id="添加php5-6的PPA源"><a href="#添加php5-6的PPA源" class="headerlink" title="添加php5.6的PPA源"></a>添加php5.6的PPA源</h2><p>下面有三个选择，分别对应php5.4, php5.5, php5.6。请自行选择</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//安装php5.4</span><br><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:ondrej/php5-oldstable</span><br><span class="line">//安装php5.5</span><br><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:ondrej/php5</span><br><span class="line">//安装php5.6</span><br><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:ondrej/php5-5.6</span><br></pre></td></tr></table></figure>
+<h2 id="更新源并安装php5-6"><a href="#更新源并安装php5-6" class="headerlink" title="更新源并安装php5.6"></a>更新源并安装php5.6</h2><p><font size="4"><br>添加完源之后，安装php5.6：</font></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install php5-5.6</span><br></pre></td></tr></table></figure>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -144,7 +137,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/杂谈/">杂谈</a>
+  <span></span> <a href="/tags/杂谈/">杂谈</a><a href="/tags/Ubuntu/">Ubuntu</a>
   </div>
 
 </div>
@@ -287,10 +280,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -443,58 +436,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

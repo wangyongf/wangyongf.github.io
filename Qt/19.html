@@ -4,38 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No19-原-invalid use of incomplete type &#39;class-Ui-Widge&#39;t的解决办法 | Scott Wang&#39;s blog</title>
+    <title>No19-原-invalid use of incomplete type &#39;class-Ui-Widge&#39;t的解决办法 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="先说环境
-qt 5.5.1
-Windows7
-gcc version 4.8.1">
+    <meta name="description" content="先说环境 qt 5.5.1 Windows7 gcc version 4.8.1">
+<meta name="keywords" content="Qt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No19-原-invalid use of incomplete type 'class-Ui-Widge't的解决办法">
+<meta property="og:title" content="No19-原-invalid use of incomplete type &#39;class-Ui-Widge&#39;t的解决办法">
 <meta property="og:url" content="http://blog.54yongf.com/Qt/19.html">
-<meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="先说环境
-qt 5.5.1
-Windows7
-gcc version 4.8.1">
+<meta property="og:site_name" content="移动开发技术小黑屋">
+<meta property="og:description" content="先说环境 qt 5.5.1 Windows7 gcc version 4.8.1">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_154912.png">
 <meta property="og:updated_time" content="2016-04-22T11:27:42.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No19-原-invalid use of incomplete type 'class-Ui-Widge't的解决办法">
-<meta name="twitter:description" content="先说环境
-qt 5.5.1
-Windows7
-gcc version 4.8.1">
+<meta name="twitter:title" content="No19-原-invalid use of incomplete type &#39;class-Ui-Widge&#39;t的解决办法">
+<meta name="twitter:description" content="先说环境 qt 5.5.1 Windows7 gcc version 4.8.1">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -44,7 +38,7 @@ gcc version 4.8.1">
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -63,12 +57,12 @@ gcc version 4.8.1">
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -125,24 +119,24 @@ gcc version 4.8.1">
 		
 		</div>
 		
-		<h2 id="先说环境">先说环境</h2><ul>
+		<h2 id="先说环境"><a href="#先说环境" class="headerlink" title="先说环境"></a>先说环境</h2><ul>
 <li>qt 5.5.1</li>
 <li>Windows7</li>
 <li>gcc version 4.8.1</li>
 </ul>
 <a id="more"></a>
-<h2 id="错误详情">错误详情</h2><p><font size="4"><br>如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png" alt="错误详情"></font></p>
-<h2 id="原因及解决办法">原因及解决办法</h2><p><font size="4"><br>可以确定的是，你肯定在Qt Designer中修改了顶部Widget的object name，然而，Qt creator并不会帮你同步gotocell.cpp中的obj name。导致不对应，自然就报错了。<br>应该有两种方法：</font></p>
+<h2 id="错误详情"><a href="#错误详情" class="headerlink" title="错误详情"></a>错误详情</h2><p><font size="4"><br>如下图：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_151532.png" alt="错误详情"></font></p>
+<h2 id="原因及解决办法"><a href="#原因及解决办法" class="headerlink" title="原因及解决办法"></a>原因及解决办法</h2><p><font size="4"><br>可以确定的是，你肯定在Qt Designer中修改了顶部Widget的object name，然而，Qt creator并不会帮你同步gotocell.cpp中的obj name。导致不对应，自然就报错了。<br>应该有两种方法：</font></p>
 <ol>
 <li>比较简单的方法，观察错误中的<code>class Ui::gotoCell</code>，在Qt Designer中，将顶部（点击窗口中空白处即可）的objectName修改为<code>gotoCell</code>即可。注意，请根据自己的错误对应处理。</li>
 <li>修改gotoCell.cpp，类似，将gotoCell修改为Qt Designer中的顶部窗口的objectName，这相对麻烦一点，所以还是推荐方法1。</li>
 </ol>
-<h3 id="科普一下">科普一下</h3><p><font size="4"><br>objectName在哪里修改：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_154912.png" alt="objectName"></font></p>
-<h2 id="参考">参考</h2><p><font size="4"></font></p>
+<h3 id="科普一下"><a href="#科普一下" class="headerlink" title="科普一下"></a>科普一下</h3><p><font size="4"><br>objectName在哪里修改：<br><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No19-2015-11-20_154912.png" alt="objectName"></font></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><font size="4"></font></p>
 <ul>
-<li><a href="http://icivelee.blog.163.com/blog/static/147198932201171025810737/" target="_blank" rel="external">http://icivelee.blog.163.com/blog/static/147198932201171025810737/</a></li>
+<li><a href="http://icivelee.blog.163.com/blog/static/147198932201171025810737/" target="_blank" rel="noopener">http://icivelee.blog.163.com/blog/static/147198932201171025810737/</a></li>
 </ul>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -299,10 +293,10 @@ gcc version 4.8.1">
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -455,58 +449,68 @@ gcc version 4.8.1">
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

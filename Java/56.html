@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No56-【原】-Java基础之方法传参问题 | Scott Wang&#39;s blog</title>
+    <title>No56-【原】-Java基础之方法传参问题 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="前言本文讲述的是Java中参数传递相关的一些知识点.">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No56-【原】-Java基础之方法传参问题">
 <meta property="og:url" content="http://blog.54yongf.com/Java/56.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="前言本文讲述的是Java中参数传递相关的一些知识点.">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-08-17T22:28:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No56-【原】-Java基础之方法传参问题">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -114,19 +116,19 @@
 		
 		</div>
 		
-		<h2 id="前言">前言</h2><p><font size="4"><br>本文讲述的是Java中参数传递相关的一些知识点.</font></p>
+		<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><font size="4"><br>本文讲述的是Java中参数传递相关的一些知识点.</font></p>
 <a id="more"></a>
 <p>先来看一段代码:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by yongf on 16-5-16.</span><br><span class="line"> * 参数传递</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParameterPass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student1 = <span class="keyword">new</span> Student(<span class="string">"张三"</span>, <span class="string">"001"</span>);</span><br><span class="line">        System.out.println(<span class="string">"[修改前]: "</span> + student1);</span><br><span class="line"></span><br><span class="line">         modifyInfo(student1);</span><br><span class="line">        System.out.println(<span class="string">"[修改后]: "</span> + student1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">modifyInfo</span><span class="params">(Student student)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[正在修改]: "</span> + student);</span><br><span class="line">        student = <span class="keyword">new</span> Student(student.name, <span class="string">"002"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    String name;</span><br><span class="line">    String id;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, String id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Student&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", id='"</span> + id + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by yongf on 16-5-16.</span></span><br><span class="line"><span class="comment"> * 参数传递</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParameterPass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student1 = <span class="keyword">new</span> Student(<span class="string">"张三"</span>, <span class="string">"001"</span>);</span><br><span class="line">        System.out.println(<span class="string">"[修改前]: "</span> + student1);</span><br><span class="line"></span><br><span class="line">         modifyInfo(student1);</span><br><span class="line">        System.out.println(<span class="string">"[修改后]: "</span> + student1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">modifyInfo</span><span class="params">(Student student)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[正在修改]: "</span> + student);</span><br><span class="line">        student = <span class="keyword">new</span> Student(student.name, <span class="string">"002"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    String name;</span><br><span class="line">    String id;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, String id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Student&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", id='"</span> + id + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>你能立刻写出这段代码的输出结果么?如果可以,那么后面就不用看了;如果不能,那就继续.</p>
 <p>这段代码的运行结果如下:</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_reference">修改前</span>]:<span class="link_url"> Student&#123;name='张三', id='001'&#125;</span></span><br><span class="line">[<span class="link_reference">正在修改</span>]:<span class="link_url"> Student&#123;name='张三', id='001'&#125;</span></span><br><span class="line">[<span class="link_reference">修改后</span>]:<span class="link_url"> Student&#123;name='张三', id='001'&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="一段话解析">一段话解析</h2><p><font size="4"><br>其实是Java中很基础的知识点,所以说,基础很重要.</font></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[修改前]: Student&#123;<span class="attribute">name</span>=<span class="string">'张三'</span>, <span class="attribute">id</span>=<span class="string">'001'</span>&#125;</span><br><span class="line">[正在修改]: Student&#123;<span class="attribute">name</span>=<span class="string">'张三'</span>, <span class="attribute">id</span>=<span class="string">'001'</span>&#125;</span><br><span class="line">[修改后]: Student&#123;<span class="attribute">name</span>=<span class="string">'张三'</span>, <span class="attribute">id</span>=<span class="string">'001'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="一段话解析"><a href="#一段话解析" class="headerlink" title="一段话解析"></a>一段话解析</h2><p><font size="4"><br>其实是Java中很基础的知识点,所以说,基础很重要.</font></p>
 <blockquote>
 <p>方法传递参数时,对于基本类型的变量,传递的是变量的值的副本;对于引用类型的变量,传递的是地址的值的副本(所以说Java中都是<code>值传递</code>啊).</p>
 </blockquote>
 <p>对于上述例子,modifyInfo方法内部,只是将student地址的副本指向了新的地址,真正的student(即方法外部的)的地址并未发生改变,从而原地址指向的内容也不会改变.所以,输出的结果都不会变啊啊啊啊啊啊啊啊啊啊…</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :-)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -283,10 +285,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -439,58 +441,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

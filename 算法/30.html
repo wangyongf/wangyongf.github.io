@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No30-转-扩展欧几里德定理 | Scott Wang&#39;s blog</title>
+    <title>No30-转-扩展欧几里德定理 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="扩展欧几里德定理　　对于不完全为 0 的整数 a，b，gcd（a，b）表示 a，b 的最大公约数。那么一定存在整数 x，y 使得 gcd（a，b）=ax+by。">
+<meta name="keywords" content="数学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No30-转-扩展欧几里德定理">
 <meta property="og:url" content="http://blog.54yongf.com/算法/30.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="扩展欧几里德定理　　对于不完全为 0 的整数 a，b，gcd（a，b）表示 a，b 的最大公约数。那么一定存在整数 x，y 使得 gcd（a，b）=ax+by。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-12-26T10:22:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No30-转-扩展欧几里德定理">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -110,15 +112,15 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展欧几里德定理"><span class="toc-number">1.</span> <span class="toc-text">扩展欧几里德定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对欧几里德定理的理解"><span class="toc-number">2.</span> <span class="toc-text">对欧几里德定理的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C++实现"><span class="toc-number">3.</span> <span class="toc-text">C++实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展欧几里德定理"><span class="toc-number">1.</span> <span class="toc-text">扩展欧几里德定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对欧几里德定理的理解"><span class="toc-number">2.</span> <span class="toc-text">对欧几里德定理的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-实现"><span class="toc-number">3.</span> <span class="toc-text">C++实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="扩展欧几里德定理">扩展欧几里德定理</h2><p><font size="4"><br>　　对于不完全为 0 的整数 a，b，gcd（a，b）表示 a，b 的最大公约数。那么一定存在整<br>数 x，y 使得 gcd（a，b）=ax+by。</font></p>
+		<h2 id="扩展欧几里德定理"><a href="#扩展欧几里德定理" class="headerlink" title="扩展欧几里德定理"></a>扩展欧几里德定理</h2><p><font size="4"><br>　　对于不完全为 0 的整数 a，b，gcd（a，b）表示 a，b 的最大公约数。那么一定存在整<br>数 x，y 使得 gcd（a，b）=ax+by。</font></p>
 <a id="more"></a>
-<h2 id="对欧几里德定理的理解">对欧几里德定理的理解</h2><p><font size="4"><br>设 a&gt;b。<br><br>1，显然当 b=0，gcd（a，b）=a。此时 x=1，y=0；<br><br>2，ab&lt;&gt;0 时<br><br>设 ax1+by1=gcd(a,b);<br><br>bx2+(a mod b)y2=gcd(b,a mod b);<br><br>根据朴素的欧几里德原理有 gcd(a,b)=gcd(b,a mod b);<br><br>则:ax1+by1=bx2+(a mod b)y2;<br><br>即:ax1+by1=bx2+(a-(a/b)<em>b)y2=ay2+bx2-(a/b)</em>by2;<br><br>根据恒等定理得：x1=y2; y1=x2-(a/b)*y2;<br><br>这样我们就得到了求解 x1,y1 的方法：x1，y1 的值基于 x2，y2.<br><br>上面的思想是以递归定义的，因为gcd不断的递归求解一定会有个时候b=0，所以递归可以结束。</font></p>
-<h2 id="C++实现">C++实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> x, y, q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend_Euclid</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( b == <span class="number">0</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        x = <span class="number">1</span>;</span><br><span class="line">        y = <span class="number">0</span>;</span><br><span class="line">        q = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        extend_Euclid(b, a % b);</span><br><span class="line">        <span class="keyword">int</span> temp = x;</span><br><span class="line">        x = y;</span><br><span class="line">        y = temp - a / b * y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="keyword">if</span>(a &lt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = a;</span><br><span class="line">        a = b;</span><br><span class="line">        b = t;</span><br><span class="line">    &#125;</span><br><span class="line">    extend_Euclid(a,b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d=(%d)*%d+(%d)*%d\n"</span>, q, x, a, y, b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="感谢">感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h2 id="对欧几里德定理的理解"><a href="#对欧几里德定理的理解" class="headerlink" title="对欧几里德定理的理解"></a>对欧几里德定理的理解</h2><p><font size="4"><br>设 a&gt;b。<br><br>1，显然当 b=0，gcd（a，b）=a。此时 x=1，y=0；<br><br>2，ab&lt;&gt;0 时<br><br>设 ax1+by1=gcd(a,b);<br><br>bx2+(a mod b)y2=gcd(b,a mod b);<br><br>根据朴素的欧几里德原理有 gcd(a,b)=gcd(b,a mod b);<br><br>则:ax1+by1=bx2+(a mod b)y2;<br><br>即:ax1+by1=bx2+(a-(a/b)<em>b)y2=ay2+bx2-(a/b)</em>by2;<br><br>根据恒等定理得：x1=y2; y1=x2-(a/b)*y2;<br><br>这样我们就得到了求解 x1,y1 的方法：x1，y1 的值基于 x2，y2.<br><br>上面的思想是以递归定义的，因为gcd不断的递归求解一定会有个时候b=0，所以递归可以结束。</font></p>
+<h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> x, y, q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend_Euclid</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( b == <span class="number">0</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        x = <span class="number">1</span>;</span><br><span class="line">        y = <span class="number">0</span>;</span><br><span class="line">        q = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        extend_Euclid(b, a % b);</span><br><span class="line">        <span class="keyword">int</span> temp = x;</span><br><span class="line">        x = y;</span><br><span class="line">        y = temp - a / b * y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="keyword">if</span>(a &lt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = a;</span><br><span class="line">        a = b;</span><br><span class="line">        b = t;</span><br><span class="line">    &#125;</span><br><span class="line">    extend_Euclid(a,b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d=(%d)*%d+(%d)*%d\n"</span>, q, x, a, y, b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">　　感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -239,7 +241,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展欧几里德定理"><span class="toc-number">1.</span> <span class="toc-text">扩展欧几里德定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对欧几里德定理的理解"><span class="toc-number">2.</span> <span class="toc-text">对欧几里德定理的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C++实现"><span class="toc-number">3.</span> <span class="toc-text">C++实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展欧几里德定理"><span class="toc-number">1.</span> <span class="toc-text">扩展欧几里德定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对欧几里德定理的理解"><span class="toc-number">2.</span> <span class="toc-text">对欧几里德定理的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-实现"><span class="toc-number">3.</span> <span class="toc-text">C++实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -275,10 +277,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -431,58 +433,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

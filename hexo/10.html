@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No10-原-hexo博文写作之博客生成generate常见错误集锦 | Scott Wang&#39;s blog</title>
+    <title>No10-原-hexo博文写作之博客生成generate常见错误集锦 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="本文写作初衷作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，hexo generate编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No10-原-hexo博文写作之博客生成generate常见错误集锦">
 <meta property="og:url" content="http://blog.54yongf.com/hexo/10.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="本文写作初衷作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，hexo generate编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-11-20T10:27:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No10-原-hexo博文写作之博客生成generate常见错误集锦">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -114,18 +116,18 @@
 		
 		</div>
 		
-		<h2 id="本文写作初衷">本文写作初衷</h2><p><font size="4">作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</font></p>
+		<h2 id="本文写作初衷"><a href="#本文写作初衷" class="headerlink" title="本文写作初衷"></a>本文写作初衷</h2><p><font size="4">作为一名在hexo方面赤果果的新手，我在博文写作方面遇到了很多问题，在写完了博文，<code>hexo generate</code>编译的时候遇到了各种错误。故特意将这些错误及其解决方案记录下来，以便日后查证之用，同时，也可给各位在遇到类似问题时提供一点参考。</font></p>
 <a id="more"></a>
-<h2 id="软件环境">软件环境</h2><p><font size="4"><br>OS: Windows_NT 6.1.7600 win32 x64<br>node: 4.2.2<br>hexo: 3.1</font></p>
-<h2 id="错误类型1">错误类型1</h2><h3 id="错误描述">错误描述</h3><p><font size="4"><br>YAMLException: end of the stream or a document separator is expected at line x, column y:</font></p>
-<h3 id="错误说明">错误说明</h3><p><font size="4"><br>缺少分隔符，一般都是因为缺少空格</font></p>
-<h3 id="解决方案">解决方案</h3><p><font size="4"><br>出现这种情况，一般都是缺少空格，在<code>:</code>冒号之后要有空格！检查x行y列附近的冒号，其之后是否跟了空格。</font></p>
-<h2 id="错误类型2">错误类型2</h2><h3 id="错误描述-1">错误描述</h3><p><font size="4"><br>ValidationError: ‘null’ is not a string!</font></p>
-<h3 id="错误说明-1">错误说明</h3><p><font size="4"><br>一般都是因为文章无内容，可能是因为在这篇博客文章中，有某些属性没有填写，比如author属性，tag属性，categories属性等，导致该属性是空的，即<code>null</code>，所以报错。<br><strong>友情提示</strong>：如果你是用MarkdownPad 2来进行博文写作（我就是），可能在打开该md文件之后，对文件名进行了修改，导致出现了两篇文章。就会出现错误。</font></p>
-<h3 id="解决方案-1">解决方案</h3><p><font size="4"><br>既然是属性缺失，那就把为空的那个属性给补上吧，仔细找找 :-)</font></p>
-<h2 id="错误类型3">错误类型3</h2><h3 id="错误描述-2">错误描述</h3><p><font size="4"><br>generate的时候是没问题的，但是网页预览的时候，发现引用块有问题，原本引用块下方的内容跑到引用块里边去了！</font></p>
-<h3 id="解决方案-2">解决方案</h3><p><font size="4"><br>引用块都是由一对三个<strong>`</strong>所包起来的，如果在最后一个点<strong>`</strong>之后有空格，界面会错乱，所以，把这个多余的空格去掉吧。</font></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h2><p><font size="4"><br>OS: Windows_NT 6.1.7600 win32 x64<br>node: 4.2.2<br>hexo: 3.1</font></p>
+<h2 id="错误类型1"><a href="#错误类型1" class="headerlink" title="错误类型1"></a>错误类型1</h2><h3 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h3><p><font size="4"><br>YAMLException: end of the stream or a document separator is expected at line x, column y:</font></p>
+<h3 id="错误说明"><a href="#错误说明" class="headerlink" title="错误说明"></a>错误说明</h3><p><font size="4"><br>缺少分隔符，一般都是因为缺少空格</font></p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p><font size="4"><br>出现这种情况，一般都是缺少空格，在<code>:</code>冒号之后要有空格！检查x行y列附近的冒号，其之后是否跟了空格。</font></p>
+<h2 id="错误类型2"><a href="#错误类型2" class="headerlink" title="错误类型2"></a>错误类型2</h2><h3 id="错误描述-1"><a href="#错误描述-1" class="headerlink" title="错误描述"></a>错误描述</h3><p><font size="4"><br>ValidationError: ‘null’ is not a string!</font></p>
+<h3 id="错误说明-1"><a href="#错误说明-1" class="headerlink" title="错误说明"></a>错误说明</h3><p><font size="4"><br>一般都是因为文章无内容，可能是因为在这篇博客文章中，有某些属性没有填写，比如author属性，tag属性，categories属性等，导致该属性是空的，即<code>null</code>，所以报错。<br><strong>友情提示</strong>：如果你是用MarkdownPad 2来进行博文写作（我就是），可能在打开该md文件之后，对文件名进行了修改，导致出现了两篇文章。就会出现错误。</font></p>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p><font size="4"><br>既然是属性缺失，那就把为空的那个属性给补上吧，仔细找找 :-)</font></p>
+<h2 id="错误类型3"><a href="#错误类型3" class="headerlink" title="错误类型3"></a>错误类型3</h2><h3 id="错误描述-2"><a href="#错误描述-2" class="headerlink" title="错误描述"></a>错误描述</h3><p><font size="4"><br>generate的时候是没问题的，但是网页预览的时候，发现引用块有问题，原本引用块下方的内容跑到引用块里边去了！</font></p>
+<h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h3><p><font size="4"><br>引用块都是由一对三个<strong>`</strong>所包起来的，如果在最后一个点<strong>`</strong>之后有空格，界面会错乱，所以，把这个多余的空格去掉吧。</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -282,10 +284,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -438,58 +440,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

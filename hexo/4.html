@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No4-原-使用hexo的过程中，我踩过的那些坑 | Scott Wang&#39;s blog</title>
+    <title>No4-原-使用hexo的过程中，我踩过的那些坑 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="前言事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。">
+<meta name="keywords" content="hexo,感受,挖坑and踩坑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No4-原-使用hexo的过程中，我踩过的那些坑">
 <meta property="og:url" content="http://blog.54yongf.com/hexo/4.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="前言事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-11-09T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No4-原-使用hexo的过程中，我踩过的那些坑">
@@ -24,7 +26,7 @@
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -33,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -52,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -114,16 +116,16 @@
 		
 		</div>
 		
-		<h2 id="前言">前言</h2><p><font size="4">事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</font></p>
+		<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><font size="4">事先声明，这篇博客不是介绍hexo的详细安装步骤的，这样的文章已经很多了，很容易找到。我写这篇文章的目的，仅仅是记录我使用hexo搭建博客的过程中，踩过的一个个坑，做一个记录 | 给大家一点参考。博客应该会不断更新，因为我现在勉强算个入门吧，对hexo的理解在不断加深中^_^。现在已经遇到了很多坑，而且，在未来应该还会遇到各种各样的坑（因为要个性化呀，我是个菜鸟，但是我爱折腾我自豪！）。</font></p>
 <a id="more"></a>
-<h2 id="说说我的搭建环境吧">说说我的搭建环境吧</h2><p><font size="4"></font></p>
+<h2 id="说说我的搭建环境吧"><a href="#说说我的搭建环境吧" class="headerlink" title="说说我的搭建环境吧"></a>说说我的搭建环境吧</h2><p><font size="4"></font></p>
 <ul>
 <li>hexo: 3.1.1外加zippera大神的Lightum主题（再次感谢）</li>
 <li>os: Windows_NT 6.1.7600 win32 x64</li>
 <li>http_parser: 2.5.0</li>
 <li>node: 4.2.2</li>
 </ul>
-<h2 id="先说说hexo的安装过程中潜在的坑">先说说hexo的安装过程中潜在的坑</h2><p><font size="4">目前，我的博客是用hexo+gitcafe-gitpages的方式搭建的，因为对空间的需求暂时不大，所以就先凑合着用了，以后再做打算。</font></p>
+<h2 id="先说说hexo的安装过程中潜在的坑"><a href="#先说说hexo的安装过程中潜在的坑" class="headerlink" title="先说说hexo的安装过程中潜在的坑"></a>先说说hexo的安装过程中潜在的坑</h2><p><font size="4">目前，我的博客是用hexo+gitcafe-gitpages的方式搭建的，因为对空间的需求暂时不大，所以就先凑合着用了，以后再做打算。</font></p>
 <p><font size="4">这时候，就需要用到git来部署网站了，注意事项如下：</font></p>
 <ol>
 <li>在 _config.yml 中设置 deploy中的type一项为git（而且还要注意空一格）<ol>
@@ -132,12 +134,12 @@
 </li>
 <li>注意安装好所有必须的插件，在部署网站时，必须用到hexo-deployer-git，如果没安装，会报错，错误信息：<strong>hexo:ERROR Deployer not found: git</strong>。安装的命令为：npm install hexo-deployer-git –save</li>
 <li>接上面2，一般做到这个程度就没问题了，但是不排除有其他特殊情况，那么，还是具体问题具体分析吧。</li>
-<li>在gitcafe上使用gitPages服务，就必须与gitcafe通信，这时候就添加SSH公钥到gitcafe上，至于如何操作，请移步<a href="https://gitcafe.com/GitCafe/Help/wiki/如何安装和设置-Git" title="SSH设置（很详细哦）" target="_blank" rel="external">gitcafe的官方文档</a> ，官方文档很详细，放心，如果有问题，还可以与官方联系，很方便的。</li>
-<li>现在，假设你已经在gitcafe创建好了库，并且已经写好了一篇博客，准备push到gitcafe项目的gitPages分支了，再次检查一下你的hexo/_config.yml吧，它应该是形如下面这样的：<br><font size="4"><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git   #如果使用gitcafe就一定要填git，使用github可以填github</span><br><span class="line">    <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//gitcafe.com/your_username/your_username.git  #注意用户名，your_username替换成自己的用户名</span></span><br><span class="line">    <span class="attribute">branch</span>: gitcafe-pages   #gitcafe填这个</span><br><span class="line">    <span class="attribute">message</span>: update #这是每次更新博客时的message，这项可以没有，有的话内容也可以自定义（如果你用过Git的话，这些应该不用我解释了）</span><br></pre></td></tr></table></figure>
+<li>在gitcafe上使用gitPages服务，就必须与gitcafe通信，这时候就添加SSH公钥到gitcafe上，至于如何操作，请移步<a href="https://gitcafe.com/GitCafe/Help/wiki/如何安装和设置-Git" title="SSH设置（很详细哦）" target="_blank" rel="noopener">gitcafe的官方文档</a> ，官方文档很详细，放心，如果有问题，还可以与官方联系，很方便的。</li>
+<li>现在，假设你已经在gitcafe创建好了库，并且已经写好了一篇博客，准备push到gitcafe项目的gitPages分支了，再次检查一下你的hexo/_config.yml吧，它应该是形如下面这样的：<br><font size="4"><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">git</span>   <span class="comment">#如果使用gitcafe就一定要填git，使用github可以填github</span></span><br><span class="line"><span class="attr">    repository:</span> <span class="attr">https://gitcafe.com/your_username/your_username.git</span>  <span class="comment">#注意用户名，your_username替换成自己的用户名</span></span><br><span class="line"><span class="attr">    branch:</span> <span class="string">gitcafe-pages</span>   <span class="comment">#gitcafe填这个</span></span><br><span class="line"><span class="attr">    message:</span> <span class="string">update</span> <span class="comment">#这是每次更新博客时的message，这项可以没有，有的话内容也可以自定义（如果你用过Git的话，这些应该不用我解释了）</span></span><br></pre></td></tr></table></figure>
 </font></li>
 </ol>
 <p><font color="red"><strong>注意（Attention）！</strong></font>在type,repository,branch[,message]的后面的冒号之后，必须留出一个空格！否则很可能会解析出错，可能出现一大堆看不懂的错误，这是一个注意点。</p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -294,10 +296,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -450,58 +452,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

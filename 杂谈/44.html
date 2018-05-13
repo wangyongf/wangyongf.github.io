@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No44-【原】-Visual Studio Code使用初体验 | Scott Wang&#39;s blog</title>
+    <title>No44-【原】-Visual Studio Code使用初体验 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
@@ -12,21 +12,24 @@
 
     
     <meta name="description" content="Visual Studio Code 使用初体验作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好,CSS,JS还没试,应该可以的吧.我是在Ubuntu 14.04下使用VSC的,使用的是Monokai主题,颜值和我使用Sublime Text 3有的一拼.之前在Ubuntu下一直没有找到一款好用的Markdown编辑器(如果你有好的推荐">
+<meta name="keywords" content="杂谈,Visual Studio Code">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No44-【原】-Visual Studio Code使用初体验">
 <meta property="og:url" content="http://blog.54yongf.com/杂谈/44.html">
-<meta property="og:site_name" content="Scott Wang's blog">
+<meta property="og:site_name" content="移动开发技术小黑屋">
 <meta property="og:description" content="Visual Studio Code 使用初体验作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好,CSS,JS还没试,应该可以的吧.我是在Ubuntu 14.04下使用VSC的,使用的是Monokai主题,颜值和我使用Sublime Text 3有的一拼.之前在Ubuntu下一直没有找到一款好用的Markdown编辑器(如果你有好的推荐">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No44-%E7%94%A8vs%20code%E5%86%99markdown.png">
 <meta property="og:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No44-VSCODE.png">
 <meta property="og:updated_time" content="2016-08-17T22:40:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No44-【原】-Visual Studio Code使用初体验">
 <meta name="twitter:description" content="Visual Studio Code 使用初体验作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好,CSS,JS还没试,应该可以的吧.我是在Ubuntu 14.04下使用VSC的,使用的是Monokai主题,颜值和我使用Sublime Text 3有的一拼.之前在Ubuntu下一直没有找到一款好用的Markdown编辑器(如果你有好的推荐">
+<meta name="twitter:image" content="http://7xo5vs.com1.z0.glb.clouddn.com/No44-%E7%94%A8vs%20code%E5%86%99markdown.png">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -35,7 +38,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -54,12 +57,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -112,21 +115,21 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Visual_Studio_Code_使用初体验"><span class="toc-number">1.</span> <span class="toc-text">Visual Studio Code 使用初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于VSC的Markdown写作的特性"><span class="toc-number">2.</span> <span class="toc-text">关于VSC的Markdown写作的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后,来几张美照吧"><span class="toc-number">3.</span> <span class="toc-text">最后,来几张美照吧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Visual-Studio-Code-使用初体验"><span class="toc-number">1.</span> <span class="toc-text">Visual Studio Code 使用初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于VSC的Markdown写作的特性"><span class="toc-number">2.</span> <span class="toc-text">关于VSC的Markdown写作的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后-来几张美照吧"><span class="toc-number">3.</span> <span class="toc-text">最后,来几张美照吧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="Visual_Studio_Code_使用初体验">Visual Studio Code 使用初体验</h2><p><font size="4"><br>作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好,CSS,JS还没试,应该可以的吧.我是在Ubuntu 14.04下使用VSC的,使用的是<code>Monokai</code>主题,颜值和我使用Sublime Text 3有的一拼.<br><br>之前在Ubuntu下一直没有找到一款好用的Markdown编辑器(如果你有好的推荐,请留言哦 ^_^ ),现在,我可以用VSC写Markdown写得飞起了.VSC的缺点也挺多,比如说BUG稍微有点多,插件呢,也相对比较少,毕竟作为新人嘛,到现在为止,还在<code>0.10.11</code>版本,算是预览版吧.不过,现在巨硬也一直在推荐VSC,VSC一直在发展,相信会有越来越多的人喜欢上这款编辑器的.</font></p>
-<h2 id="关于VSC的Markdown写作的特性">关于VSC的Markdown写作的特性</h2><p><font size="4"></font></p>
+		<h2 id="Visual-Studio-Code-使用初体验"><a href="#Visual-Studio-Code-使用初体验" class="headerlink" title="Visual Studio Code 使用初体验"></a>Visual Studio Code 使用初体验</h2><p><font size="4"><br>作为一个资深菜鸟,先说说结论:用VCS写Markdown真心好用.写HTML也不错,HTML代码格式化做的挺好,CSS,JS还没试,应该可以的吧.我是在Ubuntu 14.04下使用VSC的,使用的是<code>Monokai</code>主题,颜值和我使用Sublime Text 3有的一拼.<br><br>之前在Ubuntu下一直没有找到一款好用的Markdown编辑器(如果你有好的推荐,请留言哦 ^_^ ),现在,我可以用VSC写Markdown写得飞起了.VSC的缺点也挺多,比如说BUG稍微有点多,插件呢,也相对比较少,毕竟作为新人嘛,到现在为止,还在<code>0.10.11</code>版本,算是预览版吧.不过,现在巨硬也一直在推荐VSC,VSC一直在发展,相信会有越来越多的人喜欢上这款编辑器的.</font></p>
+<h2 id="关于VSC的Markdown写作的特性"><a href="#关于VSC的Markdown写作的特性" class="headerlink" title="关于VSC的Markdown写作的特性"></a>关于VSC的Markdown写作的特性</h2><p><font size="4"></font></p>
 <ol>
 <li>可以定制Snippets,加快写作速度(不过还是没有直接使用快捷键的爽啊 QAQ)</li>
 <li>支持实时预览,边写边看,左边写,右边预览(快捷键Ctrl+K, V 不谢)</li>
 <li>支持全文预览,适合写完之后看一下效果(快捷键Ctrl+Shift+V)</li>
 <li>上述功能为VSC自带,不使用任何插件,因为目前关于Markdown的插件很少</li>
 </ol>
-<h2 id="最后,来几张美照吧">最后,来几张美照吧</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No44-%E7%94%A8vs%20code%E5%86%99markdown.png" alt="我的VSC"></p>
+<h2 id="最后-来几张美照吧"><a href="#最后-来几张美照吧" class="headerlink" title="最后,来几张美照吧"></a>最后,来几张美照吧</h2><p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No44-%E7%94%A8vs%20code%E5%86%99markdown.png" alt="我的VSC"></p>
 <p><img src="http://7xo5vs.com1.z0.glb.clouddn.com/No44-VSCODE.png" alt="我的VSC"></p>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -140,7 +143,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Visual-Studio-Code/">Visual Studio Code</a><a href="/tags/杂谈/">杂谈</a>
+  <span></span> <a href="/tags/杂谈/">杂谈</a><a href="/tags/Visual-Studio-Code/">Visual Studio Code</a>
   </div>
 
 </div>
@@ -247,7 +250,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title"><font color="#2CA6CB"><b>文章目录</b></font></strong>
  
- <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Visual_Studio_Code_使用初体验"><span class="toc-number">1.</span> <span class="toc-text">Visual Studio Code 使用初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于VSC的Markdown写作的特性"><span class="toc-number">2.</span> <span class="toc-text">关于VSC的Markdown写作的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后,来几张美照吧"><span class="toc-number">3.</span> <span class="toc-text">最后,来几张美照吧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
+ <font color="#2CA6CB"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Visual-Studio-Code-使用初体验"><span class="toc-number">1.</span> <span class="toc-text">Visual Studio Code 使用初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于VSC的Markdown写作的特性"><span class="toc-number">2.</span> <span class="toc-text">关于VSC的Markdown写作的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后-来几张美照吧"><span class="toc-number">3.</span> <span class="toc-text">最后,来几张美照吧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">4.</span> <span class="toc-text">感谢</span></a></li></ol></font>
  
   </div>
 
@@ -283,10 +286,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -439,58 +442,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

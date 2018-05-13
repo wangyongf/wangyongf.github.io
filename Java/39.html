@@ -4,36 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>No39-原-Java核心技术读书笔记 | Scott Wang&#39;s blog</title>
+    <title>No39-原-Java核心技术读书笔记 | 移动开发技术小黑屋</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="老码">
     
 
     
-    <meta name="description" content="Java核心技术读书笔记
-
-
-在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）">
+    <meta name="description" content="Java核心技术读书笔记   在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）">
+<meta name="keywords" content="Java,读书笔记,Java核心技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="No39-原-Java核心技术读书笔记">
 <meta property="og:url" content="http://blog.54yongf.com/Java/39.html">
-<meta property="og:site_name" content="Scott Wang's blog">
-<meta property="og:description" content="Java核心技术读书笔记
-
-
-在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）">
+<meta property="og:site_name" content="移动开发技术小黑屋">
+<meta property="og:description" content="Java核心技术读书笔记   在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-04-26T11:35:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="No39-原-Java核心技术读书笔记">
-<meta name="twitter:description" content="Java核心技术读书笔记
-
-
-在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）">
+<meta name="twitter:description" content="Java核心技术读书笔记   在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）">
 <link rel="publisher" href="103252988093400142507">
 
     
-    <link rel="alternative" href="/atom.xml" title="Scott Wang&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="移动开发技术小黑屋" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -42,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman2.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman2.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <a href="https://github.com/wangyongf" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
@@ -61,12 +54,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/jacman2.jpg" alt="Scott Wang&#39;s blog" title="Scott Wang&#39;s blog"/></a>
+				<a href="/"><img src="/img/jacman2.jpg" alt="移动开发技术小黑屋" title="移动开发技术小黑屋"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Scott Wang&#39;s blog">Scott Wang&#39;s blog</a></h1>
-				<h2 class="blog-motto">越努力，越幸运</h2>
+				<h1 class="site-name"><a href="/" title="移动开发技术小黑屋">移动开发技术小黑屋</a></h1>
+				<h2 class="blog-motto">Scott Wang&#39;s blog. 越努力，越幸运</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -123,7 +116,7 @@
 		
 		</div>
 		
-		<h2 id="Java核心技术读书笔记">Java核心技术读书笔记</h2><font size="4">
+		<h2 id="Java核心技术读书笔记"><a href="#Java核心技术读书笔记" class="headerlink" title="Java核心技术读书笔记"></a>Java核心技术读书笔记</h2><font size="4">
 
 <ol>
 <li>在Java中，共有8种基本类型：4种整型（int4,short2,long8,byte1）、2种浮点类型（float4,double8）、字符类型（char2表示Unicode编码的字符单元）、boolean类型（1bit）<a id="more"></a></li>
@@ -211,9 +204,9 @@
 <li>Path和Files类since JDK7.0</li>
 <li>每个Java程序至少拥有三个类加载器：1. 引导类加载器。2. 扩展类加载器。3. 系统类（应用类）加载器。引导类加载器负责加载系统类（通常从JAR文件rt.jar中进行加载），引导类加载器没有对应的ClassLoader对象。扩展类加载器用于从jre/lib/ext目录加载标准扩展。系统类加载器用于加载应用类。引导类加载器通常使用C语言实现的，扩展类加载器和系统类加载器通常是用Java来实现的。</li>
 </ol>
-<h4 id="volatile变量不能提供原子性！">volatile变量不能提供原子性！</h4><p><font size="4"><br>volatile只提供了保证访问该变量时，每次都是从内存中读取最新值，并不会使用寄存器缓存该值——每次都会从内存中读取。而对该变量的修改，volatile并不提供原子性的保证。那么编译器究竟是直接修改内存的值，还是使用寄存器修改都符合volatile的定义。所以，一句话，volatile并不提供原子性的保证。所以，下面的代码并不能确保number的递增。还是要使用synchronized</font></p>
+<h4 id="volatile变量不能提供原子性！"><a href="#volatile变量不能提供原子性！" class="headerlink" title="volatile变量不能提供原子性！"></a>volatile变量不能提供原子性！</h4><p><font size="4"><br>volatile只提供了保证访问该变量时，每次都是从内存中读取最新值，并不会使用寄存器缓存该值——每次都会从内存中读取。而对该变量的修改，volatile并不提供原子性的保证。那么编译器究竟是直接修改内存的值，还是使用寄存器修改都符合volatile的定义。所以，一句话，volatile并不提供原子性的保证。所以，下面的代码并不能确保number的递增。还是要使用synchronized</font></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add_number</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ++number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="字节码校验">字节码校验</h4><p><font size="4"><br>在类加载器将新加载的字节码传递给虚拟机时，这些字节码首先要接受校验器的校验。下面是校验器执行的一些检查：</font></p>
+<h4 id="字节码校验"><a href="#字节码校验" class="headerlink" title="字节码校验"></a>字节码校验</h4><p><font size="4"><br>在类加载器将新加载的字节码传递给虚拟机时，这些字节码首先要接受校验器的校验。下面是校验器执行的一些检查：</font></p>
 <ol>
 <li>变量要在使用之前初始化</li>
 <li>方法调用与对象引用类型之间要匹配</li>
@@ -221,7 +214,7 @@
 <li>对本地变量的访问都落在运行时堆栈内</li>
 <li>运行时堆栈没有溢出</li>
 </ol>
-<h4 id="调用构造器的具体处理步骤">调用构造器的具体处理步骤</h4><font size="4">
+<h4 id="调用构造器的具体处理步骤"><a href="#调用构造器的具体处理步骤" class="headerlink" title="调用构造器的具体处理步骤"></a>调用构造器的具体处理步骤</h4><font size="4">
 
 <ol>
 <li>所有数据域被初始化为默认值（0 =&gt; 数值型, false =&gt; 布尔型, null =&gt; 对象类型）</li>
@@ -229,32 +222,32 @@
 <li>如果在构造器第一行调用了第二个构造器，则执行第二个构造器的主体</li>
 <li>执行这个构造器的主体</li>
 </ol>
-<h4 id="泛型的约束和局限性">泛型的约束和局限性</h4><ol>
+<h4 id="泛型的约束和局限性"><a href="#泛型的约束和局限性" class="headerlink" title="泛型的约束和局限性"></a>泛型的约束和局限性</h4><ol>
 <li>不能用基本类型实例化类型参数（用包装类）</li>
 <li>运行时类型查询只适用于原始类型</li>
 <li>不要创建参数化类型的数组</li>
 <li>不能实例化类型变量</li>
 <li>泛型类的静态（变量、方法）上下文中类型无效</li>
 </ol>
-<h4 id="对象拷贝与对象克隆的区别">对象拷贝与对象克隆的区别</h4><ol>
+<h4 id="对象拷贝与对象克隆的区别"><a href="#对象拷贝与对象克隆的区别" class="headerlink" title="对象拷贝与对象克隆的区别"></a>对象拷贝与对象克隆的区别</h4><ol>
 <li>当拷贝一个对象时，原始变量和拷贝变量引用同一个对象</li>
 <li>当克隆一个对象时，引用新的对象</li>
 </ol>
-<h4 id="编写equals方法的建议">编写equals方法的建议</h4><ol>
+<h4 id="编写equals方法的建议"><a href="#编写equals方法的建议" class="headerlink" title="编写equals方法的建议"></a>编写equals方法的建议</h4><ol>
 <li>显式参数命名为otherObject，稍后需要将它转换成另一个叫做other的变量。</li>
 <li>检测this与otherObject是否引用同一个对象，即如果this == otherObject，返回true</li>
 <li>检测otherObject是否为null，如果是null，返回false</li>
 <li>比较this与otherObject是否属于同一个类。如果equals的语义在每个子类都有变化，就用getClass判断。如果所有的子类都拥有统一的语义，就用instanceof检测</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!(getClass() == otherObject.getClass()) </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!(otherObject <span class="keyword">instanceof</span> ClassName))</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="5">
 <li>将otherObject转换为相应的类类型变量</li>
 <li>对所有需要比较的域进行比较。使用==比较基本类型于，使用equals比较对象与。如果所有的域都匹配，就返回true；否则返回false。</li>
 <li><p>如果在子类中重新定义equals，就要在其中包含调用super.equals(other)。</p>
-<h2 id="关于动态绑定">关于动态绑定</h2><p><font size="4"><br>必须明确的一点是,动态绑定针对的是对象的方法,这一点尤为重要!因此,在向上转型的情况下，对象的方法可以找到子类，而对象的属性还是父类的属性。</font></p>
+<h2 id="关于动态绑定"><a href="#关于动态绑定" class="headerlink" title="关于动态绑定"></a>关于动态绑定</h2><p><font size="4"><br>必须明确的一点是,动态绑定针对的是对象的方法,这一点尤为重要!因此,在向上转型的情况下，对象的方法可以找到子类，而对象的属性还是父类的属性。</font></p>
 </li>
 </ol>
-<h2 id="感谢">感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><font size="4">感谢访问我的个人博客的朋友，如果您感觉本站对您搜索的问题有所帮助，并感觉对本站还满意的话，顶一下吧，希望您把本站分享给您的朋友！在此对您表示由衷的谢意！ :)</font></p>
 </font></font>
 	</div>
 		<footer class="article-footer clearfix">
@@ -268,7 +261,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Java/">Java</a><a href="/tags/Java核心技术/">Java核心技术</a><a href="/tags/读书笔记/">读书笔记</a>
+  <span></span> <a href="/tags/Java/">Java</a><a href="/tags/读书笔记/">读书笔记</a><a href="/tags/Java核心技术/">Java核心技术</a>
   </div>
 
 </div>
@@ -411,10 +404,10 @@
     <li>花名：yongf|老码|定国</li>
     <li>性别：男</li>
     <li>爱好：女</li>
-    <li>现状：魔都CS在读本科生，大四</li>
+    <li>现状：挖财Android开发工程师</li>
     <li>想交友的朋友请<a href="http://blog.54yongf.com/about"><font ><b>联系我</b></font></a>！</li>
     <li>QQ ：1059613472</li>
-    <li>邮箱：ScottWang1996#gmail.com</li>
+    <li>邮箱：ScottWang1996#qq.com</li>
     <li>一句话：<font color="red">我不是咸鱼！</font></li>
     </ul>
 </div>
@@ -567,58 +560,68 @@
 </div>
 
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hey, it&#39;s yongf.  <br/>
-			This is my blog, welcome!</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
+		<div class="line">
+			<span></span>
+			<div class="author"></div>
+		</div>
 		
-		<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
-		
-		
-		
-		
-		
-		
-		<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
-		
-		
-		<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
-		
-		
-		<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
 			
-		
+				<section class="info">
+					<p>
+						Hey, it&#39;s yongf. 
+							<br/>
+							This is my blog, welcome!
+					</p>
+				</section>
+				
+					<div class="social-font" class="clearfix">
+						
+							<a href="http://weibo.com/2902237231" target="_blank" class="icon-weibo" title="微博"></a>
+							
+								
+									<a href="https://github.com/wangyongf" target="_blank" class="icon-github" title="github"></a>
+									
+										
+											<a href="http://stackoverflow.com/users/5304207" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+											
+												
+														
+																
+																		
+																				
+																					<a href="http://www.zhihu.com/people/wang-yong-8-33" target="_blank" class="icon-zhihu" title="知乎"></a>
+																					
+																						
+																							<a href="https://plus.google.com/103252988093400142507?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+																							
+																								
+																									<a href="mailto:ScottWang1996@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+																									
+					</div>
+					
+						
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017
-		
-		<a href="/about" target="_blank" title="老码">老码</a>
-		
+								<p class="copyright">
+									Powered by
+									<a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by
+									<a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> ©
+									2018
+										
+											<a href="/about" target="_blank" title="老码">
+												老码
+											</a>
+											
 
-		</p>
+													<br>
+													<a href="http://www.miitbeian.gov.cn/" target="_blank" title="备案号">湘ICP备17022183号-1</a>
+								</p>
+
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-</footer>
+</script></footer>
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
